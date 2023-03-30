@@ -1,8 +1,9 @@
 import React from "react";
+import "rc-drawer/assets/index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Layout from "./@components/layout/Layout";
-import Home from "./@pages/Home";
+import Layout from "./components/layout/Layout";
+import Home from "./pages/Home";
 
 function App() {
   return (

@@ -4,6 +4,41 @@
     "text2": "Blog",
     "text3": "Portfolio",
     "text4": "Careers",
-    "text5": "Services"
+    "text5": "Services",
+    "scheduleText": "Schedule a Call"
+  },
+  "home": {
+    "title": "REEMROSE",
+    "tagline1": "Unleashing the Power of Technology with Expert Software Development",
+    "tagline2": "Empowering Your Vision with Cutting-Edge Software Solutions",
+    "btnText": "What we do",
+    "viewBtnText": "View All",
+    "frontend": {
+      "title": "Front-End Development",
+      "tags": ["HTML", "CSS", "Javascript"]
+    },
+    "design": { "title": "Product Design", "tags": ["Branding", "UI/UX"] },
+    "backend": {
+      "title": "Back-End Development",
+      "tags": ["PHP", "Node.js", "Java", "Python", "Ruby"]
+    },
+    "featured": {
+      "heading": "Featured Projects",
+      "text": "Showcasing our expertise and delivering innovative solutions through our diverse portfolio of successful projects"
+    },
+    "services": {
+      "heading": "Services",
+      "title1": "Consulting",
+      "title2": "Development",
+      "text2": "The specific tools used for back-end development depend on the requirements of a project, the programming language being used, and the developer's preferences and experience. The back-end developer's role is to build and maintain the server-side of the application and ensure that it can effectively handle the required data and communication between the front-end and the database.",
+      "title3": "Mentoring",
+      "title4": "Open-Source"
+    },
+    "testimonials": {
+      "title": "Testimonials",
+      "text": "Hear it from our satisfied clients: Our commitment to excellence shines through in every project"
+    },
+    "readMore": "Read more",
+    "viewMore": "View More"
   }
 }

@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 /* importing  fonts */
-@import url("./@assets/fonts/Plus_Jakarta_Sans/plus_jakarta_sans.css");
-@import url("./@assets/fonts/Roboto_Slab/roboto_slab.css");
+@import url("./assets/fonts/Plus_Jakarta_Sans/plus_jakarta_sans.css");
+@import url("./assets/fonts/Roboto_Slab/roboto_slab.css");
 body {
   margin: 0;
   font-family: "PlusJakartaSans", "RobotoSlab";
@@ -12,7 +12,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 .layout {
-  background-image: url("./@assets/images/backgroundImage.png");
+  background-image: url("./assets/images/backgroundImage.png");
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

@@ -7,11 +7,13 @@ module.exports = {
       colors: {
         primary: "#00A388", // this and heading are primary
         primaryLight: "#00a38814",
-        gradiantColor: "#006655",
+        gradientColor: "#006655",
         heading: "#06090E",
+        bodyText: "#fff6",
         body: "#000E14", // this is the background color
         white: "#ffffff",
         gray: "#6b7280",
+        black: "#000A08",
       },
     },
     screens: {
