@@ -25,7 +25,7 @@ const Tech = () => {
     <div className="mt-[144px] lg:mt-[216px] bg-primaryLight rounded flex flex-col items-center p-[48px] w-full">
       <div className="flex flex-col items-center lg:items-start lg:flex-row w-full max-w-[1344px] lg:justify-around">
         <div className="flex flex-col lg:mt-0 w-[437px] items-center">
-          <h5 className="text-heading font-semibold font-PlusJakartaSans text-[20px]">
+          <h5 className="text-heading font-semibold font-PlusJakartaSans text-base lg:text-[20px]">
             {t("home.frontend.title")}
           </h5>
           <div className="flex justify-center">
@@ -41,7 +41,7 @@ const Tech = () => {
           </div>
         </div>
         <div className="flex flex-col mt-6 lg:mt-0 w-[437px] items-center">
-          <h5 className="text-heading font-semibold font-PlusJakartaSans text-[20px]">
+          <h5 className="text-heading font-semibold font-PlusJakartaSans text-base lg:text-[20px]">
             {t("home.design.title")}
           </h5>
           <div className="flex justify-center">
@@ -54,7 +54,7 @@ const Tech = () => {
           </div>
         </div>
         <div className="flex flex-col mt-6 lg:mt-0 w-[437px] items-center">
-          <h5 className="text-heading  font-semibold font-PlusJakartaSans text-[20px] mr-4">
+          <h5 className="text-heading  font-semibold font-PlusJakartaSans text-base lg:text-[20px] mr-4">
             {t("home.backend.title")}
           </h5>
           <div className="ml-[12px] xs:ml-0 flex justify-center">
