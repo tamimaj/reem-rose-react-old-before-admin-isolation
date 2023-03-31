@@ -1,6 +1,5 @@
 import React from "react";
 import { AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
-import siteSettings from "../../../settings/siteSettings";
 
 type Data = {
   name: string;

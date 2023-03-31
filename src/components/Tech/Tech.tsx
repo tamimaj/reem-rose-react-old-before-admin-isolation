@@ -22,9 +22,9 @@ const Tech = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="mt-[216px] bg-primaryLight rounded flex flex-col items-center p-[48px] w-full">
-      <div className="flex w-full max-w-[1344px] justify-around">
-        <div className="flex flex-col w-[437px] items-center">
+    <div className="mt-[144px] lg:mt-[216px] bg-primaryLight rounded flex flex-col items-center p-[48px] w-full">
+      <div className="flex flex-col items-center lg:items-start lg:flex-row w-full max-w-[1344px] lg:justify-around">
+        <div className="flex flex-col lg:mt-0 w-[437px] items-center">
           <h5 className="text-heading font-semibold font-PlusJakartaSans text-[20px]">
             {t("home.frontend.title")}
           </h5>
@@ -40,7 +40,7 @@ const Tech = () => {
             </span>
           </div>
         </div>
-        <div className="flex flex-col w-[437px] items-center">
+        <div className="flex flex-col mt-6 lg:mt-0 w-[437px] items-center">
           <h5 className="text-heading font-semibold font-PlusJakartaSans text-[20px]">
             {t("home.design.title")}
           </h5>
@@ -53,11 +53,11 @@ const Tech = () => {
             </span>
           </div>
         </div>
-        <div className="flex flex-col w-[437px] items-center">
+        <div className="flex flex-col mt-6 lg:mt-0 w-[437px] items-center">
           <h5 className="text-heading  font-semibold font-PlusJakartaSans text-[20px] mr-4">
             {t("home.backend.title")}
           </h5>
-          <div className="flex justify-center">
+          <div className="ml-[12px] xs:ml-0 flex justify-center">
             <span className="text-sm text-primary font-RobotoSlab mr-4">
               {t("home.backend.tag1")}
             </span>
@@ -76,7 +76,7 @@ const Tech = () => {
           </div>
         </div>
       </div>
-      <div className="mt-[48px] flex w-full justify-between">
+      <div className="mt-[48px] flex w-[822px] overflow-x-scroll  lg:w-full  justify-between">
         <img src={gobbler} alt="gobbler" className="w-[32px] h-[32px] " />
         <DiAndroid className="text-[32px] text-primary" />
         <DiApple className="text-[32px] text-primary" />

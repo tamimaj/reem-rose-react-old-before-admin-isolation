@@ -30,15 +30,15 @@ const Portfolio = () => {
     }
   };
   return (
-    <div className="flex w-full mt-[204px]">
-      <div className="flex flex-col ml-6">
-        <h6 className="text-white text-[32px] mb-2">
+    <div className="flex flex-col items-center lg:items-start lg:flex-row w-full mt-[64px] lg:mt-[204px]">
+      <div className="flex flex-col items-center lg:items-start mb-8 lg:mb-0 lg:ml-6">
+        <h6 className="text-white text-[20px] lg:text-[32px] mb-2 mr-[24px] lg:mr-0">
           {t("home.featured.heading")}
         </h6>
-        <span className="text-bodyText w-[277px]">
+        <span className="text-bodyText text-sm lg:text-base w-full xs:w-[277px]">
           {t("home.featured.text")}
         </span>
-        <div className="flex my-6">
+        <div className="hidden lg:flex my-6">
           <div
             onClick={() =>
               lang === "ar" ? handleScrollRight() : handleScrollLeft()
@@ -56,13 +56,13 @@ const Portfolio = () => {
             {lang === "ar" ? <HiArrowLeft /> : <HiArrowRight />}
           </div>
         </div>
-        <span className="text-primary text-base font-semibold cursor-pointer">
+        <span className="hidden lg:flex text-primary text-base font-semibold cursor-pointer">
           {t("home.viewBtnText")}
         </span>
       </div>
       <div
         ref={portfolioRef}
-        className="flex overflow-x-scroll scroll w-[1076px] ml-[63px]"
+        className="flex overflow-x-scroll scroll w-full lg:w-[1076px] lg:ml-[63px]"
       >
         {portfolioData.map((v, idx) => (
           <div className="relative min-w-[348px] h-[264px] mr-4 cursor-pointer">
@@ -81,6 +81,9 @@ const Portfolio = () => {
           </div>
         ))}
       </div>
+      <span className="lg:hidden mt-[32px] flex text-primary text-base font-semibold cursor-pointer">
+        {t("home.viewBtnText")}
+      </span>
     </div>
   );
 };

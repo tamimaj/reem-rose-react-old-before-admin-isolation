@@ -6,7 +6,7 @@ import TestimonialCard from "./TestimonialCard/TestimonialCard";
 const Testimonials = () => {
   const { t } = useTranslation();
   return (
-    <div className="flex  w-full mt-[200px]">
+    <div className="flex  w-full mt-[96px] lg:mt-[160px] xl:mt-[200px]">
       <div className="flex flex-col items-center w-full">
         <h6 className="text-white text-[32px] ">
           {t("home.testimonials.title")}
@@ -21,9 +21,9 @@ const Testimonials = () => {
             </Fragment>
           ))}
         </div>
-        <div className="relative mt-[48px]">
-          <button className="flex items-center justify-center w-[208px] h-[60px]  bg-transparent btn "></button>
-          <span className="absolute text-white top-[20px] left-[61px]">
+        <div className="relative mt-[48px] ">
+          <button className="flex items-center justify-center w-[208px] h-[50px] xs:h-[60px]  bg-transparent btn "></button>
+          <span className="absolute text-white  top-[15px] xs:top-[20px] left-[61px]">
             {t("home.viewMore")}{" "}
           </span>
         </div>
