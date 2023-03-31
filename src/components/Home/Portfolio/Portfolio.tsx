@@ -2,7 +2,7 @@ import { useRef, RefObject, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { FiArrowUpRight } from "react-icons/fi";
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi";
-import { portfolioData } from "../../helpers/temphelpers/tempHelpers";
+import { portfolioData } from "../../../helpers/temphelpers/tempHelpers";
 
 const Portfolio = () => {
   const { i18n, t } = useTranslation();

@@ -4,7 +4,7 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { IoMdMenu } from "react-icons/io";
 
 import siteSettings from "../../settings/siteSettings";
-import LanguagesMenu from "../LanguageMenu/LanguagesMenu";
+import LanguagesMenu from "./LanguageMenu/LanguagesMenu";
 import MobileMenuDrawer from "./MobileMenuDrawer/MobileMenuDrawer";
 
 interface HeaderTypes {

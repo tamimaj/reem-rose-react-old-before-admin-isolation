@@ -1,4 +1,4 @@
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";

@@ -6,7 +6,7 @@ import { useWindowSize } from "react-use";
 import { MdOutlineClose, MdArrowRight, MdArrowLeft } from "react-icons/md";
 
 import siteSettings from "../../../settings/siteSettings";
-import LanguagesMenu from "../../LanguageMenu/LanguagesMenu";
+import LanguagesMenu from "../LanguageMenu/LanguagesMenu";
 import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
 
 interface drawerProps {

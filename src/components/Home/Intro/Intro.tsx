@@ -24,7 +24,7 @@ const Intro = () => {
         </span>
       </div>
       <div className="flex items-center justify-between font-PlusJakartaSans mt-[48px] lg:mt-[96px] w-[270px] xs:w-[350px] sm:w-[390px] md:w-[460px]">
-        <button className="flex items-center text-sm md:text-base justify-center w-[130px] xs:w-[169px] md:w-[208px]  h-[50px] xs:h-[60px] text-white rounded bg-gradient-to-r from-primary to-gradientColor ">
+        <button className="flex items-center text-sm md:text-base justify-center w-[130px] xs:w-[169px] md:w-[208px]  h-[52px] xs:h-[62px] text-white rounded bg-gradient-to-r from-primary to-gradientColor ">
           {t("header.scheduleText")}{" "}
           {lang === "ar" ? (
             <FiChevronLeft className="text-[16px] lg:text-[20px] ml-2 md:ml-4" />
@@ -33,10 +33,9 @@ const Intro = () => {
           )}
         </button>
         <div className="relative">
-          <button className="flex items-center justify-center w-[130px] xs:w-[169px] md:w-[208px] h-[50px] xs:h-[60px]  bg-transparent btn "></button>
-          <span className="absolute text-white text-sm md:text-base top-[15px] left-[27px] xs:top-[20px] xs:left-[42px] md:left-[61px]">
+          <button className="flex text-white items-center justify-center w-[130px] xs:w-[169px] md:w-[208px] h-[50px] xs:h-[60px]  border border-primary rounded ">
             {t("home.btnText")}{" "}
-          </span>
+          </button>
         </div>
       </div>
     </>

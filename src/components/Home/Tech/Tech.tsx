@@ -1,4 +1,3 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 
 import {
@@ -12,11 +11,11 @@ import {
 } from "react-icons/di";
 import { SiDjango, SiJavascript } from "react-icons/si";
 
-import gobbler from "../../assets/icons/gobbler.svg";
-import net from "../../assets/icons/net.svg";
-import techIcon from "../../assets/icons/techicon.svg";
-import vue from "../../assets/icons/vue.svg";
-import techIcon2 from "../../assets/icons/techIcon2.svg";
+import gobbler from "../../../assets/icons/gobbler.svg";
+import net from "../../../assets/icons/net.svg";
+import techIcon from "../../../assets/icons/techicon.svg";
+import vue from "../../../assets/icons/vue.svg";
+import techIcon2 from "../../../assets/icons/techIcon2.svg";
 
 const Tech = () => {
   const { t } = useTranslation();
@@ -76,21 +75,59 @@ const Tech = () => {
           </div>
         </div>
       </div>
-      <div className="mt-[48px] flex w-[822px] overflow-x-scroll  lg:w-full  justify-between">
-        <img src={gobbler} alt="gobbler" className="w-[32px] h-[32px] " />
-        <DiAndroid className="text-[32px] text-primary" />
-        <DiApple className="text-[32px] text-primary" />
-        <DiJava className="text-[32px] text-primary" />
-        <DiPython className="text-[32px] text-primary" />
-        <img src={net} alt="net" className="w-[32px] h-[32px] " />
-        <SiJavascript className="text-[26px] text-primary" />
-        <DiReact className="text-[32px] text-primary" />
-        <DiAngularSimple className="text-[32px] text-primary" />
-        <DiNodejsSmall className="text-[32px] text-primary" />
-        <img src={techIcon} alt="net" className="w-[32px] h-[32px] " />
-        <SiDjango className="text-[32px] text-primary" />
-        <img src={vue} alt="net" className="w-[32px] h-[32px] " />
-        <img src={techIcon2} alt="net" className="w-[32px] h-[32px] " />
+      <div className="mt-[48px] flex w-full md:w-[622px] overflow-x-scroll scroll  lg:w-full  lg:justify-between">
+        <img
+          src={gobbler}
+          alt="gobbler"
+          className="min-w-[32px] max-w-[32px] mr-4 h-[32px] "
+        />
+        <div className="min-w-[32px] max-w-[32px] mr-4 h-[32px]">
+          <DiAndroid className="w-full h-full text-primary" />
+        </div>
+        <div className="min-w-[32px] max-w-[32px] mr-4 h-[32px]">
+          <DiApple className="w-full h-full text-primary" />
+        </div>
+        <div className="min-w-[32px] max-w-[32px] mr-4 h-[32px]">
+          <DiJava className="w-full h-full text-primary" />
+        </div>
+        <div className="min-w-[32px] max-w-[32px] mr-4 h-[32px]">
+          <DiPython className="w-full h-full text-primary" />
+        </div>
+        <img
+          src={net}
+          alt="net"
+          className="min-w-[32px] max-w-[32px] mr-4 h-[32px]"
+        />
+        <div className="min-w-[32px] max-w-[32px] mr-4 h-[32px]">
+          <SiJavascript className="text-[26px] text-primary" />
+        </div>
+        <div className="min-w-[32px] max-w-[32px] mr-4 h-[32px]">
+          <DiReact className="w-full h-full text-primary" />
+        </div>
+        <div className="min-w-[32px] max-w-[32px] mr-4 h-[32px]">
+          <DiAngularSimple className="w-full h-full text-primary" />
+        </div>
+        <div className="min-w-[32px] max-w-[32px] mr-4 h-[32px]">
+          <DiNodejsSmall className="w-full h-full text-primary" />
+        </div>
+        <img
+          src={techIcon}
+          alt="net"
+          className="min-w-[32px] max-w-[32px] mr-4 h-[32px]"
+        />
+        <div className="min-w-[32px] max-w-[32px] mr-4 h-[32px]">
+          <SiDjango className="w-full h-full text-primary" />
+        </div>
+        <img
+          src={vue}
+          alt="net"
+          className="min-w-[32px] max-w-[32px] mr-4 h-[32px]"
+        />
+        <img
+          src={techIcon2}
+          alt="net"
+          className="min-w-[32px] max-w-[32px] mr-4 h-[32px]"
+        />
       </div>
     </div>
   );

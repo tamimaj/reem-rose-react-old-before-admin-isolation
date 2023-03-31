@@ -21,18 +21,7 @@ body {
 .scroll::-webkit-scrollbar {
   visibility: hidden;
 }
-.btn {
-  box-sizing: content-box;
-  border: 1px solid transparent;
-  background: linear-gradient(to right, #00a388, #006655) border-box;
-  border-radius: 4px;
-  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-  -webkit-mask: /*4*/ linear-gradient(#fff 0 0) padding-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor; /*5'*/
-  mask-composite: exclude; /*5*/
-  content: "What we do";
-}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

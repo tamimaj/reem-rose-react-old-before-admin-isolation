@@ -2,8 +2,8 @@ import { Fragment, useEffect, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 
 import { useTranslation } from "react-i18next";
-import siteSettings from "../../settings/siteSettings";
-import { translationMenu } from "../../helpers/TranslationMenu/TranslationMenu";
+import siteSettings from "../../../settings/siteSettings";
+import { translationMenu } from "../../../helpers/TranslationMenu/TranslationMenu";
 
 type langType = {
   name: string;
@@ -67,7 +67,7 @@ const LanguagesMenu = () => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Listbox.Options className="absolute z-50	 mt-1 max-h-60 w-[90px] overflow-auto rounded-md bg-white py-1 text-base shadow-xl focus:outline-none sm:text-sm">
+            <Listbox.Options className="absolute z-50	 mt-1 max-h-60 w-[90px] overflow-auto rounded-md bg-black box-shadow py-1 text-base shadow-xl focus:outline-none sm:text-sm">
               {translationMenu.map((translation) => (
                 <Listbox.Option
                   key={translation.code}

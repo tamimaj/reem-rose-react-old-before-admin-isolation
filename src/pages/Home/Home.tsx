@@ -1,8 +1,8 @@
-import Intro from "../components/Intro/Intro";
-import Tech from "../components/Tech/Tech";
-import Portfolio from "../components/Portfolio/Portfolio";
-import Services from "../components/Services/Services";
-import Testimonials from "../components/Testimonials/Testimonials";
+import Intro from "../../components/Home/Intro/Intro";
+import Portfolio from "../../components/Home/Portfolio/Portfolio";
+import Services from "../../components/Home/Services/Services";
+import Tech from "../../components/Home/Tech/Tech";
+import Testimonials from "../../components/Home/Testimonials/Testimonials";
 
 const Home = () => {
   return (
