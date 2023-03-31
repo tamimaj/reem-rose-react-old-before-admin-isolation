@@ -15,12 +15,22 @@
     "viewBtnText": "View All",
     "frontend": {
       "title": "Front-End Development",
-      "tags": ["HTML", "CSS", "Javascript"]
+      "tag1": "HTML",
+      "tag2": "CSS",
+      "tag3": "Javascript"
     },
-    "design": { "title": "Product Design", "tags": ["Branding", "UI/UX"] },
+    "design": {
+      "title": "Product Design",
+      "tag1": "Branding",
+      "tag2": "UI/UX"
+    },
     "backend": {
       "title": "Back-End Development",
-      "tags": ["PHP", "Node.js", "Java", "Python", "Ruby"]
+      "tag1": "PHP",
+      "tag2": "Node.js",
+      "tag3": "Java",
+      "tag4": "Python",
+      "tag5": "Ruby"
     },
     "featured": {
       "heading": "Featured Projects",
@@ -29,10 +39,13 @@
     "services": {
       "heading": "Services",
       "title1": "Consulting",
+      "text1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius sed odit fugiat.",
       "title2": "Development",
       "text2": "The specific tools used for back-end development depend on the requirements of a project, the programming language being used, and the developer's preferences and experience. The back-end developer's role is to build and maintain the server-side of the application and ensure that it can effectively handle the required data and communication between the front-end and the database.",
       "title3": "Mentoring",
-      "title4": "Open-Source"
+      "text3": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius sed odit fugiat.",
+      "title4": "Open-Source",
+      "text4": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius sed odit fugiat."
     },
     "testimonials": {
       "title": "Testimonials",
@@ -40,5 +53,13 @@
     },
     "readMore": "Read more",
     "viewMore": "View More"
+  },
+  "footer": {
+    "heading": "Do you have a project?",
+    "tagline": "Schedule a free call and we can start",
+    "copyrightText": "Copyright © 2023 ReemRose Company  All rights reserved.",
+    "text1": "Terms of use",
+    "text2": "Privacy Policy",
+    "text3": "Terms & conditions"
   }
 }

@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import RcDrawer from "rc-drawer";
 import { useWindowSize } from "react-use";
-import { MdOutlineClose, MdArrowRight } from "react-icons/md";
+import { MdOutlineClose, MdArrowRight, MdArrowLeft } from "react-icons/md";
 
 import siteSettings from "../../../settings/siteSettings";
+import LanguagesMenu from "../../LanguageMenu/LanguagesMenu";
+import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
 
 interface drawerProps {
   openMenu: boolean;
@@ -21,13 +23,17 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
   handleMenuClose,
 }) => {
   const { width } = useWindowSize();
-  const { t } = useTranslation();
-  const [active, setActive] = useState("Home");
+  const { i18n, t } = useTranslation();
+  const [active, setActive] = useState<string>("Home");
+  const [lang, setLang] = useState<string | null>("");
 
   const handleSelection = (v: string) => {
     setActive(v);
     handleMenuClose();
   };
+  useEffect(() => {
+    setLang(i18n.language);
+  }, [i18n.language]);
   return (
     <RcDrawer
       width={width <= 520 ? "100%" : "390px"}
@@ -40,17 +46,11 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
         <div className="w-full flex justify-between items-center pt-[32px]  pb-[48px] px-4 mb-4">
           <Link to={"/"} onClick={handleMenuClose} className="flex ">
             <span className="text-primary text-[16px] font-RobotoSlab">
-              {t("title")}
+              {t("home.title")}
             </span>
           </Link>
           <div className="flex">
-            <div className="w-[40px] h-[40px] flex items-center justify-center bg-primaryLight cursor-pointer rounded">
-              <img
-                src={siteSettings.translateIcon}
-                alt="translate"
-                className="w-8 h-8 cursor-pointer"
-              />
-            </div>
+            <LanguagesMenu />
             <div className="w-[40px] h-[40px] flex items-center justify-center bg-primaryLight cursor-pointer rounded ml-2">
               <MdOutlineClose
                 className="w-8 h-8 cursor-pointer "
@@ -61,12 +61,16 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
         </div>
         {siteSettings.header.map((v: HeaderTypes, idx: number) => (
           <div
-            className="flex items-center ml-6 mb-6 "
+            key={idx}
+            className="flex items-center ps-6 pe-6 mb-6 "
             onClick={() => handleSelection(v.text)}
           >
-            {v.text === active && (
-              <MdArrowRight className="text-[32px] mr-3 text-primary" />
-            )}
+            {v.text === active &&
+              (lang === "ar" ? (
+                <MdArrowLeft className={`text-[32px] mr-3 text-primary mt-3`} />
+              ) : (
+                <MdArrowRight className={`text-[32px] mr-3 text-primary`} />
+              ))}
             <span
               key={idx}
               className={`text-[34px] xs:text-[48px] ${
@@ -81,22 +85,10 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
           <span className="flex  text-[24px]">
             {t(siteSettings.scheduleText)}
           </span>
-          <div className="flex items-center  mt-[48px] ml-[48px]">
-            <img
-              src={siteSettings.icons.github}
-              alt="github"
-              className="mr-[48px] cursor-pointer"
-            />
-            <img
-              src={siteSettings.icons.linkedin}
-              alt="linkedin"
-              className="mr-[48px] cursor-pointer"
-            />
-            <img
-              src={siteSettings.icons.twitter}
-              alt="twitter"
-              className="mr-[48px] cursor-pointer"
-            />
+          <div className="flex items-center  mt-[48px] ml-[48px] text-primary text-[24px]">
+            <AiFillGithub className="mr-[48px] " />
+            <AiFillLinkedin className="mr-[48px] " />
+            <AiOutlineTwitter className="mr-[48px] " />
           </div>
         </div>
       </div>
