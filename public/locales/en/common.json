@@ -54,6 +54,18 @@
     "readMore": "Read more",
     "viewMore": "View More"
   },
+  "blog": {
+    "title": "Welcome to ReemRose Blog",
+    "tagline": "From Ideas to Implementation: Tips, Tricks, and Best Practices for Successful Software Development",
+    "categories": {
+      "heading": "All Categories",
+      "menuItem1": "Back-End Development",
+      "menuItem2": "Front-End Development",
+      "menuItem3": "UI/UX",
+      "menuItem4": "SEO"
+    },
+    "readingText": "Continue Reading"
+  },
   "footer": {
     "heading": "Do you have a project?",
     "tagline": "Schedule a free call and we can start",
@@ -61,5 +73,9 @@
     "text1": "Terms of use",
     "text2": "Privacy Policy",
     "text3": "Terms & conditions"
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next"
   }
 }

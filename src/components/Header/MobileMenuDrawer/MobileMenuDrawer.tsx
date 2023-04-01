@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import RcDrawer from "rc-drawer";
 import { useWindowSize } from "react-use";
@@ -26,9 +26,11 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
   const { i18n, t } = useTranslation();
   const [active, setActive] = useState<string>("Home");
   const [lang, setLang] = useState<string | null>("");
+  const navigate = useNavigate();
 
-  const handleSelection = (v: string) => {
+  const handleSelection = (v: string, link: string) => {
     setActive(v);
+    navigate(link);
     handleMenuClose();
   };
   useEffect(() => {
@@ -63,7 +65,7 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
           <div
             key={idx}
             className="flex items-center ps-6 pe-6 mb-6 "
-            onClick={() => handleSelection(v.text)}
+            onClick={() => handleSelection(v.text, v.link)}
           >
             {v.text === active &&
               (lang === "ar" ? (
@@ -72,7 +74,6 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
                 <MdArrowRight className={`text-[32px] mr-3 text-primary`} />
               ))}
             <span
-              key={idx}
               className={`text-[34px] xs:text-[48px] ${
                 v.text === active ? "text-primary" : "text-bodyText"
               }  cursor-pointer`}

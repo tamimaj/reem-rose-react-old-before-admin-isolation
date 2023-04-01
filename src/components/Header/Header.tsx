@@ -6,6 +6,7 @@ import { IoMdMenu } from "react-icons/io";
 import siteSettings from "../../settings/siteSettings";
 import LanguagesMenu from "./LanguageMenu/LanguagesMenu";
 import MobileMenuDrawer from "./MobileMenuDrawer/MobileMenuDrawer";
+import { Link } from "react-router-dom";
 
 interface HeaderTypes {
   text: string;
@@ -38,12 +39,13 @@ const Header = () => {
           />
           <div className="hidden lg:flex text-base w-[405px] ml-[220px] xl:ml-[256px]">
             {siteSettings.header.map((v: HeaderTypes, idx: number) => (
-              <span
+              <Link
+                to={v.link}
                 key={idx}
                 className="mr-8 text-bodyText hover:text-white cursor-pointer"
               >
                 {t(v.text)}
-              </span>
+              </Link>
             ))}
           </div>
           <div className="hidden lg:flex items-center ">

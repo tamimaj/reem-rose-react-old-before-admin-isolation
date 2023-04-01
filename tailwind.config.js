@@ -12,7 +12,6 @@ module.exports = {
         bodyText: "#fff6",
         body: "#000E14", // this is the background color
         white: "#ffffff",
-        lightWhite: "",
         lighterWhite: "#ffffff29",
         gray: "#6b7280",
         black: "#000A08",
