@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import RcDrawer from "rc-drawer";
 import { useWindowSize } from "react-use";
@@ -27,6 +27,9 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
   const [active, setActive] = useState<string>("Home");
   const [lang, setLang] = useState<string | null>("");
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  console.log(pathname, "v");
 
   const handleSelection = (v: string, link: string) => {
     setActive(v);
@@ -43,7 +46,7 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
       onClose={handleMenuClose}
       placement="left"
     >
-      <div className="flex flex-col justify-between  w-full h-full bg-black text-primary overflow-x-hidden">
+      <div className="flex flex-col justify-between  w-full h-full bg-body text-primary overflow-x-hidden">
         {/* HEADER */}
         <div className="w-full flex justify-between items-center pt-[32px]  pb-[48px] px-4 mb-4">
           <Link to={"/"} onClick={handleMenuClose} className="flex ">

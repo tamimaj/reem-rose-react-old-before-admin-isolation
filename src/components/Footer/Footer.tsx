@@ -13,7 +13,7 @@ const Footer = () => {
         <DesktopFooter />
         <MobileFooter />
 
-        <div className="mt-[64px] flex lg:hidden justify-between text-white w-full xs:w-[350px]">
+        <div className="mt-[64px] flex lg:hidden justify-between text-white w-full //xs:w-[350px]">
           {siteSettings.footerPrivacy.map((v, idx) => (
             <span className="text-xs xs:text-sm cursor-pointer " key={idx}>
               {t(v.text)}

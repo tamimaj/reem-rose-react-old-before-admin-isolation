@@ -34,7 +34,7 @@ const BlogCard: React.FC<BlogCardType> = ({ idx }) => {
             : blogImage1
         }
         alt="blog Image"
-        className="w-full lg:w-[421px] lg:h-[200px]"
+        className="w-full xl:w-[421px] lg:h-[200px]"
       />
       <h5 className="mt-[32px] font-RobotoSlab font-semibold text-base text-white line-clamp-2">
         Behind the Scenes: The Role and Importance of Back-End Development in
