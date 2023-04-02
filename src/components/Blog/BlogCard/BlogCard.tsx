@@ -52,7 +52,7 @@ const BlogCard: React.FC<BlogCardType> = ({ idx }) => {
         red tests becoming green with every step, hence your algorithm emerging
         from that...
       </p>
-      <div className="flex  text-sm text-primary mt-4">
+      <div className="flex  text-sm text-primary mt-4 cursor-pointer">
         {t("blog.readingText")}
         {lang === "ar" ? (
           <FiChevronLeft className="text-[18px] ml-4 mt-[2px]" />
