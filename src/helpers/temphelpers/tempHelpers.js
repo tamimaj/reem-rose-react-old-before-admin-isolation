@@ -1,6 +1,7 @@
 import project1 from "../../assets/tempImages/project1.png";
 import project2 from "../../assets/tempImages/project2.png";
 import project3 from "../../assets/tempImages/project3.png";
+import project4 from "../../assets/tempImages/project4.png";
 import calvin from "../../assets/tempImages/calvin.png";
 import robyn from "../../assets/tempImages/robyn.png";
 import shawn from "../../assets/tempImages/shawn.png";
@@ -71,5 +72,40 @@ export const testimonialData = [
     review:
       "The software development services offered by ReemRose are top-notch. Their team of experts was able to take our complex requirements and turn them into a user-friendly and intuitive solution. We appreciate their attention to detail, quick turnaround times, and exceptional customer service.",
     date: "12.12.2022",
+  },
+];
+
+const blogData = [
+  {
+    projectImage: project1,
+    title: "LLC Auction Company",
+    text: "The Back End Developer will be responsible for designing, developing, and maintaining the company's back-end systems. They will work closely with the front-end development team, ",
+    services: ["UI/UX", "Front-End Development", "back-End Development"],
+    techs: ["Javascript", "React", "Angular", "Node"],
+    link: "https://www.google.com",
+  },
+  {
+    projectImage: project2,
+    title: "LLC Auction Company",
+    text: "The Back End Developer will be responsible for designing, developing, and maintaining the company's back-end systems. They will work closely with the front-end development team, ",
+    services: ["UI/UX", "Front-End Development", "back-End Development"],
+    techs: ["Javascript", "React", "Angular", "Node"],
+    link: "https://www.google.com",
+  },
+  {
+    projectImage: project3,
+    title: "LLC Auction Company",
+    text: "The Back End Developer will be responsible for designing, developing, and maintaining the company's back-end systems. They will work closely with the front-end development team, ",
+    services: ["UI/UX", "Front-End Development", "back-End Development"],
+    techs: ["Javascript", "React", "Angular", "Node"],
+    link: "https://www.google.com",
+  },
+  {
+    projectImage: project4,
+    title: "LLC Auction Company",
+    text: "The Back End Developer will be responsible for designing, developing, and maintaining the company's back-end systems. They will work closely with the front-end development team, ",
+    services: ["UI/UX", "Front-End Development", "back-End Development"],
+    techs: ["Javascript", "React", "Angular", "Node"],
+    link: "https://www.google.com",
   },
 ];

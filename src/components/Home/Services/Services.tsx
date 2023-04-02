@@ -11,6 +11,7 @@ const Services = () => {
   useEffect(() => {
     setLang(i18n.language);
   }, [i18n.language]);
+
   const handleActiveItem = (v: string) => {
     setActive(v);
   };
