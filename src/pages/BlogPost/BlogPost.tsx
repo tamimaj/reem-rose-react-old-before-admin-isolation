@@ -8,9 +8,12 @@ import { HiArrowLeft, HiArrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { Element, scroller } from "react-scroll";
 import StickyBox from "react-sticky-box";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
 import postImage from "../../assets/tempImages/postImage.png";
 import BlogCard from "../../components/Blog/BlogCard/BlogCard";
+import { atelierCaveDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const BlogPost = () => {
   const { i18n, t } = useTranslation();
@@ -236,23 +239,32 @@ const BlogPost = () => {
               repository containing all the code used within this article,
               commit by commit, to help you in case you miss the big picture.
             </p>
-            <div className="w-full flex justify-between bg-primaryLight p-3 lg:p-6 my-6 rounded">
-              <p className="w-[200px] xs:w-[262px] md:w-[400px] lg:w-[500px]">{`
-                import { Test, TestingModule } from '@nestjs/testing';
-                import { AppointmentService } from './appointment.service';
-                describe('AppointmentService', () => {  let service: AppointmentService; 
-                     beforeEach(async () => {    const module: TestingModule = await Test.createTestingModule({      providers: [AppointmentService],    }).compile(); 
-                        service = module.get<AppointmentService>(AppointmentService);  }); 
-                         it('should be defined', () => {    expect(service).toBeDefined();  });
-                           it('should schedule an unconfirmed appointment for a user on success',
-                            () => {    const startTime = new Date('2022-01-01T14:00:00Z');    
-                            const endTime = new Date('2022-01-01T15:00:00Z');   
-                             const newAppointment = service.scheduleAppointment({      patientId: 1,      startTime,      endTime,    });  
-                               expect(newAppointment).toEqual({      patientId: 1,      startTime,      endTime,      confirmed: false,    }); 
+
+            <div className="w-full flex relative bg-primaryLight p-2 sm:p-3 lg:p-6 my-6 rounded">
+              <SyntaxHighlighter
+                language="javascript"
+                wrapLongLines
+                style={atomDark}
+                customStyle={{ background: "transparent" }}
+                className="w-[200px] xs:w-[300px] sm:w-[400px] lg:w-[500px] scroll"
+              >{`
+import { Test, TestingModule } from '@nestjs/testing';
+import { AppointmentService } from './appointment.service';
+
+describe('AppointmentService', () => {  let service: AppointmentService; 
+beforeEach(async () => {   
+const module: TestingModule = await Test.createTestingModule({providers: [AppointmentService],}).compile(); 
+service = module.get<AppointmentService>(AppointmentService);  }); 
+it('should be defined', () => {    expect(service).toBeDefined();  });
+it('should schedule an unconfirmed appointment for a user on success',
+() => {    const startTime = new Date('2022-01-01T14:00:00Z');    
+const endTime = new Date('2022-01-01T15:00:00Z');   
+const newAppointment = service.scheduleAppointment({ patientId: 1,startTime,endTime});  
+expect(newAppointment).toEqual({patientId: 1,startTime,endTime,confirmed: false,}); 
                              });});
-              `}</p>
-              <div className="flex  items-center justify-center w-[40px] h-[40px] rounded cursor-pointer bg-primaryLight">
-                <MdOutlineCopyAll className="text-[24px] text-primary" />
+              `}</SyntaxHighlighter>
+              <div className="flex absolute top-[16px] right-[16px] items-center justify-center w-[40px] h-[40px] rounded cursor-pointer bg-primaryLight">
+                <MdOutlineCopyAll className=" text-[24px] text-primary" />
               </div>
             </div>
             <Element name="title2">
@@ -340,7 +352,7 @@ const BlogPost = () => {
               </div>
             </div>
           </div>
-          <div ref={blogRef} className="flex w-full overflow-x-scroll">
+          <div ref={blogRef} className="flex w-full overflow-x-scroll scroll">
             {[...Array(4)].map((v, idx) => (
               <BlogCard idx={idx} className="mr-4 min-w-[470px]" />
             ))}
