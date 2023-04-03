@@ -6,13 +6,15 @@ import blogImage2 from "../../../assets/tempImages/blogimage2.png";
 import blogImage3 from "../../../assets/tempImages/blogImage3.png";
 import blogImage4 from "../../../assets/tempImages/blogImage4.png";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 type BlogCardType = {
   idx: any;
+  className?: string;
 };
-const BlogCard: React.FC<BlogCardType> = ({ idx }) => {
+const BlogCard: React.FC<BlogCardType> = ({ idx, className }) => {
   const { i18n, t } = useTranslation();
-
+  const navigate = useNavigate();
   const [lang, setLang] = useState<string | null>("");
 
   useEffect(() => {
@@ -20,7 +22,9 @@ const BlogCard: React.FC<BlogCardType> = ({ idx }) => {
   }, [i18n.language]);
 
   return (
-    <div className="flex flex-col 3xl:w-[470px] rounded bg-primaryLight p-6">
+    <div
+      className={`${className} flex flex-col 3xl:w-[470px] rounded bg-primaryLight p-6`}
+    >
       <img
         src={
           idx === 0
@@ -52,7 +56,10 @@ const BlogCard: React.FC<BlogCardType> = ({ idx }) => {
         red tests becoming green with every step, hence your algorithm emerging
         from that...
       </p>
-      <div className="flex  text-sm text-primary mt-4 cursor-pointer">
+      <div
+        onClick={() => navigate("/blog-post")}
+        className="flex  text-sm text-primary mt-4 cursor-pointer"
+      >
         {t("blog.readingText")}
         {lang === "ar" ? (
           <FiChevronLeft className="text-[18px] ml-4 mt-[2px]" />

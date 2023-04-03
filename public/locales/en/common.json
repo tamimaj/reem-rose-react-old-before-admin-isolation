@@ -64,7 +64,9 @@
       "menuItem3": "UI/UX",
       "menuItem4": "SEO"
     },
-    "readingText": "Continue Reading"
+    "readingText": "Continue Reading",
+    "backToBlog": "Back to Blog",
+    "relatedBlogPost": "Related Blogposts"
   },
   "footer": {
     "heading": "Do you have a project?",
