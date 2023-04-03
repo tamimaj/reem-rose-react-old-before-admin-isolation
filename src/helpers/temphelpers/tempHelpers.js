@@ -79,6 +79,7 @@ export const portfolioDetailsData = [
   {
     projectImage: project1,
     title: "LLC Auction Company",
+    date: "12.02.23",
     text: "The Back End Developer will be responsible for designing, developing, and maintaining the company's back-end systems. They will work closely with the front-end development team, ",
     services: ["UI/UX", "Front-End Development", "back-End Development"],
     techs: ["Javascript", "React", "Angular", "Node"],
@@ -87,6 +88,7 @@ export const portfolioDetailsData = [
   {
     projectImage: project2,
     title: "LLC Auction Company",
+    date: "12.02.23",
     text: "The Back End Developer will be responsible for designing, developing, and maintaining the company's back-end systems. They will work closely with the front-end development team, ",
     services: ["UI/UX", "Front-End Development", "back-End Development"],
     techs: ["Javascript", "React", "Angular", "Node"],
@@ -95,6 +97,7 @@ export const portfolioDetailsData = [
   {
     projectImage: project3,
     title: "LLC Auction Company",
+    date: "12.02.23",
     text: "The Back End Developer will be responsible for designing, developing, and maintaining the company's back-end systems. They will work closely with the front-end development team, ",
     services: ["UI/UX", "Front-End Development", "back-End Development"],
     techs: ["Javascript", "React", "Angular", "Node"],
@@ -103,6 +106,7 @@ export const portfolioDetailsData = [
   {
     projectImage: project4,
     title: "LLC Auction Company",
+    date: "12.02.23",
     text: "The Back End Developer will be responsible for designing, developing, and maintaining the company's back-end systems. They will work closely with the front-end development team, ",
     services: ["UI/UX", "Front-End Development", "back-End Development"],
     techs: ["Javascript", "React", "Angular", "Node"],
