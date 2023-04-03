@@ -41,7 +41,7 @@ const Services = () => {
             <span className="text-sm  text-bodyText mt-2">
               {t("home.services.text1")}
             </span>
-            <span className="mt-6 text-primary text-base font-semibold flex items-center">
+            <span className="mt-6 text-primary text-base font-semibold flex items-center cursor-pointer">
               {t("home.readMore")}{" "}
               {lang === "ar" ? (
                 <FiChevronLeft className="text-[20px] ml-4 mt-[2px]" />

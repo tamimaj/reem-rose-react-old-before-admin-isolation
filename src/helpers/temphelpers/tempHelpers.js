@@ -75,7 +75,7 @@ export const testimonialData = [
   },
 ];
 
-const blogData = [
+export const portfolioDetailsData = [
   {
     projectImage: project1,
     title: "LLC Auction Company",
@@ -107,5 +107,38 @@ const blogData = [
     services: ["UI/UX", "Front-End Development", "back-End Development"],
     techs: ["Javascript", "React", "Angular", "Node"],
     link: "https://www.google.com",
+  },
+];
+
+export const CareerData = [
+  {
+    heading: "Senior Front-End Developer",
+    date: "12.02.23",
+    location: "Spain",
+    info: "We are seeking a talented UI/UX Designer to join our team. The successful candidate will have a passion for user-centered design, a strong portfolio of successful UI/UX projects, and a desire to create innovative and visually appealing designs that improve user experiences. In this role, you will collaborate with cross-functional teams to design and...",
+  },
+  {
+    heading: "UI/UX Designer",
+    date: "12.02.23",
+    location: "Remote",
+    info: "We are seeking a talented UI/UX Designer to join our team. The successful candidate will have a passion for user-centered design, a strong portfolio of successful UI/UX projects, and a desire to create innovative and visually appealing designs that improve user experiences. In this role, you will collaborate with cross-functional teams to design and...",
+  },
+  {
+    heading: "Back-End Developer",
+    date: "12.02.23",
+    location: "Remote",
+    info: "We are seeking a talented UI/UX Designer to join our team. The successful candidate will have a passion for user-centered design, a strong portfolio of successful UI/UX projects, and a desire to create innovative and visually appealing designs that improve user experiences. In this role, you will collaborate with cross-functional teams to design and...",
+  },
+  {
+    heading: "Product Owner",
+    date: "12.02.23",
+    location: "Remote",
+    info: "We are seeking a talented UI/UX Designer to join our team. The successful candidate will have a passion for user-centered design, a strong portfolio of successful UI/UX projects, and a desire to create innovative and visually appealing designs that improve user experiences. In this role, you will collaborate with cross-functional teams to design and...",
+  },
+  {
+    heading: "UX Researcher",
+    date: "12.02.23",
+    location: "Remote",
+    info: "We are seeking a talented UI/UX Designer to join our team. The successful candidate will have a passion for user-centered design, a strong portfolio of successful UI/UX projects, and a desire to create innovative and visually appealing designs that improve user experiences. In this role, you will collaborate with cross-functional teams to design and...",
   },
 ];

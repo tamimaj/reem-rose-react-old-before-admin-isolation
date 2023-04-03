@@ -8,11 +8,12 @@ module.exports = {
         primary: "#00A388", // this and heading are primary
         primaryLight: "#00a38814",
         gradientColor: "#006655",
-        heading: "#fffc",
-        bodyText: "#fff6",
+        heading: "#fffc", // white 80% opacity
+        bodyText: "#fff6", // white 60% opacity
         body: "#000E14", // this is the background color
         white: "#ffffff",
-        lighterWhite: "#ffffff29",
+        lightWhite: "#ffffffa3", // white 64% opacity
+        lighterWhite: "#ffffff29", //white 16% opacity
         gray: "#6b7280",
         black: "#000A08",
       },
