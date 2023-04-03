@@ -68,6 +68,36 @@
     "backToBlog": "Back to Blog",
     "relatedBlogPost": "Related Blogposts"
   },
+  "careers": {
+    "heading": "Join Our Team of Innovators and Shape the Future of Software Development",
+    "seeDetails": "See Details",
+    "title1": "Location",
+    "title2": "Company Overview",
+    "title3": "Job Overview",
+    "title4": "Responsibilities",
+    "title5": "Requirements",
+    "title6": "Benefits",
+    "form": {
+      "label": {
+        "name": "Name",
+        "email": "Email",
+        "githubLink": "Github Link",
+        "linkedinLink": "Linkedin Link",
+        "websiteLink": "Website Link",
+        "uploadCv": "Upload CV",
+        "coverLetter": "Cover Letter",
+        "btnText": "Apply for a Job"
+      },
+      "placeholder": {
+        "name": "Name",
+        "email": "Email",
+        "github": "Github",
+        "linkedin": "Linkedin",
+        "website": "Website",
+        "coverLetter": "Write your cover letter here"
+      }
+    }
+  },
   "footer": {
     "heading": "Do you have a project?",
     "tagline": "Schedule a free call and we can start",
