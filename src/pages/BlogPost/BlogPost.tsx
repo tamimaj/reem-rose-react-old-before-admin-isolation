@@ -200,7 +200,7 @@ const BlogPost = () => {
           </div>
           <div className="lg:ml-2 flex flex-col text-sm lg:text-base text-heading">
             <Element name="title1">
-              <h5 className="text-[20px] font-semibold text-white">
+              <h5 className="text-[20px] font-semibold text-white leading-8">
                 Epilogue of the coding
               </h5>
             </Element>
@@ -269,7 +269,7 @@ expect(newAppointment).toEqual({patientId: 1,startTime,endTime,confirmed: false,
             </div>
             <Element name="title2">
               {" "}
-              <h5 className="text-[20px] font-semibold text-white">
+              <h5 className="text-[20px] font-semibold text-white leading-8">
                 Things that are important in back-end development
               </h5>
             </Element>
