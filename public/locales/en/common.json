@@ -98,6 +98,18 @@
       }
     }
   },
+  "services": {
+    "heading": "Tailored Web Solutions to Drive Your Business Forward: Our Services",
+    "tagline": "From Concept to Launch, Our Expertise Delivers Websites That Captivate and Convert"
+  },
+  "portfolio": {
+    "heading": "Experience Excellence in Web Development: Explore Our Portfolio",
+    "tagline": "Crafting Unique and Intuitive Web Solutions to Showcase Your Brand's Story - Trust Our Portfolio to Inspire Your Digital Success",
+    "services": "Services",
+    "techText": "Tech that we used",
+    "visitText": "Visit Website",
+    "codeText": "Get Code"
+  },
   "footer": {
     "heading": "Do you have a project?",
     "tagline": "Schedule a free call and we can start",
