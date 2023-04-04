@@ -46,7 +46,7 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
       onClose={handleMenuClose}
       placement="left"
     >
-      <div className="flex flex-col justify-between  w-full h-full bg-body text-primary overflow-x-hidden">
+      <div className="flex flex-col justify-between  w-full h-full bg-black text-primary overflow-x-hidden">
         {/* HEADER */}
         <div className="w-full flex justify-between items-center pt-[32px]  pb-[48px] px-4 mb-4">
           <Link to={"/"} onClick={handleMenuClose} className="flex ">
