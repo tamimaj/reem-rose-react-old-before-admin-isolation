@@ -6,14 +6,14 @@ module.exports = {
     extend: {
       colors: {
         primary: "#00A388", // this and heading are primary
-        primaryLight: "#00a38814",
+        primaryLight: "rgba(0, 163, 136, 0.08)",
         gradientColor: "#006655",
-        heading: "#fffc", // white 80% opacity
-        bodyText: "#fff6", // white 60% opacity
+        heading: "rgba(255, 255, 255, 0.8)", // white 80% opacity
+        bodyText: "rgba(255, 255, 255, 0.4)", // white 40% opacity
         body: "#000E14", // this is the background color
         white: "#ffffff",
-        lightWhite: "#ffffffa3", // white 64% opacity
-        lighterWhite: "#ffffff29", //white 16% opacity
+        lightWhite: "rgba(255, 255, 255, 0.64)", // white 64% opacity
+        lighterWhite: "rgba(255, 255, 255, 0.16)", //white 16% opacity
         gray: "#6b7280",
         black: "#000A08",
       },
