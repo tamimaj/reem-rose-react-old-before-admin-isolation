@@ -62,10 +62,10 @@ const Portfolio = () => {
       </div>
       <div
         ref={portfolioRef}
-        className="flex overflow-x-scroll scroll w-full lg:w-[1076px] lg:ml-[63px]"
+        className="flex overflow-x-scroll scroll  w-full lg:w-[1076px] lg:ml-[63px]"
       >
         {portfolioData.map((v, idx) => (
-          <div className="relative min-w-[348px] h-[264px] mr-4 cursor-pointer">
+          <div className="relative min-w-[300px] h-[240px] sm:min-w-[348px] sm:h-[264px] mr-4 cursor-pointer">
             <img
               key={idx}
               src={v.projectImage}

@@ -6,7 +6,7 @@ import { IoMdMenu } from "react-icons/io";
 import siteSettings from "../../settings/siteSettings";
 import LanguagesMenu from "./LanguageMenu/LanguagesMenu";
 import MobileMenuDrawer from "./MobileMenuDrawer/MobileMenuDrawer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 interface HeaderTypes {
   text: string;
@@ -15,6 +15,7 @@ interface HeaderTypes {
 const Header = () => {
   const { i18n, t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
   const [lang, setLang] = useState<string | null>("");
 
   useEffect(() => {
@@ -28,6 +29,7 @@ const Header = () => {
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
   };
+
   return (
     <>
       <header className="flex justify-center w-full font-PlusJakartaSans">
@@ -57,7 +59,10 @@ const Header = () => {
               />
             </div> */}
             <LanguagesMenu />
-            <div className="flex text-primary items-center ml-[48px] cursor-pointer">
+            <div
+              onClick={() => navigate("/schedule")}
+              className="flex text-primary items-center ml-[48px] cursor-pointer"
+            >
               <span>{t(siteSettings.scheduleText)}</span>
               {lang === "ar" ? (
                 <FiChevronLeft className="text-[20px] ml-4" />

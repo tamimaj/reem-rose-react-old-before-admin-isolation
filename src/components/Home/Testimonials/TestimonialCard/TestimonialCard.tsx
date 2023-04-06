@@ -13,7 +13,7 @@ type TestimonialDataType = {
 };
 const TestimonialCard: React.FC<TestimonialDataType> = ({ data }) => {
   return (
-    <div className="relative min-w-[348px] h-[378px] p-6 rounded bg-primaryLight mr-4 flex flex-col">
+    <div className="relative min-w-[300px]  sm:min-w-[348px] sm:h-[378px] p-6 rounded bg-primaryLight mr-4 flex flex-col">
       <div className="flex ">
         <img
           src={data.profilePicture}
@@ -34,7 +34,7 @@ const TestimonialCard: React.FC<TestimonialDataType> = ({ data }) => {
         </div>
       </div>
       <span className="text-heading mt-6 text-base">{data.review}</span>
-      <span className="absolute bottom-[16px] right-[16px] text-white text-sm">
+      <span className="absolute bottom-[16px] right-[16px] text-bodyText text-sm">
         {data.date}
       </span>
     </div>

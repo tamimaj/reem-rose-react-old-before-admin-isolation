@@ -17,7 +17,12 @@ body {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
-
+.testimonials {
+  cursor: grab;
+}
+.scroll {
+  scrollbar-width: none;
+}
 .scroll::-webkit-scrollbar {
   visibility: hidden;
 }

@@ -39,7 +39,7 @@ const PorFolioCard: React.FC<data> = ({ projectData, idx }) => {
           className={`w-full h-full rounded`}
         />
       </div>
-      <div className="flex w-full lg:w-2/4 h-full flex-col justify-between lg:ml-8  ">
+      <div className="flex w-full lg:w-2/4 h-full flex-col mt-3 lg:mt-0 lg:justify-between lg:ml-8  ">
         <span className="text-white text-[20px] lg:text-[24px]">
           {projectData.title}
         </span>
@@ -69,7 +69,7 @@ const PorFolioCard: React.FC<data> = ({ projectData, idx }) => {
             ))}
           </div>
         </div>
-        <div className="flex mt-3">
+        <div className="flex mt-5">
           <button className="flex items-center text-sm md:text-base justify-center w-[190px]  h-[52px]  text-white rounded bg-gradient-to-r from-primary to-gradientColor">
             {t("portfolio.visitText")}{" "}
             <FiArrowUpRight className="text-[16px] lg:text-[20px] ml-2 md:ml-4" />

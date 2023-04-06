@@ -24,12 +24,12 @@ const Intro = () => {
         </span>
       </div>
       <div className="flex items-center justify-between font-PlusJakartaSans mt-[48px] lg:mt-[96px] w-[270px] xs:w-[350px] sm:w-[390px] md:w-[460px]">
-        <button className="flex items-center text-sm md:text-base justify-center w-[130px] xs:w-[169px] md:w-[208px]  h-[52px] xs:h-[62px] text-white rounded bg-gradient-to-r from-primary to-gradientColor ">
+        <button className="flex items-center text-sm md:text-base justify-center w-[130px] xs:w-[169px] md:w-[208px]  h-[52px] xs:h-[62px] pl-2 xs:pl-0 text-white rounded bg-gradient-to-r from-primary to-gradientColor ">
           {t("header.scheduleText")}{" "}
           {lang === "ar" ? (
-            <FiChevronLeft className="text-[16px] lg:text-[20px] ml-2 md:ml-4" />
+            <FiChevronLeft className="text-[16px] lg:text-[20px] ml-1 xs:ml-2 md:ml-4 mt-[2px] xs:mt-0" />
           ) : (
-            <FiChevronRight className="text-[16px] lg:text-[20px] ml-2 md:ml-4" />
+            <FiChevronRight className="text-[16px] lg:text-[20px] ml-1 xs:ml-2 md:ml-4 mt-[2px] xs:mt-0" />
           )}
         </button>
         <div className="relative">

@@ -110,6 +110,13 @@
     "visitText": "Visit Website",
     "codeText": "Get Code"
   },
+  "schedule": {
+    "heading": "Let's Discuss Your Web Development Needs: Schedule a Call",
+    "tagline": "Your Vision, Our Expertise: Let's Create Something Great Together",
+    "timeText": "15-30 minute meeting",
+    "webText": "Web conferencing details provided upon confirmation.",
+    "dateHeading": "Select a Date & Time"
+  },
   "footer": {
     "heading": "Do you have a project?",
     "tagline": "Schedule a free call and we can start",

@@ -23,7 +23,7 @@ const Portfolio = () => {
         </div>
         <div className="flex items-center mt-[48px] text-heading text-sm">
           <span className="mr-6">{t("pagination.previous")}</span>
-          <span className="mr-4">1</span>
+          <span className="mr-4 text-base font-semibold text-white">1</span>
           <span className="mr-4">2</span>
           <span>3</span>
           <span className="ml-6">{t("pagination.next")}</span>
