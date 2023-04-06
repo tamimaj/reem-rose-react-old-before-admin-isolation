@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import siteSettings from "../../settings/siteSettings";
 import DesktopFooter from "./DesktopFooter/DesktopFooter";
 import MobileFooter from "./MobileFooter/MobileFooter";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -15,9 +16,13 @@ const Footer = () => {
 
         <div className="mt-[64px] flex lg:hidden justify-between text-white w-full //xs:w-[350px]">
           {siteSettings.footerPrivacy.map((v, idx) => (
-            <span className="text-xs xs:text-sm cursor-pointer " key={idx}>
+            <Link
+              to={v.link}
+              className="text-xs xs:text-sm cursor-pointer "
+              key={idx}
+            >
               {t(v.text)}
-            </span>
+            </Link>
           ))}
         </div>
         <div className="flex flex-col lg:flex-row items-center  justify-between w-full mt-6 lg:mt-[121px]">
