@@ -17,7 +17,8 @@ module.exports = {
         lighterWhite: "rgba(255, 255, 255, 0.16)", //white 16% opacity
         gray: "#6b7280",
         black: "#000A08",
-        lightBlack: "#000a08a3",
+        lightBlack: "rgb(0 10 8 / 64%)",
+        lighterBlack: "rgb(0 10 8 / 24%)",
       },
     },
     screens: {

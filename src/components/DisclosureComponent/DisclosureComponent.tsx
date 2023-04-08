@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { Disclosure } from "@headlessui/react";
+import { useEffect, useState } from "react";
 import { FiArrowUpRight, FiChevronDown } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
 import { MdArrowLeft, MdArrowRight } from "react-icons/md";
