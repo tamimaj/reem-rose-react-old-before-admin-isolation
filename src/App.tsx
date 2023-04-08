@@ -1,4 +1,3 @@
-import React from "react";
 import "rc-drawer/assets/index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -10,6 +9,8 @@ import Careers from "./pages/Careers/Careers";
 import CareerDetails from "./pages/CareerDetails/CareerDetails";
 import Services from "./pages/Services/Services";
 import Portfolio from "./pages/Portfolio/Portfolio";
+import ScheduleCall from "./pages/ScheduleCall/ScheduleCall";
+import TermsOfUse from "./pages/TermsOfUse/TermsOfUse";
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
           <Route path="/career-details" element={<CareerDetails />} />
           <Route path="/services" element={<Services />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/schedule" element={<ScheduleCall />} />
+          <Route path="/terms-of-use" element={<TermsOfUse />} />
         </Routes>
       </Layout>
     </Router>

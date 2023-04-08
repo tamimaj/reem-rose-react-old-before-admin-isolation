@@ -90,16 +90,17 @@ const BlogPost = () => {
               <span className="text-sm text-primary">12.12.2022</span>
             </div>
 
-            <div className="flex justify-between text-white mt-4 w-[168px]">
+            <div className="flex justify-between text-heading mt-4 w-[168px]">
+              <div className="flex cursor-pointer">
+                <AiOutlineTwitter className="w-[24px] h-[24px] mr-2" />
+              </div>
               <div className="flex cursor-pointer">
                 <AiFillGithub className="w-[24px] h-[24px] mr-2" />
               </div>
               <div className="flex cursor-pointer">
                 <AiFillLinkedin className="w-[24px] h-[24px] mr-2" />
               </div>
-              <div className="flex cursor-pointer">
-                <AiOutlineTwitter className="w-[24px] h-[24px] mr-2" />
-              </div>
+
               <div className="flex cursor-pointer">
                 <BsGlobe className="w-[24px] h-[24px] mr-2" />
               </div>

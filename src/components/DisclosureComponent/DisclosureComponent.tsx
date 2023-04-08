@@ -27,7 +27,7 @@ const DisclosureComponent = () => {
         onClick={() => handleActive("Consulting")}
         className={`flex justify-between w-full h-[60px] px-[24px] py-[20px] disclosure ${
           active === "Consulting"
-            ? "bg-primary text-white"
+            ? " bg-gradient-to-r from-primary to-gradientColor text-white"
             : "bg-primaryLight text-bodyText"
         } hover:bg-primary  hover:text-white rounded cursor-pointer mb-4`}
       >
@@ -45,10 +45,10 @@ const DisclosureComponent = () => {
         </div>
       </div>
       {active === "Consulting" && (
-        <div className="mb-4">
+        <div className="mb-8 transition ease-in-out duration-1000">
           <div className="flex  flex-col ">
             {" "}
-            <span className="lg:text-base text-sm  text-bodyText mb-8">
+            <span className="lg:text-base text-sm  text-heading mb-8">
               Our web development services are designed to bring your vision to
               life. We believe in delivering customized solutions that align
               with your unique business needs and objectives. Whether you need a
@@ -59,7 +59,7 @@ const DisclosureComponent = () => {
               step of the way to ensure your website meets your expectations and
               beyond.
             </span>
-            <span className="mb-4 text-lightWhite flex items-center lg:text-base text-sm">
+            <span className="mb-4 text-bodyText flex items-center lg:text-base text-sm">
               {lang === "ar" ? (
                 <MdArrowLeft className={`text-[20px] mr-1 text-primary `} />
               ) : (
@@ -67,7 +67,7 @@ const DisclosureComponent = () => {
               )}
               Website planning and strategy development
             </span>
-            <span className="mb-4 text-lightWhite flex items-center lg:text-base text-sm">
+            <span className="mb-4 text-bodyText flex items-center lg:text-base text-sm">
               {lang === "ar" ? (
                 <MdArrowLeft className={`text-[20px] mr-1 text-primary `} />
               ) : (
@@ -75,7 +75,7 @@ const DisclosureComponent = () => {
               )}
               Website design and layout creation
             </span>
-            <span className="mb-4 text-lightWhite flex items-center lg:text-base text-sm">
+            <span className="mb-4 text-bodyText flex items-center lg:text-base text-sm">
               {lang === "ar" ? (
                 <MdArrowLeft className={`text-[20px] mr-1 text-primary `} />
               ) : (
@@ -83,7 +83,7 @@ const DisclosureComponent = () => {
               )}
               Website development and coding
             </span>
-            <span className="mb-4 text-lightWhite flex items-center lg:text-base text-sm">
+            <span className="mb-4 text-bodyText flex items-center lg:text-base text-sm">
               {lang === "ar" ? (
                 <MdArrowLeft className={`text-[20px] mr-1 text-primary `} />
               ) : (
@@ -91,7 +91,7 @@ const DisclosureComponent = () => {
               )}
               Front-end development (HTML/CSS/JavaScript)
             </span>
-            <span className="text-lightWhite flex items-center lg:text-base text-sm">
+            <span className="text-bodyText flex items-center lg:text-base text-sm">
               {lang === "ar" ? (
                 <MdArrowLeft className={`text-[20px] mr-1 text-primary `} />
               ) : (
@@ -100,7 +100,7 @@ const DisclosureComponent = () => {
               Back-end development (server-side scripting and database
               integration)
             </span>
-            <span className="lg:text-base text-sm  text-bodyText my-8">
+            <span className="lg:text-base text-sm  text-heading my-8">
               Here are some of the things that a web development company
               typically does for a client in the development department
             </span>
@@ -115,7 +115,7 @@ const DisclosureComponent = () => {
         onClick={() => handleActive("Development")}
         className={`flex justify-between w-full h-[60px] px-[24px] py-[20px] disclosure ${
           active === "Development"
-            ? "bg-primary text-white"
+            ? " bg-gradient-to-r from-primary to-gradientColor text-white"
             : "bg-primaryLight text-bodyText"
         } hover:bg-primary  hover:text-white rounded cursor-pointer mb-4`}
       >
@@ -133,10 +133,10 @@ const DisclosureComponent = () => {
         </div>
       </div>
       {active === "Development" && (
-        <div className="mb-4">
-          <div className="flex  flex-col ">
+        <div className="mb-8 transition ease-in-out duration-1000">
+          <div className="flex  flex-col">
             {" "}
-            <span className="lg:text-base text-sm  text-bodyText mb-8">
+            <span className="lg:text-base text-sm  text-heading mb-8">
               Our web development services are designed to bring your vision to
               life. We believe in delivering customized solutions that align
               with your unique business needs and objectives. Whether you need a
@@ -147,7 +147,7 @@ const DisclosureComponent = () => {
               step of the way to ensure your website meets your expectations and
               beyond.
             </span>
-            <span className="mb-4 text-lightWhite flex items-center lg:text-base text-sm">
+            <span className="mb-4 text-bodyText flex items-center lg:text-base text-sm">
               {lang === "ar" ? (
                 <MdArrowLeft className={`text-[20px] mr-1 text-primary `} />
               ) : (
@@ -155,7 +155,7 @@ const DisclosureComponent = () => {
               )}
               Website planning and strategy development
             </span>
-            <span className="mb-4 text-lightWhite flex items-center lg:text-base text-sm">
+            <span className="mb-4 text-bodyText flex items-center lg:text-base text-sm">
               {lang === "ar" ? (
                 <MdArrowLeft className={`text-[20px] mr-1 text-primary `} />
               ) : (
@@ -163,7 +163,7 @@ const DisclosureComponent = () => {
               )}
               Website design and layout creation
             </span>
-            <span className="mb-4 text-lightWhite flex items-center lg:text-base text-sm">
+            <span className="mb-4 text-bodyText flex items-center lg:text-base text-sm">
               {lang === "ar" ? (
                 <MdArrowLeft className={`text-[20px] mr-1 text-primary `} />
               ) : (
@@ -171,7 +171,7 @@ const DisclosureComponent = () => {
               )}
               Website development and coding
             </span>
-            <span className="mb-4 text-lightWhite flex items-center lg:text-base text-sm">
+            <span className="mb-4 text-bodyText flex items-center lg:text-base text-sm">
               {lang === "ar" ? (
                 <MdArrowLeft className={`text-[20px] mr-1 text-primary `} />
               ) : (
@@ -179,7 +179,7 @@ const DisclosureComponent = () => {
               )}
               Front-end development (HTML/CSS/JavaScript)
             </span>
-            <span className="text-lightWhite flex items-center lg:text-base text-sm">
+            <span className="text-bodyText flex items-center lg:text-base text-sm">
               {lang === "ar" ? (
                 <MdArrowLeft className={`text-[20px] mr-1 text-primary `} />
               ) : (
@@ -188,7 +188,7 @@ const DisclosureComponent = () => {
               Back-end development (server-side scripting and database
               integration)
             </span>
-            <span className="lg:text-base text-sm  text-bodyText my-8">
+            <span className="lg:text-base text-sm  text-heading my-8">
               Here are some of the things that a web development company
               typically does for a client in the development department
             </span>
@@ -203,7 +203,7 @@ const DisclosureComponent = () => {
         onClick={() => handleActive("Mentoring")}
         className={`flex justify-between w-full h-[60px] px-[24px] py-[20px] disclosure ${
           active === "Mentoring"
-            ? "bg-primary text-white"
+            ? " bg-gradient-to-r from-primary to-gradientColor text-white"
             : "bg-primaryLight text-bodyText"
         } hover:bg-primary  hover:text-white rounded cursor-pointer mb-4`}
       >
@@ -221,10 +221,10 @@ const DisclosureComponent = () => {
         </div>
       </div>
       {active === "Mentoring" && (
-        <div className="mb-4">
+        <div className="mb-8 transition ease-in-out duration-1000">
           <div className="flex  flex-col ">
             {" "}
-            <span className="lg:text-base text-sm  text-bodyText mb-8">
+            <span className="lg:text-base text-sm  text-heading mb-8">
               Our web development services are designed to bring your vision to
               life. We believe in delivering customized solutions that align
               with your unique business needs and objectives. Whether you need a
@@ -235,7 +235,7 @@ const DisclosureComponent = () => {
               step of the way to ensure your website meets your expectations and
               beyond.
             </span>
-            <span className="mb-4 text-lightWhite flex items-center lg:text-base text-sm">
+            <span className="mb-4 text-bodyText flex items-center lg:text-base text-sm">
               {lang === "ar" ? (
                 <MdArrowLeft className={`text-[20px] mr-1 text-primary `} />
               ) : (
@@ -243,7 +243,7 @@ const DisclosureComponent = () => {
               )}
               Website planning and strategy development
             </span>
-            <span className="mb-4 text-lightWhite flex items-center lg:text-base text-sm">
+            <span className="mb-4 text-bodyText flex items-center lg:text-base text-sm">
               {lang === "ar" ? (
                 <MdArrowLeft className={`text-[20px] mr-1 text-primary `} />
               ) : (
@@ -251,7 +251,7 @@ const DisclosureComponent = () => {
               )}
               Website design and layout creation
             </span>
-            <span className="mb-4 text-lightWhite flex items-center lg:text-base text-sm">
+            <span className="mb-4 text-bodyText flex items-center lg:text-base text-sm">
               {lang === "ar" ? (
                 <MdArrowLeft className={`text-[20px] mr-1 text-primary `} />
               ) : (
@@ -259,7 +259,7 @@ const DisclosureComponent = () => {
               )}
               Website development and coding
             </span>
-            <span className="mb-4 text-lightWhite flex items-center lg:text-base text-sm">
+            <span className="mb-4 text-bodyText flex items-center lg:text-base text-sm">
               {lang === "ar" ? (
                 <MdArrowLeft className={`text-[20px] mr-1 text-primary `} />
               ) : (
@@ -267,7 +267,7 @@ const DisclosureComponent = () => {
               )}
               Front-end development (HTML/CSS/JavaScript)
             </span>
-            <span className="text-lightWhite flex items-center lg:text-base text-sm">
+            <span className="text-bodyText flex items-center lg:text-base text-sm">
               {lang === "ar" ? (
                 <MdArrowLeft className={`text-[20px] mr-1 text-primary `} />
               ) : (
@@ -276,7 +276,7 @@ const DisclosureComponent = () => {
               Back-end development (server-side scripting and database
               integration)
             </span>
-            <span className="lg:text-base text-sm  text-bodyText my-8">
+            <span className="lg:text-base text-sm  text-heading my-8">
               Here are some of the things that a web development company
               typically does for a client in the development department
             </span>
@@ -291,7 +291,7 @@ const DisclosureComponent = () => {
         onClick={() => handleActive("Open Source")}
         className={`flex justify-between w-full h-[60px] px-[24px] py-[20px] disclosure ${
           active === "Open Source"
-            ? "bg-primary text-white"
+            ? " bg-gradient-to-r from-primary to-gradientColor text-white"
             : "bg-primaryLight text-bodyText"
         } hover:bg-primary  hover:text-white rounded cursor-pointer mb-4`}
       >
@@ -309,10 +309,10 @@ const DisclosureComponent = () => {
         </div>
       </div>
       {active === "Open Source" && (
-        <div className="mb-4">
+        <div className="mb-8 transition ease-in-out duration-1000">
           <div className="flex  flex-col ">
             {" "}
-            <span className="lg:text-base text-sm  text-bodyText mb-8">
+            <span className="lg:text-base text-sm  text-heading mb-8">
               Our web development services are designed to bring your vision to
               life. We believe in delivering customized solutions that align
               with your unique business needs and objectives. Whether you need a
@@ -323,7 +323,7 @@ const DisclosureComponent = () => {
               step of the way to ensure your website meets your expectations and
               beyond.
             </span>
-            <span className="mb-4 text-lightWhite flex items-center lg:text-base text-sm">
+            <span className="mb-4 text-bodyText flex items-center lg:text-base text-sm">
               {lang === "ar" ? (
                 <MdArrowLeft className={`text-[20px] mr-1 text-primary `} />
               ) : (
@@ -331,7 +331,7 @@ const DisclosureComponent = () => {
               )}
               Website planning and strategy development
             </span>
-            <span className="mb-4 text-lightWhite flex items-center lg:text-base text-sm">
+            <span className="mb-4 text-bodyText flex items-center lg:text-base text-sm">
               {lang === "ar" ? (
                 <MdArrowLeft className={`text-[20px] mr-1 text-primary `} />
               ) : (
@@ -339,7 +339,7 @@ const DisclosureComponent = () => {
               )}
               Website design and layout creation
             </span>
-            <span className="mb-4 text-lightWhite flex items-center lg:text-base text-sm">
+            <span className="mb-4 text-bodyText flex items-center lg:text-base text-sm">
               {lang === "ar" ? (
                 <MdArrowLeft className={`text-[20px] mr-1 text-primary `} />
               ) : (
@@ -347,7 +347,7 @@ const DisclosureComponent = () => {
               )}
               Website development and coding
             </span>
-            <span className="mb-4 text-lightWhite flex items-center lg:text-base text-sm">
+            <span className="mb-4 text-bodyText flex items-center lg:text-base text-sm">
               {lang === "ar" ? (
                 <MdArrowLeft className={`text-[20px] mr-1 text-primary `} />
               ) : (
@@ -355,7 +355,7 @@ const DisclosureComponent = () => {
               )}
               Front-end development (HTML/CSS/JavaScript)
             </span>
-            <span className="text-lightWhite flex items-center lg:text-base text-sm">
+            <span className="text-bodyText flex items-center lg:text-base text-sm">
               {lang === "ar" ? (
                 <MdArrowLeft className={`text-[20px] mr-1 text-primary `} />
               ) : (
@@ -364,7 +364,7 @@ const DisclosureComponent = () => {
               Back-end development (server-side scripting and database
               integration)
             </span>
-            <span className="lg:text-base text-sm  text-bodyText my-8">
+            <span className="lg:text-base text-sm  text-heading my-8">
               Here are some of the things that a web development company
               typically does for a client in the development department
             </span>

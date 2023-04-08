@@ -28,13 +28,13 @@ const Tech = () => {
             {t("home.frontend.title")}
           </h5>
           <div className="flex justify-center">
-            <span className="text-sm text-primary font-RobotoSlab mr-4">
+            <span className="text-sm opacity-40 hover:opacity-100 text-primary font-RobotoSlab mr-4">
               {t("home.frontend.tag1")}
             </span>
-            <span className="text-sm text-primary font-RobotoSlab mr-4">
+            <span className="text-sm opacity-40 hover:opacity-100 text-primary font-RobotoSlab mr-4">
               {t("home.frontend.tag2")}
             </span>
-            <span className="text-sm text-primary font-RobotoSlab mr-4">
+            <span className="text-sm opacity-40 hover:opacity-100 text-primary font-RobotoSlab mr-4">
               {t("home.frontend.tag3")}
             </span>
           </div>
@@ -44,10 +44,10 @@ const Tech = () => {
             {t("home.design.title")}
           </h5>
           <div className="flex justify-center">
-            <span className="text-sm text-primary font-RobotoSlab mr-4">
+            <span className="text-sm opacity-40 hover:opacity-100 text-primary font-RobotoSlab mr-4">
               {t("home.design.tag1")}
             </span>
-            <span className="text-sm text-primary font-RobotoSlab mr-4">
+            <span className="text-sm opacity-40 hover:opacity-100 text-primary font-RobotoSlab mr-4">
               {t("home.design.tag2")}
             </span>
           </div>
@@ -57,19 +57,19 @@ const Tech = () => {
             {t("home.backend.title")}
           </h5>
           <div className="ml-[12px] xs:ml-0 flex justify-center">
-            <span className="text-sm text-primary font-RobotoSlab mr-4">
+            <span className="text-sm opacity-40 hover:opacity-100 text-primary font-RobotoSlab mr-4">
               {t("home.backend.tag1")}
             </span>
-            <span className="text-sm text-primary font-RobotoSlab mr-4">
+            <span className="text-sm opacity-40 hover:opacity-100 text-primary font-RobotoSlab mr-4">
               {t("home.backend.tag2")}
             </span>
-            <span className="text-sm text-primary font-RobotoSlab mr-4">
+            <span className="text-sm opacity-40 hover:opacity-100 text-primary font-RobotoSlab mr-4">
               {t("home.backend.tag3")}
             </span>
-            <span className="text-sm text-primary font-RobotoSlab mr-4">
+            <span className="text-sm opacity-40 hover:opacity-100 text-primary font-RobotoSlab mr-4">
               {t("home.backend.tag4")}
             </span>
-            <span className="text-sm text-primary font-RobotoSlab mr-4">
+            <span className="text-sm opacity-40 hover:opacity-100 text-primary font-RobotoSlab mr-4">
               {t("home.backend.tag5")}
             </span>
           </div>
@@ -79,54 +79,54 @@ const Tech = () => {
         <img
           src={gobbler}
           alt="gobbler"
-          className="min-w-[32px] max-w-[32px] mr-4 h-[32px] "
+          className="min-w-[32px] max-w-[32px] mr-4 cursor-pointer h-[32px] opacity-40 hover:opacity-100"
         />
-        <div className="min-w-[32px] max-w-[32px] mr-4 h-[32px]">
-          <DiAndroid className="w-full h-full text-primary" />
+        <div className="min-w-[32px] max-w-[32px] mr-4 cursor-pointer h-[32px]">
+          <DiAndroid className="w-full h-full opacity-40 hover:opacity-100 text-primary" />
         </div>
-        <div className="min-w-[32px] max-w-[32px] mr-4 h-[32px]">
-          <DiApple className="w-full h-full text-primary" />
+        <div className="min-w-[32px] max-w-[32px] mr-4 cursor-pointer h-[32px]">
+          <DiApple className="w-full h-full opacity-40 hover:opacity-100 text-primary" />
         </div>
-        <div className="min-w-[32px] max-w-[32px] mr-4 h-[32px]">
-          <DiJava className="w-full h-full text-primary" />
+        <div className="min-w-[32px] max-w-[32px] mr-4 cursor-pointer h-[32px]">
+          <DiJava className="w-full h-full opacity-40 hover:opacity-100 text-primary" />
         </div>
-        <div className="min-w-[32px] max-w-[32px] mr-4 h-[32px]">
-          <DiPython className="w-full h-full text-primary" />
+        <div className="min-w-[32px] max-w-[32px] mr-4 cursor-pointer h-[32px]">
+          <DiPython className="w-full h-full opacity-40 hover:opacity-100 text-primary" />
         </div>
         <img
           src={net}
           alt="net"
-          className="min-w-[32px] max-w-[32px] mr-4 h-[32px]"
+          className="min-w-[32px] max-w-[32px] mr-4 cursor-pointer h-[32px] opacity-40 hover:opacity-100"
         />
-        <div className="min-w-[32px] max-w-[32px] mr-4 h-[32px]">
-          <SiJavascript className="text-[26px] text-primary" />
+        <div className="min-w-[32px] max-w-[32px] mr-4 cursor-pointer h-[32px]">
+          <SiJavascript className="text-[26px] opacity-40 hover:opacity-100 text-primary" />
         </div>
-        <div className="min-w-[32px] max-w-[32px] mr-4 h-[32px]">
-          <DiReact className="w-full h-full text-primary" />
+        <div className="min-w-[32px] max-w-[32px] mr-4 cursor-pointer h-[32px]">
+          <DiReact className="w-full h-full opacity-40 hover:opacity-100 text-primary" />
         </div>
-        <div className="min-w-[32px] max-w-[32px] mr-4 h-[32px]">
-          <DiAngularSimple className="w-full h-full text-primary" />
+        <div className="min-w-[32px] max-w-[32px] mr-4 cursor-pointer h-[32px]">
+          <DiAngularSimple className="w-full h-full opacity-40 hover:opacity-100 text-primary" />
         </div>
-        <div className="min-w-[32px] max-w-[32px] mr-4 h-[32px]">
-          <DiNodejsSmall className="w-full h-full text-primary" />
+        <div className="min-w-[32px] max-w-[32px] mr-4 cursor-pointer h-[32px]">
+          <DiNodejsSmall className="w-full h-full opacity-40 hover:opacity-100 text-primary" />
         </div>
         <img
           src={techIcon}
-          alt="net"
-          className="min-w-[32px] max-w-[32px] mr-4 h-[32px]"
+          alt="tech"
+          className="min-w-[32px] max-w-[32px] mr-4 cursor-pointer h-[32px] opacity-40 hover:opacity-100"
         />
-        <div className="min-w-[32px] max-w-[32px] mr-4 h-[32px]">
-          <SiDjango className="w-full h-full text-primary" />
+        <div className="min-w-[32px] max-w-[32px] mr-4 cursor-pointer h-[32px]">
+          <SiDjango className="w-full h-full opacity-40 hover:opacity-100 text-primary" />
         </div>
         <img
           src={vue}
-          alt="net"
-          className="min-w-[32px] max-w-[32px] mr-4 h-[32px]"
+          alt="vue"
+          className="min-w-[32px] max-w-[32px] mr-4 cursor-pointer h-[32px] opacity-40 hover:opacity-100"
         />
         <img
           src={techIcon2}
-          alt="net"
-          className="min-w-[32px] max-w-[32px] mr-4 h-[32px]"
+          alt="tech2"
+          className="min-w-[32px] max-w-[32px] mr-4 cursor-pointer h-[32px] opacity-40 hover:opacity-100"
         />
       </div>
     </div>

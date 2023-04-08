@@ -110,6 +110,41 @@
     "visitText": "Visit Website",
     "codeText": "Get Code"
   },
+  "schedule": {
+    "heading": "Let's Discuss Your Web Development Needs: Schedule a Call",
+    "tagline": "Your Vision, Our Expertise: Let's Create Something Great Together",
+    "timeText": "15-30 minute meeting",
+    "webText": "Web conferencing details provided upon confirmation.",
+    "dateHeading": "Select a Date & Time"
+  },
+  "terms": {
+    "heading": "Terms of Use: Our Commitment to Your Trust and Security",
+
+    "title1": "Introduction",
+    "titleData1": "This Privacy Policy describes how your personal information is collected, used, and shared when you visit, subscribe, register or make a purchase from nftfox, ‘Site’.",
+    "title2": "Definition of personal data",
+    "titleData2": "Personal data refers to any information that can be used to identify a specific individual, such as their name, address, email, phone number, and so on. This can also include sensitive information like financial details, medical records, and biometric data. Personal data is protected by laws and regulations such as the General Data Protection Regulation (GDPR) in the European Union and the California Consumer Privacy Act (CCPA) in the United States, which set guidelines for how organizations can collect, use, and protect personal data.",
+    "title3": "Cookies and Similar Technologies",
+    "titleData3": {
+      "paragraph1": "We use cookies and similar technologies to provide, protect, and improve our products and services, such as by personalizing content, offering and measuring advertisements, understanding user behaviour, and providing a safer experience.",
+      "paragraph2": "You can remove or reject cookies using your browser or device settings, but in some cases doing so may affect your ability to use our products and services.",
+      "paragraph3": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown",
+      "paragraph4": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown"
+    },
+    "title4": "Your Rights",
+    "titleData4": {
+      "paragraph": "Dictum vestibulum nulla justo sed, ligula rutrum sollicitudin, vivamus non. Nunc donec tincidunt, vivamus repellat habitanaccumsan faucibus ante in mauris. Lorem purus leo eleifend semper sit, donec duis vel orci lorem consectetuer, lacus lorem praesent elit odio ut, tortor id metus fermentum mi ipsum, quisque proin. Aptent aliquet facilisis",
+      "point1": "1. Right to access: Users have the right to request and receive information about the personal data that an auction site has collected about them.",
+      "point2": "2. Right to rectification: Users have the right to request that any inaccurate or incomplete personal data be corrected.",
+      "point3": "3. Right to erasure: Users have the right to request that their personal data be deleted.",
+      "point4": "4. Right to object: Users have the right to object to the processing of their personal data for certain purposes.",
+      "point5": "5. Right to data portability: Users have the right to request that their personal data be transferred to another organization in a commonly used and machine-readable format.",
+      "point6": "6. Right to be informed: Users have the right to be informed about how their personal data is being used and for what purpose.",
+      "point7": "7. Right to complain: Users have the right to file a complaint with the relevant regulatory body if they believe their rights have been violated.",
+      "point8": "8. Right to know about data breaches: Users have the right to be informed if there is a data breach which involves their personal data.It's important to note that these rights may vary depending on the specific laws and regulations in your jurisdiction."
+    }
+  },
+
   "footer": {
     "heading": "Do you have a project?",
     "tagline": "Schedule a free call and we can start",

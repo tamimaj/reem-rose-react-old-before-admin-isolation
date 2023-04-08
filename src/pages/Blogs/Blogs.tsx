@@ -8,7 +8,7 @@ const Blogs = () => {
   return (
     <div className="lg:mt-40 mb-3 lg:mb-12 w-full flex justify-center">
       <div className="w-[90%] max-w-[1440px] flex flex-col overflow-x-hidden items-center">
-        <div className=" flex flex-col items-center w-full  sm:w-[379px] lg:w-[974px]">
+        <div className=" flex flex-col items-center w-full  sm:w-[379px] lg:w-[974px] mt-[64px] lg:mt-0">
           <h1 className="font-PlusJakartaSans text-[28px] text-center lg:text-[48px] text-white">
             {t("blog.title")}
           </h1>
@@ -17,14 +17,14 @@ const Blogs = () => {
           </span>
         </div>
         <BlogFilter />
-        <div className="mt-[48px] grid lg:grid-cols-2 xl:grid-cols-3 gap-4">
+        <div className="mt-6 lg:mt-[48px] grid lg:grid-cols-2 xl:grid-cols-3 gap-4">
           {[...Array(9)].map((v, idx) => (
             <BlogCard idx={idx} />
           ))}
         </div>
-        <div className="flex items-center mt-[48px] text-heading text-sm">
+        <div className="flex items-center mt-8 lg:mt-[48px] text-heading text-sm">
           <span className="mr-6">{t("pagination.previous")}</span>
-          <span className="mr-4">1</span>
+          <span className="mr-4 text-base font-semibold">1</span>
           <span className="mr-4">2</span>
           <span>3</span>
           <span className="ml-6">{t("pagination.next")}</span>

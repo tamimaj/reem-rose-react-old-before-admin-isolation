@@ -7,6 +7,7 @@ module.exports = {
       colors: {
         primary: "#00A388", // this and heading are primary
         primaryLight: "rgba(0, 163, 136, 0.08)",
+        primarySchedule: "rgba(0, 163, 136, 0.24)",
         gradientColor: "#006655",
         heading: "rgba(255, 255, 255, 0.8)", // white 80% opacity
         bodyText: "rgba(255, 255, 255, 0.4)", // white 40% opacity
@@ -16,6 +17,7 @@ module.exports = {
         lighterWhite: "rgba(255, 255, 255, 0.16)", //white 16% opacity
         gray: "#6b7280",
         black: "#000A08",
+        lightBlack: "#000a08a3",
       },
     },
     screens: {

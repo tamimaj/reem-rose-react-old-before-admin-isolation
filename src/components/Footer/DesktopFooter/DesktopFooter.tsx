@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import siteSettings from "../../../settings/siteSettings";
+import { Link } from "react-router-dom";
 
 const DesktopFooter = () => {
   const { i18n, t } = useTranslation();
@@ -30,16 +31,16 @@ const DesktopFooter = () => {
       </div>
       <div className="flex flex-col text-white">
         {siteSettings.footerMenu.map((v, idx) => (
-          <span className="mb-4 text-sm cursor-pointer" key={idx}>
+          <Link to={v.link} className="mb-4 text-sm cursor-pointer" key={idx}>
             {t(v.text)}
-          </span>
+          </Link>
         ))}
       </div>
       <div className="flex flex-col text-white">
         {siteSettings.footerPrivacy.map((v, idx) => (
-          <span className="text-sm cursor-pointer mb-3" key={idx}>
+          <Link to={v.link} className="text-sm cursor-pointer mb-3" key={idx}>
             {t(v.text)}
-          </span>
+          </Link>
         ))}
       </div>
       <div className="flex text-white">
