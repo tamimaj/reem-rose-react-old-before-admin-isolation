@@ -104,7 +104,7 @@ const ScheduleCall = () => {
                     <div className="flex mt-2 mb-6">
                       <div className="flex flex-col w-full lg:w-[240px]">
                         <label className="font-semibold text-sm text-white ml-[1px]">
-                          {t("careers.form.label.coverLetter")}
+                          {t("schedule.letter")}
                         </label>
                         <textarea
                           placeholder={t(

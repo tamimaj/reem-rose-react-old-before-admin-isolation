@@ -115,11 +115,26 @@
     "tagline": "Your Vision, Our Expertise: Let's Create Something Great Together",
     "timeText": "15-30 minute meeting",
     "webText": "Web conferencing details provided upon confirmation.",
-    "dateHeading": "Select a Date & Time"
+    "dateHeading": "Select a Date & Time",
+    "letter": "Letter"
+  },
+  "contactus": {
+    "heading": "Get in Touch with Our Web Development Experts: Contact Us",
+    "tagline": "Let's Build Your Online Success Story - Reach Out to Our Team Today",
+    "phoneNo": "Phone Number",
+    "subheading": "Send us your message",
+    "btnText": "Send Message",
+    "scheduleText": "Or schedule free 30 minute call"
+  },
+  "aboutus": {
+    "heading": "Discover Our Passion for Innovative Web Development: About Us",
+    "tagline": "Let's Build Your Online Success Story - Reach Out to Our Team Today",
+    "text1": "At Reemrose, we are passionate about web development and committed to delivering exceptional solutions that help our clients succeed online. Our team of experienced developers, designers, and project managers work together to create innovative websites that engage visitors, drive conversions, and build brands.",
+    "text2": "We believe in a collaborative approach to web development, working closely with our clients to understand their unique business needs and objectives. From initial concept to final launch, we strive to exceed our clients' expectations and deliver solutions that are tailored to their specific requirements.",
+    "text3": "Our expertise encompasses a wide range of web development services, including website design and development, content management system integration, e-commerce solutions, and more. We stay up-to-date with the latest technologies and trends to ensure that our clients' websites are responsive, user-friendly, and visually stunning."
   },
   "terms": {
     "heading": "Terms of Use: Our Commitment to Your Trust and Security",
-
     "title1": "Introduction",
     "titleData1": "This Privacy Policy describes how your personal information is collected, used, and shared when you visit, subscribe, register or make a purchase from nftfox, ‘Site’.",
     "title2": "Definition of personal data",

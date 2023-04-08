@@ -11,6 +11,8 @@ import Services from "./pages/Services/Services";
 import Portfolio from "./pages/Portfolio/Portfolio";
 import ScheduleCall from "./pages/ScheduleCall/ScheduleCall";
 import TermsOfUse from "./pages/TermsOfUse/TermsOfUse";
+import ContactUs from "./pages/ContactUs/ContactUs";
+import AboutUs from "./pages/AboutUs/AboutUs";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/schedule" element={<ScheduleCall />} />
           <Route path="/terms-of-use" element={<TermsOfUse />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/about-us" element={<AboutUs />} />
         </Routes>
       </Layout>
     </Router>
