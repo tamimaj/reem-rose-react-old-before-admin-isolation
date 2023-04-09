@@ -5,12 +5,20 @@
 /* importing  fonts */
 @import url("./assets/fonts/Plus_Jakarta_Sans/plus_jakarta_sans.css");
 @import url("./assets/fonts/Roboto_Slab/roboto_slab.css");
+html {
+  background-color: #000e14;
+}
 body {
   margin: 0;
   font-family: "PlusJakartaSans", "RobotoSlab";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+.suspense {
+  background-color: #000e14;
+  height: 100vh;
+  width: 100vw;
 }
 .layout {
   background-image: url("./assets/images/backgroundImage.png");

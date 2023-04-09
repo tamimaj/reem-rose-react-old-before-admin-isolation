@@ -10,6 +10,8 @@ import Tags from "../../components/Tags/Tags";
 import StatusTag from "../../components/Admin/StatusTag/StatusTag";
 import Modal from "../../components/Modal/Modal";
 import SortMenu from "../../components/Admin/SortMenu/SortMenu";
+import { Link } from "react-router-dom";
+import ROUTES from "../../settings/ROUTES";
 
 const Admin = () => {
   const { t } = useTranslation();
@@ -17,9 +19,12 @@ const Admin = () => {
   return (
     <div className=" pt-4 pb-20 w-full flex justify-center">
       <div className="w-full 3xl:w-[90%] max-w-[1440px] flex flex-col overflow-x-hidden items-center">
-        <h2 className="text-white md:w-[712px] text-[24px] xs:text-[28px] lg:text-[32px] text-center mt-4 mb-[48px] lg:mb-[80px]">
+        <Link
+          to={ROUTES.HOME}
+          className="text-white md:w-[712px] text-[24px] xs:text-[28px] lg:text-[32px] text-center mt-4 mb-[48px] lg:mb-[80px]"
+        >
           {t("admin.heading")}
-        </h2>
+        </Link>
         <div className="flex w-full">
           <div className="flex flex-col justify-between 2xl:items-start items-center 2xl:w-[227px] h-[300px] 2xl:h-full bg-primaryLight py-8 px-4 2xl:p-8 rounded mr-6">
             <div className="flex flex-col">

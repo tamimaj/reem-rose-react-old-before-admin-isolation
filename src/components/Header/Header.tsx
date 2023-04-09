@@ -38,11 +38,9 @@ const Header = () => {
           pathname === "/admin" ? "hidden" : "flex"
         } justify-center w-full font-PlusJakartaSans`}
       >
-        <div
-          onClick={() => navigate(ROUTES.HOME)}
-          className="max-w-[1440px]  w-[90%] h-[40px] mt-5 flex items-center justify-between"
-        >
+        <div className="max-w-[1440px]  w-[90%] h-[40px] mt-5 flex items-center justify-between">
           <img
+            onClick={() => navigate(ROUTES.HOME)}
             src={siteSettings.logo.url}
             alt={siteSettings.logo.alt}
             className="w-[24px] h-[24px] cursor-pointer"

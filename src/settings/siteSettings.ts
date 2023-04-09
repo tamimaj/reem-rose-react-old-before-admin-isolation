@@ -56,24 +56,25 @@ export default {
   ],
   footerPrivacy: [
     {
+      text: "footer.text3",
+      link: ROUTES.TERMS_AND_CONDITIONS,
+    },
+    {
       text: "footer.text1",
-      link: ROUTES.TERMSOFUSE,
+      link: ROUTES.TERMS_OF_USE,
     },
     {
       text: "footer.text2",
-      link: ROUTES.PRIVACYPOLICY,
+      link: ROUTES.PRIVACY_POLICY,
     },
-    {
-      text: "footer.text3",
-      link: ROUTES.TERMSANDCONDITIONS,
-    },
+
     {
       text: "footer.text4",
-      link: ROUTES.CONTACTUS,
+      link: ROUTES.CONTACT_US,
     },
     {
       text: "footer.text5",
-      link: ROUTES.ABOUTUS,
+      link: ROUTES.ABOUT_US,
     },
   ],
 };

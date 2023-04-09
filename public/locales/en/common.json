@@ -81,6 +81,7 @@
       "label": {
         "name": "Name",
         "email": "Email",
+        "phoneNo": "Phone Number",
         "githubLink": "Github Link",
         "linkedinLink": "Linkedin Link",
         "websiteLink": "Website Link",
@@ -91,6 +92,7 @@
       "placeholder": {
         "name": "Name",
         "email": "Email",
+        "phoneNo": "Phone Number",
         "github": "Github",
         "linkedin": "Linkedin",
         "website": "Website",

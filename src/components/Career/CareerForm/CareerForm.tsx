@@ -19,13 +19,23 @@ const CareerForm = () => {
             className="w-full h-[36px] rounded text-bodyText bg-primaryLight outline-none pl-4 py-2 pr-2 mt-2 text-base"
           />
         </div>
-        <div className="flex flex-col w-full lg:w-[226px] mr-4">
+        <div className="flex flex-col w-full mb-8 lg:mb-0 lg:w-[226px] mr-4">
           <label className="font-semibold text-sm text-white ml-[1px]">
             {t("careers.form.label.email")}
           </label>
           <input
             type="text"
             placeholder={t("careers.form.placeholder.email").toString()}
+            className="w-full h-[36px] rounded text-bodyText bg-primaryLight outline-none pl-4 py-2 pr-2 mt-2 text-base"
+          />
+        </div>
+        <div className="flex flex-col w-full lg:w-[226px] mr-4">
+          <label className="font-semibold text-sm text-white ml-[1px]">
+            {t("careers.form.label.phoneNo")}
+          </label>
+          <input
+            type="text"
+            placeholder={t("careers.form.placeholder.phoneNo").toString()}
             className="w-full h-[36px] rounded text-bodyText bg-primaryLight outline-none pl-4 py-2 pr-2 mt-2 text-base"
           />
         </div>

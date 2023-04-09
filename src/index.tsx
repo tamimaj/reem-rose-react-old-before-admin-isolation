@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 
 import "./i18n";
@@ -10,6 +10,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Suspense fallback={<div className="suspense"></div>}>
+      <App />
+    </Suspense>
   </React.StrictMode>
 );

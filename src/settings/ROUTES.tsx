@@ -1,19 +1,19 @@
 const ROUTES = {
   HOME: "/",
   BLOG: "/blog",
-  BLOGPOST: "/blog-post",
+  BLOG_POST: "/blog-post",
   CAREERS: "/careers",
-  CAREERDETAILS: "/career-details",
+  CAREER_DETAILS: "/career-details",
   SERVICES: "/services",
   PORTFOLIO: "/portfolio",
   SCHEDULE: "/schedule",
-  TERMSOFUSE: "/terms-of-use",
-  CONTACTUS: "/contact-us",
-  ABOUTUS: "/about-us",
+  TERMS_OF_USE: "/terms-of-use",
+  CONTACT_US: "/contact-us",
+  ABOUT_US: "/about-us",
   ADMIN: "/admin",
   LOGIN: "/login",
-  PRIVACYPOLICY: "/privacy-policy",
-  TERMSANDCONDITIONS: "/terms-and-conditions",
+  PRIVACY_POLICY: "/privacy-policy",
+  TERMS_AND_CONDITIONS: "/terms-and-conditions",
 };
 
 export default ROUTES;

@@ -40,7 +40,7 @@ const Intro = () => {
         </button>
         <div className="relative">
           <button
-            onClick={() => navigate(ROUTES.ABOUTUS)}
+            onClick={() => navigate(ROUTES.ABOUT_US)}
             className="flex text-white items-center justify-center w-[130px] xs:w-[169px] md:w-[208px] h-[50px] xs:h-[60px]  border border-primary rounded cursor-pointer"
           >
             {t("home.btnText")}{" "}

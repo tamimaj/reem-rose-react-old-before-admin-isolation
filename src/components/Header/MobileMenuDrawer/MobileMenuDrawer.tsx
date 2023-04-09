@@ -10,6 +10,7 @@ import LanguagesMenu from "../LanguageMenu/LanguagesMenu";
 import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
 import ROUTES from "../../../settings/ROUTES";
 import LanguageDetector from "../../../hooks/LanguageDetector/LanguageDetector";
+import path from "path";
 
 interface drawerProps {
   openMenu: boolean;
@@ -25,17 +26,20 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
   handleMenuClose,
 }) => {
   const { width } = useWindowSize();
-  const { i18n, t } = useTranslation();
-  const [active, setActive] = useState<string>("Home");
+  const { t } = useTranslation();
+  const { pathname } = useLocation();
+  const [active, setActive] = useState<string>(pathname);
   const [lang, setLang] = useState<string | null>("");
   const navigate = useNavigate();
-  const { pathname } = useLocation();
 
   console.log(pathname, "v");
+  useEffect(() => {
+    if (pathname) setActive(pathname);
+  }, [pathname]);
 
   const handleSelection = (v: string, link: string) => {
-    setActive(v);
     navigate(link);
+    setActive(v);
     handleMenuClose();
   };
   LanguageDetector(setLang);
@@ -70,7 +74,7 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
             className="flex items-center ps-6 pe-6 mb-6 "
             onClick={() => handleSelection(v.text, v.link)}
           >
-            {v.text === active &&
+            {v.link === active &&
               (lang === "ar" ? (
                 <MdArrowLeft className={`text-[32px] mr-3 text-primary mt-3`} />
               ) : (
@@ -78,7 +82,7 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
               ))}
             <span
               className={`text-[34px] xs:text-[48px] ${
-                v.text === active ? "text-primary" : "text-bodyText"
+                v.link === active ? "text-primary" : "text-bodyText"
               }  cursor-pointer`}
             >
               {t(v.text)}
@@ -91,14 +95,14 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
               navigate(ROUTES.SCHEDULE);
               handleMenuClose();
             }}
-            className="flex  text-[24px]"
+            className="flex  text-[24px] cursor-pointer"
           >
             {t(siteSettings.scheduleText)}
           </span>
           <div className="flex items-center  mt-[48px] ml-[48px] text-primary text-[24px]">
-            <AiFillGithub className="mr-[48px] " />
-            <AiFillLinkedin className="mr-[48px] " />
-            <AiOutlineTwitter className="mr-[48px] " />
+            <AiFillGithub className="mr-[48px] cursor-pointer " />
+            <AiFillLinkedin className="mr-[48px] cursor-pointer " />
+            <AiOutlineTwitter className="mr-[48px] cursor-pointer " />
           </div>
         </div>
       </div>

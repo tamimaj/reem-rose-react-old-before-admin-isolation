@@ -26,8 +26,8 @@ const TestimonialCard: React.FC<TestimonialDataType> = ({ data }) => {
               {data.name}
             </h6>
             <div className="flex text-primary">
-              <AiFillLinkedin className="w-[20px] h-[20px]  cursor-pointer mr-4" />
-              <AiOutlineTwitter className="w-[20px] h-[20px] cursor-pointer " />
+              <AiFillLinkedin className="w-[20px] h-[20px]  cursor-pointer mr-4 hover:opacity-100 cursor-pointer opacity-40" />
+              <AiOutlineTwitter className="w-[20px] h-[20px] cursor-pointer hover:opacity-100 cursor-pointer opacity-40" />
             </div>
           </div>
           <span className="text-bodyText text-sm mt-2">{data.position}</span>

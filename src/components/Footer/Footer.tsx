@@ -19,17 +19,6 @@ const Footer = () => {
         <DesktopFooter />
         <MobileFooter />
 
-        <div className="mt-[64px] flex lg:hidden justify-between text-white w-full //xs:w-[350px]">
-          {siteSettings.footerPrivacy.map((v, idx) => (
-            <Link
-              to={v.link}
-              className="text-xs xs:text-sm cursor-pointer "
-              key={idx}
-            >
-              {t(v.text)}
-            </Link>
-          ))}
-        </div>
         <div className="flex flex-col lg:flex-row items-center  justify-between w-full mt-6 lg:mt-[121px]">
           <span className="text-xs text-bodyText mb-2 lg:mb-0">
             {t("footer.copyrightText")}
