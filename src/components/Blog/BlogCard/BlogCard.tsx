@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 import blogImage1 from "../../../assets/tempImages/blogImage.png";
 import blogImage2 from "../../../assets/tempImages/blogimage2.png";
 import blogImage3 from "../../../assets/tempImages/blogImage3.png";
 import blogImage4 from "../../../assets/tempImages/blogImage4.png";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
+import LanguageDetector from "../../../hooks/LanguageDetector/LanguageDetector";
 
 type BlogCardType = {
   idx: any;
@@ -17,9 +18,7 @@ const BlogCard: React.FC<BlogCardType> = ({ idx, className }) => {
   const navigate = useNavigate();
   const [lang, setLang] = useState<string | null>("");
 
-  useEffect(() => {
-    setLang(i18n.language);
-  }, [i18n.language]);
+  LanguageDetector(setLang);
 
   return (
     <div

@@ -13,23 +13,28 @@ import ScheduleCall from "./pages/ScheduleCall/ScheduleCall";
 import TermsOfUse from "./pages/TermsOfUse/TermsOfUse";
 import ContactUs from "./pages/ContactUs/ContactUs";
 import AboutUs from "./pages/AboutUs/AboutUs";
+import Admin from "./pages/Admin/Admin";
+import Login from "./pages/Login/Login";
+import ROUTES from "./settings/ROUTES";
 
 function App() {
   return (
     <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path={ROUTES.HOME} element={<Home />} />
           <Route path="/blog" element={<Blogs />} />
           <Route path="/blog-post" element={<BlogPost />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/career-details" element={<CareerDetails />} />
           <Route path="/services" element={<Services />} />
           <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/schedule" element={<ScheduleCall />} />
+          <Route path={ROUTES.SCHEDULE} element={<ScheduleCall />} />
           <Route path="/terms-of-use" element={<TermsOfUse />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Layout>
     </Router>

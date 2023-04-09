@@ -3,13 +3,18 @@ import { useTranslation } from "react-i18next";
 import siteSettings from "../../settings/siteSettings";
 import DesktopFooter from "./DesktopFooter/DesktopFooter";
 import MobileFooter from "./MobileFooter/MobileFooter";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
   const { t } = useTranslation();
+  const { pathname } = useLocation();
 
   return (
-    <footer className="mt-[120px] lg:mt-[248px] pt-2.5 lg:pt-0 2xl:pt-2 pb-4 w-full flex justify-center">
+    <footer
+      className={`mt-[120px] lg:mt-[248px] pt-2.5 lg:pt-0 2xl:pt-2 pb-4 w-full ${
+        pathname === "/admin" ? "hidden" : "flex"
+      } justify-center`}
+    >
       <div className="flex flex-col w-[90%] max-w-[1440px] lg:items-start items-center">
         <DesktopFooter />
         <MobileFooter />

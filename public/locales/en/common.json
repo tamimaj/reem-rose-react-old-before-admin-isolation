@@ -166,7 +166,39 @@
     "copyrightText": "Copyright © 2023 ReemRose Company  All rights reserved.",
     "text1": "Terms of use",
     "text2": "Privacy Policy",
-    "text3": "Terms & conditions"
+    "text3": "Terms & conditions",
+    "text4": "Contact Us",
+    "text5": "About Us"
+  },
+  "admin": {
+    "heading": "ReemRose",
+    "placeholder": "Search",
+    "title": "Dashboard",
+    "section1": "section 1",
+    "section2": "section 2",
+    "section3": "section 3",
+    "sortBy": "sort by",
+    "menu": {
+      "menuItem1": "Title (asc)",
+      "menuItem2": "Title (desc)",
+      "menuItem3": "Status (asc)",
+      "menuItem4": "Status (desc)",
+      "menuItem5": "Date (asc)",
+      "menuItem6": "Date (desc)"
+    },
+    "table": {
+      "heading1": "ID",
+      "heading2": "Title",
+      "heading3": "Status",
+      "heading4": "Date",
+      "heading5": "View"
+    }
+  },
+  "login": {
+    "heading": "Admin",
+    "btnText": "Login",
+    "password": "Password",
+    "enterPassword": "Enter Password"
   },
   "pagination": {
     "previous": "Previous",

@@ -3,14 +3,16 @@ import { useTranslation } from "react-i18next";
 import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import siteSettings from "../../../settings/siteSettings";
+import ROUTES from "../../../settings/ROUTES";
+import { useNavigate } from "react-router";
+import LanguageDetector from "../../../hooks/LanguageDetector/LanguageDetector";
 
 const MobileFooter = () => {
   const { i18n, t } = useTranslation();
+  const navigate = useNavigate();
   const [lang, setLang] = useState<string | null>("");
 
-  useEffect(() => {
-    setLang(i18n.language);
-  }, [i18n.language]);
+  LanguageDetector(setLang);
 
   return (
     <div className="flex lg:hidden flex-col w-full //xs:w-auto">
@@ -21,7 +23,10 @@ const MobileFooter = () => {
         <span className="mt-2 text-bodyText text-center text-base">
           {t("footer.tagline")}
         </span>
-        <button className="flex items-center justify-center w-full //xs:w-[272px] h-[50px] xs:h-[60px] text-white rounded bg-gradient-to-r from-primary to-gradientColor mt-[48px]">
+        <button
+          onClick={() => navigate(ROUTES.SCHEDULE)}
+          className="flex items-center justify-center w-full //xs:w-[272px] h-[50px] xs:h-[60px] text-white rounded bg-gradient-to-r from-primary to-gradientColor mt-[48px]"
+        >
           {t("header.scheduleText")}{" "}
           {lang === "ar" ? (
             <FiChevronLeft className="text-[20px] ml-4" />

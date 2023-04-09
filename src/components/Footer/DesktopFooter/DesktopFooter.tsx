@@ -1,17 +1,19 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { Link, useNavigate } from "react-router-dom";
 import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
+
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import siteSettings from "../../../settings/siteSettings";
-import { Link } from "react-router-dom";
+import ROUTES from "../../../settings/ROUTES";
+import LanguageDetector from "../../../hooks/LanguageDetector/LanguageDetector";
 
 const DesktopFooter = () => {
   const { i18n, t } = useTranslation();
+  const navigate = useNavigate();
   const [lang, setLang] = useState<string | null>("");
 
-  useEffect(() => {
-    setLang(i18n.language);
-  }, [i18n.language]);
+  LanguageDetector(setLang);
 
   return (
     <div className="hidden lg:flex w-full justify-between">
@@ -20,7 +22,10 @@ const DesktopFooter = () => {
         <span className="mt-2 text-bodyText text-base">
           {t("footer.tagline")}
         </span>
-        <button className="flex items-center justify-center w-[208px] h-[60px] text-white rounded bg-gradient-to-r from-primary to-gradientColor mt-[48px]">
+        <button
+          onClick={() => navigate(ROUTES.SCHEDULE)}
+          className="flex items-center justify-center w-[208px] h-[60px] text-white rounded bg-gradient-to-r from-primary to-gradientColor mt-[48px]"
+        >
           {t("header.scheduleText")}{" "}
           {lang === "ar" ? (
             <FiChevronLeft className="text-[20px] ml-4" />

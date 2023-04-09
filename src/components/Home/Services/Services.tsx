@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+
+import ROUTES from "../../../settings/ROUTES";
+import LanguageDetector from "../../../hooks/LanguageDetector/LanguageDetector";
 
 const Services = () => {
   const { i18n, t } = useTranslation();
   const [active, setActive] = useState<string>("Consulting");
-
+  const navigate = useNavigate();
   const [lang, setLang] = useState<string | null>("");
 
-  useEffect(() => {
-    setLang(i18n.language);
-  }, [i18n.language]);
+  LanguageDetector(setLang);
 
   const handleActiveItem = (v: string) => {
     setActive(v);
@@ -41,7 +43,10 @@ const Services = () => {
             <span className="text-sm  text-bodyText mt-2">
               {t("home.services.text1")}
             </span>
-            <span className="mt-6 text-primary text-base font-semibold flex items-center cursor-pointer">
+            <span
+              onClick={() => navigate(ROUTES.SERVICES)}
+              className="mt-6 text-primary text-base font-semibold flex items-center cursor-pointer"
+            >
               {t("home.readMore")}{" "}
               {lang === "ar" ? (
                 <FiChevronLeft className="text-[20px] ml-4 mt-[2px]" />
@@ -72,7 +77,10 @@ const Services = () => {
             <span className="text-sm 2xl:text-base text-bodyText mt-2">
               {t("home.services.text2")}
             </span>
-            <span className="mt-6 text-primary text-base font-semibold flex items-center">
+            <span
+              onClick={() => navigate(ROUTES.SERVICES)}
+              className="mt-6 text-primary text-base font-semibold flex items-center"
+            >
               {t("home.readMore")}{" "}
               {lang === "ar" ? (
                 <FiChevronLeft className="text-[20px] ml-4 mt-[2px]" />
@@ -103,7 +111,10 @@ const Services = () => {
             <span className="text-sm 2xl:text-base text-bodyText mt-2">
               {t("home.services.text3")}
             </span>
-            <span className="mt-6 text-primary text-base font-semibold flex items-center">
+            <span
+              onClick={() => navigate(ROUTES.SERVICES)}
+              className="mt-6 text-primary text-base font-semibold flex items-center"
+            >
               {t("home.readMore")}{" "}
               {lang === "ar" ? (
                 <FiChevronLeft className="text-[20px] ml-4 mt-[2px]" />
@@ -134,7 +145,10 @@ const Services = () => {
             <span className="text-sm 2xl:text-base text-bodyText mt-2">
               {t("home.services.text4")}
             </span>
-            <span className="mt-6 text-primary text-base font-semibold flex items-center">
+            <span
+              onClick={() => navigate(ROUTES.SERVICES)}
+              className="mt-6 text-primary text-base font-semibold flex items-center"
+            >
               {t("home.readMore")}{" "}
               {lang === "ar" ? (
                 <FiChevronLeft className="text-[20px] ml-4 mt-[2px]" />
@@ -191,7 +205,10 @@ const Services = () => {
             </span>
           </>
         )}
-        <span className="mt-6 text-primary text-base font-semibold flex">
+        <span
+          onClick={() => navigate(ROUTES.SERVICES)}
+          className="mt-6 text-primary text-base font-semibold flex cursor-pointer"
+        >
           {t("home.readMore")}{" "}
           {lang === "ar" ? (
             <FiChevronLeft className="text-[20px] ml-4 mt-[2px]" />

@@ -19,6 +19,10 @@ module.exports = {
         black: "#000A08",
         lightBlack: "rgb(0 10 8 / 64%)",
         lighterBlack: "rgb(0 10 8 / 24%)",
+        red: "rgba(179,58,58,1)",
+        lightRed: "rgba(179,58,58,0.08)",
+        yellow: "rgba(247,203,115,1)",
+        lightYellow: "rgba(247,203,115,0.08)",
       },
     },
     screens: {

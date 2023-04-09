@@ -3,16 +3,18 @@ import { useTranslation } from "react-i18next";
 import { FiArrowUpRight } from "react-icons/fi";
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi";
 import { portfolioData } from "../../../helpers/temphelpers/tempHelpers";
+import { useNavigate } from "react-router";
+import ROUTES from "../../../settings/ROUTES";
+import LanguageDetector from "../../../hooks/LanguageDetector/LanguageDetector";
 
 const Portfolio = () => {
   const { i18n, t } = useTranslation();
+  const navigate = useNavigate();
   const portfolioRef: RefObject<HTMLDivElement> = useRef(null);
 
   const [lang, setLang] = useState<string | null>("");
 
-  useEffect(() => {
-    setLang(i18n.language);
-  }, [i18n.language]);
+  LanguageDetector(setLang);
 
   const handleScrollLeft = () => {
     if (portfolioRef.current) {
@@ -81,7 +83,10 @@ const Portfolio = () => {
           </div>
         ))}
       </div>
-      <span className="lg:hidden mt-[32px] flex text-primary text-base font-semibold cursor-pointer">
+      <span
+        onClick={() => navigate(ROUTES.PORTFOLIO)}
+        className="lg:hidden mt-[32px] flex text-primary text-base font-semibold cursor-pointer"
+      >
         {t("home.viewBtnText")}
       </span>
     </div>

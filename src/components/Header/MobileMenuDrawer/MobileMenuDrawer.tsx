@@ -8,6 +8,8 @@ import { MdOutlineClose, MdArrowRight, MdArrowLeft } from "react-icons/md";
 import siteSettings from "../../../settings/siteSettings";
 import LanguagesMenu from "../LanguageMenu/LanguagesMenu";
 import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
+import ROUTES from "../../../settings/ROUTES";
+import LanguageDetector from "../../../hooks/LanguageDetector/LanguageDetector";
 
 interface drawerProps {
   openMenu: boolean;
@@ -36,9 +38,7 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
     navigate(link);
     handleMenuClose();
   };
-  useEffect(() => {
-    setLang(i18n.language);
-  }, [i18n.language]);
+  LanguageDetector(setLang);
   return (
     <RcDrawer
       width={width <= 520 ? "100%" : "390px"}
@@ -49,7 +49,7 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
       <div className="flex flex-col justify-between  w-full h-full bg-black text-primary overflow-x-hidden">
         {/* HEADER */}
         <div className="w-full flex justify-between items-center pt-[32px]  pb-[48px] px-4 mb-4">
-          <Link to={"/"} onClick={handleMenuClose} className="flex ">
+          <Link to={ROUTES.HOME} onClick={handleMenuClose} className="flex ">
             <span className="text-primary text-[16px] font-RobotoSlab">
               {t("home.title")}
             </span>
@@ -86,7 +86,13 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
           </div>
         ))}
         <div className="flex flex-col mb-[38px] items-center justify-center">
-          <span className="flex  text-[24px]">
+          <span
+            onClick={() => {
+              navigate(ROUTES.SCHEDULE);
+              handleMenuClose();
+            }}
+            className="flex  text-[24px]"
+          >
             {t(siteSettings.scheduleText)}
           </span>
           <div className="flex items-center  mt-[48px] ml-[48px] text-primary text-[24px]">
