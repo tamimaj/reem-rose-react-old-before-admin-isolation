@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { useTranslation } from "react-i18next";
+import AliceCarousel from "react-alice-carousel";
 
 import { testimonialData } from "../../../helpers/temphelpers/tempHelpers";
 import TestimonialCard from "./TestimonialCard/TestimonialCard";
@@ -7,31 +8,12 @@ import TestimonialCard from "./TestimonialCard/TestimonialCard";
 const Testimonials = () => {
   const { t } = useTranslation();
 
-  const slider = document.querySelector(".testimonials") as HTMLElement;
-  let mouseDown = false;
-  let startX: any, scrollLeft: any;
-
-  let startDragging = function (e: MouseEvent) {
-    mouseDown = true;
-    startX = e.pageX - slider?.offsetLeft;
-    scrollLeft = slider.scrollLeft;
+  const responsive = {
+    0: { items: 1 },
+    767: { items: 2 },
+    1024: { items: 3 },
+    1500: { items: 4 },
   };
-  let stopDragging = function () {
-    mouseDown = false;
-  };
-
-  slider?.addEventListener("mousemove", (e: any) => {
-    e.preventDefault();
-    if (!mouseDown) {
-      return;
-    }
-    const x = e.pageX - slider?.offsetLeft;
-    const scroll = x - startX;
-    slider.scrollLeft = scrollLeft - scroll;
-  });
-  slider?.addEventListener("mousedown", startDragging, false);
-  slider?.addEventListener("mouseup", stopDragging, false);
-  slider?.addEventListener("mouseleave", stopDragging, false);
   return (
     <div className="flex  w-full mt-[96px] lg:mt-[160px] xl:mt-[200px]">
       <div className="flex flex-col items-center w-full">
@@ -41,12 +23,27 @@ const Testimonials = () => {
         <span className="mt-2 text-bodyText text-center text-base sm:w-[407px]">
           {t("home.testimonials.text")}
         </span>
-        <div className="flex testimonials overflow-x-scroll scroll w-full px-1  2xl:w-[1440px] mt-[48px]">
-          {testimonialData.map((data, idx) => (
+        <div className="flex justify-center  w-full px-1  2xl:w-[1440px] mt-[48px] cursor-grab">
+          {/* {testimonialData.map((data, idx) => (
             <Fragment key={idx}>
               <TestimonialCard data={data} />
             </Fragment>
-          ))}
+          ))} */}
+          <AliceCarousel
+            mouseTracking
+            infinite
+            disableDotsControls
+            disableButtonsControls
+            activeIndex={1}
+            responsive={responsive}
+            paddingLeft={20}
+            paddingRight={5}
+            items={testimonialData.map((data, idx) => (
+              <Fragment key={idx}>
+                <TestimonialCard data={data} />
+              </Fragment>
+            ))}
+          />
         </div>
         <button className="flex mt-[48px] text-white items-center justify-center w-full lg:w-[208px] h-[50px] xs:h-[60px] border border-primary rounded ">
           {t("home.viewMore")}{" "}
