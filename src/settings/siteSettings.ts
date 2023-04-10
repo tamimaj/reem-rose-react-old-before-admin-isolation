@@ -53,6 +53,15 @@ export default {
       text: "header.text5",
       link: ROUTES.SERVICES,
     },
+
+    {
+      text: "footer.text4",
+      link: ROUTES.CONTACT_US,
+    },
+    {
+      text: "footer.text5",
+      link: ROUTES.ABOUT_US,
+    },
   ],
   footerPrivacy: [
     {
@@ -66,15 +75,6 @@ export default {
     {
       text: "footer.text2",
       link: ROUTES.PRIVACY_POLICY,
-    },
-
-    {
-      text: "footer.text4",
-      link: ROUTES.CONTACT_US,
-    },
-    {
-      text: "footer.text5",
-      link: ROUTES.ABOUT_US,
     },
   ],
 };

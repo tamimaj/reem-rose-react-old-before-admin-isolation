@@ -65,50 +65,31 @@ const MobileFooter = () => {
             {t(siteSettings.footerMenu[2].text)}
           </Link>
           <Link
-            to={siteSettings.footerPrivacy[3].link}
+            to={siteSettings.footerMenu[4].link}
             className=" cursor-pointer mb-4"
           >
-            {t(siteSettings.footerPrivacy[3].text)}
-          </Link>
-        </div>
-        <div className=" flex flex-col items-center sm:w-full lg:hidden text-white ">
-          <Link
-            to={siteSettings.footerPrivacy[0].link}
-            className=" cursor-pointer mb-4"
-          >
-            {t(siteSettings.footerPrivacy[0].text)}
-          </Link>
-          <Link
-            to={siteSettings.footerPrivacy[1].link}
-            className=" cursor-pointer mb-4"
-          >
-            {t(siteSettings.footerPrivacy[1].text)}
-          </Link>
-          <Link
-            to={siteSettings.footerPrivacy[2].link}
-            className=" cursor-pointer mb-4"
-          >
-            {t(siteSettings.footerPrivacy[2].text)}
+            {t(siteSettings.footerMenu[4].text)}
           </Link>
         </div>
         <div className="flex flex-col items-end sm:w-full  mb-3">
           <Link
             to={siteSettings.footerMenu[1].link}
-            className="mb-4  cursor-pointer"
+            className="cursor-pointer mb-4 w-[62px]"
           >
             {t(siteSettings.footerMenu[1].text)}
           </Link>
           <Link
             to={siteSettings.footerMenu[3].link}
-            className="mb-4  cursor-pointer"
+            className="cursor-pointer mb-4 w-[62px]"
           >
             {t(siteSettings.footerMenu[3].text)}
           </Link>
+
           <Link
-            to={siteSettings.footerPrivacy[4].link}
-            className=" cursor-pointer mb-4"
+            to={siteSettings.footerMenu[5].link}
+            className=" cursor-pointer mb-4 w-[62px]"
           >
-            {t(siteSettings.footerPrivacy[4].text)}
+            {t(siteSettings.footerMenu[5].text)}
           </Link>
         </div>
       </div>

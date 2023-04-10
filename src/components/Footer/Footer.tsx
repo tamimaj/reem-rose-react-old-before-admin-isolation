@@ -18,7 +18,13 @@ const Footer = () => {
       <div className="flex flex-col w-[90%] max-w-[1440px] lg:items-start items-center">
         <DesktopFooter />
         <MobileFooter />
-
+        <div className="mt-[64px] flex lg:hidden justify-between text-white w-full //xs:w-[350px]">
+          {siteSettings.footerPrivacy.map((v, idx) => (
+            <span className="text-xs xs:text-sm cursor-pointer " key={idx}>
+              {t(v.text)}
+            </span>
+          ))}
+        </div>
         <div className="flex flex-col lg:flex-row items-center  justify-between w-full mt-6 lg:mt-[121px]">
           <span className="text-xs text-bodyText mb-2 lg:mb-0">
             {t("footer.copyrightText")}
