@@ -6,7 +6,9 @@ import { IoMdMenu } from "react-icons/io";
 import siteSettings from "../../settings/siteSettings";
 import LanguagesMenu from "./LanguageMenu/LanguagesMenu";
 import MobileMenuDrawer from "./MobileMenuDrawer/MobileMenuDrawer";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import ROUTES from "../../settings/ROUTES";
+import LanguageDetector from "../../hooks/LanguageDetector/LanguageDetector";
 
 interface HeaderTypes {
   text: string;
@@ -16,11 +18,10 @@ const Header = () => {
   const { i18n, t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const { pathname } = useLocation();
   const [lang, setLang] = useState<string | null>("");
 
-  useEffect(() => {
-    setLang(i18n.language);
-  }, [i18n.language]);
+  LanguageDetector(setLang);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen((v) => !v);
@@ -32,9 +33,14 @@ const Header = () => {
 
   return (
     <>
-      <header className="flex justify-center w-full font-PlusJakartaSans">
+      <header
+        className={`${
+          pathname === "/admin" ? "hidden" : "flex"
+        } justify-center w-full font-PlusJakartaSans`}
+      >
         <div className="max-w-[1440px]  w-[90%] h-[40px] mt-5 flex items-center justify-between">
           <img
+            onClick={() => navigate(ROUTES.HOME)}
             src={siteSettings.logo.url}
             alt={siteSettings.logo.alt}
             className="w-[24px] h-[24px] cursor-pointer"
@@ -60,7 +66,7 @@ const Header = () => {
             </div> */}
             <LanguagesMenu />
             <div
-              onClick={() => navigate("/schedule")}
+              onClick={() => navigate(ROUTES.SCHEDULE)}
               className="flex text-primary items-center ml-[48px] cursor-pointer"
             >
               <span>{t(siteSettings.scheduleText)}</span>

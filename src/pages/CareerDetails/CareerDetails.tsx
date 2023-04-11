@@ -2,14 +2,13 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { MdArrowLeft, MdArrowRight } from "react-icons/md";
 import CareerForm from "../../components/Career/CareerForm/CareerForm";
+import LanguageDetector from "../../hooks/LanguageDetector/LanguageDetector";
 
 const CareerDetails = () => {
   const { i18n, t } = useTranslation();
   const [lang, setLang] = useState<string | null>("");
 
-  useEffect(() => {
-    setLang(i18n.language);
-  }, [i18n.language]);
+  LanguageDetector(setLang);
 
   return (
     <div className="lg:mt-40 mb-3 lg:mb-12 w-full flex justify-center">

@@ -2,15 +2,14 @@ import { useEffect, useState } from "react";
 import { FiArrowUpRight, FiChevronDown } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
 import { MdArrowLeft, MdArrowRight } from "react-icons/md";
+import LanguageDetector from "../../hooks/LanguageDetector/LanguageDetector";
 
 const DisclosureComponent = () => {
   const { i18n, t } = useTranslation();
   const [lang, setLang] = useState<string | null>("");
   const [active, setActive] = useState("");
 
-  useEffect(() => {
-    setLang(i18n.language);
-  }, [i18n.language]);
+  LanguageDetector(setLang);
 
   const handleActive = (v: string) => {
     if (active === v) {

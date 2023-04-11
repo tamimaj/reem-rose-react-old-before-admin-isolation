@@ -14,6 +14,7 @@ import postImage from "../../assets/tempImages/postImage.png";
 import BlogCard from "../../components/Blog/BlogCard/BlogCard";
 import { atelierCaveDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import LanguageDetector from "../../hooks/LanguageDetector/LanguageDetector";
 
 const BlogPost = () => {
   const { i18n, t } = useTranslation();
@@ -45,9 +46,7 @@ const BlogPost = () => {
     setActive(activeElement);
   };
 
-  useEffect(() => {
-    setLang(i18n.language);
-  }, [i18n.language]);
+  LanguageDetector(setLang);
   return (
     <div className="lg:mt-40 mb-3 lg:mb-12 w-full flex justify-center">
       <div className="w-[90%] max-w-[1440px] flex flex-col  items-center">

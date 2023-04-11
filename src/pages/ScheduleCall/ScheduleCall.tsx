@@ -71,7 +71,7 @@ const ScheduleCall = () => {
                   "rounded text-primary min-w-full lg:min-w-[300px] xl:min-w-[350px] h-[300px] sm:h-[327px] lg:h-auto "
                 }
               />
-              <div className="flex flex-col mt-8 lg:mt-0 ml-5 xl:ml-[64px] lg:h-[438px] ">
+              <div className="flex flex-col mt-8 lg:mt-0 lg:ml-5 xl:ml-[64px] lg:h-[438px] ">
                 <span className="text-base text-white mb-6">
                   Thursday, March 23
                 </span>

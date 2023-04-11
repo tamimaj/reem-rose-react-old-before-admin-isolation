@@ -1,28 +1,29 @@
 import logo from "../assets/icons/logo.svg";
 import footerLogo from "../assets/icons/footerLogo.svg";
 import translate from "../assets/icons/translate.svg";
+import ROUTES from "./ROUTES";
 
 export default {
   header: [
     {
       text: "header.text1",
-      link: "/",
+      link: ROUTES.HOME,
     },
     {
       text: "header.text2",
-      link: "/blog",
+      link: ROUTES.BLOG,
     },
     {
       text: "header.text3",
-      link: "/portfolio",
+      link: ROUTES.PORTFOLIO,
     },
     {
       text: "header.text4",
-      link: "/careers",
+      link: ROUTES.CAREERS,
     },
     {
       text: "header.text5",
-      link: "/services",
+      link: ROUTES.SERVICES,
     },
   ],
   scheduleText: "header.scheduleText",
@@ -38,33 +39,42 @@ export default {
   footerMenu: [
     {
       text: "header.text2",
-      link: "/blog",
+      link: ROUTES.BLOG,
     },
     {
       text: "header.text3",
-      link: "/portfolio",
+      link: ROUTES.PORTFOLIO,
     },
     {
       text: "header.text4",
-      link: "/careers",
+      link: ROUTES.CAREERS,
     },
     {
       text: "header.text5",
-      link: "/services",
+      link: ROUTES.SERVICES,
+    },
+
+    {
+      text: "footer.text4",
+      link: ROUTES.CONTACT_US,
+    },
+    {
+      text: "footer.text5",
+      link: ROUTES.ABOUT_US,
     },
   ],
   footerPrivacy: [
     {
+      text: "footer.text3",
+      link: ROUTES.TERMS_AND_CONDITIONS,
+    },
+    {
       text: "footer.text1",
-      link: "/terms-of-use",
+      link: ROUTES.TERMS_OF_USE,
     },
     {
       text: "footer.text2",
-      link: "/privacy-policy",
-    },
-    {
-      text: "footer.text3",
-      link: "/terms-and-conditions",
+      link: ROUTES.PRIVACY_POLICY,
     },
   ],
 };

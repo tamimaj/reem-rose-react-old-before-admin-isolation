@@ -1,4 +1,5 @@
 import "rc-drawer/assets/index.css";
+import "react-alice-carousel/lib/alice-carousel.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Layout from "./components/layout/Layout";
@@ -13,23 +14,28 @@ import ScheduleCall from "./pages/ScheduleCall/ScheduleCall";
 import TermsOfUse from "./pages/TermsOfUse/TermsOfUse";
 import ContactUs from "./pages/ContactUs/ContactUs";
 import AboutUs from "./pages/AboutUs/AboutUs";
+import Admin from "./pages/Admin/Admin";
+import Login from "./pages/Login/Login";
+import ROUTES from "./settings/ROUTES";
 
 function App() {
   return (
     <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/blog" element={<Blogs />} />
-          <Route path="/blog-post" element={<BlogPost />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/career-details" element={<CareerDetails />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/schedule" element={<ScheduleCall />} />
-          <Route path="/terms-of-use" element={<TermsOfUse />} />
-          <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/about-us" element={<AboutUs />} />
+          <Route path={ROUTES.HOME} element={<Home />} />
+          <Route path={ROUTES.BLOG} element={<Blogs />} />
+          <Route path={ROUTES.BLOG_POST} element={<BlogPost />} />
+          <Route path={ROUTES.CAREERS} element={<Careers />} />
+          <Route path={ROUTES.CAREER_DETAILS} element={<CareerDetails />} />
+          <Route path={ROUTES.SERVICES} element={<Services />} />
+          <Route path={ROUTES.PORTFOLIO} element={<Portfolio />} />
+          <Route path={ROUTES.SCHEDULE} element={<ScheduleCall />} />
+          <Route path={ROUTES.TERMS_OF_USE} element={<TermsOfUse />} />
+          <Route path={ROUTES.CONTACT_US} element={<ContactUs />} />
+          <Route path={ROUTES.ABOUT_US} element={<AboutUs />} />
+          <Route path={ROUTES.ADMIN} element={<Admin />} />
+          <Route path={ROUTES.LOGIN} element={<Login />} />
         </Routes>
       </Layout>
     </Router>

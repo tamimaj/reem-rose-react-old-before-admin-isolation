@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import LanguageDetector from "../../../hooks/LanguageDetector/LanguageDetector";
 
 type CareerType = {
   heading: string;
@@ -17,9 +18,7 @@ const CareerCard: React.FC<CareerDataType> = ({ careerData }) => {
   const { i18n, t } = useTranslation();
   const [lang, setLang] = useState<string | null>("");
 
-  useEffect(() => {
-    setLang(i18n.language);
-  }, [i18n.language]);
+  LanguageDetector(setLang);
 
   return (
     <div className="rounded px-6 py-4 w-full bg-primaryLight mb-4">

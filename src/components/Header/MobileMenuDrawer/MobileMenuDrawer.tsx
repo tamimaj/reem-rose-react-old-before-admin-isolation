@@ -8,6 +8,9 @@ import { MdOutlineClose, MdArrowRight, MdArrowLeft } from "react-icons/md";
 import siteSettings from "../../../settings/siteSettings";
 import LanguagesMenu from "../LanguageMenu/LanguagesMenu";
 import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
+import ROUTES from "../../../settings/ROUTES";
+import LanguageDetector from "../../../hooks/LanguageDetector/LanguageDetector";
+import path from "path";
 
 interface drawerProps {
   openMenu: boolean;
@@ -23,22 +26,23 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
   handleMenuClose,
 }) => {
   const { width } = useWindowSize();
-  const { i18n, t } = useTranslation();
-  const [active, setActive] = useState<string>("Home");
+  const { t } = useTranslation();
+  const { pathname } = useLocation();
+  const [active, setActive] = useState<string>(pathname);
   const [lang, setLang] = useState<string | null>("");
   const navigate = useNavigate();
-  const { pathname } = useLocation();
 
   console.log(pathname, "v");
+  useEffect(() => {
+    if (pathname) setActive(pathname);
+  }, [pathname]);
 
   const handleSelection = (v: string, link: string) => {
-    setActive(v);
     navigate(link);
+    setActive(v);
     handleMenuClose();
   };
-  useEffect(() => {
-    setLang(i18n.language);
-  }, [i18n.language]);
+  LanguageDetector(setLang);
   return (
     <RcDrawer
       width={width <= 520 ? "100%" : "390px"}
@@ -49,7 +53,7 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
       <div className="flex flex-col justify-between  w-full h-full bg-black text-primary overflow-x-hidden">
         {/* HEADER */}
         <div className="w-full flex justify-between items-center pt-[32px]  pb-[48px] px-4 mb-4">
-          <Link to={"/"} onClick={handleMenuClose} className="flex ">
+          <Link to={ROUTES.HOME} onClick={handleMenuClose} className="flex ">
             <span className="text-primary text-[16px] font-RobotoSlab">
               {t("home.title")}
             </span>
@@ -70,7 +74,7 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
             className="flex items-center ps-6 pe-6 mb-6 "
             onClick={() => handleSelection(v.text, v.link)}
           >
-            {v.text === active &&
+            {v.link === active &&
               (lang === "ar" ? (
                 <MdArrowLeft className={`text-[32px] mr-3 text-primary mt-3`} />
               ) : (
@@ -78,7 +82,7 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
               ))}
             <span
               className={`text-[34px] xs:text-[48px] ${
-                v.text === active ? "text-primary" : "text-bodyText"
+                v.link === active ? "text-primary" : "text-bodyText"
               }  cursor-pointer`}
             >
               {t(v.text)}
@@ -86,13 +90,19 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
           </div>
         ))}
         <div className="flex flex-col mb-[38px] items-center justify-center">
-          <span className="flex  text-[24px]">
+          <span
+            onClick={() => {
+              navigate(ROUTES.SCHEDULE);
+              handleMenuClose();
+            }}
+            className="flex  text-[24px] cursor-pointer"
+          >
             {t(siteSettings.scheduleText)}
           </span>
           <div className="flex items-center  mt-[48px] ml-[48px] text-primary text-[24px]">
-            <AiFillGithub className="mr-[48px] " />
-            <AiFillLinkedin className="mr-[48px] " />
-            <AiOutlineTwitter className="mr-[48px] " />
+            <AiFillGithub className="mr-[48px] cursor-pointer " />
+            <AiFillLinkedin className="mr-[48px] cursor-pointer " />
+            <AiOutlineTwitter className="mr-[48px] cursor-pointer " />
           </div>
         </div>
       </div>
