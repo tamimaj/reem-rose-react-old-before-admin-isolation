@@ -5,7 +5,7 @@ import { MdArrowLeft, MdArrowRight } from "react-icons/md";
 import LanguageDetector from "../../hooks/LanguageDetector/LanguageDetector";
 
 const DisclosureComponent = () => {
-  const { i18n, t } = useTranslation();
+  const { t } = useTranslation();
   const [lang, setLang] = useState<string | null>("");
   const [active, setActive] = useState("");
 

@@ -1,12 +1,47 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import AliceCarousel from "react-alice-carousel";
 
-import { testimonialData } from "../../../helpers/temphelpers/tempHelpers";
 import TestimonialCard from "./TestimonialCard/TestimonialCard";
+import { getTestimonials } from "../../../api/public/testimonials";
 
-const Testimonials = () => {
+interface TestimonialDataProps {
+  name: string;
+  profileImage: string;
+  profession: string;
+  socialLinks: [
+    {
+      provider: string;
+      link: string;
+    }
+  ];
+  review: string;
+  reviewAddedAt: string;
+}
+
+interface PortfolioProps {
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Testimonials: React.FC<PortfolioProps> = ({ setLoading }) => {
   const { t } = useTranslation();
+  const [testimonialData, setTestimonialData] = useState<
+    TestimonialDataProps[]
+  >([]);
+
+  const getTestimonialData = async () => {
+    setLoading(true);
+    let response = await getTestimonials();
+    if (response?.status === 200) {
+      setTestimonialData(response.data);
+    } else {
+      console.log("error occurred:", response?.data);
+    }
+    setLoading(false);
+  };
+  useEffect(() => {
+    getTestimonialData();
+  }, []);
 
   const responsive = {
     0: { items: 1 },
