@@ -27,6 +27,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ setLoading }) => {
   const navigate = useNavigate();
   const [activeIndex, setActiveIndex] = useState(0);
   const [portfolioData, setPortfolioData] = useState<PortfolioDataProps[]>([]);
+
   const responsive = {
     0: { items: 1 },
     767: { items: 2 },
@@ -63,7 +64,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ setLoading }) => {
   };
   useEffect(() => {
     getPortfolioData();
-  }, []);
+  });
 
   return (
     <div className="flex flex-col items-center lg:items-start lg:flex-row w-full mt-[64px] lg:mt-[204px]">
