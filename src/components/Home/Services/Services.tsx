@@ -41,7 +41,7 @@ const Services: React.FC<ServicesProps> = ({ setLoading }) => {
   };
   useEffect(() => {
     getServicesData();
-  });
+  }, []);
 
   return (
     <div className="flex w-full mt-[120px] lg:mt-[204px]">

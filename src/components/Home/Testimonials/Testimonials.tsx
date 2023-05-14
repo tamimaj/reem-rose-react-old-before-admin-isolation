@@ -41,7 +41,7 @@ const Testimonials: React.FC<PortfolioProps> = ({ setLoading }) => {
   };
   useEffect(() => {
     getTestimonialData();
-  });
+  }, []);
 
   const responsive = {
     0: { items: 1 },

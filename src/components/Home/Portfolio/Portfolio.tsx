@@ -64,8 +64,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ setLoading }) => {
   };
   useEffect(() => {
     getPortfolioData();
-  });
-
+  }, []);
   return (
     <div className="flex flex-col items-center lg:items-start lg:flex-row w-full mt-[64px] lg:mt-[204px]">
       <div className="flex flex-col items-center lg:items-start mb-8 lg:mb-0 lg:ml-6">
