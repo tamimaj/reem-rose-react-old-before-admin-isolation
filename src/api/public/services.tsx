@@ -11,3 +11,13 @@ export const getServices = async () => {
     console.log(err, "err");
   }
 };
+
+export const getServiceById = async (id: string) => {
+  try {
+    let url = endpoint + "/" + id;
+    const result = await api.get(url);
+    return result;
+  } catch (err) {
+    console.log(err, "err");
+  }
+};

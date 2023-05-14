@@ -59,11 +59,6 @@ const Testimonials: React.FC<PortfolioProps> = ({ setLoading }) => {
           {t("home.testimonials.text")}
         </span>
         <div className="flex justify-center  w-full px-1  2xl:w-[1440px] mt-[48px] cursor-grab">
-          {/* {testimonialData.map((data, idx) => (
-            <Fragment key={idx}>
-              <TestimonialCard data={data} />
-            </Fragment>
-          ))} */}
           <AliceCarousel
             mouseTracking
             infinite
@@ -80,9 +75,9 @@ const Testimonials: React.FC<PortfolioProps> = ({ setLoading }) => {
             ))}
           />
         </div>
-        <button className="flex mt-[48px] text-white items-center justify-center w-full lg:w-[208px] h-[50px] xs:h-[60px] border border-primary rounded ">
+        {/* <button className="flex mt-[48px] text-white items-center justify-center w-full lg:w-[208px] h-[50px] xs:h-[60px] border border-primary rounded ">
           {t("home.viewMore")}{" "}
-        </button>
+        </button> */}
       </div>
     </div>
   );
