@@ -1,6 +1,8 @@
 import "rc-drawer/assets/index.css";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import Layout from "./components/layout/Layout";
 import Home from "./pages/Home/Home";
@@ -22,6 +24,20 @@ function App() {
   return (
     <Router>
       <Layout>
+        <ToastContainer
+          position="top-center"
+          theme="dark"
+          autoClose={5000}
+          hideProgressBar={true}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          closeButton={false}
+          className="min-h-auto p-0 m-0"
+        />
         <Routes>
           <Route path={ROUTES.HOME} element={<Home />} />
           <Route path={ROUTES.BLOG} element={<Blogs />} />
