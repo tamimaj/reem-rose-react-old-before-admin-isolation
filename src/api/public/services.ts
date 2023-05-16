@@ -19,5 +19,6 @@ export const getServiceById = async (id: string) => {
     return result;
   } catch (err) {
     console.log(err, "err");
+    return null;
   }
 };

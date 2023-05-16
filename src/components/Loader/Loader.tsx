@@ -2,12 +2,13 @@ import React from "react";
 
 import loader from "../../assets/icons/loader.svg";
 
-const Loader = () => {
+interface LoaderTypes {
+  className: string;
+}
+const Loader: React.FC<LoaderTypes> = ({ className }) => {
   return (
     <div
-      className={
-        "flex justify-center items-center h-full w-[100%] bg-transparent"
-      }
+      className={`${className} flex justify-center items-center w-[100%] bg-transparent`}
     >
       <img
         src={loader}

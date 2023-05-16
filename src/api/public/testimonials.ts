@@ -9,5 +9,6 @@ export const getTestimonials = async () => {
     return result;
   } catch (err) {
     console.log(err, "err");
+    return null;
   }
 };

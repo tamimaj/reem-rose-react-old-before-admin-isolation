@@ -9,5 +9,6 @@ export const getProjects = async () => {
     return result;
   } catch (err) {
     console.log(err, "err");
+    return null;
   }
 };

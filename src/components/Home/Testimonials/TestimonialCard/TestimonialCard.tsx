@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment";
 import { AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
+
 import { HtmlConverter } from "../../../../hooks/HtmlConverter/HtmlConverter";
 
 type Data = {
@@ -34,8 +35,29 @@ const TestimonialCard: React.FC<TestimonialDataType> = ({ data }) => {
               {data.name}
             </h6>
             <div className="flex text-primary">
-              <AiFillLinkedin className="w-[20px] h-[20px]  cursor-pointer mr-4 hover:opacity-100 cursor-pointer opacity-40" />
-              <AiOutlineTwitter className="w-[20px] h-[20px] cursor-pointer hover:opacity-100 cursor-pointer opacity-40" />
+              {data.socialLinks.map((v, idx) =>
+                v.provider === "LinkedIn" ? (
+                  <a
+                    href={v?.link}
+                    key={idx}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <AiFillLinkedin className="w-[20px] h-[20px]  cursor-pointer mr-4 hover:opacity-100 cursor-pointer opacity-40" />
+                  </a>
+                ) : (
+                  v.provider === "Twitter" && (
+                    <a
+                      href={v?.link}
+                      key={idx}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      <AiOutlineTwitter className="w-[20px] h-[20px] cursor-pointer hover:opacity-100 cursor-pointer opacity-40" />
+                    </a>
+                  )
+                )
+              )}
             </div>
           </div>
           <span className="text-bodyText text-sm mt-2">{data.profession}</span>
