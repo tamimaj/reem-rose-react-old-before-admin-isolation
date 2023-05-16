@@ -60,7 +60,7 @@ const Portfolio = () => {
     let response = await getProjects();
     if (!response || response?.status !== 200) {
       setLoading(false);
-      toast(<CustomToast message={"Projects Not found"} />);
+      toast(<CustomToast message={t("portfolio.error")} />);
       return;
     }
     setPortfolioData(response?.data);

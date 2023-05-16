@@ -49,7 +49,8 @@
     },
     "testimonials": {
       "title": "Testimonials",
-      "text": "Hear it from our satisfied clients: Our commitment to excellence shines through in every project"
+      "text": "Hear it from our satisfied clients: Our commitment to excellence shines through in every project",
+      "error": "Testimonials Not found"
     },
     "readMore": "Read more",
     "viewMore": "View More"
@@ -102,7 +103,8 @@
   },
   "services": {
     "heading": "Tailored Web Solutions to Drive Your Business Forward: Our Services",
-    "tagline": "From Concept to Launch, Our Expertise Delivers Websites That Captivate and Convert"
+    "tagline": "From Concept to Launch, Our Expertise Delivers Websites That Captivate and Convert",
+    "error": "Services Not found"
   },
   "portfolio": {
     "heading": "Experience Excellence in Web Development: Explore Our Portfolio",
@@ -110,7 +112,8 @@
     "services": "Services",
     "techText": "Tech that we used",
     "visitText": "Visit Website",
-    "codeText": "Get Code"
+    "codeText": "Get Code",
+    "error": "Projects Not found"
   },
   "schedule": {
     "heading": "Let's Discuss Your Web Development Needs: Schedule a Call",

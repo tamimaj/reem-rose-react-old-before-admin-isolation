@@ -31,10 +31,10 @@ const Services = () => {
   };
   const getServicesData = async () => {
     setLoading(true);
-    const response: any = await getServices();
+    const response = await getServices();
     if (!response || response?.status !== 200) {
       setLoading(false);
-      toast(<CustomToast message={"Services Not found"} />);
+      toast(<CustomToast message={t("services.error")} />);
       return;
     }
     setServicesData(response?.data);

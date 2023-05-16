@@ -32,12 +32,13 @@ const Testimonials = () => {
   const getTestimonialData = async () => {
     setLoading(true);
     let response = await getTestimonials();
-    if (response?.status === 200) {
-      setTestimonialData(response.data);
-    } else {
-      toast(<CustomToast message={"Testimonials Not found"} />);
-      console.log("error occurred:", response?.data);
+
+    if (!response || response?.status !== 200) {
+      setLoading(false);
+      toast(<CustomToast message={t("home.testimonials.error")} />);
+      return;
     }
+    setTestimonialData(response?.data);
     setLoading(false);
   };
 
