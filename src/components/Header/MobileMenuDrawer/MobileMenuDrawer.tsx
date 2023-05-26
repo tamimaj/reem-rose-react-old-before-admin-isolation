@@ -32,7 +32,6 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
   const [lang, setLang] = useState<string | null>("");
   const navigate = useNavigate();
 
-  console.log(pathname, "v");
   useEffect(() => {
     if (pathname) setActive(pathname);
   }, [pathname]);

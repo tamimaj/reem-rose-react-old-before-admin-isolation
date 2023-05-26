@@ -59,15 +59,13 @@
     "title": "Welcome to ReemRose Blog",
     "tagline": "From Ideas to Implementation: Tips, Tricks, and Best Practices for Successful Software Development",
     "categories": {
-      "heading": "All Categories",
-      "menuItem1": "Back-End Development",
-      "menuItem2": "Front-End Development",
-      "menuItem3": "UI/UX",
-      "menuItem4": "SEO"
+      "heading": "All Categories"
     },
     "readingText": "Continue Reading",
     "backToBlog": "Back to Blog",
-    "relatedBlogPost": "Related Blogposts"
+    "relatedBlogPost": "Related Blogposts",
+    "error": "Blog Posts Not found",
+    "CategoriesError": "Categories Not found"
   },
   "careers": {
     "heading": "Join Our Team of Innovators and Shape the Future of Software Development",

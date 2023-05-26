@@ -96,14 +96,14 @@ const Services = () => {
             {servicesData.map(
               (v, idx) =>
                 active === idx && (
-                  <>
+                  <Fragment key={idx}>
                     {" "}
                     <h5 className="text-white text-[24px]">{v.title}</h5>
                     <p
                       dangerouslySetInnerHTML={HtmlConverter(v.summary)}
                       className="text-sm 2xl:text-base text-bodyText mt-6"
                     />
-                  </>
+                  </Fragment>
                 )
             )}
             <span

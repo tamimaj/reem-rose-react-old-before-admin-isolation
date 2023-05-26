@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import moment from "moment";
 
 import blogImage1 from "../../../assets/tempImages/blogImage.png";
 import blogImage2 from "../../../assets/tempImages/blogimage2.png";
@@ -12,9 +13,17 @@ import LanguageDetector from "../../../hooks/LanguageDetector/LanguageDetector";
 type BlogCardType = {
   idx: any;
   className?: string;
+  data: {
+    title: string;
+    summary: string;
+    createdAt: string;
+    tags: string[];
+    slug: string;
+    coverImage: string;
+  };
 };
-const BlogCard: React.FC<BlogCardType> = ({ idx, className }) => {
-  const { i18n, t } = useTranslation();
+const BlogCard: React.FC<BlogCardType> = ({ idx, className, data }) => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [lang, setLang] = useState<string | null>("");
 
@@ -22,41 +31,23 @@ const BlogCard: React.FC<BlogCardType> = ({ idx, className }) => {
 
   return (
     <div
-      className={`${className} flex flex-col 3xl:w-[470px] rounded bg-primaryLight p-6`}
+      className={`${className} flex flex-col w-auto 3xl:w-[470px] rounded bg-primaryLight p-6`}
     >
       <img
-        src={
-          idx === 0
-            ? blogImage1
-            : idx === 1
-            ? blogImage2
-            : idx === 2
-            ? blogImage3
-            : idx === 3
-            ? blogImage4
-            : blogImage1
-        }
+        src={data.coverImage}
         alt="blog Image"
         className="w-full xl:w-[421px] lg:h-[200px]"
       />
       <h5 className="mt-[32px] font-RobotoSlab font-semibold text-base text-white line-clamp-2">
-        Behind the Scenes: The Role and Importance of Back-End Development in
-        Creating Seamless User ...
+        {data.title}
       </h5>
       <div className="flex justify-between w-full text-sm text-bodyText mt-2">
-        <span>By William Griffin</span>
-        <span>12.12.2022</span>
+        <span>By Tamim</span>
+        <span>{moment(data.createdAt).format("DD.MM.YY")}</span>
       </div>
-      <p className="text-base text-heading mt-4">
-        TDD is not as difficult as it may sound if you have never tried it
-        before. With practice, this methodology greatly improves your
-        productivity, your confidence in your code, and your love for
-        programming. There is an undeniable rush of dopamine when you see your
-        red tests becoming green with every step, hence your algorithm emerging
-        from that...
-      </p>
+      <p className="text-base text-heading mt-4">{data.summary}</p>
       <div
-        onClick={() => navigate("/blog-post")}
+        onClick={() => navigate("/blog-post/" + data.slug)}
         className="flex  text-sm text-primary mt-4 cursor-pointer"
       >
         {t("blog.readingText")}
@@ -67,13 +58,12 @@ const BlogCard: React.FC<BlogCardType> = ({ idx, className }) => {
         )}
       </div>
       <div className="mt-[32px] flex flex-wrap text-sm text-white font-RobotoSlab">
-        <span className="mr-2">#NestJS</span>
-        <span className="mr-2">#React</span>
-        <span className="mr-2">#PHP</span>
-        <span className="mr-2">#C++</span>
-        <span className="mr-2">#Ruby</span>
-        <span className="mr-2">#Python</span>
-        <span className="mr-2">+ 7 tags</span>
+        {data.tags.length > 0 &&
+          data.tags.map((tag, idx) => (
+            <span className="mr-2" key={idx}>
+              #{tag}
+            </span>
+          ))}
       </div>
     </div>
   );
