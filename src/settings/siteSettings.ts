@@ -11,7 +11,7 @@ export default {
     },
     {
       text: "header.text2",
-      link: ROUTES.BLOG,
+      link: ROUTES.BLOG_PAGE,
     },
     {
       text: "header.text3",

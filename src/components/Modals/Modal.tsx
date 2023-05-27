@@ -18,6 +18,7 @@ const Modal: React.FC<ModalType> = ({ setDialogOpen }) => {
   };
   const modalRef = useRef(null);
   useOutsideClick(modalRef, closeModal);
+
   const handleDialog = () => {
     closeModal();
   };

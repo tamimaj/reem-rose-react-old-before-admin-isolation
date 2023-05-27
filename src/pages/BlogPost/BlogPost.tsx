@@ -12,12 +12,11 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
 import postImage from "../../assets/tempImages/postImage.png";
 import BlogCard from "../../components/Blog/BlogCard/BlogCard";
-import { atelierCaveDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import LanguageDetector from "../../hooks/LanguageDetector/LanguageDetector";
 
 const BlogPost = () => {
-  const { i18n, t } = useTranslation();
+  const { t } = useTranslation();
   const [active, setActive] = useState<string>("section 1");
   const [lang, setLang] = useState<string | null>("");
   const blogRef: RefObject<HTMLDivElement> = useRef(null);
@@ -353,9 +352,9 @@ expect(newAppointment).toEqual({patientId: 1,startTime,endTime,confirmed: false,
             </div>
           </div>
           <div ref={blogRef} className="flex w-full overflow-x-scroll scroll">
-            {[...Array(4)].map((v, idx) => (
-              <BlogCard idx={idx} className="mr-4 min-w-[470px]" />
-            ))}
+            {/* {[...Array(4)].map((v, idx) => (
+              <BlogCard idx={idx} className="mr-4 min-w-[470px]" data={v}/>
+            ))} */}
           </div>
         </div>
       </div>
