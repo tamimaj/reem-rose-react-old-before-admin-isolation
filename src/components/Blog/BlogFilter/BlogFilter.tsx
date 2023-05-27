@@ -3,7 +3,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { RxCross2 } from "react-icons/rx";
 
 import SortMenu from "../../SortMenu/SortMenu";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import InputModal from "../../Modals/InputModal/InputModal";
 import { useOutsideClick } from "../../../hooks/outsideClick/useOutsideClick";
 
@@ -20,7 +20,10 @@ const BlogFilter: React.FC<FilterType> = ({
 }) => {
   const navigate = useNavigate();
   const [dialogOpen, setDialogOpen] = useState(false);
-  const params = useParams();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+
+  const title = queryParams.get("search");
 
   const closeModal = () => {
     setDialogOpen(false);
@@ -56,7 +59,7 @@ const BlogFilter: React.FC<FilterType> = ({
           className="text-bodyText pl-4 bg-transparent border-none outline-none"
           onChange={(e) => handleSearchText(e)}
         />
-        {params?.title ? (
+        {title ? (
           <button onClick={handleClearSearch} className="cursor-pointer">
             <RxCross2 className="text-primary text-[24px]" />
           </button>
@@ -87,7 +90,7 @@ const BlogFilter: React.FC<FilterType> = ({
             handleSearchText={handleSearchText}
             handleSubmit={handleSubmit}
             handleClearSearch={handleClearSearch}
-            title={params?.title}
+            title={title}
           />
         )}
       </div>

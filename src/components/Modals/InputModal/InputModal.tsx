@@ -7,7 +7,7 @@ type ModalType = {
   handleSearchText: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   handleClearSearch: () => void;
-  title: string | undefined;
+  title: string | null;
 };
 
 const InputModal: React.FC<ModalType> = ({
