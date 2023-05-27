@@ -8,7 +8,7 @@ import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import Search from "../../components/Admin/Search/Search";
 import Tags from "../../components/Tags/Tags";
 import StatusTag from "../../components/Admin/StatusTag/StatusTag";
-import Modal from "../../components/Modal/Modal";
+import Modal from "../../components/Modals/Modal";
 import SortMenu from "../../components/Admin/SortMenu/SortMenu";
 import { Link } from "react-router-dom";
 import ROUTES from "../../settings/ROUTES";

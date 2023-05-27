@@ -5,15 +5,15 @@ const endpoint = "/posts";
 export const getBlogPosts = async (
   page: number,
   pageSize: number,
-  search: object,
-  filters: object
+  title: string | undefined,
+  category: string | undefined
 ) => {
   try {
-    console.log(search, "v");
     let url = endpoint;
     let params;
-    if (search) params = { page, pageSize, search };
-    else if (filters) params = { page, pageSize, filters };
+    if (title) params = { page, pageSize, search: { title: title } };
+    else if (category)
+      params = { page, pageSize, filters: { categories: category } };
     else {
       params = { page, pageSize };
     }

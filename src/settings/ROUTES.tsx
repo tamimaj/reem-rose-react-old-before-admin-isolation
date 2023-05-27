@@ -1,6 +1,9 @@
 const ROUTES = {
   HOME: "/",
-  BLOG: "/blog",
+  BLOG: "/blog/:page",
+  BLOG_PAGE: "/blog/1",
+  BLOG_SEARCH: "/blog/:page/search/:title",
+  BLOG_FILTER: "/blog/:page/filter/:name/:category",
   BLOG_POST: "/blog-post/:slug",
   CAREERS: "/careers",
   CAREER_DETAILS: "/career-details",

@@ -36,7 +36,7 @@ const BlogCard: React.FC<BlogCardType> = ({ idx, className, data }) => {
       <img
         src={data.coverImage}
         alt="blog Image"
-        className="w-full xl:w-[421px] lg:h-[200px]"
+        className="w-full xl:w-[421px] sm:h-[350px] lg:h-[200px]"
       />
       <h5 className="mt-[32px] font-RobotoSlab font-semibold text-base text-white line-clamp-2">
         {data.title}
