@@ -41,8 +41,6 @@ function App() {
         <Routes>
           <Route path={ROUTES.HOME} element={<Home />} />
           <Route path={ROUTES.BLOG} element={<Blogs />} />
-          <Route path={ROUTES.BLOG_SEARCH} element={<Blogs />} />
-          <Route path={ROUTES.BLOG_FILTER} element={<Blogs />} />
           <Route path={ROUTES.BLOG_POST} element={<BlogPost />} />
           <Route path={ROUTES.CAREERS} element={<Careers />} />
           <Route path={ROUTES.CAREER_DETAILS} element={<CareerDetails />} />

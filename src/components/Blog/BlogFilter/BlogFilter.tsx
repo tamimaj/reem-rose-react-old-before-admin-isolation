@@ -30,13 +30,13 @@ const BlogFilter: React.FC<FilterType> = ({
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!search.title) navigate("/blog/1");
-    else navigate("/blog/1/search/" + search.title);
+    if (!search.title) navigate("/blog?page=1");
+    else navigate("/blog?page=1&search=" + search.title);
   };
 
   const handleClearSearch = () => {
     setSearch({ title: "" });
-    navigate("/blog/1");
+    navigate("/blog?page=1");
   };
   const handleSearchText = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch({ title: e.target.value });

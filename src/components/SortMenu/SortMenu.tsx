@@ -1,9 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
 import { useOutsideClick } from "../../hooks/outsideClick/useOutsideClick";
 import { useTranslation } from "react-i18next";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 type SortType = {
   className?: string;
@@ -30,18 +30,27 @@ const SortMenu: React.FC<SortType> = ({
   const sortRef = useRef(null);
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const params = useParams();
-
+  const location = useLocation();
+  const [categoryName, setCategoryName] = useState<string | undefined>("");
+  const queryParams = new URLSearchParams(location.search);
+  const categorySlug = queryParams.get("slug");
   useOutsideClick(sortRef, setSortMenu);
   const handleClose = (v?: CategoryType) => {
     setSortMenu(false);
 
-    if (v) navigate("/blog/1/filter/" + v.name + "/" + v._id);
+    if (v) navigate("/blog?page=1&slug=" + v.slug + "&category=" + v._id);
     else {
-      navigate("/blog/1");
+      navigate("/blog?page=1");
       setSearch({ title: "" });
     }
   };
+  useEffect(() => {
+    const categoryData = categoriesData.find((v, idx) => {
+      return v.slug === categorySlug;
+    });
+    setCategoryName(categoryData?.name);
+  }, [categorySlug]);
+
   return (
     <div className={`${className} relative`} ref={sortRef}>
       <button
@@ -50,7 +59,7 @@ const SortMenu: React.FC<SortType> = ({
       >
         <div className="flex">
           <p className="mr-1 text-xs xs:text-base text-white">
-            {params?.name ? params?.name : t("blog.categories.heading")}
+            {categoryName ? categoryName : t("blog.categories.heading")}
           </p>
         </div>
         <IoIosArrowDown className={`text-primary text-[24px] ml-2`} />

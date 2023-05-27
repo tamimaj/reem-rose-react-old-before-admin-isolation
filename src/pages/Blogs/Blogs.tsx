@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import BlogFilter from "../../components/Blog/BlogFilter/BlogFilter";
@@ -14,18 +14,22 @@ import { getCategories } from "../../api/public/categories";
 const Blogs = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { state } = useLocation();
-  const params = useParams();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+
+  const pageData = queryParams.get("page");
+  const title = queryParams.get("search");
+  const category = queryParams.get("category");
+
   const [loading, setLoading] = useState(false);
   const [count, setCount] = useState(0);
   const [search, setSearch] = useState({ title: "" });
   const [blogData, setBlogData] = useState([]);
   const [categoriesData, setCategoriesData] = useState<any>([]);
-
   const getBlogData = async () => {
     setLoading(true);
-    const page = parseInt(params.page ? params.page : "1");
-    let response = await getBlogPosts(page, 9, params?.title, params?.category);
+    const page = parseInt(pageData ? pageData : "1");
+    let response = await getBlogPosts(page, 9, title, category);
     if (!response || response?.status !== 200) {
       setLoading(false);
       setBlogData([]);
@@ -51,17 +55,18 @@ const Blogs = () => {
   };
 
   useEffect(() => {
-    if (params?.title) {
-      setSearch({ title: params?.title });
-    } else if (params?.category) {
+    if (title) {
+      setSearch({ title: title });
+    } else if (category) {
       setSearch({ title: "" });
     }
     getBlogData();
-  }, [params?.title, params?.page, params?.category]);
+  }, [title, pageData, category]);
 
   useEffect(() => {
     getCategoriesData();
   }, []);
+  console.log(category, "category");
   return (
     <div className="lg:mt-40 mb-3 lg:mb-12 w-full flex justify-center">
       <div className="w-[90%] max-w-[1440px] min-h-[88vh] flex flex-col overflow-x-hidden items-center">
@@ -94,11 +99,11 @@ const Blogs = () => {
             <div className="flex items-center mt-8 lg:mt-[48px] text-heading text-sm">
               <Pagination
                 className="flex justify-center items-center"
-                currentPage={parseInt(params?.page ? params?.page : "1")}
+                currentPage={parseInt(pageData ? pageData : "1")}
                 totalCount={count ? count : 0}
                 pageSize={9}
                 onPageChange={(v) =>
-                  navigate("/blog/" + v, { state: { page: v } })
+                  navigate("/blog?page=" + v, { state: { page: v } })
                 }
               />
             </div>
