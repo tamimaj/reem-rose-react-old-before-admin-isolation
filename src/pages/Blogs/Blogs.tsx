@@ -101,9 +101,7 @@ const Blogs = () => {
                 currentPage={parseInt(pageData ? pageData : "1")}
                 totalCount={count ? count : 0}
                 pageSize={9}
-                onPageChange={(v) =>
-                  navigate("/blog?page=" + v, { state: { page: v } })
-                }
+                onPageChange={(v) => navigate("/blog?page=" + v)}
               />
             </div>
           </>

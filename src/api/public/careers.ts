@@ -1,8 +1,8 @@
 import api from "../PublicAPIConfig";
 
-const endpoint = "/projects";
+const endpoint = "/careers";
 
-export const getProjects = async () => {
+export const getCareers = async () => {
   try {
     let url = endpoint;
     const result = await api.get(url);
@@ -12,12 +12,11 @@ export const getProjects = async () => {
     return null;
   }
 };
-export const getProjectsData = async (page: number, pageSize: number) => {
-  try {
-    let url = endpoint + "/data";
-    const params = { page, pageSize };
 
-    const result = await api.get(url, { params: params });
+export const getCareersDetails = async (slug: string) => {
+  try {
+    let url = endpoint + "/bySlug";
+    const result = await api.get(url, { params: { slug } });
     return result;
   } catch (err) {
     console.log(err, "err");

@@ -4,7 +4,7 @@ const ROUTES = {
   BLOG_PAGE: "/blog?page=1",
   BLOG_POST: "/blog-post/:slug",
   CAREERS: "/careers",
-  CAREER_DETAILS: "/career-details",
+  CAREER_DETAILS: "/career-details/:slug",
   SERVICES: "/services",
   PORTFOLIO: "/portfolio",
   SCHEDULE: "/schedule",

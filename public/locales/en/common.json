@@ -7,6 +7,10 @@
     "text5": "Services",
     "scheduleText": "Schedule a Call"
   },
+  "application": {
+    "success": "Application submitted successfully",
+    "error": "Application not submitted successfully"
+  },
   "home": {
     "title": "REEMROSE",
     "tagline1": "Unleashing the Power of Technology with Expert Software Development",
@@ -76,6 +80,8 @@
     "title4": "Responsibilities",
     "title5": "Requirements",
     "title6": "Benefits",
+    "error": "Jobs not found",
+    "detailsError": "Job Details not found",
     "form": {
       "label": {
         "name": "Name",
@@ -102,7 +108,7 @@
   "services": {
     "heading": "Tailored Web Solutions to Drive Your Business Forward: Our Services",
     "tagline": "From Concept to Launch, Our Expertise Delivers Websites That Captivate and Convert",
-    "error": "Services Not found"
+    "error": "Services not found"
   },
   "portfolio": {
     "heading": "Experience Excellence in Web Development: Explore Our Portfolio",
@@ -111,7 +117,7 @@
     "techText": "Tech that we used",
     "visitText": "Visit Website",
     "codeText": "Get Code",
-    "error": "Projects Not found"
+    "error": "Projects not found"
   },
   "schedule": {
     "heading": "Let's Discuss Your Web Development Needs: Schedule a Call",
