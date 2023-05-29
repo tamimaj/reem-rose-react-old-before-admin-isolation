@@ -28,7 +28,7 @@ const Portfolio = () => {
       setLoading(false);
       setPortfolioData([]);
       setCount(0);
-      toast(<CustomToast message={t("blog.error")} />);
+      toast(<CustomToast message={t("portfolio.error")} />);
       return;
     }
     setPortfolioData(response?.data?.data);
