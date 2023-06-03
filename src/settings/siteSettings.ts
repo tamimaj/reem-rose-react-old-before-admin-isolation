@@ -77,4 +77,42 @@ export default {
       link: ROUTES.PRIVACY_POLICY,
     },
   ],
+  admin: [
+    {
+      text: "admin.section1",
+      link: ROUTES.ADMIN_HOME,
+    },
+    {
+      text: "admin.section2",
+      link: ROUTES.ADMIN_HOME,
+    },
+    {
+      text: "admin.section3",
+      link: ROUTES.ADMIN_HOME,
+    },
+    {
+      text: "admin.section4",
+      link: ROUTES.ADMIN_HOME,
+    },
+    {
+      text: "admin.section5",
+      link: ROUTES.ADMIN_HOME,
+    },
+    {
+      text: "admin.section6",
+      link: ROUTES.ADMIN_HOME,
+    },
+    {
+      text: "admin.section7",
+      link: ROUTES.ADMIN_HOME,
+    },
+    {
+      text: "admin.section8",
+      link: ROUTES.ADMIN_HOME,
+    },
+    {
+      text: "admin.section9",
+      link: ROUTES.ADMIN_HOME,
+    },
+  ],
 };

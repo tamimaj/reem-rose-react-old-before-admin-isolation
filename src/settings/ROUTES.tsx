@@ -11,10 +11,15 @@ const ROUTES = {
   TERMS_OF_USE: "/terms-of-use",
   CONTACT_US: "/contact-us",
   ABOUT_US: "/about-us",
-  ADMIN: "/admin",
+
   LOGIN: "/login",
   PRIVACY_POLICY: "/privacy-policy",
   TERMS_AND_CONDITIONS: "/terms-and-conditions",
+
+  //admin routes
+  ADMIN: "/admin/*",
+  ADMIN_HOME: "/admin",
+  ADMIN_BLOGS: "/",
 };
 
 export default ROUTES;

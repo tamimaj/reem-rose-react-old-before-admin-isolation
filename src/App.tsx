@@ -50,8 +50,9 @@ function App() {
           <Route path={ROUTES.TERMS_OF_USE} element={<TermsOfUse />} />
           <Route path={ROUTES.CONTACT_US} element={<ContactUs />} />
           <Route path={ROUTES.ABOUT_US} element={<AboutUs />} />
-          <Route path={ROUTES.ADMIN} element={<Admin />} />
           <Route path={ROUTES.LOGIN} element={<Login />} />
+
+          <Route path={ROUTES.ADMIN} element={<Admin />} />
         </Routes>
       </Layout>
     </Router>
