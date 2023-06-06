@@ -1,31 +1,36 @@
 import React, { useRef, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
-import { useTranslation } from "react-i18next";
 import { useOutsideClick } from "../../../../../hooks/outsideClick/useOutsideClick";
+import { initialCapital } from "../../../../../hooks/InitialCapital/InitialCapital";
 
 type SearchType = {
   className?: string;
+  searchKey: string;
+  setSearchKey: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const SearchFilter: React.FC<SearchType> = ({ className }) => {
-  const [filterMenu, SetFilterMenu] = useState(false);
+const SearchFilter: React.FC<SearchType> = ({
+  className,
+  searchKey,
+  setSearchKey,
+}) => {
+  const [filterMenu, setFilterMenu] = useState(false);
   const sortRef = useRef(null);
-  const { t } = useTranslation();
-
-  useOutsideClick(sortRef, SetFilterMenu);
-  const handleClose = () => {
-    SetFilterMenu(false);
+  useOutsideClick(sortRef, setFilterMenu);
+  const handleClose = (v: string) => {
+    setFilterMenu(false);
+    setSearchKey(v);
   };
   return (
-    <div className={`${className} relative mr-2`} ref={sortRef}>
+    <div className={`${className} relative`} ref={sortRef}>
       <button
-        onClick={() => SetFilterMenu(!filterMenu)}
-        className="flex items-center justify-between w-[140px] h-[40px] bg-primaryLight rounded pl-4 pr-2"
+        onClick={() => setFilterMenu(!filterMenu)}
+        className="flex items-center justify-between w-[140px] h-[40px] bg-primaryLight rounded pl-4 pr-2 mt-2 md:mt-0"
       >
         <div className="flex">
           <p className="mr-1 text-[14px] text-base text-white">
-            {t("admin.sortBy")}
+            {searchKey === "_id" ? "Id" : initialCapital(searchKey)}
           </p>
         </div>
         <IoIosArrowDown className={`text-primary text-[24px] ml-2`} />
@@ -34,40 +39,22 @@ const SearchFilter: React.FC<SearchType> = ({ className }) => {
         <div className="text-sm z-50 absolute bg-black text-bodyText w-full top-[46px] rounded  pl-3 py-4">
           {" "}
           <button
-            onClick={handleClose}
+            onClick={() => handleClose("title")}
             className="w-full h-[20px] pb-[6px] mb-3  flex items-center justify-between hover:font-semibold hover:text-primary"
           >
-            {t("admin.postMenu.menuItem1")}
+            Title
           </button>
           <button
-            onClick={handleClose}
+            onClick={() => handleClose("_id")}
             className="w-full h-[20px] pb-[6px] mb-3  flex items-center justify-between hover:font-semibold hover:text-primary"
           >
-            {t("admin.postMenu.menuItem2")}
+            Id
           </button>
           <button
-            onClick={handleClose}
-            className="w-full h-[20px] pb-[6px] mb-3  flex items-center justify-between hover:font-semibold hover:text-primary"
+            onClick={() => handleClose("summary")}
+            className="w-full h-[20px] pb-[6px] flex items-center justify-between hover:font-semibold hover:text-primary"
           >
-            {t("admin.postMenu.menuItem3")}
-          </button>
-          <button
-            onClick={handleClose}
-            className="w-full h-[20px] pb-[6px] mb-3  flex items-center justify-between hover:font-semibold hover:text-primary"
-          >
-            {t("admin.postMenu.menuItem4")}
-          </button>
-          <button
-            onClick={handleClose}
-            className="w-full h-[20px] pb-[6px] mb-3  flex items-center justify-between hover:font-semibold hover:text-primary"
-          >
-            {t("admin.postMenu.menuItem5")}
-          </button>
-          <button
-            onClick={handleClose}
-            className="w-full h-[20px] pb-[6px]   flex items-center justify-between hover:font-semibold hover:text-primary"
-          >
-            {t("admin.postMenu.menuItem6")}
+            Summary
           </button>
         </div>
       )}

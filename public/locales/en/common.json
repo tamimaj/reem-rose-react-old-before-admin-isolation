@@ -193,14 +193,6 @@
     "section8": "Careers",
     "section9": "Users",
     "sortBy": "sort by",
-    "postMenu": {
-      "menuItem1": "Title (asc)",
-      "menuItem2": "Title (desc)",
-      "menuItem3": "Categories (asc)",
-      "menuItem4": "Categories (desc)",
-      "menuItem5": "Date (asc)",
-      "menuItem6": "Date (desc)"
-    },
     "postTable": {
       "heading1": "ID",
       "heading2": "Title",

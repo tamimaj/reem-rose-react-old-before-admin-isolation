@@ -2,22 +2,41 @@ import api from "../privateAPIConfig";
 
 const endpoint = "/posts";
 
+interface SearchType {
+  [key: string]: any;
+}
+
 export const getBlogPosts = async (
   page: number,
   pageSize: number,
   searchKey: string | null,
   search: string | null,
-  categoryId: string | null
+  filter: {
+    isPublished?: boolean;
+  } | null,
+  sort: object | null
 ) => {
   try {
     let url = endpoint;
     let params;
-    const searchData = { searchKey: search };
-    if (search) params = { page, pageSize, searchData };
-    else if (categoryId)
-      params = { page, pageSize, filters: { categories: categoryId } };
-    else {
-      params = { page, pageSize };
+    let searchData: SearchType = {};
+    if (searchKey) searchData[searchKey] = search;
+    if (search) {
+      if (sort) {
+        params = { page, pageSize, search: { ...searchData }, sort };
+      } else {
+        params = { page, pageSize, search: { ...searchData } };
+      }
+    } else if (filter) {
+      if (sort) {
+        params = { page, pageSize, filters: { ...filter }, sort };
+      } else {
+        params = { page, pageSize, filters: { ...filter } };
+      }
+    } else {
+      if (sort) {
+        params = { page, pageSize, sort };
+      } else params = { page, pageSize };
     }
     const result = await api.get(url, { params: params });
     return result;

@@ -2,30 +2,56 @@ import React, { useRef, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
 import { useOutsideClick } from "../../../../hooks/outsideClick/useOutsideClick";
-import { useTranslation } from "react-i18next";
+import { initialCapital } from "../../../../hooks/InitialCapital/InitialCapital";
+import { useLocation, useNavigate } from "react-router-dom";
 
 type sortType = {
   className?: string;
+  sort: string;
+  setSort: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const SortMenu: React.FC<sortType> = ({ className }) => {
+const SortMenu: React.FC<sortType> = ({ className, sort, setSort }) => {
   const [sortMenu, setSortMenu] = useState(false);
   const sortRef = useRef(null);
-  const { t } = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const searchKeyData = queryParams.get("search-key");
+  const searchValueData = queryParams.get("search-value");
+  const filterData = queryParams.get("filter");
 
   useOutsideClick(sortRef, setSortMenu);
-  const handleClose = () => {
+
+  const handleClose = (v: string) => {
+    const sortValue = v.split(" ").join("-");
     setSortMenu(false);
+    if (searchKeyData) {
+      navigate(
+        "/admin?page=1&search-key=" +
+          searchKeyData +
+          "&search-value=" +
+          searchValueData +
+          "&sort=" +
+          sortValue
+      );
+    } else if (filterData) {
+      navigate(
+        "/admin?page=1" + "&filter=" + filterData + "&sort=" + sortValue
+      );
+    } else navigate("/admin?page=1&sort=" + sortValue);
+    setSort(v);
   };
+
   return (
     <div className={`${className} relative mr-2`} ref={sortRef}>
       <button
         onClick={() => setSortMenu(!sortMenu)}
-        className="flex items-center justify-between w-[140px] h-[40px] bg-primaryLight rounded pl-4 pr-2"
+        className="flex items-center justify-between min-w-[180px] h-[40px] bg-primaryLight rounded pl-4 pr-2"
       >
         <div className="flex">
           <p className="mr-1 text-[14px] text-base text-white">
-            {t("admin.sortBy")}
+            {sort ? initialCapital(sort) : "Sort By"}
           </p>
         </div>
         <IoIosArrowDown className={`text-primary text-[24px] ml-2`} />
@@ -34,40 +60,40 @@ const SortMenu: React.FC<sortType> = ({ className }) => {
         <div className="text-sm z-50 absolute bg-black text-bodyText w-full top-[46px] rounded  pl-3 py-4">
           {" "}
           <button
-            onClick={handleClose}
+            onClick={() => handleClose("title asc")}
             className="w-full h-[20px] pb-[6px] mb-3  flex items-center justify-between hover:font-semibold hover:text-primary"
           >
-            {t("admin.postMenu.menuItem1")}
+            Title (asc)
           </button>
           <button
-            onClick={handleClose}
+            onClick={() => handleClose("title desc")}
             className="w-full h-[20px] pb-[6px] mb-3  flex items-center justify-between hover:font-semibold hover:text-primary"
           >
-            {t("admin.postMenu.menuItem2")}
+            Title (desc)
           </button>
           <button
-            onClick={handleClose}
+            onClick={() => handleClose("category asc")}
             className="w-full h-[20px] pb-[6px] mb-3  flex items-center justify-between hover:font-semibold hover:text-primary"
           >
-            {t("admin.postMenu.menuItem3")}
+            Category (asc)
           </button>
           <button
-            onClick={handleClose}
-            className="w-full h-[20px] pb-[6px] mb-3  flex items-center justify-between hover:font-semibold hover:text-primary"
+            onClick={() => handleClose("category desc")}
+            className="w-full h-[20px] pb-[6px] mb-3 flex items-center justify-between hover:font-semibold hover:text-primary"
           >
-            {t("admin.postMenu.menuItem4")}
+            Category (desc)
           </button>
           <button
-            onClick={handleClose}
-            className="w-full h-[20px] pb-[6px] mb-3  flex items-center justify-between hover:font-semibold hover:text-primary"
+            onClick={() => handleClose("date asc")}
+            className="w-full h-[20px] pb-[6px] mb-3 flex items-center justify-between hover:font-semibold hover:text-primary"
           >
-            {t("admin.postMenu.menuItem5")}
+            Date (asc)
           </button>
           <button
-            onClick={handleClose}
-            className="w-full h-[20px] pb-[6px]   flex items-center justify-between hover:font-semibold hover:text-primary"
+            onClick={() => handleClose("date desc")}
+            className="w-full h-[20px] pb-[6px] flex items-center justify-between hover:font-semibold hover:text-primary"
           >
-            {t("admin.postMenu.menuItem6")}
+            Date (desc)
           </button>
         </div>
       )}

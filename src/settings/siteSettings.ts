@@ -110,9 +110,5 @@ export default {
       text: "admin.section8",
       link: ROUTES.ADMIN_HOME,
     },
-    {
-      text: "admin.section9",
-      link: ROUTES.ADMIN_HOME,
-    },
   ],
 };
