@@ -9,4 +9,17 @@ export const initialValues = [
     coverLetter: "",
     cv: "",
   },
+  {
+    title: "",
+    summary: "",
+    slug: "",
+    seoTitle: "",
+    seoDescription: "",
+    coverImage: "",
+    content: "",
+    categories: [],
+    langCode: "",
+    tags: [],
+    keywords: [],
+  },
 ];

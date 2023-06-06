@@ -3,12 +3,13 @@ import { Link, Route, Routes } from "react-router-dom";
 import { IoMdApps } from "react-icons/io";
 import { FiLogOut } from "react-icons/fi";
 import { Tooltip } from "react-tooltip";
+import { useWindowSize } from "react-use";
 import "react-tooltip/dist/react-tooltip.css";
 
 import ROUTES from "../../settings/ROUTES";
 import siteSettings from "../../settings/siteSettings";
 import Blogs from "./Blogs/Blogs";
-import { useWindowSize } from "react-use";
+import AddBlogForm from "./Blogs/Forms/AddBlogForm";
 
 const Admin = () => {
   const { t } = useTranslation();
@@ -74,6 +75,7 @@ const Admin = () => {
           </div>{" "}
           <Routes>
             <Route path={ROUTES.ADMIN_BLOGS} element={<Blogs />} />
+            <Route path={ROUTES.ADMIN_ADD_BLOG} element={<AddBlogForm />} />
           </Routes>
         </div>
       </div>

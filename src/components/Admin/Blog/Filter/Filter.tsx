@@ -6,6 +6,7 @@ import Search from "../Search/Search";
 import Tags from "../../../Tags/Tags";
 import SortMenu from "../SortMenu/SortMenu";
 import SearchFilter from "../Search/SearchFilter/SearchFilter";
+import ROUTES from "../../../../settings/ROUTES";
 
 interface FilterType {
   search: string;
@@ -148,7 +149,7 @@ const Filter: React.FC<FilterType> = ({
           />
         </div>
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col pr-2">
         <div className="flex mt-4 md:mt-0">
           <SortMenu sort={sort} setSort={setSort} />
           <button
@@ -175,7 +176,10 @@ const Filter: React.FC<FilterType> = ({
           </button>
         </div>
         <div className="flex md:justify-end">
-          <button className="flex text-white items-center justify-center px-2 py-2 w-[85px] mt-2 border border-primary rounded cursor-pointer">
+          <button
+            onClick={() => navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_ADD_BLOG)}
+            className="flex text-white items-center justify-center px-2 py-2 w-[85px] mt-2 border border-primary rounded cursor-pointer"
+          >
             Add
           </button>
         </div>

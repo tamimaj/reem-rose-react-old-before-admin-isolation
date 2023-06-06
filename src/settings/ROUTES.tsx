@@ -20,6 +20,7 @@ const ROUTES = {
   ADMIN: "/admin/*",
   ADMIN_HOME: "/admin",
   ADMIN_BLOGS: "/",
+  ADMIN_ADD_BLOG: "/add-blog",
 };
 
 export default ROUTES;

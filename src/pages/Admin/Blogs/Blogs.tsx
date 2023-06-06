@@ -75,7 +75,7 @@ const Blogs = () => {
     }
     let response = await getBlogPosts(
       page,
-      2,
+      10,
       searchKey,
       search,
       filters,
@@ -172,7 +172,7 @@ const Blogs = () => {
                 className="flex justify-center items-center"
                 currentPage={parseInt(pageData ? pageData : "1")}
                 totalCount={count ? count : 0}
-                pageSize={2}
+                pageSize={10}
                 onPageChange={(v) => handlePagination(v)}
               />
             </div>
