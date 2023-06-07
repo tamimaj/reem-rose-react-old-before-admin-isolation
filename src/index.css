@@ -42,10 +42,10 @@ body.modal-open {
 .scroll::-webkit-scrollbar {
   visibility: hidden;
 }
-
 .disclosure:hover .icon {
   color: white;
 }
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

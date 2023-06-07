@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { AiOutlineSearch } from "react-icons/ai";
 import { RxCross2 } from "react-icons/rx";
 import { useNavigate } from "react-router-dom";
+import ROUTES from "../../../../settings/ROUTES";
 
 interface SearchType {
   search: string;
@@ -22,18 +23,22 @@ const Search: React.FC<SearchType> = ({
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(search, "search");
     if (search)
       navigate(
-        "/admin?page=1&search-key=" + searchKey + "&search-value=" + search
+        ROUTES.ADMIN_HOME +
+          ROUTES.ADMIN_BLOGS +
+          "?page=1&search-key=" +
+          searchKey +
+          "&search-value=" +
+          search
       );
-    else navigate("/admin?page=1");
+    else navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_BLOGS + "?page=1");
   };
 
   const handleClearSearch = () => {
     console.log("working");
     setSearch("");
-    navigate("/admin?page=1");
+    navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_BLOGS + "?page=1");
   };
   const handleSearchText = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);

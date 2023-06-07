@@ -39,22 +39,32 @@ const Filter: React.FC<FilterType> = ({
 
   const page = queryParams.get("page");
   const pageNumber = parseInt(page ? page : "1");
-  const totalPages = Math.ceil(count / 2);
+  const totalPages = Math.ceil(count / 10);
 
   const handleTagSelection = (tag: string) => {
     if (tag === "Published") {
-      if (filterData === "published") navigate("/admin?page=1");
-      else navigate("/admin?page=1&filter=published");
+      if (filterData === "published")
+        navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_BLOGS + "?page=1");
+      else
+        navigate(
+          ROUTES.ADMIN_HOME + ROUTES.ADMIN_BLOGS + "?page=1&filter=published"
+        );
     } else if (tag === "Draft") {
-      if (filterData === "draft") navigate("/admin?page=1");
-      else navigate("/admin?page=1&filter=draft");
+      if (filterData === "draft")
+        navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_BLOGS + "?page=1");
+      else
+        navigate(
+          ROUTES.ADMIN_HOME + ROUTES.ADMIN_BLOGS + "?page=1&filter=draft"
+        );
     }
   };
   const handleNext = (v: number) => {
     if (searchValueData) {
       if (sortData) {
         navigate(
-          "/admin?page=" +
+          ROUTES.ADMIN_HOME +
+            ROUTES.ADMIN_BLOGS +
+            "?page=" +
             v +
             "&search-key=" +
             searchKeyData +
@@ -65,7 +75,9 @@ const Filter: React.FC<FilterType> = ({
         );
       } else {
         navigate(
-          "/admin?page=" +
+          ROUTES.ADMIN_HOME +
+            ROUTES.ADMIN_BLOGS +
+            "?page=" +
             v +
             "&search-key=" +
             searchKey +
@@ -76,14 +88,36 @@ const Filter: React.FC<FilterType> = ({
     } else if (filterData) {
       if (sortData) {
         navigate(
-          "/admin?page=" + v + "&filter=" + filterData + "&sort=" + sortData
+          ROUTES.ADMIN_HOME +
+            ROUTES.ADMIN_BLOGS +
+            "?page=" +
+            v +
+            "&filter=" +
+            filterData +
+            "&sort=" +
+            sortData
         );
       } else {
-        navigate("/admin?page=" + v + "&filter=" + filterData);
+        navigate(
+          ROUTES.ADMIN_HOME +
+            ROUTES.ADMIN_BLOGS +
+            "?page=" +
+            v +
+            "&filter=" +
+            filterData
+        );
       }
     } else {
-      if (sortData) navigate("/admin?page=" + v + "&sort=" + sortData);
-      else navigate("/admin?page=" + v);
+      if (sortData)
+        navigate(
+          ROUTES.ADMIN_HOME +
+            ROUTES.ADMIN_BLOGS +
+            "?page=" +
+            v +
+            "&sort=" +
+            sortData
+        );
+      else navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_BLOGS + "?page=" + v);
     }
   };
 
@@ -91,7 +125,9 @@ const Filter: React.FC<FilterType> = ({
     if (searchValueData) {
       if (sortData) {
         navigate(
-          "/admin?page=" +
+          ROUTES.ADMIN_HOME +
+            ROUTES.ADMIN_BLOGS +
+            "?page=" +
             v +
             "&search-key=" +
             searchKeyData +
@@ -102,7 +138,9 @@ const Filter: React.FC<FilterType> = ({
         );
       } else {
         navigate(
-          "/admin?page=" +
+          ROUTES.ADMIN_HOME +
+            ROUTES.ADMIN_BLOGS +
+            "?page=" +
             v +
             "&search-key=" +
             searchKey +
@@ -113,14 +151,36 @@ const Filter: React.FC<FilterType> = ({
     } else if (filterData) {
       if (sortData) {
         navigate(
-          "/admin?page=" + v + "&filter=" + filterData + "&sort=" + sortData
+          ROUTES.ADMIN_HOME +
+            ROUTES.ADMIN_BLOGS +
+            "?page=" +
+            v +
+            "&filter=" +
+            filterData +
+            "&sort=" +
+            sortData
         );
       } else {
-        navigate("/admin?page=" + v + "&filter=" + filterData);
+        navigate(
+          ROUTES.ADMIN_HOME +
+            ROUTES.ADMIN_BLOGS +
+            "?page=" +
+            v +
+            "&filter=" +
+            filterData
+        );
       }
     } else {
-      if (sortData) navigate("/admin?page=" + v + "&sort=" + sortData);
-      else navigate("/admin?page=" + v);
+      if (sortData)
+        navigate(
+          ROUTES.ADMIN_HOME +
+            ROUTES.ADMIN_BLOGS +
+            "?page=" +
+            v +
+            "&sort=" +
+            sortData
+        );
+      else navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_BLOGS + "?page=" + v);
     }
   };
 
@@ -165,7 +225,7 @@ const Filter: React.FC<FilterType> = ({
           </button>
           <button
             onClick={() => handleNext(pageNumber + 1)}
-            disabled={pageNumber === totalPages ? true : false}
+            disabled={pageNumber >= totalPages ? true : false}
             className={`flex items-center ${
               pageNumber === totalPages
                 ? "cursor-not-allowed"

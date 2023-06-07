@@ -79,8 +79,12 @@ export default {
   ],
   admin: [
     {
-      text: "admin.section1",
+      text: "admin.title",
       link: ROUTES.ADMIN_HOME,
+    },
+    {
+      text: "admin.section1",
+      link: ROUTES.ADMIN_HOME + ROUTES.ADMIN_BLOGS,
     },
     {
       text: "admin.section2",

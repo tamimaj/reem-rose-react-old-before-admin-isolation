@@ -45,3 +45,15 @@ export const getBlogPosts = async (
     return null;
   }
 };
+
+export const createPost = async (data: object) => {
+  try {
+    let url = endpoint;
+
+    const result = await api.post(url, { data });
+    return result;
+  } catch (err) {
+    console.log(err, "err");
+    return null;
+  }
+};

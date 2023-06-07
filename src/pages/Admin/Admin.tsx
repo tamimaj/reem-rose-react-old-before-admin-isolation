@@ -10,6 +10,7 @@ import ROUTES from "../../settings/ROUTES";
 import siteSettings from "../../settings/siteSettings";
 import Blogs from "./Blogs/Blogs";
 import AddBlogForm from "./Blogs/Forms/AddBlogForm";
+import Home from "./Home/Home";
 
 const Admin = () => {
   const { t } = useTranslation();
@@ -32,7 +33,7 @@ const Admin = () => {
         >
           {t("admin.heading")}
         </Link>
-        <div className="flex w-full">
+        <div className="flex w-full overflow-y-hidden">
           <div className="flex flex-col justify-between 2xl:items-start items-center 2xl:w-[227px] h-[405px] 2xl:h-full bg-primaryLight py-8 px-4 2xl:p-8 rounded mr-6">
             <div className="flex flex-col">
               {/* <div className="flex cursor-pointer mb-4">
@@ -74,6 +75,8 @@ const Admin = () => {
             </div>
           </div>{" "}
           <Routes>
+            <Route path={ROUTES.ADMIN_HOME} element={<Home />} />
+
             <Route path={ROUTES.ADMIN_BLOGS} element={<Blogs />} />
             <Route path={ROUTES.ADMIN_ADD_BLOG} element={<AddBlogForm />} />
           </Routes>

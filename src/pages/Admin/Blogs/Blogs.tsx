@@ -10,6 +10,7 @@ import Filter from "../../../components/Admin/Blog/Filter/Filter";
 import Pagination from "../../../components/pagination/pagination";
 import Loader from "../../../components/Loader/Loader";
 import Table from "../../../components/Admin/Blog/Table/Table";
+import ROUTES from "../../../settings/ROUTES";
 
 interface BlogType {
   _id: string;
@@ -112,7 +113,9 @@ const Blogs = () => {
     if (searchValueData) {
       if (sortData) {
         navigate(
-          "/admin?page=" +
+          ROUTES.ADMIN_HOME +
+            ROUTES.ADMIN_BLOGS +
+            "?page=" +
             v +
             "&search-key=" +
             searchKeyData +
@@ -123,7 +126,9 @@ const Blogs = () => {
         );
       } else {
         navigate(
-          "/admin?page=" +
+          ROUTES.ADMIN_HOME +
+            ROUTES.ADMIN_BLOGS +
+            "?page=" +
             v +
             "&search-key=" +
             searchKey +
@@ -134,48 +139,68 @@ const Blogs = () => {
     } else if (filterData) {
       if (sortData) {
         navigate(
-          "/admin?page=" + v + "&filter=" + filterData + "&sort=" + sortData
+          ROUTES.ADMIN_HOME +
+            ROUTES.ADMIN_BLOGS +
+            "?page=" +
+            v +
+            "&filter=" +
+            filterData +
+            "&sort=" +
+            sortData
         );
       } else {
-        navigate("/admin?page=" + v + "&filter=" + filterData);
+        navigate(
+          ROUTES.ADMIN_HOME +
+            ROUTES.ADMIN_BLOGS +
+            "?page=" +
+            v +
+            "&filter=" +
+            filterData
+        );
       }
     } else {
-      if (sortData) navigate("/admin?page=" + v + "&sort=" + sortData);
-      else navigate("/admin?page=" + v);
+      if (sortData)
+        navigate(
+          ROUTES.ADMIN_HOME +
+            ROUTES.ADMIN_BLOGS +
+            "?page=" +
+            v +
+            "&sort=" +
+            sortData
+        );
+      else navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_BLOGS + "?page=" + v);
     }
   };
   return (
-    <div className=" pt-4 pb-20 w-full flex justify-center">
-      <div className="w-full 3xl:w-[90%] max-w-[1440px] flex flex-col overflow-x-hidden items-center">
-        <div className="flex w-full">
-          <div className="flex flex-col w-[90%] xl:w-full">
-            <Filter
-              search={search}
-              setSearch={setSearch}
-              searchKey={searchKey}
-              setSearchKey={setSearchKey}
-              sort={sort}
-              setSort={setSort}
-              filterValue={filterData}
-              count={count}
-            />
+    <div className=" pt-4 pb-20 w-full overflow-x-hidden flex justify-center">
+      <div className="flex w-full">
+        <div className="flex flex-col w-[90%] xl:w-full">
+          <Filter
+            search={search}
+            setSearch={setSearch}
+            searchKey={searchKey}
+            setSearchKey={setSearchKey}
+            sort={sort}
+            setSort={setSort}
+            filterValue={filterData}
+            count={count}
+          />
 
-            {loading ? (
-              <Loader className="h-[100vh]" />
-            ) : (
-              <div className="w-full my-6 overflow-x-scroll scroll">
-                <Table blogData={blogData} />
-              </div>
-            )}
-            <div className="flex w-full ml-[30%]  md:ml-0 md:justify-center items-center mt-[48px] text-heading text-sm">
-              <Pagination
-                className="flex justify-center items-center"
-                currentPage={parseInt(pageData ? pageData : "1")}
-                totalCount={count ? count : 0}
-                pageSize={10}
-                onPageChange={(v) => handlePagination(v)}
-              />
+          {loading ? (
+            <Loader className="h-[100vh]" />
+          ) : (
+            <div className="w-full my-6 overflow-x-scroll scrollbar scrollbar-thumb-primary scrollbar-thin scrollbar-track-gray-100">
+              <Table blogData={blogData} />
             </div>
+          )}
+          <div className="flex w-full ml-[30%]  md:ml-0 md:justify-center items-center mt-[48px] text-heading text-sm">
+            <Pagination
+              className="flex justify-center items-center"
+              currentPage={parseInt(pageData ? pageData : "1")}
+              totalCount={count ? count : 0}
+              pageSize={10}
+              onPageChange={(v) => handlePagination(v)}
+            />
           </div>
         </div>
       </div>

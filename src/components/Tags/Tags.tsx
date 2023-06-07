@@ -1,18 +1,13 @@
 import React from "react";
-import { RxCross2 } from "react-icons/rx";
 import { initialCapital } from "../../hooks/InitialCapital/InitialCapital";
+
 type tagType = {
   tag: string;
   handleClick?: (v: string) => void;
   handleClearFilter?: () => void;
   selected?: string | null;
 };
-const Tags: React.FC<tagType> = ({
-  tag,
-  handleClick,
-  selected,
-  handleClearFilter,
-}) => {
+const Tags: React.FC<tagType> = ({ tag, handleClick, selected }) => {
   return (
     <div
       onClick={() => {

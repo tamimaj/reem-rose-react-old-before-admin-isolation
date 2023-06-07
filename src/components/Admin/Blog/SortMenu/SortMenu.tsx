@@ -4,6 +4,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { useOutsideClick } from "../../../../hooks/outsideClick/useOutsideClick";
 import { initialCapital } from "../../../../hooks/InitialCapital/InitialCapital";
 import { useLocation, useNavigate } from "react-router-dom";
+import ROUTES from "../../../../settings/ROUTES";
 
 type sortType = {
   className?: string;
@@ -28,7 +29,9 @@ const SortMenu: React.FC<sortType> = ({ className, sort, setSort }) => {
     setSortMenu(false);
     if (searchKeyData) {
       navigate(
-        "/admin?page=1&search-key=" +
+        ROUTES.ADMIN_HOME +
+          ROUTES.ADMIN_BLOGS +
+          "?page=1&search-key=" +
           searchKeyData +
           "&search-value=" +
           searchValueData +
@@ -37,9 +40,18 @@ const SortMenu: React.FC<sortType> = ({ className, sort, setSort }) => {
       );
     } else if (filterData) {
       navigate(
-        "/admin?page=1" + "&filter=" + filterData + "&sort=" + sortValue
+        ROUTES.ADMIN_HOME +
+          ROUTES.ADMIN_BLOGS +
+          "?page=1" +
+          "&filter=" +
+          filterData +
+          "&sort=" +
+          sortValue
       );
-    } else navigate("/admin?page=1&sort=" + sortValue);
+    } else
+      navigate(
+        ROUTES.ADMIN_HOME + ROUTES.ADMIN_BLOGS + "?page=1&sort=" + sortValue
+      );
     setSort(v);
   };
 

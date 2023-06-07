@@ -19,7 +19,7 @@ const ROUTES = {
   //admin routes
   ADMIN: "/admin/*",
   ADMIN_HOME: "/admin",
-  ADMIN_BLOGS: "/",
+  ADMIN_BLOGS: "/post",
   ADMIN_ADD_BLOG: "/add-blog",
 };
 

@@ -23,7 +23,7 @@ interface TableType {
 const Table: React.FC<TableType> = ({ blogData }) => {
   const { t } = useTranslation();
   return (
-    <table className="xl:w-full w-[95%] min-w-[1200px] border-separate border-spacing-x-0 border-spacing-y-[10px]">
+    <table className="xl:w-full w-[95%] min-w-[1200px]  border-separate border-spacing-x-0 border-spacing-y-[10px]">
       <thead className="text-white text-sm bg-primaryLight h-[50px] rounded">
         <tr>
           <td className="pl-4 w-[300px]">{t("admin.postTable.heading1")}</td>
