@@ -11,6 +11,7 @@ import siteSettings from "../../settings/siteSettings";
 import Blogs from "./Blogs/Blogs";
 import AddBlogForm from "./Blogs/Forms/AddBlogForm";
 import Home from "./Home/Home";
+import EditBlogForm from "./Blogs/Forms/EditBlogForm";
 
 const Admin = () => {
   const { t } = useTranslation();
@@ -79,6 +80,7 @@ const Admin = () => {
 
             <Route path={ROUTES.ADMIN_BLOGS} element={<Blogs />} />
             <Route path={ROUTES.ADMIN_ADD_BLOG} element={<AddBlogForm />} />
+            <Route path={ROUTES.ADMIN_EDIT_BLOG} element={<EditBlogForm />} />
           </Routes>
         </div>
       </div>

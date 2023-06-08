@@ -4,6 +4,8 @@ import { AiOutlineEdit } from "react-icons/ai";
 import { MdDeleteOutline } from "react-icons/md";
 
 import StatusTag from "../StatusTag/StatusTag";
+import { useNavigate } from "react-router-dom";
+import ROUTES from "../../../../settings/ROUTES";
 
 interface BlogType {
   _id: string;
@@ -22,6 +24,7 @@ interface TableType {
 }
 const Table: React.FC<TableType> = ({ blogData }) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   return (
     <table className="xl:w-full w-[95%] min-w-[1200px]  border-separate border-spacing-x-0 border-spacing-y-[10px]">
       <thead className="text-white text-sm bg-primaryLight h-[50px] rounded">
@@ -73,7 +76,17 @@ const Table: React.FC<TableType> = ({ blogData }) => {
             </td>
             <td className="w-[100px] ">
               <span className="flex justify-center">
-                <AiOutlineEdit className="text-primary text-[20px] cursor-pointer" />
+                <AiOutlineEdit
+                  className="text-primary text-[20px] cursor-pointer"
+                  onClick={() =>
+                    navigate(
+                      ROUTES.ADMIN_HOME +
+                        ROUTES.ADMIN_EDIT_BLOG_LINK +
+                        "/" +
+                        v._id
+                    )
+                  }
+                />
                 <MdDeleteOutline className="text-primary text-[20px] cursor-pointer" />
               </span>
             </td>

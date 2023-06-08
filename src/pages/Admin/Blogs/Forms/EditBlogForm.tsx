@@ -5,19 +5,19 @@ import { AiFillPlusCircle } from "react-icons/ai";
 import { MdCancel } from "react-icons/md";
 import Select from "react-select";
 import ReactQuill from "react-quill";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import slugify from "slugify";
 import { toast } from "react-toastify";
 
 import "../../../../assets/styles/quill.css";
-import { initialValues } from "../../../../helpers/intialValues";
 import { validationSchema } from "../../../../helpers/validationSchema";
 import { getCategories } from "../../../../api/public/categories";
 import { customStyles } from "../../../../assets/styles/SelectStyles";
 import Tag from "../../../../components/Admin/Tag/Tag";
 import CustomToast from "../../../../components/CustomToast/CustomToast";
-import { createPost } from "../../../../api/private/blogs";
+import { EditPost, getSpecificPost } from "../../../../api/private/blogs";
 import Loader from "../../../../components/Loader/Loader";
+import { langOptions } from "../../../../helpers/langOptions/langOptions";
 import ROUTES from "../../../../settings/ROUTES";
 
 interface categoriesType {
@@ -25,11 +25,39 @@ interface categoriesType {
   name: string;
   slug: string;
 }
-
-const AddBlogForm = () => {
+interface PostType {
+  title: string;
+  summary: string;
+  slug: string;
+  seoTitle: string;
+  seoDescription: string;
+  coverImage: string;
+  content: string;
+  isPublished: boolean;
+  categories: string[];
+  langCode: string;
+  tags: string[];
+  keywords: string[];
+}
+const EditBlogForm = () => {
   const imageRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
+  const { id } = useParams();
   const contentRef = useRef<any>(null);
+  const [postData, setPostData] = useState<PostType>({
+    title: "",
+    summary: "",
+    slug: "",
+    seoTitle: "",
+    seoDescription: "",
+    coverImage: "",
+    content: "",
+    isPublished: false,
+    categories: [],
+    langCode: "",
+    tags: [],
+    keywords: [],
+  });
   const [loading, setLoading] = useState(false);
   const [categoriesData, setCategoriesData] = useState([]);
   const [keyword, setKeyword] = useState("");
@@ -38,23 +66,30 @@ const AddBlogForm = () => {
     { value: "", label: "" },
   ]);
   const [contentQuillRef, setContentQuillRef] = useState<any>(null);
-
+  const [selectedCategoryOption, setSelectedCategoryOption] = useState<any>([
+    {
+      value: "",
+      label: "",
+    },
+  ]);
   const formik = useFormik({
-    initialValues: initialValues[1],
+    enableReinitialize: true,
+    initialValues: {
+      ...postData,
+    },
     validationSchema: validationSchema[1],
-    onSubmit: (values) => handleCreatePost(values),
+    onSubmit: (values) => handleEditPost(values),
   });
-
-  const handleCreatePost = async (values: object) => {
+  const handleEditPost = async (values: object) => {
     setLoading(true);
-    let response = await createPost(values);
+    let response = await EditPost(values);
     if (!response || response?.status !== 200) {
       setLoading(false);
-      toast(<CustomToast message="Post Not Created Successfully" />);
+      toast(<CustomToast message="Post Not Updated Successfully" />);
       return;
     }
     setLoading(false);
-    toast(<CustomToast message="Post Created Successfully" type="success" />);
+    toast(<CustomToast message="Post  Updated Successfully" type="success" />);
 
     navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_BLOGS);
   };
@@ -65,6 +100,25 @@ const AddBlogForm = () => {
       return;
     }
     setCategoriesData(response.data);
+  };
+  useEffect(() => {
+    getPostData();
+  }, [id]);
+
+  const getPostData = async () => {
+    if (id) {
+      let response = await getSpecificPost(id);
+      if (!response || response?.status !== 200) {
+        return;
+      }
+      if (response?.data?.postData) {
+        delete response?.data?.postData?.authorId;
+        delete response?.data?.postData?.__v;
+        delete response?.data?.postData?.createdAt;
+        delete response?.data?.postData?.updatedAt;
+      }
+      setPostData(response.data.postData);
+    }
   };
 
   useEffect(() => {
@@ -84,6 +138,13 @@ const AddBlogForm = () => {
       setCategoryOptions(options);
     }
   }, [categoriesData]);
+
+  useEffect(() => {
+    const selectedOption = categoryOptions.filter((option) => {
+      return formik.values.categories?.includes(option.value);
+    });
+    if (selectedOption) setSelectedCategoryOption(selectedOption);
+  }, [categoryOptions]);
 
   const checkFileType = (fileType: string) => {
     const mimeTypes = ["image/jpeg", "image/png"];
@@ -168,6 +229,9 @@ const AddBlogForm = () => {
       formik.setFieldValue("tags", updatedTags);
     }
   };
+  const selectedLangOption = langOptions.find(
+    (option) => option.value === formik.values.langCode
+  );
 
   return (
     <div className=" pt-4 pb-20 w-full flex justify-center">
@@ -176,7 +240,7 @@ const AddBlogForm = () => {
           <Loader className="h-[100vh]" />
         ) : (
           <div className="flex flex-col items-center w-full overflow-y-hidden pb-24">
-            <h6 className="text-white font-medium text-xl">Add Blog Form</h6>
+            <h6 className="text-white font-medium text-xl">Edit Blog Form</h6>
             <form className="flex flex-col mt-[48px]" autoComplete="off">
               <div className="flex lg:flex-row flex-col  mb-8">
                 <div className="flex flex-col w-full mb-8 lg:mb-0 lg:w-1/2 mr-4">
@@ -188,6 +252,7 @@ const AddBlogForm = () => {
                     name="title"
                     onChange={formik.handleChange}
                     onBlur={(e) => handleOnNameBlur(e)}
+                    value={formik.values.title}
                     placeholder="Title"
                     className="w-full h-[36px] rounded text-bodyText bg-primaryLight outline-none pl-4 py-2 pr-2 mt-2 text-base"
                   />
@@ -226,6 +291,7 @@ const AddBlogForm = () => {
                     type="text"
                     name="seoTitle"
                     onChange={formik.handleChange}
+                    value={formik.values.seoTitle}
                     placeholder="SEO Title"
                     className="w-full h-[36px] rounded text-bodyText bg-primaryLight outline-none pl-4 py-2 pr-2 mt-2 text-base"
                   />
@@ -243,6 +309,7 @@ const AddBlogForm = () => {
                     type="text"
                     name="seoDescription"
                     onChange={formik.handleChange}
+                    value={formik.values.seoDescription}
                     placeholder="SEO Description"
                     className="w-full h-[36px] rounded text-bodyText bg-primaryLight outline-none pl-4 py-2 pr-2 mt-2 text-base"
                   />
@@ -308,13 +375,15 @@ const AddBlogForm = () => {
                   </label>
                   <Select
                     onChange={(values) => {
+                      setSelectedCategoryOption(values);
                       formik.setFieldValue(
                         "categories",
-                        values.map((v) => {
+                        values?.map((v) => {
                           return v.value;
                         })
                       );
                     }}
+                    value={selectedCategoryOption}
                     styles={customStyles}
                     isMulti
                     options={categoryOptions}
@@ -329,6 +398,7 @@ const AddBlogForm = () => {
                 <textarea
                   name="summary"
                   onChange={formik.handleChange}
+                  value={formik.values.summary}
                   placeholder="Write Summary Here..."
                   className="w-full h-[120px] rounded text-bodyText bg-primaryLight outline-none pl-4 py-2 pr-2 mt-2 text-base resize-none"
                 />
@@ -448,16 +518,11 @@ const AddBlogForm = () => {
                   <Select
                     defaultValue={{ value: "en", label: "English" }}
                     onChange={(v) => {
-                      console.log(v, "value");
                       formik.setFieldValue("langCode", v?.value);
                     }}
+                    value={selectedLangOption}
                     styles={customStyles}
-                    options={[
-                      { value: "en", label: "English" },
-                      { value: "ar", label: "Arabic" },
-                      { value: "es", label: "Spanish" },
-                      { value: "fr", label: "French" },
-                    ]}
+                    options={langOptions}
                     className="w-full  rounded py-2 text-base"
                   />
                 </div>{" "}
@@ -495,7 +560,7 @@ const AddBlogForm = () => {
                 }}
                 className="flex text-white items-center justify-center w-[175px] h-[52px] border border-primary rounded cursor-pointer"
               >
-                Save
+                Update
               </button>
             </form>{" "}
           </div>
@@ -505,4 +570,4 @@ const AddBlogForm = () => {
   );
 };
 
-export default AddBlogForm;
+export default EditBlogForm;

@@ -57,3 +57,26 @@ export const createPost = async (data: object) => {
     return null;
   }
 };
+
+export const EditPost = async (data: object) => {
+  try {
+    let url = endpoint;
+
+    const result = await api.put(url, { data });
+    return result;
+  } catch (err) {
+    console.log(err, "err");
+    return null;
+  }
+};
+export const getSpecificPost = async (id: string) => {
+  try {
+    let url = endpoint + "/" + id;
+
+    const result = await api.get(url);
+    return result;
+  } catch (err) {
+    console.log(err, "err");
+    return null;
+  }
+};
