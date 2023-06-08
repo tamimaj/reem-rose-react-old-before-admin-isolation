@@ -36,7 +36,9 @@ const Table: React.FC<TableType> = ({ blogData, getBlogData }) => {
     setDeleteId(id);
     setTitle(postTitle);
   };
-
+  const moveToDetails = (id: string) => {
+    navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_BLOG_DETAILS_LINK + "/" + id);
+  };
   return (
     <>
       <table className="xl:w-full w-[95%] min-w-[1200px]  border-separate border-spacing-x-0 border-spacing-y-[10px]">
@@ -57,8 +59,16 @@ const Table: React.FC<TableType> = ({ blogData, getBlogData }) => {
         <tbody>
           {blogData.map((v, idx) => (
             <tr key={idx} className="text-white">
-              <td className="pb-[9px]">{v._id}</td>
-              <td className="flex w-[300px]">
+              <td
+                onClick={() => moveToDetails(v._id)}
+                className="pb-[9px] cursor-pointer"
+              >
+                {v._id}
+              </td>
+              <td
+                className="flex w-[300px] cursor-pointer"
+                onClick={() => moveToDetails(v._id)}
+              >
                 <img
                   src={v.coverImage}
                   alt={v.title}

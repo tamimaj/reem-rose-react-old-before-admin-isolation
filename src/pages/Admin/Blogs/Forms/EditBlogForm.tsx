@@ -113,6 +113,7 @@ const EditBlogForm = () => {
       }
       if (response?.data?.postData) {
         delete response?.data?.postData?.authorId;
+        delete response?.data?.postData?.categoriesData;
         delete response?.data?.postData?.__v;
         delete response?.data?.postData?.createdAt;
         delete response?.data?.postData?.updatedAt;

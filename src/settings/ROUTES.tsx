@@ -23,6 +23,8 @@ const ROUTES = {
   ADMIN_ADD_BLOG: "/add-blog",
   ADMIN_EDIT_BLOG: "/edit-blog/:id",
   ADMIN_EDIT_BLOG_LINK: "/edit-blog",
+  ADMIN_BLOG_DETAILS: "/blog-details/:id",
+  ADMIN_BLOG_DETAILS_LINK: "/blog-details",
 };
 
 export default ROUTES;
