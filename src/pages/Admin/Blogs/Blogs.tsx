@@ -27,7 +27,6 @@ interface BlogType {
 
 const Blogs = () => {
   const { t } = useTranslation();
-  const [modalOpen, setModalOpen] = useState<boolean>(false);
   const navigate = useNavigate();
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -190,7 +189,7 @@ const Blogs = () => {
             <Loader className="h-[100vh]" />
           ) : (
             <div className="w-full my-6 overflow-x-scroll scrollbar scrollbar-thumb-primary scrollbar-thin scrollbar-track-gray-100">
-              <Table blogData={blogData} />
+              <Table blogData={blogData} getBlogData={getBlogData} />
             </div>
           )}
           <div className="flex w-full ml-[30%]  md:ml-0 md:justify-center items-center mt-[48px] text-heading text-sm">
@@ -204,7 +203,6 @@ const Blogs = () => {
           </div>
         </div>
       </div>
-      {modalOpen && <Modal setDialogOpen={setModalOpen} />}
     </div>
   );
 };

@@ -80,3 +80,14 @@ export const getSpecificPost = async (id: string) => {
     return null;
   }
 };
+export const deletePost = async (id: string) => {
+  try {
+    let url = endpoint + "/" + id;
+
+    const result = await api.delete(url);
+    return result;
+  } catch (err) {
+    console.log(err, "err");
+    return null;
+  }
+};
