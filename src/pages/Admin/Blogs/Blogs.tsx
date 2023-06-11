@@ -1,9 +1,8 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-import Modal from "../../../components/Modals/Modal";
 import CustomToast from "../../../components/CustomToast/CustomToast";
 import { getBlogPosts } from "../../../api/private/blogs";
 import Filter from "../../../components/Admin/Blog/Filter/Filter";

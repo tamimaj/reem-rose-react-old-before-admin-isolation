@@ -1,9 +1,9 @@
-import React, { useEffect, useState, Fragment } from "react";
+import { useEffect, useState, Fragment } from "react";
+import moment from "moment";
 
 import Loader from "../../../Loader/Loader";
 import { useParams } from "react-router-dom";
 import { getSpecificPost } from "../../../../api/private/blogs";
-import moment from "moment";
 import StatusTag from "../StatusTag/StatusTag";
 import { HtmlConverter } from "../../../../hooks/HtmlConverter/HtmlConverter";
 
@@ -59,7 +59,6 @@ const BlogDetails = () => {
       if (!response || response?.status !== 200) {
         return;
       }
-
       setPostData(response.data.postData);
       setLoading(false);
     }

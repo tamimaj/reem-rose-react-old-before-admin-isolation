@@ -19,6 +19,7 @@ import { EditPost, getSpecificPost } from "../../../../api/private/blogs";
 import Loader from "../../../../components/Loader/Loader";
 import { langOptions } from "../../../../helpers/langOptions/langOptions";
 import ROUTES from "../../../../settings/ROUTES";
+import { HtmlConverter } from "../../../../hooks/HtmlConverter/HtmlConverter";
 
 interface categoriesType {
   _id: string;
@@ -60,6 +61,7 @@ const EditBlogForm = () => {
   });
   const [loading, setLoading] = useState(false);
   const [categoriesData, setCategoriesData] = useState([]);
+  const [htmlContent, setHtmlContent] = useState("");
   const [keyword, setKeyword] = useState("");
   const [tag, setTag] = useState("");
   const [categoryOptions, setCategoryOptions] = useState([
@@ -177,7 +179,6 @@ const EditBlogForm = () => {
       [{ font: [] }],
       [{ list: "ordered" }, { list: "bullet" }],
       [{ size: ["small", false, "large", "huge"] }],
-      [{ header: [1, 2, 3, 4, 5, 6, false] }],
       ["link", "image"],
     ],
   };
@@ -242,7 +243,10 @@ const EditBlogForm = () => {
         ) : (
           <div className="flex flex-col items-center w-full overflow-y-hidden pb-24">
             <h6 className="text-white font-medium text-xl">Edit Blog Form</h6>
-            <form className="flex flex-col mt-[48px]" autoComplete="off">
+            <form
+              className="flex flex-col mt-[48px] max-w-[800px]"
+              autoComplete="off"
+            >
               <div className="flex lg:flex-row flex-col  mb-8">
                 <div className="flex flex-col w-full mb-8 lg:mb-0 lg:w-1/2 mr-4">
                   <label className="font-semibold text-sm text-white ml-[1px]">
@@ -413,6 +417,25 @@ const EditBlogForm = () => {
                 <label className="font-semibold text-sm text-white ml-[1px]">
                   Content
                 </label>
+
+                <textarea
+                  placeholder="Write HTML Content Here..."
+                  className="w-full min-h-[300px] rounded text-bodyText bg-primaryLight outline-none pl-4 py-2 pr-2 mt-2 text-base "
+                  onChange={(e) => {
+                    setHtmlContent(e.target.value);
+                  }}
+                />
+                <button
+                  type="button"
+                  className="flex text-white items-center justify-center my-2 px-2 py-1 ml-2 w-[165px] mt-2 border border-primary rounded cursor-pointer"
+                  onClick={() => {
+                    const deltaContent = HtmlConverter(htmlContent);
+
+                    formik.setFieldValue("content", deltaContent.__html);
+                  }}
+                >
+                  Convert to Content
+                </button>
                 <ReactQuill
                   className={`ql-toolbar.ql-snow .ql-container.ql-snow pt-1 form-control rounded-md min-h-[150px] mb-12 `}
                   theme="snow"

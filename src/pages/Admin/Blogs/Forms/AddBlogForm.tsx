@@ -19,6 +19,7 @@ import CustomToast from "../../../../components/CustomToast/CustomToast";
 import { createPost } from "../../../../api/private/blogs";
 import Loader from "../../../../components/Loader/Loader";
 import ROUTES from "../../../../settings/ROUTES";
+import { HtmlConverter } from "../../../../hooks/HtmlConverter/HtmlConverter";
 
 interface categoriesType {
   _id: string;
@@ -31,6 +32,7 @@ const AddBlogForm = () => {
   const navigate = useNavigate();
   const contentRef = useRef<any>(null);
   const [loading, setLoading] = useState(false);
+  const [htmlContent, setHtmlContent] = useState("");
   const [categoriesData, setCategoriesData] = useState([]);
   const [keyword, setKeyword] = useState("");
   const [tag, setTag] = useState("");
@@ -115,7 +117,6 @@ const AddBlogForm = () => {
       [{ font: [] }],
       [{ list: "ordered" }, { list: "bullet" }],
       [{ size: ["small", false, "large", "huge"] }],
-      [{ header: [1, 2, 3, 4, 5, 6, false] }],
       ["link", "image"],
     ],
   };
@@ -342,6 +343,24 @@ const AddBlogForm = () => {
                 <label className="font-semibold text-sm text-white ml-[1px]">
                   Content
                 </label>
+                <textarea
+                  placeholder="Write HTML Content Here..."
+                  className="w-full min-h-[300px]  rounded text-bodyText bg-primaryLight outline-none pl-4 py-2 pr-2 mt-2 text-base "
+                  onChange={(e) => {
+                    setHtmlContent(e.target.value);
+                  }}
+                />
+                <button
+                  type="button"
+                  className="flex text-white items-center justify-center my-2 px-2 py-1 ml-2 w-[165px] mt-2 border border-primary rounded cursor-pointer"
+                  onClick={() => {
+                    const deltaContent = HtmlConverter(htmlContent);
+
+                    formik.setFieldValue("content", deltaContent.__html);
+                  }}
+                >
+                  Convert to Content
+                </button>
                 <ReactQuill
                   className={`ql-toolbar.ql-snow .ql-container.ql-snow pt-1 form-control rounded-md min-h-[150px] mb-12 `}
                   theme="snow"
