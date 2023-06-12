@@ -1,7 +1,8 @@
 import React from "react";
-import { deletePost } from "../../../../api/private/blogs";
 import { toast } from "react-toastify";
+
 import CustomToast from "../../../CustomToast/CustomToast";
+import { deleteApplication } from "../../../../api/private/applications";
 
 type ModalType = {
   setDialogOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -26,7 +27,7 @@ const DeleteModal: React.FC<ModalType> = ({
   const deleteData = async () => {
     setDialogOpen(false);
     if (body) body.classList.remove("modal-open");
-    const response = await deletePost(deleteId);
+    const response = await deleteApplication(deleteId);
     if (!response || response?.status !== 200) {
       toast(<CustomToast message={"Failed to delete Post"} />);
       return;
@@ -46,7 +47,7 @@ const DeleteModal: React.FC<ModalType> = ({
               <div className="flex flex-col items-center">
                 <h5 className="text-white text-[24px]">Delete Modal</h5>
                 <p className="text-heading text-base mt-[48px]">
-                  {`Are you sure you want to delete post with title "${value}"?`}
+                  {`Are you sure you want to delete application submitted by "${value}"?`}
                 </p>
                 <div className="flex mt-[48px]">
                   <button

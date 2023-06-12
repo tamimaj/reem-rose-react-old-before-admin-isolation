@@ -1,11 +1,11 @@
 import { useEffect, useState, Fragment } from "react";
 import moment from "moment";
 
-import Loader from "../../../Loader/Loader";
 import { useParams } from "react-router-dom";
 import { getSpecificPost } from "../../../../api/private/blogs";
-import StatusTag from "../StatusTag/StatusTag";
 import { HtmlConverter } from "../../../../hooks/HtmlConverter/HtmlConverter";
+import Loader from "../../../../components/Loader/Loader";
+import StatusTag from "../../../../components/Admin/Blog/StatusTag/StatusTag";
 
 interface PostType {
   _id: string;

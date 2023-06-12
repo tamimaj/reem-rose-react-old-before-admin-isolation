@@ -88,7 +88,7 @@ export default {
     },
     {
       text: "admin.section2",
-      link: ROUTES.ADMIN_HOME,
+      link: ROUTES.ADMIN_HOME + ROUTES.ADMIN_APPLICATIONS,
     },
     {
       text: "admin.section3",
