@@ -10,7 +10,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="w-full min-w-full layout relative bg-body">
       <Header />
-      <main className=" z-0 min-h-[50vh]">{children}</main>
+      <main className=" z-0 min-h-[100vh]">{children}</main>
       <Footer />
     </div>
   );

@@ -8,7 +8,7 @@ interface LoaderTypes {
 const Loader: React.FC<LoaderTypes> = ({ className }) => {
   return (
     <div
-      className={`${className} flex justify-center items-center w-[100%] bg-transparent`}
+      className={`${className} flex justify-center items-center w-full bg-transparent`}
     >
       <img
         src={loader}

@@ -182,25 +182,24 @@
   "admin": {
     "heading": "ReemRose",
     "placeholder": "Search",
-    "title": "Dashboard",
-    "section1": "section 1",
-    "section2": "section 2",
-    "section3": "section 3",
+    "title": "Home",
+    "section1": "Posts",
+    "section2": "Applications",
+    "section3": "Calls",
+    "section4": "Categories",
+    "section5": "Projects",
+    "section6": "Testimonials",
+    "section7": "Services",
+    "section8": "Careers",
+    "section9": "Users",
     "sortBy": "sort by",
-    "menu": {
-      "menuItem1": "Title (asc)",
-      "menuItem2": "Title (desc)",
-      "menuItem3": "Status (asc)",
-      "menuItem4": "Status (desc)",
-      "menuItem5": "Date (asc)",
-      "menuItem6": "Date (desc)"
-    },
-    "table": {
+    "postTable": {
       "heading1": "ID",
       "heading2": "Title",
-      "heading3": "Status",
-      "heading4": "Date",
-      "heading5": "View"
+      "heading3": "Summary",
+      "heading4": "Categories",
+      "heading5": "Published",
+      "heading6": "Actions"
     }
   },
   "login": {
