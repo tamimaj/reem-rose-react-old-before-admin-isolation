@@ -9,6 +9,7 @@ module.exports = {
       },
       colors: {
         primary: "#00A388", // this and heading are primary
+        primaryDarker: "#032728", // this and heading are primary
         primaryLight: "rgba(0, 163, 136, 0.08)",
         primarySchedule: "rgba(0, 163, 136, 0.24)",
         gradientColor: "#006655",

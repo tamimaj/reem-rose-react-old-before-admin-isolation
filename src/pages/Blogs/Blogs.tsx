@@ -70,7 +70,7 @@ const Blogs = () => {
     <div className="lg:mt-40 mb-3 lg:mb-12 w-full flex justify-center">
       <div className="w-[90%] max-w-[1440px] min-h-[88vh] flex flex-col overflow-x-hidden items-center">
         <div className=" flex flex-col items-center w-full  sm:w-[379px] lg:w-[974px] mt-[64px] lg:mt-0">
-          <h1 className="font-PlusJakartaSans text-[28px] text-center lg:text-[48px] text-white">
+          <h1 className="font-PlusJakartaSans text-[28px] text-center lg:text-[48px] text-white font-normal">
             {t("blog.title")}
           </h1>
           <span className="font-PlusJakartaSans text-center text-base text-bodyText mt-2 xs:w-[350px] lg:w-[470px]">

@@ -3,7 +3,7 @@ import React from "react";
 import loader from "../../assets/icons/loader.svg";
 
 interface LoaderTypes {
-  className: string;
+  className?: string;
 }
 const Loader: React.FC<LoaderTypes> = ({ className }) => {
   return (

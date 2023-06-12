@@ -12,7 +12,10 @@ import Blogs from "./Blogs/Blogs";
 import AddBlogForm from "./Blogs/Forms/AddBlogForm";
 import Home from "./Home/Home";
 import EditBlogForm from "./Blogs/Forms/EditBlogForm";
-import BlogDetails from "../../components/Admin/Blog/BlogDetails/BlogDetails";
+import BlogDetails from "./Blogs/BlogDetails/BlogDetails";
+import Applications from "./Applications/Applications";
+import ApplicationDetails from "./Applications/ApplicationDetails/ApplicationDetails";
+import Categories from "./Categories/Categories";
 
 const Admin = () => {
   const { t } = useTranslation();
@@ -78,11 +81,22 @@ const Admin = () => {
           </div>{" "}
           <Routes>
             <Route path={ROUTES.ADMIN_HOME} element={<Home />} />
-
+            {/* blog routes */}
             <Route path={ROUTES.ADMIN_BLOGS} element={<Blogs />} />
             <Route path={ROUTES.ADMIN_ADD_BLOG} element={<AddBlogForm />} />
             <Route path={ROUTES.ADMIN_EDIT_BLOG} element={<EditBlogForm />} />
             <Route path={ROUTES.ADMIN_BLOG_DETAILS} element={<BlogDetails />} />
+            {/* application routes */}
+            <Route
+              path={ROUTES.ADMIN_APPLICATIONS}
+              element={<Applications />}
+            />
+            <Route
+              path={ROUTES.ADMIN_APPLICATION_DETAILS}
+              element={<ApplicationDetails />}
+            />
+            {/* categories routes */}
+            <Route path={ROUTES.ADMIN_CATEGORIES} element={<Categories />} />
           </Routes>
         </div>
       </div>

@@ -9,15 +9,9 @@ interface SearchType {
   search: string;
   setSearch: React.Dispatch<React.SetStateAction<string>>;
   searchKey: string;
-  sort: string;
 }
 
-const Search: React.FC<SearchType> = ({
-  search,
-  setSearch,
-  searchKey,
-  sort,
-}) => {
+const Search: React.FC<SearchType> = ({ search, setSearch, searchKey }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 

@@ -188,12 +188,7 @@ const Filter: React.FC<FilterType> = ({
     <div className="flex 2xl:w-[1198px] md:flex-row flex-col  w-full md:justify-between">
       <div className="flex flex-col w-full">
         <div className="flex flex-col md:flex-row md:items-center w-[98%] md:w-[85%] 2xl:w-[901px]">
-          <Search
-            search={search}
-            setSearch={setSearch}
-            searchKey={searchKey}
-            sort={sort}
-          />
+          <Search search={search} setSearch={setSearch} searchKey={searchKey} />
           <SearchFilter searchKey={searchKey} setSearchKey={setSearchKey} />
         </div>
         <div className="flex mt-2 flex-wrap">

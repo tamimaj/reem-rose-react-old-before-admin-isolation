@@ -125,8 +125,8 @@ const Table: React.FC<TableType> = ({ blogData, getBlogData }) => {
         <DeleteModal
           setDialogOpen={setModalOpen}
           deleteId={deleteId}
-          title={title}
-          getBlogData={getBlogData}
+          value={title}
+          getData={getBlogData}
         />
       )}
     </>

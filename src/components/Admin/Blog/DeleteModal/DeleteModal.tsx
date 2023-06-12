@@ -6,15 +6,15 @@ import CustomToast from "../../../CustomToast/CustomToast";
 type ModalType = {
   setDialogOpen: React.Dispatch<React.SetStateAction<boolean>>;
   deleteId: string;
-  title: string;
-  getBlogData: () => void;
+  value: string;
+  getData: () => void;
 };
 
 const DeleteModal: React.FC<ModalType> = ({
   setDialogOpen,
   deleteId,
-  title,
-  getBlogData,
+  value,
+  getData,
 }) => {
   const body = document.querySelector("body");
 
@@ -23,7 +23,7 @@ const DeleteModal: React.FC<ModalType> = ({
     if (body) body.classList.remove("modal-open");
   };
 
-  const deletePostData = async () => {
+  const deleteData = async () => {
     setDialogOpen(false);
     if (body) body.classList.remove("modal-open");
     const response = await deletePost(deleteId);
@@ -31,8 +31,8 @@ const DeleteModal: React.FC<ModalType> = ({
       toast(<CustomToast message={"Failed to delete Post"} />);
       return;
     }
-    toast(<CustomToast message={"Post Deleted Successfully"} />);
-    getBlogData();
+    toast(<CustomToast type="success" message={"Post Deleted Successfully"} />);
+    getData();
   };
   if (body) body.classList.add("modal-open");
   return (
@@ -46,11 +46,11 @@ const DeleteModal: React.FC<ModalType> = ({
               <div className="flex flex-col items-center">
                 <h5 className="text-white text-[24px]">Delete Modal</h5>
                 <p className="text-heading text-base mt-[48px]">
-                  {`Are you sure you want to delete post with title "${title}"?`}
+                  {`Are you sure you want to delete post with title "${value}"?`}
                 </p>
                 <div className="flex mt-[48px]">
                   <button
-                    onClick={deletePostData}
+                    onClick={deleteData}
                     className="flex items-center justify-center w-[208px] h-[52px] text-white rounded bg-gradient-to-r from-primary to-gradientColor mr-4"
                   >
                     Confirm
