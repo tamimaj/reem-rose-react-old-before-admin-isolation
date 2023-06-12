@@ -22,6 +22,8 @@ export const customStyles = {
     background: "#000A08",
     borderRadius: "4px",
     color: "white",
+    maxHeight: "120px",
+    overflowY: "scroll",
   }),
   option: (provided: any, state: any) => ({
     ...provided,

@@ -19,7 +19,7 @@ const Intro = () => {
         {t("home.title")}
       </h6>
       <div className=" flex flex-col w-full sm:w-[359px] lg:w-[974px]">
-        <h1 className="font-PlusJakartaSans text-center text-[24px] lg:text-[48px] text-white">
+        <h1 className="font-PlusJakartaSans text-center text-[24px] lg:text-[48px] text-white font-normal">
           {t("home.tagline1")}
         </h1>
         <span className="font-PlusJakartaSans text-center text-base text-bodyText mt-2">

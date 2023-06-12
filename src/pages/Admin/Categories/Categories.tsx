@@ -4,27 +4,21 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import CustomToast from "../../../components/CustomToast/CustomToast";
-import { getBlogPosts } from "../../../api/private/blogs";
-import Filter from "../../../components/Admin/Blog/Filter/Filter";
 import Pagination from "../../../components/pagination/pagination";
 import Loader from "../../../components/Loader/Loader";
-import Table from "../../../components/Admin/Blog/Table/Table";
 import ROUTES from "../../../settings/ROUTES";
+import Filter from "../../../components/Admin/Categories/Filter/Filter";
+import Table from "../../../components/Admin/Categories/Table/Table";
+import { getCategories } from "../../../api/private/categories";
 
-interface BlogType {
+interface CategoryType {
   _id: string;
-  title: string;
-  coverImage: string;
-  summary: string;
-  categoriesData: [
-    {
-      name: string;
-    }
-  ];
-  isPublished: boolean;
+  name: string;
+  slug: string;
+  langCode: string;
 }
 
-const Blogs = () => {
+const Categories = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
@@ -33,38 +27,32 @@ const Blogs = () => {
   const pageData = queryParams.get("page");
   const searchKeyData = queryParams.get("search-key");
   const searchValueData = queryParams.get("search-value");
-  const filterData = queryParams.get("filter");
   const sortData = queryParams.get("sort");
 
   const [loading, setLoading] = useState(false);
   const [count, setCount] = useState(0);
   const [search, setSearch] = useState("");
-  const [searchKey, setSearchKey] = useState("title");
+  const [searchKey, setSearchKey] = useState("name");
   const [sort, setSort] = useState("");
-  const [blogData, setBlogData] = useState<BlogType[]>([]);
+  const [categoryData, setCategoryData] = useState<CategoryType[]>([]);
 
-  const getBlogData = async () => {
+  const getCategoryData = async () => {
     setLoading(true);
     const page = parseInt(pageData ? pageData : "1");
-    let filters = null;
     let sortValue = null;
-    if (filterData === "published") {
-      filters = { isPublished: true };
-    } else if (filterData === "draft") {
-      filters = { isPublished: false };
-    }
-    if (sortData === "title-asc") {
-      sortValue = { title: 1 };
-      setSort("title asc");
-    } else if (sortData === "title-desc") {
-      sortValue = { title: -1 };
-      setSort("title desc");
-    } else if (sortData === "category-asc") {
-      sortValue = { categoriesData: 1 };
-      setSort("category asc");
-    } else if (sortData === "category-desc") {
-      sortValue = { categoriesData: -1 };
-      setSort("category desc");
+
+    if (sortData === "name-asc") {
+      sortValue = { name: 1 };
+      setSort("name asc");
+    } else if (sortData === "name-desc") {
+      sortValue = { name: -1 };
+      setSort("name desc");
+    } else if (sortData === "slug-asc") {
+      sortValue = { slug: 1 };
+      setSort("slug asc");
+    } else if (sortData === "slug-desc") {
+      sortValue = { slug: -1 };
+      setSort("slug desc");
     } else if (sortData === "date-asc") {
       sortValue = { createdAt: 1 };
       setSort("date asc");
@@ -72,22 +60,15 @@ const Blogs = () => {
       sortValue = { createdAt: -1 };
       setSort("date desc");
     }
-    let response = await getBlogPosts(
-      page,
-      10,
-      searchKey,
-      search,
-      filters,
-      sortValue
-    );
+    let response = await getCategories(page, 10, searchKey, search, sortValue);
     if (!response || response?.status !== 200) {
       setLoading(false);
-      setBlogData([]);
+      setCategoryData([]);
       setCount(0);
       toast(<CustomToast message={t("blog.error")} />);
       return;
     }
-    setBlogData(response?.data?.data);
+    setCategoryData(response?.data?.data);
     setCount(response?.data?.count);
     setLoading(false);
   };
@@ -97,22 +78,18 @@ const Blogs = () => {
       setSearchKey(searchKeyData);
       setSearch(searchValueData);
       setSort("");
-    } else if (filterData) {
-      setSearch("");
-      setSearchKey("title");
-      setSort("");
-    } else if (!searchValueData && !filterData && !sortData) {
+    } else if (!searchValueData && !sortData) {
       setSort("");
     }
-    getBlogData();
-  }, [searchValueData, pageData, filterData, sortData]);
+    getCategoryData();
+  }, [searchValueData, pageData, sortData]);
 
   const handlePagination = (v: string | number) => {
     if (searchValueData) {
       if (sortData) {
         navigate(
           ROUTES.ADMIN_HOME +
-            ROUTES.ADMIN_BLOGS +
+            ROUTES.ADMIN_CATEGORIES +
             "?page=" +
             v +
             "&search-key=" +
@@ -125,7 +102,7 @@ const Blogs = () => {
       } else {
         navigate(
           ROUTES.ADMIN_HOME +
-            ROUTES.ADMIN_BLOGS +
+            ROUTES.ADMIN_CATEGORIES +
             "?page=" +
             v +
             "&search-key=" +
@@ -134,39 +111,17 @@ const Blogs = () => {
             search
         );
       }
-    } else if (filterData) {
-      if (sortData) {
-        navigate(
-          ROUTES.ADMIN_HOME +
-            ROUTES.ADMIN_BLOGS +
-            "?page=" +
-            v +
-            "&filter=" +
-            filterData +
-            "&sort=" +
-            sortData
-        );
-      } else {
-        navigate(
-          ROUTES.ADMIN_HOME +
-            ROUTES.ADMIN_BLOGS +
-            "?page=" +
-            v +
-            "&filter=" +
-            filterData
-        );
-      }
     } else {
       if (sortData)
         navigate(
           ROUTES.ADMIN_HOME +
-            ROUTES.ADMIN_BLOGS +
+            ROUTES.ADMIN_CATEGORIES +
             "?page=" +
             v +
             "&sort=" +
             sortData
         );
-      else navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_BLOGS + "?page=" + v);
+      else navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_CATEGORIES + "?page=" + v);
     }
   };
   return (
@@ -180,15 +135,18 @@ const Blogs = () => {
             setSearchKey={setSearchKey}
             sort={sort}
             setSort={setSort}
-            filterValue={filterData}
             count={count}
+            getCategoryData={getCategoryData}
           />
 
           {loading ? (
             <Loader className="h-[100vh]" />
           ) : (
             <div className="w-full my-6 overflow-x-scroll scrollbar scrollbar-thumb-primary scrollbar-thin scrollbar-track-gray-100">
-              <Table blogData={blogData} getBlogData={getBlogData} />
+              <Table
+                categoryData={categoryData}
+                getCategoryData={getCategoryData}
+              />
             </div>
           )}
           <div className="flex w-full ml-[30%]  md:ml-0 md:justify-center items-center mt-[48px] text-heading text-sm">
@@ -206,4 +164,4 @@ const Blogs = () => {
   );
 };
 
-export default Blogs;
+export default Categories;

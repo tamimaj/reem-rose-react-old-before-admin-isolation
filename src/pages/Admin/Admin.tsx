@@ -15,6 +15,7 @@ import EditBlogForm from "./Blogs/Forms/EditBlogForm";
 import BlogDetails from "./Blogs/BlogDetails/BlogDetails";
 import Applications from "./Applications/Applications";
 import ApplicationDetails from "./Applications/ApplicationDetails/ApplicationDetails";
+import Categories from "./Categories/Categories";
 
 const Admin = () => {
   const { t } = useTranslation();
@@ -94,6 +95,8 @@ const Admin = () => {
               path={ROUTES.ADMIN_APPLICATION_DETAILS}
               element={<ApplicationDetails />}
             />
+            {/* categories routes */}
+            <Route path={ROUTES.ADMIN_CATEGORIES} element={<Categories />} />
           </Routes>
         </div>
       </div>

@@ -12,12 +12,7 @@ interface SearchType {
   sort: string;
 }
 
-const Search: React.FC<SearchType> = ({
-  search,
-  setSearch,
-  searchKey,
-  sort,
-}) => {
+const Search: React.FC<SearchType> = ({ search, setSearch, searchKey }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 

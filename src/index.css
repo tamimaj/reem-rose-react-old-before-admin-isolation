@@ -8,8 +8,7 @@
 html {
   background-color: #000e14;
 }
-h1,
-h2 {
+h1 {
   @apply font-bold text-[24px];
 }
 input:-webkit-autofill,

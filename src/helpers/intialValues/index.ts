@@ -23,4 +23,10 @@ export const initialValues = [
     tags: [],
     keywords: [],
   },
+
+  {
+    name: "",
+    slug: "",
+    langCode: "en",
+  },
 ];

@@ -96,7 +96,7 @@ export default {
     },
     {
       text: "admin.section4",
-      link: ROUTES.ADMIN_HOME,
+      link: ROUTES.ADMIN_HOME + ROUTES.ADMIN_CATEGORIES,
     },
     {
       text: "admin.section5",
