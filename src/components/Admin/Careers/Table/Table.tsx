@@ -25,6 +25,7 @@ interface TableType {
   getBlogData: () => {};
 }
 const Table: React.FC<TableType> = ({ blogData, getBlogData }) => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [deleteId, setDeleteId] = useState("");
@@ -43,12 +44,16 @@ const Table: React.FC<TableType> = ({ blogData, getBlogData }) => {
       <table className="xl:w-full w-[95%] min-w-[1200px]  border-separate border-spacing-x-0 border-spacing-y-[10px]">
         <thead className="text-white text-sm bg-primaryLight h-[50px] rounded">
           <tr>
-            <td className="pl-4 w-[300px]">Id</td>
-            <td className="w-[300px]">Title</td>
-            <td className="w-[400px]">Summary</td>
-            <td className="w-[300px]">Categories</td>
-            <td className="text-center w-[100px]">Published</td>
-            <td className="text-center w-[100px]">Actions</td>
+            <td className="pl-4 w-[300px]">{t("admin.postTable.heading1")}</td>
+            <td className="w-[300px]">{t("admin.postTable.heading2")}</td>
+            <td className="w-[400px]">{t("admin.postTable.heading3")}</td>
+            <td className="w-[300px]">{t("admin.postTable.heading4")}</td>
+            <td className="text-center w-[100px]">
+              {t("admin.postTable.heading5")}
+            </td>
+            <td className="text-center w-[100px]">
+              {t("admin.postTable.heading6")}
+            </td>
           </tr>
         </thead>
         <tbody>

@@ -29,4 +29,15 @@ export const initialValues = [
     slug: "",
     langCode: "en",
   },
+  {
+    title: "",
+    coverImage: "",
+    description: "",
+    links: [],
+    services: [],
+    techStacks: [],
+    serviceProvidedAt: "",
+    seoTitle: "",
+    seoDescription: "",
+  },
 ];

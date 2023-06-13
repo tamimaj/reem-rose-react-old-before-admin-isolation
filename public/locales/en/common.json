@@ -192,15 +192,7 @@
     "section7": "Services",
     "section8": "Careers",
     "section9": "Users",
-    "sortBy": "sort by",
-    "postTable": {
-      "heading1": "ID",
-      "heading2": "Title",
-      "heading3": "Summary",
-      "heading4": "Categories",
-      "heading5": "Published",
-      "heading6": "Actions"
-    }
+    "sortBy": "sort by"
   },
   "login": {
     "heading": "Admin",

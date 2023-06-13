@@ -1,42 +1,36 @@
 import React, { Fragment, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { AiOutlineEdit } from "react-icons/ai";
 import { MdDeleteOutline } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 import StatusTag from "../StatusTag/StatusTag";
-import { useNavigate } from "react-router-dom";
 import ROUTES from "../../../../settings/ROUTES";
 import DeleteModal from "../DeleteModal/DeleteModal";
+import moment from "moment";
 
-interface BlogType {
+interface ProjectType {
   _id: string;
   title: string;
   coverImage: string;
-  summary: string;
-  categoriesData: [
-    {
-      name: string;
-    }
-  ];
-  isPublished: boolean;
+  serviceProvidedAt: Date;
 }
 interface TableType {
-  blogData: BlogType[];
-  getBlogData: () => {};
+  projectData: ProjectType[];
+  getProjectData: () => {};
 }
-const Table: React.FC<TableType> = ({ blogData, getBlogData }) => {
+const Table: React.FC<TableType> = ({ projectData, getProjectData }) => {
   const navigate = useNavigate();
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [deleteId, setDeleteId] = useState("");
   const [title, setTitle] = useState("");
 
-  const handleDeleteModal = (id: string, postTitle: string) => {
+  const handleDeleteModal = (id: string, title: string) => {
     setModalOpen(true);
     setDeleteId(id);
-    setTitle(postTitle);
+    setTitle(title);
   };
   const moveToDetails = (id: string) => {
-    navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_BLOG_DETAILS_LINK + "/" + id);
+    navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_PROJECT_DETAILS_LINK + "/" + id);
   };
   return (
     <>
@@ -45,14 +39,12 @@ const Table: React.FC<TableType> = ({ blogData, getBlogData }) => {
           <tr>
             <td className="pl-4 w-[300px]">Id</td>
             <td className="w-[300px]">Title</td>
-            <td className="w-[400px]">Summary</td>
-            <td className="w-[300px]">Categories</td>
-            <td className="text-center w-[100px]">Published</td>
+            <td className="w-[100px]">Completion Date</td>
             <td className="text-center w-[100px]">Actions</td>
           </tr>
         </thead>
         <tbody>
-          {blogData.map((v, idx) => (
+          {projectData.map((v, idx) => (
             <tr key={idx} className="text-white">
               <td
                 onClick={() => moveToDetails(v._id)}
@@ -71,28 +63,8 @@ const Table: React.FC<TableType> = ({ blogData, getBlogData }) => {
                 />{" "}
                 <span className="ml-4">{v.title}</span>
               </td>
-              <td>{v.summary}</td>
-              <td>
-                {v.categoriesData.map((category, idx) => (
-                  <Fragment key={idx}>
-                    {category.name}{" "}
-                    {v.categoriesData.length !== idx + 1 && " , "}
-                  </Fragment>
-                ))}
-              </td>
-              <td className="flex justify-center items-center">
-                {v.isPublished ? (
-                  <StatusTag
-                    value="Published"
-                    className="text-primary bg-primaryLight"
-                  />
-                ) : (
-                  <StatusTag
-                    value="Draft"
-                    className="text-yellow bg-lightYellow"
-                  />
-                )}
-              </td>
+              <td>{moment(v.serviceProvidedAt).format("DD.MM.YY")}</td>
+
               <td className="w-[100px] ">
                 <span className="flex justify-center">
                   <AiOutlineEdit
@@ -100,7 +72,7 @@ const Table: React.FC<TableType> = ({ blogData, getBlogData }) => {
                     onClick={() =>
                       navigate(
                         ROUTES.ADMIN_HOME +
-                          ROUTES.ADMIN_EDIT_BLOG_LINK +
+                          ROUTES.ADMIN_EDIT_PROJECT_LINK +
                           "/" +
                           v._id
                       )
@@ -121,7 +93,7 @@ const Table: React.FC<TableType> = ({ blogData, getBlogData }) => {
           setDialogOpen={setModalOpen}
           deleteId={deleteId}
           value={title}
-          getData={getBlogData}
+          getData={getProjectData}
         />
       )}
     </>

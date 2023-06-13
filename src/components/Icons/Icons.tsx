@@ -31,7 +31,7 @@ const Icons: React.FC<IconsType> = ({ v }) => {
           <DiAndroid className="w-full h-full text-white" />
         </div>
       )}
-      {v === "Apple" && (
+      {v === "Swift" && (
         <div className="[32px] mr-4 h-[32px]">
           <DiApple className="w-full h-full text-white" />
         </div>

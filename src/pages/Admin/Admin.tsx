@@ -16,6 +16,10 @@ import BlogDetails from "./Blogs/BlogDetails/BlogDetails";
 import Applications from "./Applications/Applications";
 import ApplicationDetails from "./Applications/ApplicationDetails/ApplicationDetails";
 import Categories from "./Categories/Categories";
+import Projects from "./Projects/Projects";
+import AddProjectForm from "./Projects/Forms/AddProjectForm";
+import EditProjectForm from "./Projects/Forms/EditProjectForm";
+import ProjectDetails from "./Projects/ProjectDetails/ProjectDetails";
 
 const Admin = () => {
   const { t } = useTranslation();
@@ -81,11 +85,13 @@ const Admin = () => {
           </div>{" "}
           <Routes>
             <Route path={ROUTES.ADMIN_HOME} element={<Home />} />
+
             {/* blog routes */}
             <Route path={ROUTES.ADMIN_BLOGS} element={<Blogs />} />
             <Route path={ROUTES.ADMIN_ADD_BLOG} element={<AddBlogForm />} />
             <Route path={ROUTES.ADMIN_EDIT_BLOG} element={<EditBlogForm />} />
             <Route path={ROUTES.ADMIN_BLOG_DETAILS} element={<BlogDetails />} />
+
             {/* application routes */}
             <Route
               path={ROUTES.ADMIN_APPLICATIONS}
@@ -95,8 +101,24 @@ const Admin = () => {
               path={ROUTES.ADMIN_APPLICATION_DETAILS}
               element={<ApplicationDetails />}
             />
+
             {/* categories routes */}
             <Route path={ROUTES.ADMIN_CATEGORIES} element={<Categories />} />
+
+            {/* project routes */}
+            <Route path={ROUTES.ADMIN_PROJECTS} element={<Projects />} />
+            <Route
+              path={ROUTES.ADMIN_ADD_PROJECT}
+              element={<AddProjectForm />}
+            />
+            <Route
+              path={ROUTES.ADMIN_EDIT_PROJECT}
+              element={<EditProjectForm />}
+            />
+            <Route
+              path={ROUTES.ADMIN_PROJECT_DETAILS}
+              element={<ProjectDetails />}
+            />
           </Routes>
         </div>
       </div>

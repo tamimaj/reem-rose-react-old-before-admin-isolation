@@ -84,7 +84,7 @@ const Blogs = () => {
       setLoading(false);
       setBlogData([]);
       setCount(0);
-      toast(<CustomToast message={t("blog.error")} />);
+      toast(<CustomToast message={"Posts Not Found"} />);
       return;
     }
     setBlogData(response?.data?.data);

@@ -22,8 +22,10 @@ export const customStyles = {
     background: "#000A08",
     borderRadius: "4px",
     color: "white",
-    maxHeight: "120px",
-    overflowY: "scroll",
+  }),
+  menuList: (provided: any) => ({
+    ...provided,
+    maxHeight: "140px",
   }),
   option: (provided: any, state: any) => ({
     ...provided,

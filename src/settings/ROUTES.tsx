@@ -21,7 +21,7 @@ const ROUTES = {
   ADMIN_HOME: "/admin",
 
   //post routes
-  ADMIN_BLOGS: "/post",
+  ADMIN_BLOGS: "/posts",
   ADMIN_ADD_BLOG: "/add-post",
   ADMIN_EDIT_BLOG: "/edit-post/:id",
   ADMIN_EDIT_BLOG_LINK: "/edit-post",
@@ -34,7 +34,15 @@ const ROUTES = {
   ADMIN_APPLICATION_DETAILS_LINK: "/application-details",
 
   //category routes
-  ADMIN_CATEGORIES: "/category",
+  ADMIN_CATEGORIES: "/categories",
+
+  //post routes
+  ADMIN_PROJECTS: "/projects",
+  ADMIN_ADD_PROJECT: "/add-project",
+  ADMIN_EDIT_PROJECT: "/edit-project/:id",
+  ADMIN_EDIT_PROJECT_LINK: "/edit-project",
+  ADMIN_PROJECT_DETAILS: "/project-details/:id",
+  ADMIN_PROJECT_DETAILS_LINK: "/project-details",
 };
 
 export default ROUTES;
