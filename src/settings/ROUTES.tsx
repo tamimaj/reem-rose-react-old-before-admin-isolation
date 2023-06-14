@@ -36,13 +36,21 @@ const ROUTES = {
   //category routes
   ADMIN_CATEGORIES: "/categories",
 
-  //post routes
+  //project routes
   ADMIN_PROJECTS: "/projects",
   ADMIN_ADD_PROJECT: "/add-project",
   ADMIN_EDIT_PROJECT: "/edit-project/:id",
   ADMIN_EDIT_PROJECT_LINK: "/edit-project",
   ADMIN_PROJECT_DETAILS: "/project-details/:id",
   ADMIN_PROJECT_DETAILS_LINK: "/project-details",
+
+  //testimonials routes
+  ADMIN_TESTIMONIALS: "/testimonials",
+  ADMIN_ADD_TESTIMONIAL: "/add-testimonial",
+  ADMIN_EDIT_TESTIMONIAL: "/edit-testimonial/:id",
+  ADMIN_EDIT_TESTIMONIALS_LINK: "/edit-testimonial",
+  ADMIN_TESTIMONIAL_DETAILS: "/testimonial-details/:id",
+  ADMIN_TESTIMONIALS_DETAILS_LINK: "/testimonial-details",
 };
 
 export default ROUTES;

@@ -1,44 +1,44 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { MdDeleteOutline } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
 import ROUTES from "../../../../settings/ROUTES";
 import DeleteModal from "../DeleteModal/DeleteModal";
-import DetailsModal from "../DetailsModal/DetailsModal";
-import EditModal from "../EditModal/EditModal";
+import StatusTag from "../StatusTag/StatusTag";
 
-interface CategoryType {
+interface TestimonialType {
   _id: string;
   name: string;
-  slug: string;
-  langCode: string;
+  profileImage: string;
+  profession: string;
+  published: boolean;
+  title: string;
+  coverImage: string;
+  serviceProvidedAt: Date;
 }
 interface TableType {
-  categoryData: CategoryType[];
-  getCategoryData: () => {};
+  testimonialData: TestimonialType[];
+  getTestimonialData: () => {};
 }
-const Table: React.FC<TableType> = ({ categoryData, getCategoryData }) => {
+const Table: React.FC<TableType> = ({
+  testimonialData,
+  getTestimonialData,
+}) => {
   const navigate = useNavigate();
   const [modalOpen, setModalOpen] = useState<boolean>(false);
-  const [detailsModalOpen, setDetailsModalOpen] = useState<boolean>(false);
-  const [editModalOpen, setEditModalOpen] = useState<boolean>(false);
-  const [id, setId] = useState("");
+  const [deleteId, setDeleteId] = useState("");
   const [name, setName] = useState("");
 
   const handleDeleteModal = (id: string, name: string) => {
     setModalOpen(true);
-    setId(id);
+    setDeleteId(id);
     setName(name);
   };
   const moveToDetails = (id: string) => {
-    setId(id);
-    setDetailsModalOpen(true);
-  };
-
-  const handleUpdateModal = (id: string) => {
-    setId(id);
-    setEditModalOpen(true);
+    navigate(
+      ROUTES.ADMIN_HOME + ROUTES.ADMIN_TESTIMONIALS_DETAILS_LINK + "/" + id
+    );
   };
   return (
     <>
@@ -47,13 +47,13 @@ const Table: React.FC<TableType> = ({ categoryData, getCategoryData }) => {
           <tr>
             <td className="pl-4 w-[300px]">Id</td>
             <td className="w-[300px]">Name</td>
-            <td className="w-[400px]">Slug</td>
-            <td className="w-[300px]">Language Code</td>
+            <td className="w-[100px]">Profession</td>
+            <td className="text-center w-[100px]">Published</td>
             <td className="text-center w-[100px]">Actions</td>
           </tr>
         </thead>
         <tbody>
-          {categoryData.map((v, idx) => (
+          {testimonialData.map((v, idx) => (
             <tr key={idx} className="text-white">
               <td
                 onClick={() => moveToDetails(v._id)}
@@ -65,16 +65,41 @@ const Table: React.FC<TableType> = ({ categoryData, getCategoryData }) => {
                 className="flex w-[300px] cursor-pointer"
                 onClick={() => moveToDetails(v._id)}
               >
-                <span>{v.name}</span>
+                <img
+                  src={v.profileImage}
+                  alt={v.name}
+                  className="w-[30px] h-[25px]"
+                />{" "}
+                <span className="ml-4">{v.name}</span>
               </td>
-              <td>{v.slug}</td>
-              <td>{v.langCode}</td>
+              <td>{v.profession}</td>
+
+              <td className="flex justify-center items-center">
+                {v.published ? (
+                  <StatusTag
+                    value="Published"
+                    className="text-primary bg-primaryLight"
+                  />
+                ) : (
+                  <StatusTag
+                    value="Draft"
+                    className="text-yellow bg-lightYellow"
+                  />
+                )}
+              </td>
 
               <td className="w-[100px] ">
                 <span className="flex justify-center">
                   <AiOutlineEdit
                     className="text-primary text-[20px] cursor-pointer"
-                    onClick={() => handleUpdateModal(v._id)}
+                    onClick={() =>
+                      navigate(
+                        ROUTES.ADMIN_HOME +
+                          ROUTES.ADMIN_EDIT_TESTIMONIALS_LINK +
+                          "/" +
+                          v._id
+                      )
+                    }
                   />
                   <MdDeleteOutline
                     className="text-primary text-[20px] cursor-pointer"
@@ -89,19 +114,9 @@ const Table: React.FC<TableType> = ({ categoryData, getCategoryData }) => {
       {modalOpen && (
         <DeleteModal
           setDialogOpen={setModalOpen}
-          deleteId={id}
+          deleteId={deleteId}
           value={name}
-          getData={getCategoryData}
-        />
-      )}
-      {detailsModalOpen && (
-        <DetailsModal setDialogOpen={setDetailsModalOpen} id={id} />
-      )}
-      {editModalOpen && (
-        <EditModal
-          setDialogOpen={setEditModalOpen}
-          id={id}
-          getData={getCategoryData}
+          getData={getTestimonialData}
         />
       )}
     </>

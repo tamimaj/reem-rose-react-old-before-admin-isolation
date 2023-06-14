@@ -2,8 +2,7 @@ import React from "react";
 import { toast } from "react-toastify";
 
 import CustomToast from "../../../CustomToast/CustomToast";
-import { deleteApplication } from "../../../../api/private/applications";
-import { deleteCategory } from "../../../../api/private/categories";
+import { deleteTestimonial } from "../../../../api/private/testimonials";
 
 type ModalType = {
   setDialogOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -28,12 +27,17 @@ const DeleteModal: React.FC<ModalType> = ({
   const deleteData = async () => {
     setDialogOpen(false);
     if (body) body.classList.remove("modal-open");
-    const response = await deleteCategory(deleteId);
+    const response = await deleteTestimonial(deleteId);
     if (!response || response?.status !== 200) {
-      toast(<CustomToast message={"Failed to delete Post"} />);
+      toast(<CustomToast message={"Failed to delete Testimonial"} />);
       return;
     }
-    toast(<CustomToast type="success" message={"Post Deleted Successfully"} />);
+    toast(
+      <CustomToast
+        type="success"
+        message={"Testimonial Deleted Successfully"}
+      />
+    );
     getData();
   };
   if (body) body.classList.add("modal-open");
@@ -48,7 +52,7 @@ const DeleteModal: React.FC<ModalType> = ({
               <div className="flex flex-col items-center">
                 <h5 className="text-white text-[24px]">Delete Modal</h5>
                 <p className="text-heading text-base mt-[48px]">
-                  {`Are you sure you want to delete Category "${value}"?`}
+                  {`Are you sure you want to delete Testimonial from "${value}"?`}
                 </p>
                 <div className="flex mt-[48px]">
                   <button

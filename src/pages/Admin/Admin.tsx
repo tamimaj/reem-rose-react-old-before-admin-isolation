@@ -20,6 +20,7 @@ import Projects from "./Projects/Projects";
 import AddProjectForm from "./Projects/Forms/AddProjectForm";
 import EditProjectForm from "./Projects/Forms/EditProjectForm";
 import ProjectDetails from "./Projects/ProjectDetails/ProjectDetails";
+import Testimonials from "./Testimonials/Testimonials";
 
 const Admin = () => {
   const { t } = useTranslation();
@@ -117,6 +118,24 @@ const Admin = () => {
             />
             <Route
               path={ROUTES.ADMIN_PROJECT_DETAILS}
+              element={<ProjectDetails />}
+            />
+
+            {/* testimonials routes */}
+            <Route
+              path={ROUTES.ADMIN_TESTIMONIALS}
+              element={<Testimonials />}
+            />
+            <Route
+              path={ROUTES.ADMIN_ADD_TESTIMONIAL}
+              element={<AddProjectForm />}
+            />
+            <Route
+              path={ROUTES.ADMIN_EDIT_TESTIMONIAL}
+              element={<EditProjectForm />}
+            />
+            <Route
+              path={ROUTES.ADMIN_TESTIMONIAL_DETAILS}
               element={<ProjectDetails />}
             />
           </Routes>

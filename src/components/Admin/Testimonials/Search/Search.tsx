@@ -10,7 +10,6 @@ interface SearchType {
   search: string;
   setSearch: React.Dispatch<React.SetStateAction<string>>;
   searchKey: string;
-  sort: string;
 }
 
 const Search: React.FC<SearchType> = ({ search, setSearch, searchKey }) => {
@@ -22,19 +21,18 @@ const Search: React.FC<SearchType> = ({ search, setSearch, searchKey }) => {
     if (search)
       navigate(
         ROUTES.ADMIN_HOME +
-          ROUTES.ADMIN_CATEGORIES +
+          ROUTES.ADMIN_TESTIMONIALS +
           "?page=1&search-key=" +
           searchKey +
           "&search-value=" +
           search
       );
-    else navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_CATEGORIES + "?page=1");
+    else navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_TESTIMONIALS + "?page=1");
   };
 
   const handleClearSearch = () => {
-    console.log("working");
     setSearch("");
-    navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_CATEGORIES + "?page=1");
+    navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_TESTIMONIALS + "?page=1");
   };
   const handleSearchText = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
