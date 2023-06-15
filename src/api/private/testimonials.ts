@@ -37,9 +37,8 @@ export const getTestimonials = async (
   }
 };
 
-export const createTestimonials = async (data: object) => {
+export const createTestimonial = async (data: object) => {
   try {
-    console.log(data, "data");
     let url = endpoint;
 
     const result = await api.post(url, { data });

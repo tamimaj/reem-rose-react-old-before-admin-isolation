@@ -46,8 +46,8 @@ const Table: React.FC<TableType> = ({
         <thead className="text-white text-sm bg-primaryLight h-[50px] rounded">
           <tr>
             <td className="pl-4 w-[300px]">Id</td>
-            <td className="w-[300px]">Name</td>
-            <td className="w-[100px]">Profession</td>
+            <td className="w-[250px]">Name</td>
+            <td className="w-[250px]">Profession</td>
             <td className="text-center w-[100px]">Published</td>
             <td className="text-center w-[100px]">Actions</td>
           </tr>

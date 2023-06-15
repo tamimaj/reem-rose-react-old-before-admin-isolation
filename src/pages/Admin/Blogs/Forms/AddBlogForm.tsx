@@ -521,11 +521,6 @@ const AddBlogForm = () => {
                     ]}
                     className="w-full  rounded py-2 text-base"
                   />
-                  {formik.touched.isPublished && formik.errors.isPublished && (
-                    <p className="text-red text-xs flex mt-1">
-                      {formik.errors.isPublished}
-                    </p>
-                  )}
                 </div>{" "}
               </div>
               <button

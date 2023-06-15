@@ -40,4 +40,12 @@ export const initialValues = [
     seoTitle: "",
     seoDescription: "",
   },
+  {
+    name: "",
+    profileImage: "",
+    profession: "",
+    socialLinks: [],
+    review: "",
+    published: false,
+  },
 ];

@@ -198,7 +198,6 @@ const AddProjectForm = () => {
       setProjectData(response.data.projectData);
     }
   };
-  // console.log(formik.values.links, "formik.values.techStacks");
   return (
     <div className=" pt-4 pb-20 w-full flex justify-center">
       <div className="w-full 3xl:w-[90%] max-w-[1440px] flex flex-col overflow-x-hidden items-center">
@@ -209,7 +208,10 @@ const AddProjectForm = () => {
             <h6 className="text-white font-medium text-xl">
               Edit Project Form
             </h6>
-            <form className="flex flex-col mt-[48px]" autoComplete="off">
+            <form
+              className="flex flex-col mt-[48px] w-[500px] lg:w-[800px]"
+              autoComplete="off"
+            >
               <div className="flex lg:flex-row flex-col  mb-8">
                 <div className="flex flex-col w-full mb-8 lg:mb-0 lg:w-1/2 mr-4">
                   <label className="font-semibold text-sm text-white ml-[1px]">

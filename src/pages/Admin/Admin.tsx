@@ -21,6 +21,9 @@ import AddProjectForm from "./Projects/Forms/AddProjectForm";
 import EditProjectForm from "./Projects/Forms/EditProjectForm";
 import ProjectDetails from "./Projects/ProjectDetails/ProjectDetails";
 import Testimonials from "./Testimonials/Testimonials";
+import AddTestimonialForm from "./Testimonials/Forms/AddTestimonialForm";
+import EditTestimonialForm from "./Testimonials/Forms/EditTestimonialForm";
+import TestimonialDetails from "./Testimonials/TestimonialDetails/TestimonialDetails";
 
 const Admin = () => {
   const { t } = useTranslation();
@@ -128,15 +131,15 @@ const Admin = () => {
             />
             <Route
               path={ROUTES.ADMIN_ADD_TESTIMONIAL}
-              element={<AddProjectForm />}
+              element={<AddTestimonialForm />}
             />
             <Route
               path={ROUTES.ADMIN_EDIT_TESTIMONIAL}
-              element={<EditProjectForm />}
+              element={<EditTestimonialForm />}
             />
             <Route
               path={ROUTES.ADMIN_TESTIMONIAL_DETAILS}
-              element={<ProjectDetails />}
+              element={<TestimonialDetails />}
             />
           </Routes>
         </div>
