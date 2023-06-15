@@ -24,6 +24,10 @@ import Testimonials from "./Testimonials/Testimonials";
 import AddTestimonialForm from "./Testimonials/Forms/AddTestimonialForm";
 import EditTestimonialForm from "./Testimonials/Forms/EditTestimonialForm";
 import TestimonialDetails from "./Testimonials/TestimonialDetails/TestimonialDetails";
+import Services from "./Services/Services";
+import ServicesDetails from "./Services/ServiceDetails/ServiceDetails";
+import AddServicesForm from "./Services/Forms/AddServicesForm";
+import EditServicesForm from "./Services/Forms/EditServicesForm";
 
 const Admin = () => {
   const { t } = useTranslation();
@@ -140,6 +144,21 @@ const Admin = () => {
             <Route
               path={ROUTES.ADMIN_TESTIMONIAL_DETAILS}
               element={<TestimonialDetails />}
+            />
+
+            {/* services routes */}
+            <Route path={ROUTES.ADMIN_SERVICES} element={<Services />} />
+            <Route
+              path={ROUTES.ADMIN_ADD_SERVICE}
+              element={<AddServicesForm />}
+            />
+            <Route
+              path={ROUTES.ADMIN_EDIT_SERVICE}
+              element={<EditServicesForm />}
+            />
+            <Route
+              path={ROUTES.ADMIN_SERVICE_DETAILS}
+              element={<ServicesDetails />}
             />
           </Routes>
         </div>

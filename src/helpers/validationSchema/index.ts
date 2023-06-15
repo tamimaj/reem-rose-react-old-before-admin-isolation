@@ -30,13 +30,18 @@ export const validationSchema = [
     coverImage: Yup.string().required("Cover Image is required"),
     seoTitle: Yup.string().required("Seo Title is required"),
     seoDescription: Yup.string().required("Seo Description is required"),
-  }),  
-Yup.object().shape({
-  name: Yup.string().required("Name is required"),
-  profileImage: Yup.string().required("Profile Image is required"),
-  review: Yup.string().required("Review is required"),
+  }),
+  Yup.object().shape({
+    name: Yup.string().required("Name is required"),
+    profileImage: Yup.string().required("Profile Image is required"),
+    review: Yup.string().required("Review is required"),
+  }),
 
-}),
+  Yup.object().shape({
+    title: Yup.string().required("Title is required"),
+    summary: Yup.string().required("Summary is required"),
+    content: Yup.string().required("Content is required"),
+    seoTitle: Yup.string().required("Seo Title is required"),
+    seoDescription: Yup.string().required("Seo Description is required"),
+  }),
 ];
-
-

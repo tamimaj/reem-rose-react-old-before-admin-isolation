@@ -42,17 +42,17 @@ const SearchFilter: React.FC<SearchType> = ({
             onClick={() => handleClose("name")}
             className="w-full h-[20px] pb-[6px] mb-3  flex items-center justify-between hover:font-semibold hover:text-primary"
           >
-            name
+            Name
           </button>
           <button
-            onClick={() => handleClose("slug")}
+            onClick={() => handleClose("seoTitle")}
             className="w-full h-[20px] pb-[6px] mb-3  flex items-center justify-between hover:font-semibold hover:text-primary"
           >
-            Slug
+            Seo Title
           </button>
           <button
             onClick={() => handleClose("_id")}
-            className="w-full h-[20px] pb-[6px]  flex items-center justify-between hover:font-semibold hover:text-primary"
+            className="w-full h-[20px] flex items-center justify-between hover:font-semibold hover:text-primary"
           >
             Id
           </button>

@@ -5,40 +5,29 @@ import { useNavigate } from "react-router-dom";
 
 import ROUTES from "../../../../settings/ROUTES";
 import DeleteModal from "../DeleteModal/DeleteModal";
-import DetailsModal from "../DetailsModal/DetailsModal";
-import EditModal from "../EditModal/EditModal";
 
-interface CategoryType {
+interface ServicesType {
   _id: string;
-  name: string;
-  slug: string;
-  langCode: string;
+  title: string;
+  seoTitle: string;
 }
 interface TableType {
-  categoryData: CategoryType[];
-  getCategoryData: () => {};
+  servicesData: ServicesType[];
+  getServicesData: () => {};
 }
-const Table: React.FC<TableType> = ({ categoryData, getCategoryData }) => {
+const Table: React.FC<TableType> = ({ servicesData, getServicesData }) => {
   const navigate = useNavigate();
   const [modalOpen, setModalOpen] = useState<boolean>(false);
-  const [detailsModalOpen, setDetailsModalOpen] = useState<boolean>(false);
-  const [editModalOpen, setEditModalOpen] = useState<boolean>(false);
-  const [id, setId] = useState("");
-  const [name, setName] = useState("");
+  const [deleteId, setDeleteId] = useState("");
+  const [title, setTitle] = useState("");
 
-  const handleDeleteModal = (id: string, name: string) => {
+  const handleDeleteModal = (id: string, title: string) => {
     setModalOpen(true);
-    setId(id);
-    setName(name);
+    setDeleteId(id);
+    setTitle(title);
   };
   const moveToDetails = (id: string) => {
-    setId(id);
-    setDetailsModalOpen(true);
-  };
-
-  const handleUpdateModal = (id: string) => {
-    setId(id);
-    setEditModalOpen(true);
+    navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_SERVICE_DETAILS_LINK + "/" + id);
   };
   return (
     <>
@@ -46,14 +35,13 @@ const Table: React.FC<TableType> = ({ categoryData, getCategoryData }) => {
         <thead className="text-white text-sm bg-primaryLight h-[50px] rounded">
           <tr>
             <td className="pl-4 w-[300px]">Id</td>
-            <td className="w-[300px]">Name</td>
-            <td className="w-[400px]">Slug</td>
-            <td className="w-[300px]">Language Code</td>
+            <td className="w-[250px]">Title</td>
+            <td className="w-[250px]">SeoTitle</td>
             <td className="text-center w-[100px]">Actions</td>
           </tr>
         </thead>
         <tbody>
-          {categoryData.map((v, idx) => (
+          {servicesData.map((v, idx) => (
             <tr key={idx} className="text-white">
               <td
                 onClick={() => moveToDetails(v._id)}
@@ -65,20 +53,26 @@ const Table: React.FC<TableType> = ({ categoryData, getCategoryData }) => {
                 className="flex w-[300px] cursor-pointer"
                 onClick={() => moveToDetails(v._id)}
               >
-                <span>{v.name}</span>
+                <span className="ml-4">{v.title}</span>
               </td>
-              <td>{v.slug}</td>
-              <td>{v.langCode}</td>
+              <td>{v.seoTitle}</td>
 
               <td className="w-[100px] ">
                 <span className="flex justify-center">
                   <AiOutlineEdit
                     className="text-primary text-[20px] cursor-pointer"
-                    onClick={() => handleUpdateModal(v._id)}
+                    onClick={() =>
+                      navigate(
+                        ROUTES.ADMIN_HOME +
+                          ROUTES.ADMIN_EDIT_SERVICE_LINK +
+                          "/" +
+                          v._id
+                      )
+                    }
                   />
                   <MdDeleteOutline
                     className="text-primary text-[20px] cursor-pointer"
-                    onClick={() => handleDeleteModal(v._id, v.name)}
+                    onClick={() => handleDeleteModal(v._id, v.title)}
                   />
                 </span>
               </td>
@@ -89,19 +83,9 @@ const Table: React.FC<TableType> = ({ categoryData, getCategoryData }) => {
       {modalOpen && (
         <DeleteModal
           setDialogOpen={setModalOpen}
-          deleteId={id}
-          value={name}
-          getData={getCategoryData}
-        />
-      )}
-      {detailsModalOpen && (
-        <DetailsModal setDialogOpen={setDetailsModalOpen} id={id} />
-      )}
-      {editModalOpen && (
-        <EditModal
-          setDialogOpen={setEditModalOpen}
-          id={id}
-          getData={getCategoryData}
+          deleteId={deleteId}
+          value={title}
+          getData={getServicesData}
         />
       )}
     </>

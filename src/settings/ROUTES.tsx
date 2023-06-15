@@ -51,6 +51,14 @@ const ROUTES = {
   ADMIN_EDIT_TESTIMONIALS_LINK: "/edit-testimonial",
   ADMIN_TESTIMONIAL_DETAILS: "/testimonial-details/:id",
   ADMIN_TESTIMONIALS_DETAILS_LINK: "/testimonial-details",
+
+  //Services routes
+  ADMIN_SERVICES: "/services",
+  ADMIN_ADD_SERVICE: "/add-service",
+  ADMIN_EDIT_SERVICE: "/edit-service/:id",
+  ADMIN_EDIT_SERVICE_LINK: "/edit-service",
+  ADMIN_SERVICE_DETAILS: "/service-details/:id",
+  ADMIN_SERVICE_DETAILS_LINK: "/service-details",
 };
 
 export default ROUTES;

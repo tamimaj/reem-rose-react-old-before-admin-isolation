@@ -40,7 +40,7 @@ const TestimonialCard: React.FC<TestimonialDataType> = ({ data }) => {
                   key={idx}
                   provider={v.provider && initialCapital(v?.provider)}
                   link={v.link}
-                  className="text-white"
+                  className="text-primaryDark"
                 />
               ))}
             </div>

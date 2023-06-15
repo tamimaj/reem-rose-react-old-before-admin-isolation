@@ -48,4 +48,11 @@ export const initialValues = [
     review: "",
     published: false,
   },
+  {
+    title: "",
+    summary: "",
+    content: "",
+    seoTitle: "",
+    seoDescription: "",
+  },
 ];

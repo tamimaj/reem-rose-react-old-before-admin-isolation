@@ -29,7 +29,7 @@ const SortMenu: React.FC<sortType> = ({ className, sort, setSort }) => {
     if (searchKeyData) {
       navigate(
         ROUTES.ADMIN_HOME +
-          ROUTES.ADMIN_CATEGORIES +
+          ROUTES.ADMIN_SERVICES +
           "?page=1&search-key=" +
           searchKeyData +
           "&search-value=" +
@@ -39,10 +39,7 @@ const SortMenu: React.FC<sortType> = ({ className, sort, setSort }) => {
       );
     } else
       navigate(
-        ROUTES.ADMIN_HOME +
-          ROUTES.ADMIN_CATEGORIES +
-          "?page=1&sort=" +
-          sortValue
+        ROUTES.ADMIN_HOME + ROUTES.ADMIN_SERVICES + "?page=1&sort=" + sortValue
       );
     setSort(v);
   };
@@ -51,7 +48,7 @@ const SortMenu: React.FC<sortType> = ({ className, sort, setSort }) => {
     <div className={`${className} relative mr-2`} ref={sortRef}>
       <button
         onClick={() => setSortMenu(!sortMenu)}
-        className="flex items-center justify-between min-w-[150px] h-[40px] bg-primaryLight rounded pl-4 pr-2"
+        className="flex items-center justify-between min-w-[180px] h-[40px] bg-primaryLight rounded pl-4 pr-2"
       >
         <div className="flex">
           <p className="mr-1 text-[14px] text-base text-white">
@@ -64,28 +61,16 @@ const SortMenu: React.FC<sortType> = ({ className, sort, setSort }) => {
         <div className="text-sm z-50 absolute bg-black text-bodyText w-full top-[46px] rounded  pl-3 py-4">
           {" "}
           <button
-            onClick={() => handleClose("name asc")}
+            onClick={() => handleClose("title asc")}
             className="w-full h-[20px] pb-[6px] mb-3  flex items-center justify-between hover:font-semibold hover:text-primary"
           >
-            Name (asc)
+            Title (asc)
           </button>
           <button
-            onClick={() => handleClose("name desc")}
+            onClick={() => handleClose("title desc")}
             className="w-full h-[20px] pb-[6px] mb-3  flex items-center justify-between hover:font-semibold hover:text-primary"
           >
-            Name (desc)
-          </button>
-          <button
-            onClick={() => handleClose("slug asc")}
-            className="w-full h-[20px] pb-[6px] mb-3  flex items-center justify-between hover:font-semibold hover:text-primary"
-          >
-            Slug (asc)
-          </button>
-          <button
-            onClick={() => handleClose("slug desc")}
-            className="w-full h-[20px] pb-[6px] mb-3 flex items-center justify-between hover:font-semibold hover:text-primary"
-          >
-            Slug (desc)
+            Title (desc)
           </button>
           <button
             onClick={() => handleClose("date asc")}
