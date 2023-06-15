@@ -21,7 +21,7 @@ const SocialLinks: React.FC<SocialLinksType> = ({
           target="_blank"
           className="[32px] mr-4 h-[32px]"
         >
-          <BsGlobe className={`w-[21px] h-[21px] mr-2 ${className}`} />
+          <BsGlobe className={`w-[21px] h-[21px]  ${className}`} />
         </a>
       )}
       {(provider === "Github" || provider === "Code") && (
@@ -30,7 +30,7 @@ const SocialLinks: React.FC<SocialLinksType> = ({
           target="_blank"
           className="[32px] mr-4 h-[32px]"
         >
-          <AiFillGithub className={`w-[24px] h-[24px] mr-2 ${className}`} />
+          <AiFillGithub className={`w-[24px] h-[24px]  ${className}`} />
         </a>
       )}
       {provider === "LinkedIn" && (
@@ -39,7 +39,7 @@ const SocialLinks: React.FC<SocialLinksType> = ({
           target="_blank"
           className="[32px] mr-4 h-[32px]"
         >
-          <AiFillLinkedin className={`w-[24px] h-[24px] mr-2 ${className}`} />
+          <AiFillLinkedin className={`w-[24px] h-[24px]  ${className}`} />
         </a>
       )}
       {provider === "Twitter" && (
@@ -48,7 +48,7 @@ const SocialLinks: React.FC<SocialLinksType> = ({
           target="_blank"
           className="[32px] mr-4 h-[32px]"
         >
-          <AiOutlineTwitter className={`w-[24px] h-[24px] mr-2 ${className}`} />
+          <AiOutlineTwitter className={`w-[24px] h-[24px] ${className}`} />
         </a>
       )}
     </>

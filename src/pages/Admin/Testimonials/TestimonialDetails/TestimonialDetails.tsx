@@ -130,7 +130,7 @@ const TestimonialDetails = () => {
                     key={idx}
                     provider={v.provider && initialCapital(v?.provider)}
                     link={v.link}
-                    className="text-white"
+                    className="text-white mr-2"
                   />
                 ))}
               </div>

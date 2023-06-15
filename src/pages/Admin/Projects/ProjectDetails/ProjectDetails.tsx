@@ -144,7 +144,7 @@ const ProjectDetails = () => {
                     key={idx}
                     provider={v.name && initialCapital(v?.name)}
                     link={v.link}
-                    className="text-white"
+                    className="text-white mr-2"
                   />
                 ))}
               </div>

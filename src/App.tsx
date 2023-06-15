@@ -1,9 +1,9 @@
-import "rc-drawer/assets/index.css";
-import "react-alice-carousel/lib/alice-carousel.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "react-quill/dist/quill.snow.css";
+import "rc-drawer/assets/index.css";
+import "react-alice-carousel/lib/alice-carousel.css";
 
 import Layout from "./components/layout/Layout";
 import Home from "./pages/Home/Home";

@@ -61,13 +61,13 @@ const AddTestimonialForm = () => {
 
   const handleCreateTestimonial = async (values: any) => {
     setLoading(true);
-    if (linkedinInfo.link && twitterInfo.link)
+    if (linkedinInfo?.link && twitterInfo?.link)
       values.socialLinks = [{ ...linkedinInfo }, { ...twitterInfo }];
-    else if (linkedinInfo.link && !twitterInfo.link)
+    else if (linkedinInfo?.link && !twitterInfo?.link)
       values.socialLinks = [{ ...linkedinInfo }];
-    else if (!linkedinInfo.link && twitterInfo.link)
+    else if (!linkedinInfo?.link && twitterInfo?.link)
       values.socialLinks = [{ ...twitterInfo }];
-    else if (!linkedinInfo.link && !twitterInfo.link) {
+    else if (!linkedinInfo?.link && !twitterInfo?.link) {
       values.socialLinks = [];
     }
 

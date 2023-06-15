@@ -51,7 +51,6 @@ export const createTestimonial = async (data: object) => {
 export const updateTestimonial = async (data: object) => {
   try {
     let url = endpoint;
-
     const result = await api.put(url, { data });
     return result;
   } catch (err) {

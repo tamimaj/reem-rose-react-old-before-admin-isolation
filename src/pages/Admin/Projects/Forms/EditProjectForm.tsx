@@ -133,12 +133,13 @@ const AddProjectForm = () => {
   }, [projectData]);
   const handleUpdateProject = async (values: any) => {
     setLoading(true);
-    if (webInfo.link && githubInfo.link)
+    if (webInfo?.link && githubInfo?.link)
       values.links = [{ ...webInfo }, { ...githubInfo }];
-    else if (webInfo.link && !githubInfo.link) values.links = [{ ...webInfo }];
-    else if (!webInfo.link && githubInfo.link)
+    else if (webInfo?.link && !githubInfo?.link)
+      values.links = [{ ...webInfo }];
+    else if (!webInfo?.link && githubInfo?.link)
       values.links = [{ ...githubInfo }];
-    else if (!webInfo.link && !githubInfo.link) {
+    else if (!webInfo?.link && !githubInfo?.link) {
       values.links = [];
     }
 
