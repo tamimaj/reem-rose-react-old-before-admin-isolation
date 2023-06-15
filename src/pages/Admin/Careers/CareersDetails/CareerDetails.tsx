@@ -97,6 +97,10 @@ const CareerDetails = () => {
                     <span className="font-normal text-base">Updated At : </span>{" "}
                     {moment(careerData.updatedAt).format("DD.MM.YY")}
                   </span>
+                  <span className="my-2 font-light text-sm">
+                    <span className="font-normal text-base">Location : </span>{" "}
+                    {careerData.location}
+                  </span>
                 </div>
               </div>
             </div>
