@@ -1,63 +1,49 @@
-import React, { Fragment, useState } from "react";
-import { useTranslation } from "react-i18next";
+import React, { useState } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { MdDeleteOutline } from "react-icons/md";
 
-import StatusTag from "../StatusTag/StatusTag";
 import { useNavigate } from "react-router-dom";
 import ROUTES from "../../../../settings/ROUTES";
 import DeleteModal from "../DeleteModal/DeleteModal";
 
-interface BlogType {
+interface CareerType {
   _id: string;
-  title: string;
-  coverImage: string;
-  summary: string;
-  categoriesData: [
-    {
-      name: string;
-    }
-  ];
-  isPublished: boolean;
+  role: string;
+  location: string;
+  seoTitle: string;
 }
 interface TableType {
-  blogData: BlogType[];
-  getBlogData: () => {};
+  careerData: CareerType[];
+  getCareerData: () => {};
 }
-const Table: React.FC<TableType> = ({ blogData, getBlogData }) => {
-  const { t } = useTranslation();
+const Table: React.FC<TableType> = ({ careerData, getCareerData }) => {
   const navigate = useNavigate();
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [deleteId, setDeleteId] = useState("");
-  const [title, setTitle] = useState("");
+  const [role, setRole] = useState("");
 
-  const handleDeleteModal = (id: string, postTitle: string) => {
+  const handleDeleteModal = (id: string, role: string) => {
     setModalOpen(true);
     setDeleteId(id);
-    setTitle(postTitle);
+    setRole(role);
   };
   const moveToDetails = (id: string) => {
-    navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_BLOG_DETAILS_LINK + "/" + id);
+    navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_CAREER_DETAILS_LINK + "/" + id);
   };
   return (
     <>
       <table className="xl:w-full w-[95%] min-w-[1200px]  border-separate border-spacing-x-0 border-spacing-y-[10px]">
         <thead className="text-white text-sm bg-primaryLight h-[50px] rounded">
           <tr>
-            <td className="pl-4 w-[300px]">{t("admin.postTable.heading1")}</td>
-            <td className="w-[300px]">{t("admin.postTable.heading2")}</td>
-            <td className="w-[400px]">{t("admin.postTable.heading3")}</td>
-            <td className="w-[300px]">{t("admin.postTable.heading4")}</td>
-            <td className="text-center w-[100px]">
-              {t("admin.postTable.heading5")}
-            </td>
-            <td className="text-center w-[100px]">
-              {t("admin.postTable.heading6")}
-            </td>
+            <td className="pl-4 w-[300px]">Id</td>
+            <td className="w-[300px]">Role</td>
+            <td className="w-[400px]">Location</td>
+            <td className="w-[300px]">Seo Title</td>
+            <td className="text-center w-[100px]">Actions</td>
           </tr>
         </thead>
         <tbody>
-          {blogData.map((v, idx) => (
+          {careerData.map((v, idx) => (
             <tr key={idx} className="text-white">
               <td
                 onClick={() => moveToDetails(v._id)}
@@ -69,35 +55,10 @@ const Table: React.FC<TableType> = ({ blogData, getBlogData }) => {
                 className="flex w-[300px] cursor-pointer"
                 onClick={() => moveToDetails(v._id)}
               >
-                <img
-                  src={v.coverImage}
-                  alt={v.title}
-                  className="w-[30px] h-[25px]"
-                />{" "}
-                <span className="ml-4">{v.title}</span>
+                {v.role}
               </td>
-              <td>{v.summary}</td>
-              <td>
-                {v.categoriesData.map((category, idx) => (
-                  <Fragment key={idx}>
-                    {category.name}{" "}
-                    {v.categoriesData.length !== idx + 1 && " , "}
-                  </Fragment>
-                ))}
-              </td>
-              <td className="flex justify-center items-center">
-                {v.isPublished ? (
-                  <StatusTag
-                    value="Published"
-                    className="text-primary bg-primaryLight"
-                  />
-                ) : (
-                  <StatusTag
-                    value="Draft"
-                    className="text-yellow bg-lightYellow"
-                  />
-                )}
-              </td>
+              <td>{v.location}</td>
+              <td>{v.seoTitle}</td>
               <td className="w-[100px] ">
                 <span className="flex justify-center">
                   <AiOutlineEdit
@@ -105,7 +66,7 @@ const Table: React.FC<TableType> = ({ blogData, getBlogData }) => {
                     onClick={() =>
                       navigate(
                         ROUTES.ADMIN_HOME +
-                          ROUTES.ADMIN_EDIT_BLOG_LINK +
+                          ROUTES.ADMIN_EDIT_CAREER_LINK +
                           "/" +
                           v._id
                       )
@@ -113,7 +74,7 @@ const Table: React.FC<TableType> = ({ blogData, getBlogData }) => {
                   />
                   <MdDeleteOutline
                     className="text-primary text-[20px] cursor-pointer"
-                    onClick={() => handleDeleteModal(v._id, v.title)}
+                    onClick={() => handleDeleteModal(v._id, v.role)}
                   />
                 </span>
               </td>
@@ -125,8 +86,8 @@ const Table: React.FC<TableType> = ({ blogData, getBlogData }) => {
         <DeleteModal
           setDialogOpen={setModalOpen}
           deleteId={deleteId}
-          value={title}
-          getData={getBlogData}
+          value={role}
+          getData={getCareerData}
         />
       )}
     </>

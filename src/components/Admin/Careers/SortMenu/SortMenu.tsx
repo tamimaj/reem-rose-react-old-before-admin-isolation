@@ -20,7 +20,6 @@ const SortMenu: React.FC<sortType> = ({ className, sort, setSort }) => {
   const queryParams = new URLSearchParams(location.search);
   const searchKeyData = queryParams.get("search-key");
   const searchValueData = queryParams.get("search-value");
-  const filterData = queryParams.get("filter");
 
   useOutsideClick(sortRef, setSortMenu);
 
@@ -30,7 +29,7 @@ const SortMenu: React.FC<sortType> = ({ className, sort, setSort }) => {
     if (searchKeyData) {
       navigate(
         ROUTES.ADMIN_HOME +
-          ROUTES.ADMIN_BLOGS +
+          ROUTES.ADMIN_CAREERS +
           "?page=1&search-key=" +
           searchKeyData +
           "&search-value=" +
@@ -38,19 +37,9 @@ const SortMenu: React.FC<sortType> = ({ className, sort, setSort }) => {
           "&sort=" +
           sortValue
       );
-    } else if (filterData) {
-      navigate(
-        ROUTES.ADMIN_HOME +
-          ROUTES.ADMIN_BLOGS +
-          "?page=1" +
-          "&filter=" +
-          filterData +
-          "&sort=" +
-          sortValue
-      );
     } else
       navigate(
-        ROUTES.ADMIN_HOME + ROUTES.ADMIN_BLOGS + "?page=1&sort=" + sortValue
+        ROUTES.ADMIN_HOME + ROUTES.ADMIN_CAREERS + "?page=1&sort=" + sortValue
       );
     setSort(v);
   };
@@ -72,28 +61,28 @@ const SortMenu: React.FC<sortType> = ({ className, sort, setSort }) => {
         <div className="text-sm z-50 absolute bg-black text-bodyText w-full top-[46px] rounded  pl-3 py-4">
           {" "}
           <button
-            onClick={() => handleClose("title asc")}
+            onClick={() => handleClose("role asc")}
             className="w-full h-[20px] pb-[6px] mb-3  flex items-center justify-between hover:font-semibold hover:text-primary"
           >
-            Title (asc)
+            Role (asc)
           </button>
           <button
-            onClick={() => handleClose("title desc")}
+            onClick={() => handleClose("role desc")}
             className="w-full h-[20px] pb-[6px] mb-3  flex items-center justify-between hover:font-semibold hover:text-primary"
           >
-            Title (desc)
+            Role (desc)
           </button>
           <button
-            onClick={() => handleClose("category asc")}
+            onClick={() => handleClose("location asc")}
             className="w-full h-[20px] pb-[6px] mb-3  flex items-center justify-between hover:font-semibold hover:text-primary"
           >
-            Category (asc)
+            Location (asc)
           </button>
           <button
-            onClick={() => handleClose("category desc")}
+            onClick={() => handleClose("location desc")}
             className="w-full h-[20px] pb-[6px] mb-3 flex items-center justify-between hover:font-semibold hover:text-primary"
           >
-            Category (desc)
+            Location (desc)
           </button>
           <button
             onClick={() => handleClose("date asc")}

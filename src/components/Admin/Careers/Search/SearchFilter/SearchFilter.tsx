@@ -39,10 +39,10 @@ const SearchFilter: React.FC<SearchType> = ({
         <div className="text-sm z-50 absolute bg-black text-bodyText w-full top-[46px] rounded  pl-3 py-4">
           {" "}
           <button
-            onClick={() => handleClose("title")}
+            onClick={() => handleClose("role")}
             className="w-full h-[20px] pb-[6px] mb-3  flex items-center justify-between hover:font-semibold hover:text-primary"
           >
-            Title
+            Role
           </button>
           <button
             onClick={() => handleClose("_id")}
@@ -51,10 +51,10 @@ const SearchFilter: React.FC<SearchType> = ({
             Id
           </button>
           <button
-            onClick={() => handleClose("summary")}
+            onClick={() => handleClose("location")}
             className="w-full h-[20px] pb-[6px] flex items-center justify-between hover:font-semibold hover:text-primary"
           >
-            Summary
+            Location
           </button>
         </div>
       )}

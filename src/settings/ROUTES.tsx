@@ -59,6 +59,14 @@ const ROUTES = {
   ADMIN_EDIT_SERVICE_LINK: "/edit-service",
   ADMIN_SERVICE_DETAILS: "/service-details/:id",
   ADMIN_SERVICE_DETAILS_LINK: "/service-details",
+
+  //Careers routes
+  ADMIN_CAREERS: "/careers",
+  ADMIN_ADD_CAREER: "/add-career",
+  ADMIN_EDIT_CAREER: "/edit-career/:id",
+  ADMIN_EDIT_CAREER_LINK: "/edit-career",
+  ADMIN_CAREER_DETAILS: "/career-details/:id",
+  ADMIN_CAREER_DETAILS_LINK: "/career-details",
 };
 
 export default ROUTES;

@@ -55,4 +55,13 @@ export const initialValues = [
     seoTitle: "",
     seoDescription: "",
   },
+  {
+    role: "",
+    slug: "",
+    location: "",
+    shortDescription: "",
+    description: "",
+    seoTitle: "",
+    seoDescription: "",
+  },
 ];

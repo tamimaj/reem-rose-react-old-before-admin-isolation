@@ -28,6 +28,10 @@ import Services from "./Services/Services";
 import ServicesDetails from "./Services/ServiceDetails/ServiceDetails";
 import AddServicesForm from "./Services/Forms/AddServicesForm";
 import EditServicesForm from "./Services/Forms/EditServicesForm";
+import Careers from "./Careers/Careers";
+import CareerDetails from "./Careers/CareersDetails/CareerDetails";
+import AddCareerForm from "./Careers/Forms/AddCareerForm";
+import EditCareerForm from "./Careers/Forms/EditCareerForm";
 
 const Admin = () => {
   const { t } = useTranslation();
@@ -53,16 +57,6 @@ const Admin = () => {
         <div className="flex w-full overflow-y-hidden">
           <div className="flex flex-col justify-between 2xl:items-start items-center 2xl:w-[227px] h-[405px] 2xl:h-full bg-primaryLight py-8 px-4 2xl:p-8 rounded mr-6">
             <div className="flex flex-col">
-              {/* <div className="flex cursor-pointer mb-4">
-                <img
-                  src={dashboard}
-                  alt="dashboard icon"
-                  className="w-[20px] h-[20px] 2xl:mr-3"
-                />
-                <span className="2xl:flex hidden text-bodyText hover:text-white">
-                  {t("admin.title")}
-                </span>
-              </div> */}
               {siteSettings.admin.map((v, idx) => (
                 <Link
                   to={v.link ? v?.link : "/admin"}
@@ -159,6 +153,18 @@ const Admin = () => {
             <Route
               path={ROUTES.ADMIN_SERVICE_DETAILS}
               element={<ServicesDetails />}
+            />
+
+            {/* careers routes */}
+            <Route path={ROUTES.ADMIN_CAREERS} element={<Careers />} />
+            <Route path={ROUTES.ADMIN_ADD_CAREER} element={<AddCareerForm />} />
+            <Route
+              path={ROUTES.ADMIN_EDIT_CAREER}
+              element={<EditCareerForm />}
+            />
+            <Route
+              path={ROUTES.ADMIN_CAREER_DETAILS}
+              element={<CareerDetails />}
             />
           </Routes>
         </div>

@@ -112,7 +112,7 @@ export default {
     },
     {
       text: "admin.section8",
-      link: ROUTES.ADMIN_HOME,
+      link: ROUTES.ADMIN_HOME + ROUTES.ADMIN_CAREERS,
     },
   ],
 };

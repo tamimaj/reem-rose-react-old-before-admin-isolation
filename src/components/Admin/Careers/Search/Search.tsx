@@ -20,19 +20,19 @@ const Search: React.FC<SearchType> = ({ search, setSearch, searchKey }) => {
     if (search)
       navigate(
         ROUTES.ADMIN_HOME +
-          ROUTES.ADMIN_BLOGS +
+          ROUTES.ADMIN_CAREERS +
           "?page=1&search-key=" +
           searchKey +
           "&search-value=" +
           search
       );
-    else navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_BLOGS + "?page=1");
+    else navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_CAREERS + "?page=1");
   };
 
   const handleClearSearch = () => {
     console.log("working");
     setSearch("");
-    navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_BLOGS + "?page=1");
+    navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_CAREERS + "?page=1");
   };
   const handleSearchText = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
