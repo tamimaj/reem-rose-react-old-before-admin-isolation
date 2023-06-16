@@ -54,4 +54,9 @@ export const validationSchema = [
     seoTitle: Yup.string().required("Seo Title is required"),
     seoDescription: Yup.string().required("Seo Description is required"),
   }),
+
+  Yup.object().shape({
+    email: Yup.string().required("Email is required"),
+    password: Yup.string().required("Password is required"),
+  }),
 ];

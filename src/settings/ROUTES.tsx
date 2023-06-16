@@ -12,11 +12,11 @@ const ROUTES = {
   CONTACT_US: "/contact-us",
   ABOUT_US: "/about-us",
 
-  LOGIN: "/login",
   PRIVACY_POLICY: "/privacy-policy",
   TERMS_AND_CONDITIONS: "/terms-and-conditions",
-
+  
   //admin routes
+  LOGIN: "/login",
   ADMIN: "/admin/*",
   ADMIN_HOME: "/admin",
 

@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import { IoMdApps } from "react-icons/io";
 import { FiLogOut } from "react-icons/fi";
 import { Tooltip } from "react-tooltip";
@@ -32,10 +32,22 @@ import Careers from "./Careers/Careers";
 import CareerDetails from "./Careers/CareersDetails/CareerDetails";
 import AddCareerForm from "./Careers/Forms/AddCareerForm";
 import EditCareerForm from "./Careers/Forms/EditCareerForm";
+import Login from "../Login/Login";
+import { useAuth } from "../../context/auth.context";
+import { useEffect } from "react";
 
 const Admin = () => {
   const { t } = useTranslation();
   const { width } = useWindowSize();
+  const { isLoggedIn, user, isCheckingAuth, logOut } = useAuth();
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!isCheckingAuth && !user && !isLoggedIn) {
+      navigate(ROUTES.ADMIN_HOME + ROUTES.LOGIN);
+    }
+  }, [isLoggedIn, user, isCheckingAuth]);
+
   return (
     <div className=" pt-4 pb-20 w-full flex justify-center">
       {width < 1500 && (
@@ -55,117 +67,135 @@ const Admin = () => {
           {t("admin.heading")}
         </Link>
         <div className="flex w-full overflow-y-hidden">
-          <div className="flex flex-col justify-between 2xl:items-start items-center 2xl:w-[227px] h-[405px] 2xl:h-full bg-primaryLight py-8 px-4 2xl:p-8 rounded mr-6">
-            <div className="flex flex-col">
-              {siteSettings.admin.map((v, idx) => (
-                <Link
-                  to={v.link ? v?.link : "/admin"}
-                  key={idx}
-                  className="flex cursor-pointer mb-4"
-                >
-                  <IoMdApps
-                    data-tooltip-id={t(v.text)}
-                    data-tooltip-content={t(v.text)}
-                    className="w-[20px] h-[20px] 2xl:mr-3 text-primary"
-                  />
-                  <span className="text-bodyText hover:text-white 2xl:flex hidden">
-                    {t(v.text)}
-                  </span>
-                </Link>
-              ))}
+          {!isCheckingAuth && user && isLoggedIn && (
+            <div className="flex flex-col justify-between 2xl:items-start items-center 2xl:w-[227px] h-[405px] 2xl:h-full bg-primaryLight py-8 px-4 2xl:p-8 rounded mr-6">
+              <div className="flex flex-col">
+                {siteSettings.admin.map((v, idx) => (
+                  <Link
+                    to={v.link ? v?.link : "/admin"}
+                    key={idx}
+                    className="flex cursor-pointer mb-4"
+                  >
+                    <IoMdApps
+                      data-tooltip-id={t(v.text)}
+                      data-tooltip-content={t(v.text)}
+                      className="w-[20px] h-[20px] 2xl:mr-3 text-primary"
+                    />
+                    <span className="text-bodyText hover:text-white 2xl:flex hidden">
+                      {t(v.text)}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+              <div
+                onClick={() => logOut(navigate)}
+                className="flex cursor-pointer"
+              >
+                <FiLogOut
+                  data-tooltip-id="Log out"
+                  data-tooltip-content="Log out"
+                  className="w-[20px] h-[20px] 2xl:mr-3 text-primary"
+                />
+                <span className="text-sm text-white 2xl:flex hidden">
+                  Log out
+                </span>
+              </div>
             </div>
-            <div className="flex cursor-pointer">
-              <FiLogOut
-                data-tooltip-id="Log out"
-                data-tooltip-content="Log out"
-                className="w-[20px] h-[20px] 2xl:mr-3 text-primary"
-              />
-              <span className="text-sm text-white 2xl:flex hidden">
-                Log out
-              </span>
-            </div>
-          </div>{" "}
+          )}
           <Routes>
-            <Route path={ROUTES.ADMIN_HOME} element={<Home />} />
+            {!isCheckingAuth && !user && !isLoggedIn && (
+              <Route path={ROUTES.LOGIN} element={<Login />} />
+            )}
 
-            {/* blog routes */}
-            <Route path={ROUTES.ADMIN_BLOGS} element={<Blogs />} />
-            <Route path={ROUTES.ADMIN_ADD_BLOG} element={<AddBlogForm />} />
-            <Route path={ROUTES.ADMIN_EDIT_BLOG} element={<EditBlogForm />} />
-            <Route path={ROUTES.ADMIN_BLOG_DETAILS} element={<BlogDetails />} />
-
-            {/* application routes */}
-            <Route
-              path={ROUTES.ADMIN_APPLICATIONS}
-              element={<Applications />}
-            />
-            <Route
-              path={ROUTES.ADMIN_APPLICATION_DETAILS}
-              element={<ApplicationDetails />}
-            />
-
-            {/* categories routes */}
-            <Route path={ROUTES.ADMIN_CATEGORIES} element={<Categories />} />
-
-            {/* project routes */}
-            <Route path={ROUTES.ADMIN_PROJECTS} element={<Projects />} />
-            <Route
-              path={ROUTES.ADMIN_ADD_PROJECT}
-              element={<AddProjectForm />}
-            />
-            <Route
-              path={ROUTES.ADMIN_EDIT_PROJECT}
-              element={<EditProjectForm />}
-            />
-            <Route
-              path={ROUTES.ADMIN_PROJECT_DETAILS}
-              element={<ProjectDetails />}
-            />
-
-            {/* testimonials routes */}
-            <Route
-              path={ROUTES.ADMIN_TESTIMONIALS}
-              element={<Testimonials />}
-            />
-            <Route
-              path={ROUTES.ADMIN_ADD_TESTIMONIAL}
-              element={<AddTestimonialForm />}
-            />
-            <Route
-              path={ROUTES.ADMIN_EDIT_TESTIMONIAL}
-              element={<EditTestimonialForm />}
-            />
-            <Route
-              path={ROUTES.ADMIN_TESTIMONIAL_DETAILS}
-              element={<TestimonialDetails />}
-            />
-
-            {/* services routes */}
-            <Route path={ROUTES.ADMIN_SERVICES} element={<Services />} />
-            <Route
-              path={ROUTES.ADMIN_ADD_SERVICE}
-              element={<AddServicesForm />}
-            />
-            <Route
-              path={ROUTES.ADMIN_EDIT_SERVICE}
-              element={<EditServicesForm />}
-            />
-            <Route
-              path={ROUTES.ADMIN_SERVICE_DETAILS}
-              element={<ServicesDetails />}
-            />
-
-            {/* careers routes */}
-            <Route path={ROUTES.ADMIN_CAREERS} element={<Careers />} />
-            <Route path={ROUTES.ADMIN_ADD_CAREER} element={<AddCareerForm />} />
-            <Route
-              path={ROUTES.ADMIN_EDIT_CAREER}
-              element={<EditCareerForm />}
-            />
-            <Route
-              path={ROUTES.ADMIN_CAREER_DETAILS}
-              element={<CareerDetails />}
-            />
+            {!isCheckingAuth && user && isLoggedIn && (
+              <>
+                <Route path={ROUTES.ADMIN_HOME} element={<Home />} />
+                //blog routes
+                <Route path={ROUTES.ADMIN_BLOGS} element={<Blogs />} />
+                <Route path={ROUTES.ADMIN_ADD_BLOG} element={<AddBlogForm />} />
+                <Route
+                  path={ROUTES.ADMIN_EDIT_BLOG}
+                  element={<EditBlogForm />}
+                />
+                <Route
+                  path={ROUTES.ADMIN_BLOG_DETAILS}
+                  element={<BlogDetails />}
+                />
+                // application routes
+                <Route
+                  path={ROUTES.ADMIN_APPLICATIONS}
+                  element={<Applications />}
+                />
+                <Route
+                  path={ROUTES.ADMIN_APPLICATION_DETAILS}
+                  element={<ApplicationDetails />}
+                />
+                // categories routes
+                <Route
+                  path={ROUTES.ADMIN_CATEGORIES}
+                  element={<Categories />}
+                />
+                // project routes
+                <Route path={ROUTES.ADMIN_PROJECTS} element={<Projects />} />
+                <Route
+                  path={ROUTES.ADMIN_ADD_PROJECT}
+                  element={<AddProjectForm />}
+                />
+                <Route
+                  path={ROUTES.ADMIN_EDIT_PROJECT}
+                  element={<EditProjectForm />}
+                />
+                <Route
+                  path={ROUTES.ADMIN_PROJECT_DETAILS}
+                  element={<ProjectDetails />}
+                />
+                // testimonials routes
+                <Route
+                  path={ROUTES.ADMIN_TESTIMONIALS}
+                  element={<Testimonials />}
+                />
+                <Route
+                  path={ROUTES.ADMIN_ADD_TESTIMONIAL}
+                  element={<AddTestimonialForm />}
+                />
+                <Route
+                  path={ROUTES.ADMIN_EDIT_TESTIMONIAL}
+                  element={<EditTestimonialForm />}
+                />
+                <Route
+                  path={ROUTES.ADMIN_TESTIMONIAL_DETAILS}
+                  element={<TestimonialDetails />}
+                />
+                // services routes
+                <Route path={ROUTES.ADMIN_SERVICES} element={<Services />} />
+                <Route
+                  path={ROUTES.ADMIN_ADD_SERVICE}
+                  element={<AddServicesForm />}
+                />
+                <Route
+                  path={ROUTES.ADMIN_EDIT_SERVICE}
+                  element={<EditServicesForm />}
+                />
+                <Route
+                  path={ROUTES.ADMIN_SERVICE_DETAILS}
+                  element={<ServicesDetails />}
+                />
+                // careers routes
+                <Route path={ROUTES.ADMIN_CAREERS} element={<Careers />} />
+                <Route
+                  path={ROUTES.ADMIN_ADD_CAREER}
+                  element={<AddCareerForm />}
+                />
+                <Route
+                  path={ROUTES.ADMIN_EDIT_CAREER}
+                  element={<EditCareerForm />}
+                />
+                <Route
+                  path={ROUTES.ADMIN_CAREER_DETAILS}
+                  element={<CareerDetails />}
+                />
+              </>
+            )}
           </Routes>
         </div>
       </div>

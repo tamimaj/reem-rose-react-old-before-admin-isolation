@@ -64,4 +64,8 @@ export const initialValues = [
     seoTitle: "",
     seoDescription: "",
   },
+  {
+    email: "",
+    password: "",
+  },
 ];

@@ -177,7 +177,7 @@ const EditModal: React.FC<ModalType> = ({ id, setDialogOpen, getData }) => {
                     }}
                     className="flex items-center justify-center w-[208px] h-[52px] text-white rounded bg-gradient-to-r from-primary to-gradientColor mr-4"
                   >
-                    Add
+                    Update
                   </button>
 
                   <button
