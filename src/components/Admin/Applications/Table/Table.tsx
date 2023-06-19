@@ -1,8 +1,6 @@
-import React, { Fragment, useState } from "react";
-import { AiOutlineEdit } from "react-icons/ai";
+import React, { useState } from "react";
 import { MdDeleteOutline } from "react-icons/md";
 
-import StatusTag from "../StatusTag/StatusTag";
 import { useNavigate } from "react-router-dom";
 import ROUTES from "../../../../settings/ROUTES";
 import DeleteModal from "../DeleteModal/DeleteModal";

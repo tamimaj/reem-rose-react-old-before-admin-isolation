@@ -1,31 +1,27 @@
 import { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import CustomToast from "../../../components/CustomToast/CustomToast";
-import { getBlogPosts } from "../../../api/private/blogs";
-import Filter from "../../../components/Admin/Blog/Filter/Filter";
 import Pagination from "../../../components/pagination/pagination";
 import Loader from "../../../components/Loader/Loader";
-import Table from "../../../components/Admin/Blog/Table/Table";
 import ROUTES from "../../../settings/ROUTES";
+import Filter from "../../../components/Admin/Testimonials/Filter/Filter";
+import Table from "../../../components/Admin/Testimonials/Table/Table";
+import { getTestimonials } from "../../../api/private/testimonials";
 
-interface BlogType {
+interface TestimonialType {
   _id: string;
+  name: string;
+  profileImage: string;
+  profession: string;
+  published: boolean;
   title: string;
   coverImage: string;
-  summary: string;
-  categoriesData: [
-    {
-      name: string;
-    }
-  ];
-  isPublished: boolean;
+  serviceProvidedAt: Date;
 }
 
-const Blogs = () => {
-  const { t } = useTranslation();
+const Testimonials = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -33,38 +29,31 @@ const Blogs = () => {
   const pageData = queryParams.get("page");
   const searchKeyData = queryParams.get("search-key");
   const searchValueData = queryParams.get("search-value");
-  const filterData = queryParams.get("filter");
   const sortData = queryParams.get("sort");
 
   const [loading, setLoading] = useState(false);
   const [count, setCount] = useState(0);
   const [search, setSearch] = useState("");
-  const [searchKey, setSearchKey] = useState("title");
+  const [searchKey, setSearchKey] = useState("name");
   const [sort, setSort] = useState("");
-  const [blogData, setBlogData] = useState<BlogType[]>([]);
+  const [testimonialData, setTestimonialData] = useState<TestimonialType[]>([]);
 
-  const getBlogData = async () => {
+  const getTestimonialData = async () => {
     setLoading(true);
     const page = parseInt(pageData ? pageData : "1");
-    let filters = null;
     let sortValue = null;
-    if (filterData === "published") {
-      filters = { isPublished: true };
-    } else if (filterData === "draft") {
-      filters = { isPublished: false };
-    }
-    if (sortData === "title-asc") {
-      sortValue = { title: 1 };
-      setSort("title asc");
-    } else if (sortData === "title-desc") {
-      sortValue = { title: -1 };
+    if (sortData === "name-asc") {
+      sortValue = { name: 1 };
+      setSort("name asc");
+    } else if (sortData === "name-desc") {
+      sortValue = { name: -1 };
       setSort("title desc");
-    } else if (sortData === "category-asc") {
-      sortValue = { categoriesData: 1 };
-      setSort("category asc");
-    } else if (sortData === "category-desc") {
-      sortValue = { categoriesData: -1 };
-      setSort("category desc");
+    } else if (sortData === "description-asc") {
+      sortValue = { profession: 1 };
+      setSort("profession asc");
+    } else if (sortData === "profession-desc") {
+      sortValue = { profession: -1 };
+      setSort("profession desc");
     } else if (sortData === "date-asc") {
       sortValue = { createdAt: 1 };
       setSort("date asc");
@@ -72,22 +61,21 @@ const Blogs = () => {
       sortValue = { createdAt: -1 };
       setSort("date desc");
     }
-    let response = await getBlogPosts(
+    let response = await getTestimonials(
       page,
       10,
       searchKey,
       search,
-      filters,
       sortValue
     );
     if (!response || response?.status !== 200) {
       setLoading(false);
-      setBlogData([]);
+      setTestimonialData([]);
       setCount(0);
-      toast(<CustomToast message={t("blog.error")} />);
+      toast(<CustomToast message={"Testimonials Not found"} />);
       return;
     }
-    setBlogData(response?.data?.data);
+    setTestimonialData(response?.data?.data);
     setCount(response?.data?.count);
     setLoading(false);
   };
@@ -97,22 +85,18 @@ const Blogs = () => {
       setSearchKey(searchKeyData);
       setSearch(searchValueData);
       setSort("");
-    } else if (filterData) {
-      setSearch("");
-      setSearchKey("title");
-      setSort("");
-    } else if (!searchValueData && !filterData && !sortData) {
+    } else if (!searchValueData && !sortData) {
       setSort("");
     }
-    getBlogData();
-  }, [searchValueData, pageData, filterData, sortData]);
+    getTestimonialData();
+  }, [searchValueData, pageData, sortData]);
 
   const handlePagination = (v: string | number) => {
     if (searchValueData) {
       if (sortData) {
         navigate(
           ROUTES.ADMIN_HOME +
-            ROUTES.ADMIN_BLOGS +
+            ROUTES.ADMIN_TESTIMONIALS +
             "?page=" +
             v +
             "&search-key=" +
@@ -125,7 +109,7 @@ const Blogs = () => {
       } else {
         navigate(
           ROUTES.ADMIN_HOME +
-            ROUTES.ADMIN_BLOGS +
+            ROUTES.ADMIN_TESTIMONIALS +
             "?page=" +
             v +
             "&search-key=" +
@@ -134,39 +118,18 @@ const Blogs = () => {
             search
         );
       }
-    } else if (filterData) {
-      if (sortData) {
-        navigate(
-          ROUTES.ADMIN_HOME +
-            ROUTES.ADMIN_BLOGS +
-            "?page=" +
-            v +
-            "&filter=" +
-            filterData +
-            "&sort=" +
-            sortData
-        );
-      } else {
-        navigate(
-          ROUTES.ADMIN_HOME +
-            ROUTES.ADMIN_BLOGS +
-            "?page=" +
-            v +
-            "&filter=" +
-            filterData
-        );
-      }
     } else {
       if (sortData)
         navigate(
           ROUTES.ADMIN_HOME +
-            ROUTES.ADMIN_BLOGS +
+            ROUTES.ADMIN_TESTIMONIALS +
             "?page=" +
             v +
             "&sort=" +
             sortData
         );
-      else navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_BLOGS + "?page=" + v);
+      else
+        navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_TESTIMONIALS + "?page=" + v);
     }
   };
   return (
@@ -180,7 +143,6 @@ const Blogs = () => {
             setSearchKey={setSearchKey}
             sort={sort}
             setSort={setSort}
-            filterValue={filterData}
             count={count}
           />
 
@@ -188,7 +150,10 @@ const Blogs = () => {
             <Loader className="h-[100vh]" />
           ) : (
             <div className="w-full my-6 overflow-x-scroll scrollbar scrollbar-thumb-primary scrollbar-thin scrollbar-track-gray-100">
-              <Table blogData={blogData} getBlogData={getBlogData} />
+              <Table
+                testimonialData={testimonialData}
+                getTestimonialData={getTestimonialData}
+              />
             </div>
           )}
           <div className="flex w-full ml-[30%]  md:ml-0 md:justify-center items-center mt-[48px] text-heading text-sm">
@@ -206,4 +171,4 @@ const Blogs = () => {
   );
 };
 
-export default Blogs;
+export default Testimonials;

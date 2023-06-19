@@ -81,9 +81,6 @@ const Testimonials = () => {
               ))}
             />
           </div>
-          {/* <button className="flex mt-[48px] text-white items-center justify-center w-full lg:w-[208px] h-[50px] xs:h-[60px] border border-primary rounded ">
-          {t("home.viewMore")}{" "}
-        </button> */}
         </div>
       )}
     </div>

@@ -48,6 +48,11 @@ const CareerDetails = () => {
                 {moment(careerData.createdAt).format("DD.MM.YY")}{" "}
               </span>
             </div>
+            <div className="flex my-2">
+              <span className="text-bodyText text-sm">
+                {careerData.location}{" "}
+              </span>
+            </div>
             <p
               className="flex flex-col w-full mt-[48px] text-white"
               dangerouslySetInnerHTML={HtmlConverter(careerData.description)}

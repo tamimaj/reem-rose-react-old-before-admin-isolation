@@ -5,26 +5,20 @@ import { toast } from "react-toastify";
 
 import CustomToast from "../../../components/CustomToast/CustomToast";
 import { getBlogPosts } from "../../../api/private/blogs";
-import Filter from "../../../components/Admin/Blog/Filter/Filter";
 import Pagination from "../../../components/pagination/pagination";
 import Loader from "../../../components/Loader/Loader";
-import Table from "../../../components/Admin/Blog/Table/Table";
 import ROUTES from "../../../settings/ROUTES";
+import Filter from "../../../components/Admin/Services/Filter/Filter";
+import Table from "../../../components/Admin/Services/Table/Table";
+import { getServices } from "../../../api/private/services";
 
-interface BlogType {
+interface ServiceType {
   _id: string;
   title: string;
-  coverImage: string;
-  summary: string;
-  categoriesData: [
-    {
-      name: string;
-    }
-  ];
-  isPublished: boolean;
+  seoTitle: string;
 }
 
-const Blogs = () => {
+const Services = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
@@ -41,30 +35,19 @@ const Blogs = () => {
   const [search, setSearch] = useState("");
   const [searchKey, setSearchKey] = useState("title");
   const [sort, setSort] = useState("");
-  const [blogData, setBlogData] = useState<BlogType[]>([]);
+  const [servicesData, setServicesData] = useState<ServiceType[]>([]);
 
-  const getBlogData = async () => {
+  const getServicesData = async () => {
     setLoading(true);
     const page = parseInt(pageData ? pageData : "1");
-    let filters = null;
     let sortValue = null;
-    if (filterData === "published") {
-      filters = { isPublished: true };
-    } else if (filterData === "draft") {
-      filters = { isPublished: false };
-    }
+
     if (sortData === "title-asc") {
       sortValue = { title: 1 };
       setSort("title asc");
     } else if (sortData === "title-desc") {
       sortValue = { title: -1 };
       setSort("title desc");
-    } else if (sortData === "category-asc") {
-      sortValue = { categoriesData: 1 };
-      setSort("category asc");
-    } else if (sortData === "category-desc") {
-      sortValue = { categoriesData: -1 };
-      setSort("category desc");
     } else if (sortData === "date-asc") {
       sortValue = { createdAt: 1 };
       setSort("date asc");
@@ -72,22 +55,15 @@ const Blogs = () => {
       sortValue = { createdAt: -1 };
       setSort("date desc");
     }
-    let response = await getBlogPosts(
-      page,
-      10,
-      searchKey,
-      search,
-      filters,
-      sortValue
-    );
+    let response = await getServices(page, 10, searchKey, search, sortValue);
     if (!response || response?.status !== 200) {
       setLoading(false);
-      setBlogData([]);
+      setServicesData([]);
       setCount(0);
       toast(<CustomToast message={t("blog.error")} />);
       return;
     }
-    setBlogData(response?.data?.data);
+    setServicesData(response?.data?.data);
     setCount(response?.data?.count);
     setLoading(false);
   };
@@ -104,7 +80,7 @@ const Blogs = () => {
     } else if (!searchValueData && !filterData && !sortData) {
       setSort("");
     }
-    getBlogData();
+    getServicesData();
   }, [searchValueData, pageData, filterData, sortData]);
 
   const handlePagination = (v: string | number) => {
@@ -112,7 +88,7 @@ const Blogs = () => {
       if (sortData) {
         navigate(
           ROUTES.ADMIN_HOME +
-            ROUTES.ADMIN_BLOGS +
+            ROUTES.ADMIN_SERVICES +
             "?page=" +
             v +
             "&search-key=" +
@@ -125,7 +101,7 @@ const Blogs = () => {
       } else {
         navigate(
           ROUTES.ADMIN_HOME +
-            ROUTES.ADMIN_BLOGS +
+            ROUTES.ADMIN_SERVICES +
             "?page=" +
             v +
             "&search-key=" +
@@ -138,7 +114,7 @@ const Blogs = () => {
       if (sortData) {
         navigate(
           ROUTES.ADMIN_HOME +
-            ROUTES.ADMIN_BLOGS +
+            ROUTES.ADMIN_SERVICES +
             "?page=" +
             v +
             "&filter=" +
@@ -149,7 +125,7 @@ const Blogs = () => {
       } else {
         navigate(
           ROUTES.ADMIN_HOME +
-            ROUTES.ADMIN_BLOGS +
+            ROUTES.ADMIN_SERVICES +
             "?page=" +
             v +
             "&filter=" +
@@ -160,13 +136,13 @@ const Blogs = () => {
       if (sortData)
         navigate(
           ROUTES.ADMIN_HOME +
-            ROUTES.ADMIN_BLOGS +
+            ROUTES.ADMIN_SERVICES +
             "?page=" +
             v +
             "&sort=" +
             sortData
         );
-      else navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_BLOGS + "?page=" + v);
+      else navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_SERVICES + "?page=" + v);
     }
   };
   return (
@@ -180,7 +156,6 @@ const Blogs = () => {
             setSearchKey={setSearchKey}
             sort={sort}
             setSort={setSort}
-            filterValue={filterData}
             count={count}
           />
 
@@ -188,7 +163,10 @@ const Blogs = () => {
             <Loader className="h-[100vh]" />
           ) : (
             <div className="w-full my-6 overflow-x-scroll scrollbar scrollbar-thumb-primary scrollbar-thin scrollbar-track-gray-100">
-              <Table blogData={blogData} getBlogData={getBlogData} />
+              <Table
+                servicesData={servicesData}
+                getServicesData={getServicesData}
+              />
             </div>
           )}
           <div className="flex w-full ml-[30%]  md:ml-0 md:justify-center items-center mt-[48px] text-heading text-sm">
@@ -206,4 +184,4 @@ const Blogs = () => {
   );
 };
 
-export default Blogs;
+export default Services;

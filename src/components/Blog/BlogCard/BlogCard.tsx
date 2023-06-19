@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
@@ -7,7 +7,6 @@ import moment from "moment";
 import LanguageDetector from "../../../hooks/LanguageDetector/LanguageDetector";
 
 type BlogCardType = {
-  idx: any;
   className?: string;
   data: {
     title: string;
@@ -18,7 +17,7 @@ type BlogCardType = {
     coverImage: string;
   };
 };
-const BlogCard: React.FC<BlogCardType> = ({ idx, className, data }) => {
+const BlogCard: React.FC<BlogCardType> = ({ className, data }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [lang, setLang] = useState<string | null>("");

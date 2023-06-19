@@ -100,19 +100,19 @@ export default {
     },
     {
       text: "admin.section5",
-      link: ROUTES.ADMIN_HOME,
+      link: ROUTES.ADMIN_HOME + ROUTES.ADMIN_PROJECTS,
     },
     {
       text: "admin.section6",
-      link: ROUTES.ADMIN_HOME,
+      link: ROUTES.ADMIN_HOME + ROUTES.ADMIN_TESTIMONIALS,
     },
     {
       text: "admin.section7",
-      link: ROUTES.ADMIN_HOME,
+      link: ROUTES.ADMIN_HOME + ROUTES.ADMIN_SERVICES,
     },
     {
       text: "admin.section8",
-      link: ROUTES.ADMIN_HOME,
+      link: ROUTES.ADMIN_HOME + ROUTES.ADMIN_CAREERS,
     },
   ],
 };

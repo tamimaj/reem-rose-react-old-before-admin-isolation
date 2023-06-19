@@ -10,12 +10,12 @@ type ProjectDataType = {
   coverImage: string;
   title: string;
   description: string;
-  serviceData: [
+  servicesData: [
     {
       title: string;
     }
   ];
-  techs: string[];
+  techStacks: string[];
   links: [
     {
       name: string;
@@ -80,7 +80,7 @@ const PortFolioCard: React.FC<data> = ({ projectData, idx }) => {
             {t("portfolio.services")}
           </span>
           <div className="flex flex-wrap w-full mt-3">
-            {projectData?.serviceData?.map((v, idx) => (
+            {projectData?.servicesData?.map((v, idx) => (
               <Tags key={idx} tag={v.title} />
             ))}
           </div>
@@ -90,8 +90,8 @@ const PortFolioCard: React.FC<data> = ({ projectData, idx }) => {
           <span className="mt-3 text-primary text-sm lg:text-base font-semibold">
             {t("portfolio.techText")}
           </span>
-          <div className="flex flex-wrap w-full mt-3">
-            {projectData?.techs?.map((v, idx) => (
+          <div className="flex items-center flex-wrap w-full mt-3">
+            {projectData?.techStacks?.map((v, idx) => (
               <Icons key={idx} v={v} />
             ))}
           </div>
@@ -99,14 +99,32 @@ const PortFolioCard: React.FC<data> = ({ projectData, idx }) => {
 
         <div className="flex mt-5">
           {
-            <a href={websiteLink ? websiteLink : ""} target="_blank">
+            <a
+              href={
+                websiteLink
+                  ? websiteLink.includes("https")
+                    ? websiteLink
+                    : "https://" + websiteLink
+                  : ""
+              }
+              target="_blank"
+            >
               <button className="flex items-center text-sm md:text-base justify-center w-[190px]  h-[52px]  text-white rounded bg-gradient-to-r from-primary to-gradientColor">
                 {t("portfolio.visitText")}{" "}
                 <FiArrowUpRight className="text-[16px] lg:text-[20px] ml-2 md:ml-4" />
               </button>
             </a>
           }
-          <a href={codeLink ? codeLink : ""} target="_blank">
+          <a
+            href={
+              codeLink
+                ? codeLink.includes("https")
+                  ? codeLink
+                  : "https://" + codeLink
+                : ""
+            }
+            target="_blank"
+          >
             <button className="flex text-sm md:text-base text-white items-center justify-center w-[140px] h-[51px] border border-primary rounded cursor-pointer ml-4">
               {t("portfolio.codeText")}{" "}
             </button>

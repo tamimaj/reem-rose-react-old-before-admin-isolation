@@ -10,6 +10,7 @@ import { getBlogPosts } from "../../api/public/blogs";
 import Pagination from "../../components/pagination/pagination";
 import Loader from "../../components/Loader/Loader";
 import { getCategories } from "../../api/public/categories";
+import ROUTES from "../../settings/ROUTES";
 
 const Blogs = () => {
   const { t } = useTranslation();
@@ -20,6 +21,7 @@ const Blogs = () => {
   const pageData = queryParams.get("page");
   const title = queryParams.get("search");
   const category = queryParams.get("category");
+  const categorySlug = queryParams.get("slug");
 
   const [loading, setLoading] = useState(false);
   const [count, setCount] = useState(0);
@@ -66,6 +68,25 @@ const Blogs = () => {
   useEffect(() => {
     getCategoriesData();
   }, []);
+
+  const handlePagination = (v: string | number) => {
+    if (title) {
+      navigate("/blog" + "?page=" + v + "&search=" + title);
+    } else if (category) {
+      navigate(
+        "/blog" +
+          "?page=" +
+          v +
+          "&slug=" +
+          categorySlug +
+          "&category=" +
+          category
+      );
+    } else {
+      navigate("/blog" + "?page=" + v);
+    }
+  };
+
   return (
     <div className="lg:mt-40 mb-3 lg:mb-12 w-full flex justify-center">
       <div className="w-[90%] max-w-[1440px] min-h-[88vh] flex flex-col overflow-x-hidden items-center">
@@ -89,7 +110,7 @@ const Blogs = () => {
             {blogData && blogData?.length > 0 ? (
               <div className="mt-6 lg:mt-[48px] grid w-full xl:w-auto lg:grid-cols-2 xl:grid-cols-3 gap-4">
                 {blogData.map((v, idx) => (
-                  <BlogCard idx={idx} key={idx} data={v} />
+                  <BlogCard key={idx} data={v} />
                 ))}
               </div>
             ) : (
@@ -101,7 +122,7 @@ const Blogs = () => {
                 currentPage={parseInt(pageData ? pageData : "1")}
                 totalCount={count ? count : 0}
                 pageSize={9}
-                onPageChange={(v) => navigate("/blog?page=" + v)}
+                onPageChange={(v) => handlePagination(v)}
               />
             </div>
           </>

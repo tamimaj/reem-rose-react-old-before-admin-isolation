@@ -133,7 +133,7 @@ const ApplicationDetails = () => {
                     key={idx}
                     provider={v.provider}
                     link={v.link}
-                    className="text-white"
+                    className="text-white mr-2"
                   />
                 ))}
               </div>

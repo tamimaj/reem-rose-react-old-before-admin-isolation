@@ -117,7 +117,7 @@ const AddBlogForm = () => {
       ["bold", "italic", "underline", "code-block"],
       [{ font: [] }],
       [{ list: "ordered" }, { list: "bullet" }],
-      [{ size: ["small", false, "large", "huge"] }],
+      [{ header: [1, 2, 3, 4, 5, 6, false] }],
       ["link", "image"],
     ],
   };
@@ -521,11 +521,6 @@ const AddBlogForm = () => {
                     ]}
                     className="w-full  rounded py-2 text-base"
                   />
-                  {formik.touched.isPublished && formik.errors.isPublished && (
-                    <p className="text-red text-xs flex mt-1">
-                      {formik.errors.isPublished}
-                    </p>
-                  )}
                 </div>{" "}
               </div>
               <button

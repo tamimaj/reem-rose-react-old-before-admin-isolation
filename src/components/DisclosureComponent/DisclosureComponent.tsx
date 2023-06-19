@@ -28,7 +28,7 @@ const DisclosureComponent: React.FC<DisclosureType> = ({
     <>
       <div
         onClick={() => handleActive(idx)}
-        className={`flex justify-between w-full h-[60px] px-[24px] py-[20px] disclosure ${
+        className={`flex justify-between w-[98%] h-[60px] px-[24px] py-[20px] disclosure ${
           active === idx
             ? " bg-gradient-to-r from-primary to-gradientColor text-white"
             : "bg-primaryLight text-bodyText"

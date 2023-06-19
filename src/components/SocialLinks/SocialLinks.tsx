@@ -1,7 +1,7 @@
 import React from "react";
 import { BsGlobe } from "react-icons/bs";
 
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
 
 type SocialLinksType = {
   provider: string;
@@ -15,19 +15,40 @@ const SocialLinks: React.FC<SocialLinksType> = ({
 }) => {
   return (
     <>
-      {provider === "Github" && (
-        <a href={link} target="_blank" className="[32px] mr-4 h-[32px]">
-          <BsGlobe className={`w-[24px] h-[24px] mr-2 ${className}`} />
+      {provider === "Website" && (
+        <a
+          href={link.includes("https") ? link : "https://" + link}
+          target="_blank"
+          className="[32px] mr-4 h-[32px]"
+        >
+          <BsGlobe className={`w-[21px] h-[21px]  ${className}`} />
+        </a>
+      )}
+      {(provider === "Github" || provider === "Code") && (
+        <a
+          href={link.includes("https") ? link : "https://" + link}
+          target="_blank"
+          className="[32px] mr-4 h-[32px]"
+        >
+          <AiFillGithub className={`w-[24px] h-[24px]  ${className}`} />
         </a>
       )}
       {provider === "LinkedIn" && (
-        <a href={link} target="_blank" className="[32px] mr-4 h-[32px]">
-          <AiFillGithub className={`w-[24px] h-[24px] mr-2 ${className}`} />
+        <a
+          href={link.includes("https") ? link : "https://" + link}
+          target="_blank"
+          className="[32px] mr-4 h-[32px]"
+        >
+          <AiFillLinkedin className={`w-[24px] h-[24px]  ${className}`} />
         </a>
       )}
-      {provider === "Website" && (
-        <a href={link} target="_blank" className="[32px] mr-4 h-[32px]">
-          <AiFillLinkedin className={`w-[24px] h-[24px] mr-2 ${className}`} />
+      {provider === "Twitter" && (
+        <a
+          href={link.includes("https") ? link : "https://" + link}
+          target="_blank"
+          className="[32px] mr-4 h-[32px]"
+        >
+          <AiOutlineTwitter className={`w-[24px] h-[24px] ${className}`} />
         </a>
       )}
     </>
