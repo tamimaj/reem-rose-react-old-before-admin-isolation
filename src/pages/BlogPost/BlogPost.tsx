@@ -138,7 +138,6 @@ const BlogPost = () => {
     0: { items: 1 },
     767: { items: 2 },
     1024: { items: 3 },
-    1500: { items: 4 },
   };
   const handleClick = (event: MouseEvent<HTMLDivElement>, idx: number) => {
     setActive(idx);
