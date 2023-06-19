@@ -49,7 +49,7 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
       onClose={handleMenuClose}
       placement="left"
     >
-      <div className="flex flex-col justify-between  w-full h-full bg-black text-primary overflow-x-hidden">
+      <div className="flex flex-col justify-between  w-full h-full bg-black text-primary scrollbar scrollbar-thumb-primary scrollbar-thin scrollbar-track-gray-100 overflow-x-hidden">
         {/* HEADER */}
         <div className="w-full flex justify-between items-center pt-[32px]  pb-[48px] px-4 mb-4">
           <Link to={ROUTES.HOME} onClick={handleMenuClose} className="flex ">
@@ -59,7 +59,7 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
           </Link>
           <div className="flex">
             <LanguagesMenu />
-            <div className="w-[40px] h-[40px] flex items-center justify-center bg-primaryLight cursor-pointer rounded ml-2">
+            <div className="w-[40px] h-[40px] flex items-center justify-center  bg-primaryLight cursor-pointer rounded ml-2">
               <MdOutlineClose
                 className="w-8 h-8 cursor-pointer "
                 onClick={handleMenuClose}

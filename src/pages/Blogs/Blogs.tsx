@@ -110,7 +110,7 @@ const Blogs = () => {
             {blogData && blogData?.length > 0 ? (
               <div className="mt-6 lg:mt-[48px] grid w-full xl:w-auto lg:grid-cols-2 xl:grid-cols-3 gap-4">
                 {blogData.map((v, idx) => (
-                  <BlogCard idx={idx} key={idx} data={v} />
+                  <BlogCard key={idx} data={v} />
                 ))}
               </div>
             ) : (
