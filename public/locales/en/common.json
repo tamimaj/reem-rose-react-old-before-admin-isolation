@@ -125,7 +125,10 @@
     "timeText": "15-30 minute meeting",
     "webText": "Web conferencing details provided upon confirmation.",
     "dateHeading": "Select a Date & Time",
-    "letter": "Letter"
+    "letter": "Letter",
+    "existsError": "Call Event Already Exists",
+    "error": "Call Not Scheduled Successfully",
+    "success": "Call Scheduled Successfully"
   },
   "contactus": {
     "heading": "Get in Touch with Our Web Development Experts: Contact Us",
