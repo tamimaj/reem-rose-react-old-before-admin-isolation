@@ -37,6 +37,15 @@ import { useAuth } from "../../context/auth.context";
 import { useEffect } from "react";
 import Calls from "./Calls/Calls";
 import CallDetails from "./Calls/CallDetails/CallDetails";
+import {
+  AiFillCustomerService,
+  AiFillProject,
+  AiOutlineHome,
+  AiOutlineWeiboCircle,
+} from "react-icons/ai";
+import { BsFilterSquare } from "react-icons/bs";
+import { IoCall } from "react-icons/io5";
+import { MdCategory, MdPermDeviceInformation } from "react-icons/md";
 
 const Admin = () => {
   const { t } = useTranslation();
@@ -78,14 +87,120 @@ const Admin = () => {
                     key={idx}
                     className="flex cursor-pointer mb-4"
                   >
-                    <IoMdApps
-                      data-tooltip-id={t(v.text)}
-                      data-tooltip-content={t(v.text)}
-                      className="w-[20px] h-[20px] 2xl:mr-3 text-primary"
-                    />
-                    <span className="text-bodyText hover:text-white 2xl:flex hidden">
-                      {t(v.text)}
-                    </span>
+                    {t(v.text) === "Home" && (
+                      <>
+                        <AiOutlineHome
+                          data-tooltip-id={t(v.text)}
+                          data-tooltip-content={t(v.text)}
+                          className="w-[20px] h-[20px] 2xl:mr-3 text-primary"
+                        />
+                        <span className="text-bodyText hover:text-white 2xl:flex hidden">
+                          {t(v.text)}
+                        </span>
+                      </>
+                    )}
+                    {t(v.text) === "Posts" && (
+                      <>
+                        <IoMdApps
+                          data-tooltip-id={t(v.text)}
+                          data-tooltip-content={t(v.text)}
+                          className="w-[20px] h-[20px] 2xl:mr-3 text-primary"
+                        />
+
+                        <span className="text-bodyText hover:text-white 2xl:flex hidden">
+                          {t(v.text)}
+                        </span>
+                      </>
+                    )}
+                    {t(v.text) === "Applications" && (
+                      <>
+                        <BsFilterSquare
+                          data-tooltip-id={t(v.text)}
+                          data-tooltip-content={t(v.text)}
+                          className="w-[18px] h-[18px] 2xl:mr-3 text-primary"
+                        />
+                        <span className="text-bodyText hover:text-white 2xl:flex hidden">
+                          {t(v.text)}
+                        </span>
+                      </>
+                    )}
+                    {t(v.text) === "Calls" && (
+                      <>
+                        <IoCall
+                          data-tooltip-id={t(v.text)}
+                          data-tooltip-content={t(v.text)}
+                          className="w-[18px] h-[18px] 2xl:mr-3 text-primary"
+                        />
+                        <span className="text-bodyText hover:text-white 2xl:flex hidden">
+                          {t(v.text)}
+                        </span>
+                      </>
+                    )}
+
+                    {t(v.text) === "Categories" && (
+                      <>
+                        <MdCategory
+                          data-tooltip-id={t(v.text)}
+                          data-tooltip-content={t(v.text)}
+                          className="w-[21px] h-[21px] 2xl:mr-3 text-primary"
+                        />
+                        <span className="text-bodyText hover:text-white 2xl:flex hidden">
+                          {t(v.text)}
+                        </span>
+                      </>
+                    )}
+
+                    {t(v.text) === "Projects" && (
+                      <>
+                        <AiFillProject
+                          data-tooltip-id={t(v.text)}
+                          data-tooltip-content={t(v.text)}
+                          className="w-[20px] h-[20px] 2xl:mr-3 text-primary"
+                        />
+                        <span className="text-bodyText hover:text-white 2xl:flex hidden">
+                          {t(v.text)}
+                        </span>
+                      </>
+                    )}
+
+                    {t(v.text) === "Testimonials" && (
+                      <>
+                        <AiOutlineWeiboCircle
+                          data-tooltip-id={t(v.text)}
+                          data-tooltip-content={t(v.text)}
+                          className="w-[20px] h-[20px] 2xl:mr-3 text-primary"
+                        />
+                        <span className="text-bodyText hover:text-white 2xl:flex hidden">
+                          {t(v.text)}
+                        </span>
+                      </>
+                    )}
+
+                    {t(v.text) === "Services" && (
+                      <>
+                        <AiFillCustomerService
+                          data-tooltip-id={t(v.text)}
+                          data-tooltip-content={t(v.text)}
+                          className="w-[20px] h-[20px] 2xl:mr-3 text-primary"
+                        />
+                        <span className="text-bodyText hover:text-white 2xl:flex hidden">
+                          {t(v.text)}
+                        </span>
+                      </>
+                    )}
+
+                    {t(v.text) === "Careers" && (
+                      <>
+                        <MdPermDeviceInformation
+                          data-tooltip-id={t(v.text)}
+                          data-tooltip-content={t(v.text)}
+                          className="w-[20px] h-[20px] 2xl:mr-3 text-primary"
+                        />
+                        <span className="text-bodyText hover:text-white 2xl:flex hidden">
+                          {t(v.text)}
+                        </span>
+                      </>
+                    )}
                   </Link>
                 ))}
               </div>
