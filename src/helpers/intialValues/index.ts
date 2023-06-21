@@ -73,4 +73,9 @@ export const initialValues = [
     requestorEmail: "",
     description: "",
   },
+  {
+    name: "",
+    email: "",
+    coverLetter: "",
+  },
 ];

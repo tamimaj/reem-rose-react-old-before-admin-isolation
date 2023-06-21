@@ -54,7 +54,6 @@ const ScheduleCall = () => {
           moment(date).format("YYYY-MM-DD")
         );
       });
-      console.log(filteredDate[0], "filteredDate");
       let scheduled = [];
       scheduled = filteredDate.map((date: CallDataType) => {
         if (callOptions.includes(moment.utc(date.startDate).format("HH:mm"))) {
@@ -122,7 +121,6 @@ const ScheduleCall = () => {
     return date.getDay() === 6 || date.getDay() === 0;
   };
 
-  console.log(disabledTime, "disabledTime");
   return (
     <div className="lg:mt-40 mb-3 lg:mb-12 w-full flex justify-center">
       <div className="w-full xs:w-[90%] max-w-[1440px] flex flex-col overflow-x-hidden items-center">
