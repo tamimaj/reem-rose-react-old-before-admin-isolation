@@ -97,7 +97,6 @@ const ScheduleCall = () => {
     setLoading(true);
     const selectedDate = moment(date).format("YYYY-MM-DD");
     const startDate = moment(`${selectedDate} ${time}`).utc(true).format();
-    console.log(startDate, "startDate");
     const data = { ...values, startDate };
     let response = await scheduleCallData(data);
     if (!response || response?.status !== 200) {

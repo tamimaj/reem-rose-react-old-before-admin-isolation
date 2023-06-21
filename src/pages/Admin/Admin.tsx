@@ -35,6 +35,8 @@ import EditCareerForm from "./Careers/Forms/EditCareerForm";
 import Login from "../Login/Login";
 import { useAuth } from "../../context/auth.context";
 import { useEffect } from "react";
+import Calls from "./Calls/Calls";
+import CallDetails from "./Calls/CallDetails/CallDetails";
 
 const Admin = () => {
   const { t } = useTranslation();
@@ -193,6 +195,12 @@ const Admin = () => {
                 <Route
                   path={ROUTES.ADMIN_CAREER_DETAILS}
                   element={<CareerDetails />}
+                />
+                // call routes
+                <Route path={ROUTES.ADMIN_CALLS} element={<Calls />} />
+                <Route
+                  path={ROUTES.ADMIN_CALL_DETAILS}
+                  element={<CallDetails />}
                 />
               </>
             )}
