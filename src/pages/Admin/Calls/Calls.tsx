@@ -4,28 +4,22 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import CustomToast from "../../../components/CustomToast/CustomToast";
-import { getBlogPosts } from "../../../api/private/blogs";
-import Filter from "../../../components/Admin/Blog/Filter/Filter";
 import Pagination from "../../../components/pagination/pagination";
 import Loader from "../../../components/Loader/Loader";
-import Table from "../../../components/Admin/Blog/Table/Table";
 import ROUTES from "../../../settings/ROUTES";
+import { getCalls } from "../../../api/private/call";
+import Filter from "../../../components/Admin/Calls/Filter/Filter";
+import Table from "../../../components/Admin/Calls/Table/Table";
 
-interface BlogType {
+interface CallType {
   _id: string;
-  title: string;
-  coverImage: string;
-  summary: string;
-  categoriesData: [
-    {
-      name: string;
-    }
-  ];
-  isPublished: boolean;
+  requestorName: string;
+  requestorEmail: string;
+  startDate: string;
+  endDate: string;
 }
 
-const Blogs = () => {
-  const { t } = useTranslation();
+const Calls = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -33,38 +27,26 @@ const Blogs = () => {
   const pageData = queryParams.get("page");
   const searchKeyData = queryParams.get("search-key");
   const searchValueData = queryParams.get("search-value");
-  const filterData = queryParams.get("filter");
   const sortData = queryParams.get("sort");
 
   const [loading, setLoading] = useState(false);
   const [count, setCount] = useState(0);
   const [search, setSearch] = useState("");
-  const [searchKey, setSearchKey] = useState("title");
+  const [searchKey, setSearchKey] = useState("requestorName");
   const [sort, setSort] = useState("");
-  const [blogData, setBlogData] = useState<BlogType[]>([]);
+  const [callData, setCallsData] = useState<CallType[]>([]);
 
-  const getBlogData = async () => {
+  const getCallData = async () => {
     setLoading(true);
     const page = parseInt(pageData ? pageData : "1");
-    let filters = null;
     let sortValue = null;
-    if (filterData === "published") {
-      filters = { isPublished: true };
-    } else if (filterData === "draft") {
-      filters = { isPublished: false };
-    }
-    if (sortData === "title-asc") {
-      sortValue = { title: 1 };
-      setSort("title asc");
-    } else if (sortData === "title-desc") {
-      sortValue = { title: -1 };
-      setSort("title desc");
-    } else if (sortData === "category-asc") {
-      sortValue = { categoriesData: 1 };
-      setSort("category asc");
-    } else if (sortData === "category-desc") {
-      sortValue = { categoriesData: -1 };
-      setSort("category desc");
+
+    if (sortData === "email-asc") {
+      sortValue = { requestorEmail: 1 };
+      setSort("email asc");
+    } else if (sortData === "email-desc") {
+      sortValue = { requestorEmail: -1 };
+      setSort("email desc");
     } else if (sortData === "date-asc") {
       sortValue = { createdAt: 1 };
       setSort("date asc");
@@ -72,22 +54,15 @@ const Blogs = () => {
       sortValue = { createdAt: -1 };
       setSort("date desc");
     }
-    let response = await getBlogPosts(
-      page,
-      10,
-      searchKey,
-      search,
-      filters,
-      sortValue
-    );
+    let response = await getCalls(page, 10, searchKey, search, sortValue);
     if (!response || response?.status !== 200) {
       setLoading(false);
-      setBlogData([]);
+      setCallsData([]);
       setCount(0);
-      toast(<CustomToast message={t("blog.error")} />);
+      toast(<CustomToast message={"Calls Not Found"} />);
       return;
     }
-    setBlogData(response?.data?.data);
+    setCallsData(response?.data?.data);
     setCount(response?.data?.count);
     setLoading(false);
   };
@@ -97,22 +72,18 @@ const Blogs = () => {
       setSearchKey(searchKeyData);
       setSearch(searchValueData);
       setSort("");
-    } else if (filterData) {
-      setSearch("");
-      setSearchKey("title");
-      setSort("");
-    } else if (!searchValueData && !filterData && !sortData) {
+    } else if (!searchValueData && !sortData) {
       setSort("");
     }
-    getBlogData();
-  }, [searchValueData, pageData, filterData, sortData]);
+    getCallData();
+  }, [searchValueData, pageData, sortData]);
 
   const handlePagination = (v: string | number) => {
     if (searchValueData) {
       if (sortData) {
         navigate(
           ROUTES.ADMIN_HOME +
-            ROUTES.ADMIN_BLOGS +
+            ROUTES.ADMIN_CALLS +
             "?page=" +
             v +
             "&search-key=" +
@@ -125,7 +96,7 @@ const Blogs = () => {
       } else {
         navigate(
           ROUTES.ADMIN_HOME +
-            ROUTES.ADMIN_BLOGS +
+            ROUTES.ADMIN_CALLS +
             "?page=" +
             v +
             "&search-key=" +
@@ -134,39 +105,17 @@ const Blogs = () => {
             search
         );
       }
-    } else if (filterData) {
-      if (sortData) {
-        navigate(
-          ROUTES.ADMIN_HOME +
-            ROUTES.ADMIN_BLOGS +
-            "?page=" +
-            v +
-            "&filter=" +
-            filterData +
-            "&sort=" +
-            sortData
-        );
-      } else {
-        navigate(
-          ROUTES.ADMIN_HOME +
-            ROUTES.ADMIN_BLOGS +
-            "?page=" +
-            v +
-            "&filter=" +
-            filterData
-        );
-      }
     } else {
       if (sortData)
         navigate(
           ROUTES.ADMIN_HOME +
-            ROUTES.ADMIN_BLOGS +
+            ROUTES.ADMIN_CALLS +
             "?page=" +
             v +
             "&sort=" +
             sortData
         );
-      else navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_BLOGS + "?page=" + v);
+      else navigate(ROUTES.ADMIN_HOME + ROUTES.ADMIN_CALLS + "?page=" + v);
     }
   };
   return (
@@ -180,7 +129,6 @@ const Blogs = () => {
             setSearchKey={setSearchKey}
             sort={sort}
             setSort={setSort}
-            filterValue={filterData}
             count={count}
           />
 
@@ -188,7 +136,7 @@ const Blogs = () => {
             <Loader className="h-[100vh]" />
           ) : (
             <div className="w-full my-6 overflow-x-scroll scrollbar scrollbar-thumb-primary scrollbar-thin scrollbar-track-gray-100">
-              <Table blogData={blogData} getBlogData={getBlogData} />
+              <Table callData={callData} getCallData={getCallData} />
             </div>
           )}
           <div className="flex w-full ml-[30%]  md:ml-0 md:justify-center items-center mt-[48px] text-heading text-sm">
@@ -206,4 +154,4 @@ const Blogs = () => {
   );
 };
 
-export default Blogs;
+export default Calls;

@@ -1,13 +1,24 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useFormik } from "formik";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+
 import LanguageDetector from "../../hooks/LanguageDetector/LanguageDetector";
+import { initialValues } from "../../helpers/intialValues";
+import { validationSchema } from "../../helpers/validationSchema";
+import { useNavigate } from "react-router-dom";
+import ROUTES from "../../settings/ROUTES";
 
 const ContactUs = () => {
-  const { i18n, t } = useTranslation();
+  const { t } = useTranslation();
   const [lang, setLang] = useState<string | null>("");
-
+  const navigate = useNavigate();
   LanguageDetector(setLang);
+  const formik = useFormik({
+    initialValues: initialValues[9],
+    validationSchema: validationSchema[9],
+    onSubmit: (values) => console.log("working", values),
+  });
 
   return (
     <div className="lg:mt-40 mb-3 lg:mb-12 w-full flex justify-center">
@@ -50,11 +61,18 @@ const ContactUs = () => {
                     </label>
                     <input
                       type="text"
+                      name="name"
+                      onChange={formik.handleChange}
                       placeholder={t(
                         "careers.form.placeholder.name"
                       ).toString()}
                       className="w-full h-[36px] rounded text-bodyText bg-primaryLight outline-none pl-4 py-2 pr-2 mt-2 text-base"
                     />
+                    {formik.touched.name && formik.errors.name && (
+                      <p className="text-red text-xs flex mt-1">
+                        {formik.errors.name}
+                      </p>
+                    )}
                   </div>
                   <div className="flex flex-col w-full lg:w-[389px] ">
                     <label className="font-semibold text-sm text-white ml-[1px]">
@@ -62,11 +80,18 @@ const ContactUs = () => {
                     </label>
                     <input
                       type="text"
+                      name="email"
+                      onChange={formik.handleChange}
                       placeholder={t(
                         "careers.form.placeholder.email"
                       ).toString()}
                       className="w-full h-[36px] rounded text-bodyText bg-primaryLight outline-none pl-4 py-2 pr-2 mt-2 text-base"
                     />
+                    {formik.touched.email && formik.errors.email && (
+                      <p className="text-red text-xs flex mt-1">
+                        {formik.errors.email}
+                      </p>
+                    )}
                   </div>
                 </div>
                 <div className="flex flex-col w-full mr-4">
@@ -74,13 +99,26 @@ const ContactUs = () => {
                     {t("careers.form.label.coverLetter")}
                   </label>
                   <textarea
+                    name="coverLetter"
+                    onChange={formik.handleChange}
                     placeholder={t(
                       "careers.form.placeholder.coverLetter"
                     ).toString()}
                     className="w-full h-[120px] rounded text-bodyText bg-primaryLight outline-none pl-4 py-2 pr-2 mt-2 text-base resize-none"
                   />
 
-                  <button className="flex mt-6 text-white items-center justify-center w-full lg:w-[165px] h-[52px] border border-primary rounded cursor-pointer">
+                  {formik.touched.coverLetter && formik.errors.coverLetter && (
+                    <p className="text-red text-xs flex mt-1">
+                      {formik.errors.coverLetter}
+                    </p>
+                  )}
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      formik.handleSubmit();
+                    }}
+                    className="flex mt-6 text-white items-center justify-center w-full lg:w-[165px] h-[52px] border border-primary rounded cursor-pointer"
+                  >
                     {t("contactus.btnText")}{" "}
                   </button>
                 </div>
@@ -88,7 +126,10 @@ const ContactUs = () => {
                   <span className="text-primary text-center lg:text-start text-[20px] mb-6">
                     {t("contactus.scheduleText")}
                   </span>
-                  <button className="flex lg:text-base text-sm items-center justify-center w-full lg:w-[208px] h-[60px] text-white rounded bg-gradient-to-r from-primary to-gradientColor">
+                  <button
+                    onClick={() => navigate(ROUTES.SCHEDULE)}
+                    className="flex lg:text-base text-sm items-center justify-center w-full lg:w-[208px] h-[60px] text-white rounded bg-gradient-to-r from-primary to-gradientColor"
+                  >
                     {t("header.scheduleText")}{" "}
                     {lang === "ar" ? (
                       <FiChevronLeft className="text-[18px] lg:text-[20px] ml-4" />

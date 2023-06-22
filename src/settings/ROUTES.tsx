@@ -14,7 +14,7 @@ const ROUTES = {
 
   PRIVACY_POLICY: "/privacy-policy",
   TERMS_AND_CONDITIONS: "/terms-and-conditions",
-  
+
   //admin routes
   LOGIN: "/login",
   ADMIN: "/admin/*",
@@ -67,6 +67,11 @@ const ROUTES = {
   ADMIN_EDIT_CAREER_LINK: "/edit-career",
   ADMIN_CAREER_DETAILS: "/career-details/:id",
   ADMIN_CAREER_DETAILS_LINK: "/career-details",
+
+  //Call routes
+  ADMIN_CALLS: "/calls",
+  ADMIN_CALL_DETAILS: "/call-details/:id",
+  ADMIN_CALL_DETAILS_LINK: "/call-details",
 };
 
 export default ROUTES;

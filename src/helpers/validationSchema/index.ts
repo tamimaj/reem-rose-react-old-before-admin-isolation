@@ -59,4 +59,15 @@ export const validationSchema = [
     email: Yup.string().required("Email is required"),
     password: Yup.string().required("Password is required"),
   }),
+
+  Yup.object().shape({
+    requestorName: Yup.string().required("Name is required"),
+    requestorEmail: Yup.string().required("Email is required"),
+    description: Yup.string().required("Letter is required"),
+  }),
+  Yup.object().shape({
+    name: Yup.string().required("Name is required"),
+    email: Yup.string().required("Email is required"),
+    coverLetter: Yup.string().required("Cover Letter is required"),
+  }),
 ];

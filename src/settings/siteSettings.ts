@@ -92,7 +92,7 @@ export default {
     },
     {
       text: "admin.section3",
-      link: ROUTES.ADMIN_HOME,
+      link: ROUTES.ADMIN_HOME + ROUTES.ADMIN_CALLS,
     },
     {
       text: "admin.section4",

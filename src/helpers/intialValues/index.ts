@@ -68,4 +68,14 @@ export const initialValues = [
     email: "",
     password: "",
   },
+  {
+    requestorName: "",
+    requestorEmail: "",
+    description: "",
+  },
+  {
+    name: "",
+    email: "",
+    coverLetter: "",
+  },
 ];
