@@ -84,7 +84,7 @@ const ScheduleCall = () => {
   };
   const handleTime = (v: string) => {
     setTime(v);
-    setTimeConfirmed((value) => !value);
+    setTimeConfirmed(true);
   };
   const formik = useFormik({
     initialValues: initialValues[8],
@@ -308,7 +308,7 @@ const ScheduleCall = () => {
                               {timeConfirmed && time === scheduleTime && (
                                 <div
                                   onClick={() => setScheduled(true)}
-                                  className="w-[50%] lg:w-[116px] cursor-pointer bg-gradient-to-r from-primary to-gradientColor mb-2 flex justify-center items-center h-[50px] rounded text-white text-base"
+                                  className="w-[50%] lg:w-[116px] cursor-pointer bg-gradient-to-r from-primary to-gradientColor mb-2 flex justify-center items-center h-[50px] rounded text-white text-base transition ease-in-out duration-400"
                                 >
                                   Schedule
                                 </div>
