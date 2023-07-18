@@ -1,0 +1,208 @@
+{
+  "header": {
+    "text1": "Inicio",
+    "text2": "Blog",
+    "text3": "Portafolio",
+    "text4": "Carreras",
+    "text5": "Servicios",
+    "scheduleText": "Programar una llamada"
+  },
+  "application": {
+    "success": "Solicitud enviada exitosamente",
+    "error": "Solicitud no enviada exitosamente"
+  },
+  "home": {
+    "title": "REEMROSE",
+    "tagline1": "Desatando el poder de la tecnología con desarrollo de software experto",
+    "tagline2": "Potenciando tu visión con soluciones de software de vanguardia",
+    "btnText": "Lo que hacemos",
+    "viewBtnText": "Ver todo",
+    "frontend": {
+      "title": "Desarrollo Front-End",
+      "tag1": "HTML",
+      "tag2": "CSS",
+      "tag3": "Javascript"
+    },
+    "design": {
+      "title": "Diseño de Producto",
+      "tag1": "Branding",
+      "tag2": "UI/UX"
+    },
+    "backend": {
+      "title": "Desarrollo Back-End",
+      "tag1": "PHP",
+      "tag2": "Node.js",
+      "tag3": "Java",
+      "tag4": "Python",
+      "tag5": "Ruby"
+    },
+    "featured": {
+      "heading": "Proyectos destacados",
+      "text": "Mostrando nuestra experiencia y entregando soluciones innovadoras a través de nuestro diverso portafolio de proyectos exitosos"
+    },
+    "services": {
+      "heading": "Servicios",
+      "title1": "Consultoría",
+      "text1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat.",
+      "title2": "Desarrollo",
+      "text2": "Las herramientas específicas utilizadas para el desarrollo back-end dependen de los requisitos de un proyecto, del lenguaje de programación utilizado y de las preferencias y experiencia del desarrollador. El rol del desarrollador back-end es construir y mantener el lado del servidor de la aplicación y asegurarse de que pueda manejar eficazmente los datos requeridos y la comunicación entre el front-end y la base de datos.",
+      "title3": "Mentoría",
+      "text3": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat.",
+      "title4": "Código abierto",
+      "text4": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat."
+    },
+    "testimonials": {
+      "title": "Testimonios",
+      "text": "Escúchalo de nuestros clientes satisfechos: Nuestro compromiso con la excelencia brilla en cada proyecto",
+      "error": "Testimonios no encontrados"
+    },
+    "readMore": "Leer más",
+    "viewMore": "Ver más"
+  },
+  "blog": {
+    "title": "Bienvenido al blog de ReemRose",
+    "tagline": "Desde ideas hasta implementación: consejos, trucos y mejores prácticas para el desarrollo de software exitoso",
+    "categories": {
+      "heading": "Todas las categorías"
+    },
+    "readingText": "Continuar leyendo",
+    "backToBlog": "Volver al blog",
+    "relatedBlogPost": "Entradas de blog relacionadas",
+    "error": "Entradas de blog no encontradas",
+    "CategoriesError": "Categorías no encontradas"
+  },
+  "careers": {
+    "heading": "Únete a nuestro equipo de innovadores y da forma al futuro del desarrollo de software",
+    "seeDetails": "Ver detalles",
+    "title1": "Ubicación",
+    "title2": "Información de la empresa",
+    "title3": "Descripción del trabajo",
+    "title4": "Responsabilidades",
+    "title5": "Requisitos",
+    "title6": "Beneficios",
+    "error": "Trabajos no encontrados",
+    "detailsError": "Detalles del trabajo no encontrados",
+    "form": {
+      "label": {
+        "name": "Nombre",
+        "email": "Correo electrónico",
+        "phoneNo": "Número de teléfono",
+        "githubLink": "Enlace de Github",
+        "linkedinLink": "Enlace de Linkedin",
+        "websiteLink": "Enlace del sitio web",
+        "uploadCv": "Subir CV",
+        "coverLetter": "Carta de presentación",
+        "btnText": "Aplicar para un trabajo"
+      },
+      "placeholder": {
+        "name": "Nombre",
+        "email": "Correo electrónico",
+        "phoneNo": "Número de teléfono",
+        "github": "Github",
+        "linkedin": "Linkedin",
+        "website": "Sitio web",
+        "coverLetter": "Escribe tu carta de presentación aquí"
+      }
+    }
+  },
+  "services": {
+    "heading": "Soluciones web personalizadas para impulsar tu negocio: nuestros servicios",
+    "tagline": "Desde el concepto hasta el lanzamiento, nuestra experiencia ofrece sitios web que cautivan y convierten",
+    "error": "Servicios no encontrados"
+  },
+  "portfolio": {
+    "heading": "Experimenta la excelencia en el desarrollo web: explora nuestro portafolio",
+    "tagline": "Creando soluciones web únicas e intuitivas para mostrar la historia de tu marca: confía en nuestro portafolio para inspirar tu éxito digital",
+    "services": "Servicios",
+    "techText": "Tecnologías que utilizamos",
+    "visitText": "Visitar sitio web",
+    "codeText": "Obtener código",
+    "error": "Proyectos no encontrados"
+  },
+  "schedule": {
+    "heading": "Discutamos tus necesidades de desarrollo web: programa una llamada",
+    "tagline": "Tu visión, nuestra experiencia: creemos algo grandioso juntos",
+    "timeText": "Reunión de 15-30 minutos",
+    "webText": "Detalles de la videoconferencia proporcionados al confirmar.",
+    "dateHeading": "Selecciona una fecha y hora",
+    "letter": "Carta",
+    "existsError": "El evento de llamada ya existe",
+    "error": "Llamada no programada exitosamente",
+    "success": "Llamada programada exitosamente"
+  },
+  "contactus": {
+    "heading": "Ponte en contacto con nuestros expertos en desarrollo web: contáctanos",
+    "tagline": "Construyamos juntos tu historia de éxito en línea: comunícate con nuestro equipo hoy mismo",
+    "phoneNo": "Número de teléfono",
+    "subheading": "Envíanos tu mensaje",
+    "btnText": "Enviar mensaje",
+    "scheduleText": "O programa una llamada gratuita de 30 minutos"
+  },
+  "aboutus": {
+    "heading": "Descubre nuestra pasión por el desarrollo web innovador: sobre nosotros",
+    "tagline": "Construyamos juntos tu historia de éxito en línea: comunícate con nuestro equipo hoy mismo",
+    "text1": "En Reemrose, somos apasionados del desarrollo web y nos comprometemos a brindar soluciones excepcionales que ayuden a nuestros clientes a tener éxito en línea. Nuestro equipo de desarrolladores, diseñadores y gestores de proyectos experimentados trabaja en conjunto para crear sitios web innovadores que atraigan a los visitantes, generen conversiones y construyan marcas.",
+    "text2": "Creemos en un enfoque colaborativo para el desarrollo web, trabajando de cerca con nuestros clientes para comprender sus necesidades y objetivos comerciales únicos. Desde el concepto inicial hasta el lanzamiento final, nos esforzamos por superar las expectativas de nuestros clientes y brindar soluciones adaptadas a sus requisitos específicos.",
+    "text3": "Nuestra experiencia abarca una amplia gama de servicios de desarrollo web, incluyendo diseño y desarrollo de sitios web, integración de sistemas de gestión de contenido, soluciones de comercio electrónico y más. Nos mantenemos actualizados con las últimas tecnologías y tendencias para asegurar que los sitios web de nuestros clientes sean receptivos, fáciles de usar y visualmente impactantes."
+  },
+  "terms": {
+    "heading": "Términos de uso: nuestro compromiso con tu confianza y seguridad",
+    "title1": "Introducción",
+    "titleData1": "Esta Política de privacidad describe cómo se recopila, utiliza y comparte tu información personal cuando visitas, te suscribes, te registras o realizas una compra en nftfox, 'Sitio'.",
+    "title2": "Definición de datos personales",
+    "titleData2": "Los datos personales se refieren a cualquier información que se pueda utilizar para identificar a una persona específica, como su nombre, dirección, correo electrónico, número de teléfono, entre otros. Esto también puede incluir información confidencial como detalles financieros, registros médicos y datos biométricos. Los datos personales están protegidos por leyes y regulaciones como el Reglamento General de Protección de Datos (RGPD) en la Unión Europea y la Ley de Privacidad del Consumidor de California (CCPA) en Estados Unidos, que establecen pautas sobre cómo las organizaciones pueden recopilar, utilizar y proteger los datos personales.",
+    "title3": "Cookies y tecnologías similares",
+    "titleData3": {
+      "paragraph1": "Utilizamos cookies y tecnologías similares para proporcionar, proteger y mejorar nuestros productos y servicios, como personalizar el contenido, ofrecer y medir anuncios, comprender el comportamiento del usuario y brindar una experiencia más segura.",
+      "paragraph2": "Puedes eliminar o rechazar las cookies utilizando la configuración de tu navegador o dispositivo, pero en algunos casos esto puede afectar tu capacidad para utilizar nuestros productos y servicios.",
+      "paragraph3": "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de la industria desde el año 1500, cuando un impresor desconocido",
+      "paragraph4": "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de la industria desde el año 1500, cuando un impresor desconocido"
+    },
+    "title4": "Tus derechos",
+    "titleData4": {
+      "paragraph": "Dictum vestibulum nulla justo sed, ligula rutrum sollicitudin, vivamus non. Nunc donec tincidunt, vivamus repellat habitanaccumsan faucibus ante in mauris. Lorem purus leo eleifend semper sit, donec duis vel orci lorem consectetuer, lacus lorem praesent elit odio ut, tortor id metus fermentum mi ipsum, quisque proin. Aptent aliquet facilisis",
+      "point1": "1. Derecho de acceso: Los usuarios tienen derecho a solicitar y recibir información sobre los datos personales que un sitio de subastas ha recopilado sobre ellos.",
+      "point2": "2. Derecho de rectificación: Los usuarios tienen derecho a solicitar que se corrijan los datos personales inexactos o incompletos.",
+      "point3": "3. Derecho de supresión: Los usuarios tienen derecho a solicitar que se eliminen sus datos personales.",
+      "point4": "4. Derecho de oposición: Los usuarios tienen derecho a oponerse al procesamiento de sus datos personales para ciertos fines.",
+      "point5": "5. Derecho a la portabilidad de datos: Los usuarios tienen derecho a solicitar que sus datos personales se transfieran a otra organización en un formato comúnmente utilizado y legible por máquina.",
+      "point6": "6. Derecho a ser informado: Los usuarios tienen derecho a ser informados sobre cómo se utilizan sus datos personales y con qué finalidad.",
+      "point7": "7. Derecho a presentar una queja: Los usuarios tienen derecho a presentar una queja ante el organismo regulador pertinente si creen que se han violado sus derechos.",
+      "point8": "8. Derecho a conocer las violaciones de datos: Los usuarios tienen derecho a ser informados si se produce una violación de datos que involucre sus datos personales. Es importante tener en cuenta que estos derechos pueden variar según las leyes y regulaciones específicas de tu jurisdicción."
+    }
+  },
+  "footer": {
+    "heading": "¿Tienes un proyecto?",
+    "tagline": "Programa una llamada gratuita y podemos empezar",
+    "copyrightText": "Derechos de autor © 2023 ReemRose Company. Todos los derechos reservados.",
+    "text1": "Términos de uso",
+    "text2": "Política de privacidad",
+    "text3": "Términos y condiciones",
+    "text4": "Contáctanos",
+    "text5": "Sobre nosotros"
+  },
+  "admin": {
+    "heading": "ReemRose",
+    "placeholder": "Buscar",
+    "title": "Inicio",
+    "section1": "Publicaciones",
+    "section2": "Solicitudes",
+    "section3": "Llamadas",
+    "section4": "Categorías",
+    "section5": "Proyectos",
+    "section6": "Testimonios",
+    "section7": "Servicios",
+    "section8": "Carreras",
+    "sortBy": "Ordenar por"
+  },
+  "login": {
+    "heading": "Administrador",
+    "btnText": "Iniciar sesión",
+    "password": "Contraseña",
+    "enterPassword": "Ingrese la contraseña"
+  },
+  "pagination": {
+    "previous": "Anterior",
+    "next": "Siguiente"
+  }
+}
