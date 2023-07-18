@@ -4,6 +4,7 @@ import siteSettings from "../../settings/siteSettings";
 import DesktopFooter from "./DesktopFooter/DesktopFooter";
 import MobileFooter from "./MobileFooter/MobileFooter";
 import { Link, useLocation } from "react-router-dom";
+import ROUTES from "../../settings/ROUTES";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -27,7 +28,14 @@ const Footer = () => {
         </div>
         <div className="flex flex-col lg:flex-row items-center  justify-between w-full mt-6 lg:mt-[121px]">
           <span className="text-xs text-bodyText mb-2 lg:mb-0">
-            {t("footer.copyrightText")}
+            &copy;
+            {new Date().getFullYear()}{" "}
+            <b>
+              <Link to={ROUTES.HOME} className="px-1 text-primary">
+                {siteSettings.companyName}
+              </Link>
+            </b>
+            {t("footer.copyrightTextSuffix")}
           </span>
           <div className="flex">
             <span className="text-bodyText text-xs mr-2">
