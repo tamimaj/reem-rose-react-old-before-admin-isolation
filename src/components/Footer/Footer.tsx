@@ -38,13 +38,13 @@ const Footer = () => {
             {t("footer.copyrightTextSuffix")}
           </span>
           <div className="flex">
-            <span className="text-bodyText text-xs mr-2">
+            {/* <span className="text-bodyText text-xs mr-1">
               {siteSettings.companyName}
-            </span>
+            </span> */}
             <img
               src={siteSettings.footerLogo.url}
               alt={siteSettings.footerLogo.alt}
-              className="w-[16px] h-[16px]"
+              className="w-[18px] h-[18px]"
             />
           </div>
         </div>

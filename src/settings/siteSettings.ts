@@ -1,5 +1,4 @@
-import logo from "../assets/icons/logo.svg";
-import footerLogo from "../assets/icons/footerLogo.svg";
+import logo from "../assets/images/logo.png";
 import translate from "../assets/icons/translate.svg";
 import ROUTES from "./ROUTES";
 
@@ -27,7 +26,7 @@ export default {
     },
   ],
   scheduleText: "header.scheduleText",
-  footerLogo: { url: footerLogo, alt: "REEMROSE" },
+  footerLogo: { url: logo, alt: "REEMROSE" },
   logo: { url: logo, alt: "REEMROSE" },
   companyName: "ReemRose",
   translateIcon: translate,

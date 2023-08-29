@@ -43,7 +43,7 @@ const Header = () => {
             onClick={() => navigate(ROUTES.HOME)}
             src={siteSettings.logo.url}
             alt={siteSettings.logo.alt}
-            className="w-[24px] h-[24px] cursor-pointer"
+            className="w-[32px] h-[32px]  lg:w-[40px] lg:h-[40px] cursor-pointer"
           />
           <div className="hidden lg:flex text-base w-[405px] ml-[220px] xl:ml-[256px]">
             {siteSettings.header.map((v: HeaderTypes, idx: number) => (
