@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { IoMdMenu } from "react-icons/io";
@@ -15,7 +15,7 @@ interface HeaderTypes {
   link: string;
 }
 const Header = () => {
-  const { i18n, t } = useTranslation();
+  const { t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const { pathname } = useLocation();

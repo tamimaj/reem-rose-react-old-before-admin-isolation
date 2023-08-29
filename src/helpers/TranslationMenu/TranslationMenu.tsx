@@ -1,7 +1,6 @@
 import spainFlag from "../../assets/icons/spain.svg";
 import usFlag from "../../assets/icons/usFlag.svg";
 import saudiFlag from "../../assets/icons/saudi-arabia.svg";
-import franceFlag from "../../assets/icons/france.svg";
 
 interface langProps {
   name: string;
@@ -25,10 +24,5 @@ export const translationMenu: langProps[] = [
     name: "ES",
     code: "es",
     flag: spainFlag,
-  },
-  {
-    name: "FR",
-    code: "fr",
-    flag: franceFlag,
   },
 ];
