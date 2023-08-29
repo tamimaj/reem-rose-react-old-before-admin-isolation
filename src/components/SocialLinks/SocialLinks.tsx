@@ -19,6 +19,7 @@ const SocialLinks: React.FC<SocialLinksType> = ({
         <a
           href={link.includes("https") ? link : "https://" + link}
           target="_blank"
+          rel="noopener noreferrer"
           className="[32px] mr-4 h-[32px]"
         >
           <BsGlobe className={`w-[21px] h-[21px]  ${className}`} />
@@ -28,6 +29,7 @@ const SocialLinks: React.FC<SocialLinksType> = ({
         <a
           href={link.includes("https") ? link : "https://" + link}
           target="_blank"
+          rel="noopener noreferrer"
           className="[32px] mr-4 h-[32px]"
         >
           <AiFillGithub className={`w-[24px] h-[24px]  ${className}`} />
@@ -37,6 +39,7 @@ const SocialLinks: React.FC<SocialLinksType> = ({
         <a
           href={link.includes("https") ? link : "https://" + link}
           target="_blank"
+          rel="noopener noreferrer"
           className="[32px] mr-4 h-[32px]"
         >
           <AiFillLinkedin className={`w-[24px] h-[24px]  ${className}`} />
@@ -46,6 +49,7 @@ const SocialLinks: React.FC<SocialLinksType> = ({
         <a
           href={link.includes("https") ? link : "https://" + link}
           target="_blank"
+          rel="noopener noreferrer"
           className="[32px] mr-4 h-[32px]"
         >
           <AiOutlineTwitter className={`w-[24px] h-[24px] ${className}`} />
