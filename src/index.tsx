@@ -9,9 +9,7 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <Suspense fallback={<div className="suspense"></div>}>
-      <App />
-    </Suspense>
-  </React.StrictMode>
+  <Suspense fallback={<div className="suspense"></div>}>
+    <App />
+  </Suspense>
 );
