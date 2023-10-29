@@ -58,7 +58,7 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
             </span>
           </Link>
           <div className="flex">
-            <LanguagesMenu />
+            {/* <LanguagesMenu /> */}
             <div className="w-[40px] h-[40px] flex items-center justify-center  bg-primaryLight cursor-pointer rounded ml-2">
               <MdOutlineClose
                 className="w-8 h-8 cursor-pointer "

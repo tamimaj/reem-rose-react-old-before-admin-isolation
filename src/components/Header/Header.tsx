@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { IoMdMenu } from "react-icons/io";
-
 import siteSettings from "../../settings/siteSettings";
 import LanguagesMenu from "./LanguageMenu/LanguagesMenu";
 import MobileMenuDrawer from "./MobileMenuDrawer/MobileMenuDrawer";
@@ -57,14 +56,7 @@ const Header = () => {
             ))}
           </div>
           <div className="hidden lg:flex items-center ">
-            {/* <div className="w-[40px] h-[40px] flex items-center justify-center bg-primaryLight cursor-pointer rounded-lg">
-              <img
-                src={siteSettings.translateIcon}
-                alt="translate"
-                className="w-[24px] h-[24px]"
-              />
-            </div> */}
-            <LanguagesMenu />
+            {/* <LanguagesMenu /> */}
             <div
               onClick={() => navigate(ROUTES.SCHEDULE)}
               className="flex text-primary items-center ml-[48px] cursor-pointer"

@@ -10,7 +10,8 @@ i18n
   .init({
     fallbackLng: "en",
 
-    supportedLngs: ["en", "es", "ar"],
+    // supportedLngs: ["en", "es", "ar"],
+    supportedLngs: ["en"],
     debug: false,
 
     // Set default namespace

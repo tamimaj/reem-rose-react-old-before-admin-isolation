@@ -12,30 +12,32 @@
     "error": "Application not submitted successfully"
   },
   "home": {
-    "title": "REEMROSE",
+    "title": "ReemRose",
     "tagline1": "Unleashing the Power of Technology with Expert Software Development",
     "tagline2": "Empowering Your Vision with Cutting-Edge Software Solutions",
     "btnText": "What we do",
     "viewBtnText": "View All",
-    "frontend": {
-      "title": "Front-End Development",
-      "tag1": "HTML",
-      "tag2": "CSS",
-      "tag3": "Javascript"
+    "banner": {
+      "service1": {
+        "title": "Software Development",
+        "tag1": "Web Apps",
+        "tag2": "Mobile Apps",
+        "tag3": "Custom Software"
+      },
+      "service2": {
+        "title": "UI/UX Design",
+        "tag1": "User Interface",
+        "tag2": "User Experience",
+        "tag3": "Wireframing"
+      },
+      "service3": {
+        "title": "Quality Assurance",
+        "tag1": "Testing",
+        "tag2": "Bug Fixing",
+        "tag3": "Code Review"
+      }
     },
-    "design": {
-      "title": "Product Design",
-      "tag1": "Branding",
-      "tag2": "UI/UX"
-    },
-    "backend": {
-      "title": "Back-End Development",
-      "tag1": "PHP",
-      "tag2": "Node.js",
-      "tag3": "Java",
-      "tag4": "Python",
-      "tag5": "Ruby"
-    },
+
     "featured": {
       "heading": "Featured Projects",
       "text": "Showcasing our expertise and delivering innovative solutions through our diverse portfolio of successful projects"
