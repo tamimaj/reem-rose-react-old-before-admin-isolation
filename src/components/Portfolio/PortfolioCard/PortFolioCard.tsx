@@ -60,7 +60,7 @@ const PortFolioCard: React.FC<data> = ({ projectData, idx }) => {
         <img
           src={projectData.coverImage}
           alt={projectData.title}
-          className={`w-full h-full rounded object-cover`}
+          className={`w-full h-full rounded object-fit`}
         />
       </div>
       <div className="flex w-full lg:w-2/4 h-full flex-col mt-3 lg:mt-0 lg:justify-between lg:ml-8  ">
