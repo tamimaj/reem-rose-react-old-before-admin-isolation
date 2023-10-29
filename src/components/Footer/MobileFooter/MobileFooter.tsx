@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import siteSettings from "../../../settings/siteSettings";
 import ROUTES from "../../../settings/ROUTES";
@@ -37,18 +36,19 @@ const MobileFooter = () => {
         </button>
       </div>
       <div className="flex justify-between text-white mt-[64px] w-full //xs:w-[272px]">
-        <div className="flex cursor-pointer">
-          <AiFillGithub className="w-[20px] h-[20px] mr-2" />
-          <span className="text-sm  ">{siteSettings.icons.text1}</span>
-        </div>
-        <div className="flex cursor-pointer">
-          <AiFillLinkedin className="w-[20px] h-[20px] mr-2" />
-          <span className="text-sm  ">{siteSettings.icons.text2}</span>
-        </div>
-        <div className="flex cursor-pointer">
-          <AiOutlineTwitter className="w-[20px] h-[20px] mr-2" />
-          <span className="text-sm ">{siteSettings.icons.text3}</span>
-        </div>
+        {siteSettings.socialLinks.map((v) => (
+          <div className="flex cursor-pointer" key={v.name}>
+            <Link
+              to={v.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex"
+            >
+              <v.iconComponent className="w-[20px] h-[20px] mr-2" />
+              <span className="text-sm ">{v.name}</span>
+            </Link>
+          </div>
+        ))}
       </div>
       <div className="flex sm:text-sm text-xs justify-between text-white xs:ml-2  mt-[64px]">
         <div className="flex flex-col sm:w-full  mb-3">

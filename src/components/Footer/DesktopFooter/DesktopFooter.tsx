@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
-import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
 
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import siteSettings from "../../../settings/siteSettings";
@@ -9,7 +8,7 @@ import ROUTES from "../../../settings/ROUTES";
 import LanguageDetector from "../../../hooks/LanguageDetector/LanguageDetector";
 
 const DesktopFooter = () => {
-  const { i18n, t } = useTranslation();
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [lang, setLang] = useState<string | null>("");
 
@@ -48,19 +47,21 @@ const DesktopFooter = () => {
           </Link>
         ))}
       </div>
+
       <div className="flex text-white">
-        <div className="flex cursor-pointer">
-          <AiFillGithub className="w-[20px] h-[20px] mr-2 " />
-          <span className="text-sm mr-[48px] ">{siteSettings.icons.text1}</span>
-        </div>
-        <div className="flex cursor-pointer">
-          <AiFillLinkedin className="w-[20px] h-[20px] mr-2 " />
-          <span className="text-sm mr-[48px] ">{siteSettings.icons.text2}</span>
-        </div>
-        <div className="flex cursor-pointer">
-          <AiOutlineTwitter className="w-[20px] h-[20px] mr-2 " />
-          <span className="text-sm ">{siteSettings.icons.text3}</span>
-        </div>
+        {siteSettings.socialLinks.map((v) => (
+          <div className="flex cursor-pointer" key={v.name}>
+            <Link
+              to={v.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex"
+            >
+              <v.iconComponent className="w-[20px] h-[20px] mr-2" />
+              <span className="text-sm mr-[48px]">{v.name}</span>
+            </Link>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import logo from "../assets/images/logo.png";
 import translate from "../assets/icons/translate.svg";
 import ROUTES from "./ROUTES";
+import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
 
 export default {
   header: [
@@ -30,11 +31,24 @@ export default {
   logo: { url: logo, alt: "REEMROSE" },
   companyName: "ReemRose",
   translateIcon: translate,
-  icons: {
-    text1: "GitHub",
-    text2: "LinkedIn",
-    text3: "Twitter",
-  },
+  socialLinks: [
+    {
+      name: "GitHub",
+      iconComponent: AiFillGithub,
+      link: "https://github.com/reemrose",
+    },
+    {
+      name: "LinkedIn",
+      iconComponent: AiFillLinkedin,
+      link: "https://www.linkedin.com/company/reemrose",
+    },
+    {
+      name: "Twitter",
+      iconComponent: AiOutlineTwitter,
+      link: "https://twitter.com/reemroseweb",
+    },
+  ],
+
   footerMenu: [
     {
       text: "header.text2",
