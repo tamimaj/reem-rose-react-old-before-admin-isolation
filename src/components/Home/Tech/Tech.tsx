@@ -19,7 +19,7 @@ import {
   BiLogoFlutter,
 } from "react-icons/bi";
 
-import { SiBigcommerce, SiWoocommerce } from "react-icons/si";
+import { SiBigcommerce } from "react-icons/si";
 
 const Tech = () => {
   const { t } = useTranslation();
@@ -40,7 +40,6 @@ const Tech = () => {
     { icon: BiLogoWordpress, name: "WordPress" },
     { icon: BiLogoShopify, name: "Shopify" },
     { icon: SiBigcommerce, name: "Bigcommerce" },
-    { icon: SiWoocommerce, name: "Woocommerce" },
   ];
 
   return (
