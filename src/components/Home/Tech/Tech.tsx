@@ -17,6 +17,7 @@ import {
   BiLogoWordpress,
   BiLogoShopify,
   BiLogoFlutter,
+  BiLogoDjango,
 } from "react-icons/bi";
 
 import { SiBigcommerce } from "react-icons/si";
@@ -32,7 +33,7 @@ const Tech = () => {
     { icon: DiAngularSimple, name: "Angular" },
     { icon: FaGolang, name: "Go" },
     { icon: BiLogoPython, name: "Python" },
-    { icon: SiDjango, name: "Django" },
+    { icon: BiLogoDjango, name: "Django" },
     { icon: BiLogoFlutter, name: "Flutter" },
     { icon: DiAndroid, name: "Android" },
     { icon: DiApple, name: "Apple" },
