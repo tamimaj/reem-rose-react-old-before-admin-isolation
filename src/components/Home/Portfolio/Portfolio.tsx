@@ -77,7 +77,7 @@ const Portfolio = () => {
         <Loader className="h-[30vh]" />
       ) : (
         <>
-          <div className="flex flex-col items-center lg:items-start mb-8 lg:mb-0 lg:ml-6">
+          <div className="flex flex-col lg:w-4/5 items-center lg:items-start mb-8 lg:mb-0 lg:ml-6">
             <h6 className="text-white text-[20px] lg:text-[32px] mb-2 mr-[24px] lg:mr-0">
               {t("home.featured.heading")}
             </h6>
@@ -102,6 +102,7 @@ const Portfolio = () => {
                 {lang === "ar" ? <HiArrowLeft /> : <HiArrowRight />}
               </div>
             </div>
+
             <span
               onClick={() => navigate(ROUTES.PORTFOLIO)}
               className="hidden lg:flex text-primary text-base font-semibold cursor-pointer"
@@ -109,6 +110,7 @@ const Portfolio = () => {
               {t("home.viewBtnText")}
             </span>
           </div>
+
           <div className="flex w-full lg:w-[1076px] lg:ml-[63px]">
             <AliceCarousel
               mouseTracking
@@ -122,13 +124,13 @@ const Portfolio = () => {
               items={portfolioData.map((v, idx) => (
                 <div
                   key={idx}
-                  className="relative  h-[240px] xs:h-[300px]  md:h-[264px] mr-4 cursor-grab"
+                  className="relative  /max-h-[200px] mr-4 cursor-grab"
                 >
                   <img
                     draggable={false}
                     src={v.coverImage}
-                    alt="project"
-                    className="w-full h-full object-cover rounded"
+                    alt={v.title}
+                    className="w-full h-full object-fit rounded opacity-80"
                   />
                   <span className="absolute text-[24px] text-white bottom-[20px] left-[16px]">
                     {v.title}
