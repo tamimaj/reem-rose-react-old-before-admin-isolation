@@ -27,8 +27,8 @@ export default {
     },
   ],
   scheduleText: "header.scheduleText",
-  footerLogo: { url: logo, alt: "REEMROSE" },
-  logo: { url: logo, alt: "REEMROSE" },
+  footerLogo: { url: logo, alt: "ReemRose" },
+  logo: { url: logo, alt: "ReemRose" },
   companyName: "ReemRose",
   translateIcon: translate,
   socialLinks: [
