@@ -28,10 +28,43 @@ body {
   height: 100vh;
   width: 100vw;
 }
+
 .layout {
-  background-image: url("./assets/images/backgroundImage.png");
+  background: linear-gradient(
+    120deg,
+    rgba(48, 228, 142, 0.1),
+    rgba(239, 102, 63, 0.1),
+    rgba(156, 30, 194, 0.1),
+    rgba(154, 191, 70, 0.1),
+    rgba(225, 38, 192, 0.1),
+    rgba(156, 30, 194, 0.1),
+    rgba(48, 228, 142, 0.1),
+    rgba(48, 228, 142, 0.1),
+    rgba(71, 102, 210, 0.1),
+    rgba(54, 134, 212, 0.1),
+    rgba(225, 38, 192, 0.1),
+    rgba(25, 189, 186, 0.1),
+    rgba(175, 102, 77, 0.1),
+    rgba(20, 28, 212, 0.1),
+    rgba(25, 189, 186, 0.1),
+    rgba(133, 70, 154, 0.1)
+  );
+
+  background-size: 600% 600%;
+  animation: gradientBG 40s ease infinite;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 body.modal-open {

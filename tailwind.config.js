@@ -16,12 +16,12 @@ module.exports = {
         gradientColor: "#006655",
         heading: "rgba(255, 255, 255, 0.8)", // white 80% opacity
         bodyText: "rgba(255, 255, 255, 0.4)", // white 40% opacity
-        body: "#000E14", // this is the background color
+        body: "#000E14", // this is the background color. Blueish black.
         white: "#ffffff",
         lightWhite: "rgba(255, 255, 255, 0.64)", // white 64% opacity
         lighterWhite: "rgba(255, 255, 255, 0.16)", //white 16% opacity
         gray: "#6b7280",
-        black: "#000A08",
+        black: "#000A08", // ZAITECH BLACK
         lightBlack: "rgb(0 10 8 / 64%)",
         lighterBlack: "rgb(0 10 8 / 24%)",
         red: "rgba(179,58,58,1)",
