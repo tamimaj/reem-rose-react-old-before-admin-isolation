@@ -71,13 +71,7 @@ const Admin = () => {
         </>
       )}
       <div className="w-full 3xl:w-[90%] max-w-[1440px] flex flex-col overflow-x-hidden items-center">
-        <Link
-          to={ROUTES.HOME}
-          className="text-white md:w-[712px] text-[24px] xs:text-[28px] lg:text-[32px] text-center mt-4 mb-[48px] lg:mb-[80px]"
-        >
-          {t("admin.heading")}
-        </Link>
-        <div className="flex w-full overflow-y-hidden">
+        <div className="flex w-full overflow-y-hidden mt-12">
           {!isCheckingAuth && user && isLoggedIn && (
             <div className="flex flex-col justify-between 2xl:items-start items-center 2xl:w-[227px] h-[405px] 2xl:h-full bg-primaryLight py-8 px-4 2xl:p-8 rounded mr-6">
               <div className="flex flex-col">
@@ -227,7 +221,7 @@ const Admin = () => {
             {!isCheckingAuth && user && isLoggedIn && (
               <>
                 <Route path={ROUTES.ADMIN_HOME} element={<Home />} />
-                //blog routes
+                {/* //blog routes */}
                 <Route path={ROUTES.ADMIN_BLOGS} element={<Blogs />} />
                 <Route path={ROUTES.ADMIN_ADD_BLOG} element={<AddBlogForm />} />
                 <Route
@@ -238,7 +232,7 @@ const Admin = () => {
                   path={ROUTES.ADMIN_BLOG_DETAILS}
                   element={<BlogDetails />}
                 />
-                // application routes
+                {/* // application routes */}
                 <Route
                   path={ROUTES.ADMIN_APPLICATIONS}
                   element={<Applications />}
@@ -247,12 +241,12 @@ const Admin = () => {
                   path={ROUTES.ADMIN_APPLICATION_DETAILS}
                   element={<ApplicationDetails />}
                 />
-                // categories routes
+                {/* // categories routes */}
                 <Route
                   path={ROUTES.ADMIN_CATEGORIES}
                   element={<Categories />}
                 />
-                // project routes
+                {/* // project routes */}
                 <Route path={ROUTES.ADMIN_PROJECTS} element={<Projects />} />
                 <Route
                   path={ROUTES.ADMIN_ADD_PROJECT}
@@ -266,7 +260,7 @@ const Admin = () => {
                   path={ROUTES.ADMIN_PROJECT_DETAILS}
                   element={<ProjectDetails />}
                 />
-                // testimonials routes
+                {/* // testimonials routes */}
                 <Route
                   path={ROUTES.ADMIN_TESTIMONIALS}
                   element={<Testimonials />}
@@ -283,7 +277,7 @@ const Admin = () => {
                   path={ROUTES.ADMIN_TESTIMONIAL_DETAILS}
                   element={<TestimonialDetails />}
                 />
-                // services routes
+                {/* // services routes */}
                 <Route path={ROUTES.ADMIN_SERVICES} element={<Services />} />
                 <Route
                   path={ROUTES.ADMIN_ADD_SERVICE}
@@ -297,7 +291,7 @@ const Admin = () => {
                   path={ROUTES.ADMIN_SERVICE_DETAILS}
                   element={<ServicesDetails />}
                 />
-                // careers routes
+                {/* // careers routes */}
                 <Route path={ROUTES.ADMIN_CAREERS} element={<Careers />} />
                 <Route
                   path={ROUTES.ADMIN_ADD_CAREER}
@@ -311,7 +305,7 @@ const Admin = () => {
                   path={ROUTES.ADMIN_CAREER_DETAILS}
                   element={<CareerDetails />}
                 />
-                // call routes
+                {/* // call routes */}
                 <Route path={ROUTES.ADMIN_CALLS} element={<Calls />} />
                 <Route
                   path={ROUTES.ADMIN_CALL_DETAILS}
