@@ -2,11 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* importing  fonts */
 @import url("./assets/fonts/Plus_Jakarta_Sans/plus_jakarta_sans.css");
 @import url("./assets/fonts/Roboto_Slab/roboto_slab.css");
+
 html {
   background-color: #000e14;
+}
+
+::selection {
+  background-color: #00a388;
+  color: #ffffff;
 }
 
 input:-webkit-autofill,
@@ -51,7 +56,7 @@ body {
   );
 
   background-size: 600% 600%;
-  animation: gradientBG 40s ease infinite;
+  animation: gradientBG 40s linear infinite;
   background-repeat: no-repeat;
 }
 
