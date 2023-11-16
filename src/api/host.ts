@@ -1,1 +1,1 @@
-export const HOST = "http://192.168.1.226:5000";
+export const HOST = process.env.REACT_APP_SERVER_URL || "http://localhost:5000";

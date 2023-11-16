@@ -2,10 +2,8 @@ import getFBToken from "../firebase/getFBToken";
 import axios from "axios";
 import { HOST } from "./host";
 
-const SERVER_URL = process.env.REACT_APP_SERVER_URL || HOST;
-
 const api = axios.create({
-  baseURL: `${SERVER_URL}/api/private`,
+  baseURL: `${HOST}/api/private`,
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",
