@@ -3,7 +3,7 @@ import translate from "../assets/icons/translate.svg";
 import ROUTES from "./ROUTES";
 import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
 
-export default {
+const settings = {
   header: [
     {
       text: "header.text1",
@@ -129,3 +129,5 @@ export default {
     },
   ],
 };
+
+export default settings;
