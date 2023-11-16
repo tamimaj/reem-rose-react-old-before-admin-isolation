@@ -4,13 +4,10 @@ import { useTranslation } from "react-i18next";
 import RcDrawer from "rc-drawer";
 import { useWindowSize } from "react-use";
 import { MdOutlineClose, MdArrowRight, MdArrowLeft } from "react-icons/md";
-
 import siteSettings from "../../../settings/siteSettings";
 import LanguagesMenu from "../LanguageMenu/LanguagesMenu";
-import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
 import ROUTES from "../../../settings/ROUTES";
 import LanguageDetector from "../../../hooks/LanguageDetector/LanguageDetector";
-import path from "path";
 
 interface drawerProps {
   openMenu: boolean;
@@ -98,10 +95,20 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
           >
             {t(siteSettings.scheduleText)}
           </span>
-          <div className="flex items-center  mt-[48px] ml-[48px] text-primary text-[24px]">
-            <AiFillGithub className="mr-[48px] cursor-pointer " />
-            <AiFillLinkedin className="mr-[48px] cursor-pointer " />
-            <AiOutlineTwitter className="mr-[48px] cursor-pointer " />
+          <div className="flex items-center my-[32px] text-primary text-[24px]">
+            {siteSettings.socialLinks.map((v: any) => (
+              <Link
+                to={v.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex"
+              >
+                <v.iconComponent
+                  size={28}
+                  className="mx-[12px] cursor-pointer"
+                />
+              </Link>
+            ))}
           </div>
         </div>
       </div>
