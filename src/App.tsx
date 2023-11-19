@@ -27,6 +27,7 @@ import AboutUs from "./pages/AboutUs/AboutUs";
 import Admin from "./pages/Admin/Admin";
 import ROUTES from "./settings/ROUTES";
 import { AuthProvider } from "./context/auth.context";
+import PageNotFound from "./pages/404";
 
 function ScrollToTop() {
   const { pathname, search } = useLocation();
@@ -72,6 +73,8 @@ function App() {
             <Route path={ROUTES.ABOUT_US} element={<AboutUs />} />
 
             <Route path={ROUTES.ADMIN} element={<Admin />} />
+
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Layout>
       </Router>
