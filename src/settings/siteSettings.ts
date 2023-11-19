@@ -1,7 +1,14 @@
 import logo from "../assets/images/logo.png";
 import translate from "../assets/icons/translate.svg";
 import ROUTES from "./ROUTES";
-import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
+import {
+  AiFillGithub,
+  AiFillLinkedin,
+  AiFillFacebook,
+  AiFillYoutube,
+  AiFillInstagram,
+} from "react-icons/ai";
+import { RiTwitterXFill } from "react-icons/ri";
 
 const settings = {
   header: [
@@ -38,21 +45,43 @@ const settings = {
   logo: { url: logo, alt: "ReemRose" },
   companyName: "ReemRose",
   translateIcon: translate,
+
   socialLinks: [
     {
       name: "GitHub",
+      account: "@ReemRose",
       iconComponent: AiFillGithub,
       link: "https://github.com/reemrose",
     },
     {
       name: "LinkedIn",
+      account: "@ReemRose",
       iconComponent: AiFillLinkedin,
       link: "https://www.linkedin.com/company/reemrose",
     },
     {
-      name: "Twitter",
-      iconComponent: AiOutlineTwitter,
+      name: "X",
+      account: "@ReemRoseWeb",
+      iconComponent: RiTwitterXFill,
       link: "https://twitter.com/reemroseweb",
+    },
+    {
+      name: "YouTube",
+      account: "@ReemRoseWeb",
+      iconComponent: AiFillYoutube,
+      link: "http://www.youtube.com/@ReemRoseWeb",
+    },
+    {
+      name: "Facebook",
+      account: "@ReemRoseWeb",
+      iconComponent: AiFillFacebook,
+      link: "https://www.facebook.com/reemroseweb",
+    },
+    {
+      name: "Instagram",
+      account: "@ReemRoseWeb",
+      iconComponent: AiFillInstagram,
+      link: "https://www.instagram.com/reemroseweb",
     },
   ],
 

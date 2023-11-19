@@ -48,19 +48,18 @@ const DesktopFooter = () => {
         ))}
       </div>
 
-      <div className="flex text-white">
+      <div className="grid grid-cols-6 gap-x-5 text-white">
         {siteSettings.socialLinks.map((v) => (
-          <div className="flex cursor-pointer" key={v.name}>
-            <Link
-              to={v.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex"
-            >
-              <v.iconComponent className="w-[20px] h-[20px] mr-2" />
-              <span className="text-sm mr-[48px]">{v.name}</span>
-            </Link>
-          </div>
+          <Link
+            key={v.link}
+            to={v.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="h-0 flex"
+            title={v.account}
+          >
+            <v.iconComponent className="w-[24px] h-[24px] hover:text-primary" />
+          </Link>
         ))}
       </div>
     </div>

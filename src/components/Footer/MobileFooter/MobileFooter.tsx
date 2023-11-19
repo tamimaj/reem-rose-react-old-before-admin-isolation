@@ -35,17 +35,11 @@ const MobileFooter = () => {
           )}
         </button>
       </div>
-      <div className="flex justify-between text-white mt-[64px] w-full //xs:w-[272px]">
+      <div className="flex justify-between px-1 text-white mt-[64px] w-full">
         {siteSettings.socialLinks.map((v) => (
           <div className="flex cursor-pointer" key={v.name}>
-            <Link
-              to={v.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex"
-            >
-              <v.iconComponent className="w-[20px] h-[20px] mr-2" />
-              <span className="text-sm ">{v.name}</span>
+            <Link to={v.link} target="_blank" rel="noopener noreferrer">
+              <v.iconComponent className="w-[24px] h-[24px]" />
             </Link>
           </div>
         ))}
