@@ -98,6 +98,7 @@ const MobileMenuDrawer: React.FC<drawerProps> = ({
           <div className="flex items-center my-[32px] text-primary text-[24px]">
             {siteSettings.socialLinks.map((v: any) => (
               <Link
+                key={v.link}
                 to={v.link}
                 target="_blank"
                 rel="noopener noreferrer"

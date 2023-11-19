@@ -52,44 +52,46 @@ const MobileFooter = () => {
       </div>
       <div className="flex sm:text-sm text-xs justify-between text-white xs:ml-2  mt-[64px]">
         <div className="flex flex-col sm:w-full  mb-3">
+          {/* // TODO. REVERT */}
+
           <Link
-            to={siteSettings.footerMenu[0].link}
+            to={siteSettings.footerMobileMenu[0].link}
             className="mb-4  cursor-pointer"
           >
-            {t(siteSettings.footerMenu[0].text)}
+            {t(siteSettings.footerMobileMenu[0].text)}
           </Link>
           <Link
-            to={siteSettings.footerMenu[2].link}
+            to={siteSettings.footerMobileMenu[2].link}
             className="mb-4  cursor-pointer"
           >
-            {t(siteSettings.footerMenu[2].text)}
+            {t(siteSettings.footerMobileMenu[2].text)}
           </Link>
           <Link
-            to={siteSettings.footerMenu[4].link}
+            to={siteSettings.footerMobileMenu[4].link}
             className=" cursor-pointer mb-4"
           >
-            {t(siteSettings.footerMenu[4].text)}
+            {t(siteSettings.footerMobileMenu[4].text)}
           </Link>
         </div>
         <div className="flex flex-col items-end sm:w-full  mb-3">
           <Link
-            to={siteSettings.footerMenu[1].link}
+            to={siteSettings.footerMobileMenu[1].link}
             className="cursor-pointer mb-4 w-[62px]"
           >
-            {t(siteSettings.footerMenu[1].text)}
+            {t(siteSettings.footerMobileMenu[1].text)}
           </Link>
           <Link
-            to={siteSettings.footerMenu[3].link}
+            to={siteSettings.footerMobileMenu[3].link}
             className="cursor-pointer mb-4 w-[62px]"
           >
-            {t(siteSettings.footerMenu[3].text)}
+            {t(siteSettings.footerMobileMenu[3].text)}
           </Link>
 
           <Link
-            to={siteSettings.footerMenu[5].link}
+            to={siteSettings.footerMobileMenu[5].link}
             className=" cursor-pointer mb-4 w-[62px]"
           >
-            {t(siteSettings.footerMenu[5].text)}
+            {t(siteSettings.footerMobileMenu[5].text)}
           </Link>
         </div>
       </div>

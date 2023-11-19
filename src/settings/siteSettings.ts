@@ -9,10 +9,13 @@ const settings = {
       text: "header.text1",
       link: ROUTES.HOME,
     },
-    {
-      text: "header.text2",
-      link: ROUTES.BLOG_PAGE,
-    },
+
+    // TEMPO
+    // {
+    //   text: "header.text2",
+    //   link: ROUTES.BLOG_PAGE,
+    // },
+
     {
       text: "header.text3",
       link: ROUTES.PORTFOLIO,
@@ -24,6 +27,10 @@ const settings = {
     {
       text: "header.text5",
       link: ROUTES.SERVICES,
+    },
+    {
+      text: "header.aboutUs",
+      link: ROUTES.ABOUT_US,
     },
   ],
   scheduleText: "header.scheduleText",
@@ -50,10 +57,48 @@ const settings = {
   ],
 
   footerMenu: [
+    // {
+    //   text: "header.text2",
+    //   link: ROUTES.BLOG,
+    // },
     {
-      text: "header.text2",
-      link: ROUTES.BLOG,
+      text: "header.text3",
+      link: ROUTES.PORTFOLIO,
     },
+    {
+      text: "header.text4",
+      link: ROUTES.CAREERS,
+    },
+    {
+      text: "header.text5",
+      link: ROUTES.SERVICES,
+    },
+
+    {
+      text: "footer.text4",
+      link: ROUTES.CONTACT_US,
+    },
+    {
+      text: "footer.text5",
+      link: ROUTES.ABOUT_US,
+    },
+  ],
+
+  // duplicate cos the footer menu is different in the mobile.
+  // TODO: MAKE A SINGLE MENU
+  // CHANGE TRANSLATIONS
+  footerMobileMenu: [
+    // {
+    //   text: "header.text2",
+    //   link: ROUTES.BLOG,
+    // },
+
+    // TODO
+    {
+      text: "header.text1",
+      link: ROUTES.HOME,
+    },
+
     {
       text: "header.text3",
       link: ROUTES.PORTFOLIO,
