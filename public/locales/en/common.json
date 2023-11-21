@@ -139,7 +139,22 @@
     "phoneNo": "Phone Number",
     "subheading": "Send us your message",
     "btnText": "Send Message",
-    "scheduleText": "Or schedule free 30 minute call"
+    "scheduleText": "Or schedule free 30 minute call",
+    "form": {
+      "label": {
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "btnText": "Send Message"
+      },
+      "placeholder": {
+        "name": "Name",
+        "email": "Email",
+        "message": "Message"
+      },
+      "success": "Message Sent Successfully",
+      "error": "Message Not Sent Successfully"
+    }
   },
   "aboutus": {
     "heading": "Discover Our Passion for Innovative Web Development: About Us",

@@ -45,6 +45,8 @@ const settings = {
   logo: { url: logo, alt: "ReemRose" },
   companyName: "ReemRose",
   translateIcon: translate,
+  supportEmail: "info@reemrose.com",
+  companyAddress: "Spain, Granada",
 
   socialLinks: [
     {

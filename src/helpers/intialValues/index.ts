@@ -76,6 +76,6 @@ export const initialValues = [
   {
     name: "",
     email: "",
-    coverLetter: "",
+    message: "",
   },
 ];
