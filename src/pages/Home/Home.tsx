@@ -3,6 +3,7 @@ import Portfolio from "../../components/Home/Portfolio/Portfolio";
 import Services from "../../components/Home/Services/Services";
 import Tech from "../../components/Home/Tech/Tech";
 import Testimonials from "../../components/Home/Testimonials/Testimonials";
+import ImageGrid from "../../components/ImageGrid/ImageGrid";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <div className="w-[90%] max-w-[1440px] flex flex-col overflow-x-hidden items-center">
         <Intro />
         <Tech />
+        <ImageGrid />
         <Portfolio />
         <Services />
         <Testimonials />

@@ -94,3 +94,31 @@ code {
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
+/* Image grid for portfolio */
+
+@keyframes scroll-row1 {
+  0% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-row2 {
+  0% {
+    transform: translateX(60%); /* Start from the middle of the container */
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scrolling-row1 {
+  animation: scroll-row1 40s linear infinite;
+}
+
+.animate-scrolling-row2 {
+  animation: scroll-row2 40s linear infinite;
+}
