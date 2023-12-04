@@ -9,7 +9,7 @@ import LanguageDetector from "../../../hooks/LanguageDetector/LanguageDetector";
 type CareerType = {
   slug: string;
   role: string;
-  date: string;
+  createdAt: string;
   location: string;
   shortDescription: string;
 };
@@ -30,7 +30,7 @@ const CareerCard: React.FC<CareerDataType> = ({ careerData }) => {
           {careerData.role}
         </h5>
         <span className="text-bodyText text-sm">
-          {moment(careerData.date).format("DD.MM.YY")}
+          {moment(careerData.createdAt).format("DD.MM.YY")}
         </span>
       </div>
       <span className="text-bodyText text-sm mt-2">{careerData.location}</span>
