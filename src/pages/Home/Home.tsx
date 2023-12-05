@@ -11,7 +11,7 @@ const Home = () => {
       <div className="w-[90%] max-w-[1440px] flex flex-col overflow-x-hidden items-center">
         <Intro />
         <Tech />
-        <ImageGrid />
+        {/* <ImageGrid /> */}
         <Portfolio />
         <Services />
         <Testimonials />
