@@ -1,4 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "react-quill/dist/quill.snow.css";
@@ -21,11 +27,23 @@ import AboutUs from "./pages/AboutUs/AboutUs";
 import Admin from "./pages/Admin/Admin";
 import ROUTES from "./settings/ROUTES";
 import { AuthProvider } from "./context/auth.context";
+import PageNotFound from "./pages/404";
+
+function ScrollToTop() {
+  const { pathname, search } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname, search]);
+
+  return null;
+}
 
 function App() {
   return (
     <AuthProvider>
       <Router>
+        <ScrollToTop />
         <Layout>
           <ToastContainer
             position="top-center"
@@ -43,8 +61,8 @@ function App() {
           />
           <Routes>
             <Route path={ROUTES.HOME} element={<Home />} />
-            <Route path={ROUTES.BLOG} element={<Blogs />} />
-            <Route path={ROUTES.BLOG_POST} element={<BlogPost />} />
+            {/* <Route path={ROUTES.BLOG} element={<Blogs />} />
+            <Route path={ROUTES.BLOG_POST} element={<BlogPost />} /> */}
             <Route path={ROUTES.CAREERS} element={<Careers />} />
             <Route path={ROUTES.CAREER_DETAILS} element={<CareerDetails />} />
             <Route path={ROUTES.SERVICES} element={<Services />} />
@@ -55,6 +73,8 @@ function App() {
             <Route path={ROUTES.ABOUT_US} element={<AboutUs />} />
 
             <Route path={ROUTES.ADMIN} element={<Admin />} />
+
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Layout>
       </Router>

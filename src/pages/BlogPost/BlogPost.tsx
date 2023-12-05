@@ -171,8 +171,8 @@ const BlogPost = () => {
             <span className="text-sm text-bodyText ">
               {postData.categoriesData.map((category, idx) => (
                 <Fragment key={idx}>
-                  {category.name}{" "}
-                  {postData.categoriesData.length !== idx + 1 && " , "}
+                  {category.name}
+                  {postData.categoriesData.length !== idx + 1 && ", "}
                 </Fragment>
               ))}
             </span>
@@ -191,9 +191,7 @@ const BlogPost = () => {
               <span className="text-heading text-base font-semibold">
                 By Tamim
               </span>
-              <span className="text-sm text-bodyText">
-                Full Stack Developer
-              </span>
+              <span className="text-sm text-bodyText">Tech Lead</span>
               <span className="text-sm text-primary">
                 {moment(postData.publishedAt).format("DD.MM.YY")}
               </span>

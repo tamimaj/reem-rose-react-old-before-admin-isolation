@@ -9,13 +9,8 @@ import {
   DiPython,
   DiReact,
 } from "react-icons/di";
-import { SiDjango, SiJavascript } from "react-icons/si";
 
-import gobbler from "../../assets/icons/gobbler.svg";
-import net from "../../assets/icons/net.svg";
-import techIcon from "../../assets/icons/techicon.svg";
-import vue from "../../assets/icons/vue.svg";
-import techIcon2 from "../../assets/icons/techIcon2.svg";
+import { SiDjango, SiJavascript } from "react-icons/si";
 
 type IconsType = {
   v: string;
@@ -23,9 +18,6 @@ type IconsType = {
 const Icons: React.FC<IconsType> = ({ v }) => {
   return (
     <>
-      {v === "Gobbler" && (
-        <img src={gobbler} alt="gobbler" className="w-[32px] mr-4 h-[32px] " />
-      )}
       {v === "Android" && (
         <div className="w-[32px] mr-4 h-[32px]">
           <DiAndroid className="w-full h-full text-white" />
@@ -46,9 +38,7 @@ const Icons: React.FC<IconsType> = ({ v }) => {
           <DiPython className="w-full h-full text-white" />
         </div>
       )}
-      {v === "Dot Net" && (
-        <img src={net} alt="net" className="w-[32px] mr-4 h-[32px]" />
-      )}
+
       {v === "Javascript" && (
         <div className="w-[32px] mr-4 h-[32px]">
           <SiJavascript className="text-[26px] text-white" />
@@ -69,19 +59,10 @@ const Icons: React.FC<IconsType> = ({ v }) => {
           <DiNodejsSmall className="w-full h-full text-white" />
         </div>
       )}
-      {v === "Tech1" && (
-        <img src={techIcon} alt="tech1" className="w-[32px] mr-4 h-[32px]" />
-      )}
       {v === "Django" && (
         <div className="w-[32px] mr-4 h-[32px]">
           <SiDjango className="w-full h-full text-white" />
         </div>
-      )}
-      {v === "vue" && (
-        <img src={vue} alt="vue" className="w-[32px] mr-4 h-[32px]" />
-      )}
-      {v === "tech2" && (
-        <img src={techIcon2} alt="tech2" className="w-[32px] mr-4 h-[32px]" />
       )}
     </>
   );

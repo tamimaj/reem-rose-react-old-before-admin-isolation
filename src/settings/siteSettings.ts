@@ -1,18 +1,28 @@
-import logo from "../assets/icons/logo.svg";
-import footerLogo from "../assets/icons/footerLogo.svg";
+import logo from "../assets/images/logo.png";
 import translate from "../assets/icons/translate.svg";
 import ROUTES from "./ROUTES";
+import {
+  AiFillGithub,
+  AiFillLinkedin,
+  AiFillFacebook,
+  AiFillYoutube,
+  AiFillInstagram,
+} from "react-icons/ai";
+import { RiTwitterXFill } from "react-icons/ri";
 
-export default {
+const settings = {
   header: [
     {
       text: "header.text1",
       link: ROUTES.HOME,
     },
-    {
-      text: "header.text2",
-      link: ROUTES.BLOG_PAGE,
-    },
+
+    // TEMPO
+    // {
+    //   text: "header.text2",
+    //   link: ROUTES.BLOG_PAGE,
+    // },
+
     {
       text: "header.text3",
       link: ROUTES.PORTFOLIO,
@@ -25,22 +35,101 @@ export default {
       text: "header.text5",
       link: ROUTES.SERVICES,
     },
+    {
+      text: "header.aboutUs",
+      link: ROUTES.ABOUT_US,
+    },
   ],
   scheduleText: "header.scheduleText",
-  footerLogo: { url: footerLogo, alt: "REEMROSE" },
-  logo: { url: logo, alt: "REEMROSE" },
+  footerLogo: { url: logo, alt: "ReemRose" },
+  logo: { url: logo, alt: "ReemRose" },
   companyName: "ReemRose",
   translateIcon: translate,
-  icons: {
-    text1: "GitHub",
-    text2: "LinkedIn",
-    text3: "Twitter",
-  },
-  footerMenu: [
+  supportEmail: "info@reemrose.com",
+  companyAddress: "Spain, Granada",
+
+  socialLinks: [
     {
-      text: "header.text2",
-      link: ROUTES.BLOG,
+      name: "GitHub",
+      account: "@ReemRose",
+      iconComponent: AiFillGithub,
+      link: "https://github.com/reemrose",
     },
+    {
+      name: "LinkedIn",
+      account: "@ReemRose",
+      iconComponent: AiFillLinkedin,
+      link: "https://www.linkedin.com/company/reemrose",
+    },
+    {
+      name: "X",
+      account: "@ReemRoseWeb",
+      iconComponent: RiTwitterXFill,
+      link: "https://twitter.com/reemroseweb",
+    },
+    {
+      name: "YouTube",
+      account: "@ReemRoseWeb",
+      iconComponent: AiFillYoutube,
+      link: "http://www.youtube.com/@ReemRoseWeb",
+    },
+    {
+      name: "Facebook",
+      account: "@ReemRoseWeb",
+      iconComponent: AiFillFacebook,
+      link: "https://www.facebook.com/reemroseweb",
+    },
+    {
+      name: "Instagram",
+      account: "@ReemRoseWeb",
+      iconComponent: AiFillInstagram,
+      link: "https://www.instagram.com/reemroseweb",
+    },
+  ],
+
+  footerMenu: [
+    // {
+    //   text: "header.text2",
+    //   link: ROUTES.BLOG,
+    // },
+    {
+      text: "header.text3",
+      link: ROUTES.PORTFOLIO,
+    },
+    {
+      text: "header.text4",
+      link: ROUTES.CAREERS,
+    },
+    {
+      text: "header.text5",
+      link: ROUTES.SERVICES,
+    },
+
+    {
+      text: "footer.text4",
+      link: ROUTES.CONTACT_US,
+    },
+    {
+      text: "footer.text5",
+      link: ROUTES.ABOUT_US,
+    },
+  ],
+
+  // duplicate cos the footer menu is different in the mobile.
+  // TODO: MAKE A SINGLE MENU
+  // CHANGE TRANSLATIONS
+  footerMobileMenu: [
+    // {
+    //   text: "header.text2",
+    //   link: ROUTES.BLOG,
+    // },
+
+    // TODO
+    {
+      text: "header.text1",
+      link: ROUTES.HOME,
+    },
+
     {
       text: "header.text3",
       link: ROUTES.PORTFOLIO,
@@ -116,3 +205,5 @@ export default {
     },
   ],
 };
+
+export default settings;

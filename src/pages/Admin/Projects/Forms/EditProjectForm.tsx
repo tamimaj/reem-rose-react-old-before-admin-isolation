@@ -8,14 +8,12 @@ import { toast } from "react-toastify";
 import Select from "react-select";
 
 import "../../../../assets/styles/quill.css";
-import { initialValues } from "../../../../helpers/intialValues";
 import { validationSchema } from "../../../../helpers/validationSchema";
 import CustomToast from "../../../../components/CustomToast/CustomToast";
 import Loader from "../../../../components/Loader/Loader";
 import ROUTES from "../../../../settings/ROUTES";
 import {
   UpdateProject,
-  createProject,
   getSpecificProject,
 } from "../../../../api/private/projects";
 import { getServices } from "../../../../api/public/services";
@@ -45,7 +43,9 @@ interface ProjectType {
   serviceProvidedAt: string;
 }
 
-const AddProjectForm = () => {
+// REFACTOR THIS FORM
+
+const EditProjectForm = () => {
   const imageRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
   const { id } = useParams();
@@ -62,12 +62,14 @@ const AddProjectForm = () => {
       label: "",
     },
   ]);
+
   const [selectedTechOption, setSelectedTechOption] = useState<any>([
     {
       value: "",
       label: "",
     },
   ]);
+
   const [projectData, setProjectData] = useState<ProjectType>({
     _id: "",
     title: "",
@@ -80,6 +82,7 @@ const AddProjectForm = () => {
     seoTitle: "",
     seoDescription: "",
   });
+
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
@@ -121,16 +124,25 @@ const AddProjectForm = () => {
     const selectedOption = techOptions.filter((option) => {
       return formik.values.techStacks?.includes(option.value);
     });
+
     if (selectedOption) setSelectedTechOption(selectedOption);
-    const githubData = formik.values.links.filter((v, idx) => {
-      return v.name === "code";
-    });
-    const webData = formik.values.links.filter((v, idx) => {
-      return v.name === "website";
-    });
-    setGithubInfo(githubData[0]);
-    setWebInfo(webData[0]);
+
+    const webData = projectData.links.find((link) => link.name === "website");
+    const githubData = projectData.links.find((link) => link.name === "code");
+
+    if (webData) {
+      setWebInfo({ name: "website", link: webData.link });
+    } else {
+      setWebInfo({ name: "website", link: "" });
+    }
+
+    if (githubData) {
+      setGithubInfo({ name: "code", link: githubData.link });
+    } else {
+      setGithubInfo({ name: "code", link: "" });
+    }
   }, [projectData]);
+
   const handleUpdateProject = async (values: any) => {
     setLoading(true);
     if (webInfo?.link && githubInfo?.link)
@@ -181,9 +193,7 @@ const AddProjectForm = () => {
       e.target.value = "";
     }
   };
-  useEffect(() => {
-    getProjectData();
-  }, [id]);
+
   const getProjectData = async () => {
     if (id) {
       let response = await getSpecificProject(id);
@@ -199,6 +209,11 @@ const AddProjectForm = () => {
       setProjectData(response.data.projectData);
     }
   };
+
+  useEffect(() => {
+    getProjectData();
+  }, [id]);
+
   return (
     <div className=" pt-4 pb-20 w-full flex justify-center">
       <div className="w-full 3xl:w-[90%] max-w-[1440px] flex flex-col overflow-x-hidden items-center">
@@ -430,4 +445,4 @@ const AddProjectForm = () => {
   );
 };
 
-export default AddProjectForm;
+export default EditProjectForm;

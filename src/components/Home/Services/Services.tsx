@@ -2,7 +2,6 @@ import React, { Fragment, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-
 import ROUTES from "../../../settings/ROUTES";
 import LanguageDetector from "../../../hooks/LanguageDetector/LanguageDetector";
 import { getServices } from "../../../api/public/services";
@@ -73,7 +72,7 @@ const Services = () => {
                     {" "}
                     <h5 className="text-white text-[20px]">{v.title}</h5>
                     <p
-                      className="text-sm  text-bodyText mt-2"
+                      className="text-sm text-bodyText mt-2"
                       dangerouslySetInnerHTML={HtmlConverter(v.summary)}
                     />
                     <span
@@ -92,13 +91,14 @@ const Services = () => {
               </Fragment>
             ))}
           </div>
-          <div className="hidden lg:flex flex-col min-w-[160px] ml-[137px] mt-[65px]">
+
+          <div className="hidden lg:flex flex-col min-w-[160px] w-full xl:ms-8 mt-[65px]">
             {servicesData.map(
               (v, idx) =>
                 active === idx && (
                   <Fragment key={idx}>
                     {" "}
-                    <h5 className="text-white text-[24px]">{v.title}</h5>
+                    <h5 className="text-white text-[24px] ">{v.title}</h5>
                     <p
                       dangerouslySetInnerHTML={HtmlConverter(v.summary)}
                       className="text-sm 2xl:text-base text-bodyText mt-6"

@@ -60,7 +60,7 @@ const PortFolioCard: React.FC<data> = ({ projectData, idx }) => {
         <img
           src={projectData.coverImage}
           alt={projectData.title}
-          className={`w-full h-full rounded object-cover`}
+          className={`w-full h-full rounded object-fit`}
         />
       </div>
       <div className="flex w-full lg:w-2/4 h-full flex-col mt-3 lg:mt-0 lg:justify-between lg:ml-8  ">
@@ -72,63 +72,52 @@ const PortFolioCard: React.FC<data> = ({ projectData, idx }) => {
           dangerouslySetInnerHTML={HtmlConverter(projectData.description)}
         />
 
-        <span className="text-sm lg:text-sm mt-2 text-lightWhite">
+        {/* <span className="text-sm lg:text-sm mt-2 text-lightWhite">
           {moment(projectData.serviceProvidedAt).format("DD.MM.YY")}
-        </span>
-        <div className="flex flex-col w-full">
-          <span className="mt-3 text-primary text-sm lg:text-base font-semibold">
-            {t("portfolio.services")}
-          </span>
-          <div className="flex flex-wrap w-full mt-3">
-            {projectData?.servicesData?.map((v, idx) => (
-              <Tags key={idx} tag={v.title} />
-            ))}
-          </div>
-        </div>
+        </span> */}
 
-        <div className="flex flex-col w-full">
-          <span className="mt-3 text-primary text-sm lg:text-base font-semibold">
-            {t("portfolio.techText")}
-          </span>
-          <div className="flex items-center flex-wrap w-full mt-3">
-            {projectData?.techStacks?.map((v, idx) => (
-              <Icons key={idx} v={v} />
-            ))}
+        {projectData?.servicesData?.length > 0 && (
+          <div className="flex flex-col w-full">
+            <span className="mt-3 text-primary text-sm lg:text-base font-semibold">
+              {t("portfolio.services")}
+            </span>
+            <div className="flex flex-wrap w-full mt-3">
+              {projectData?.servicesData?.map((v, idx) => (
+                <Tags key={idx} tag={v.title} />
+              ))}
+            </div>
           </div>
-        </div>
+        )}
+
+        {projectData?.techStacks?.length > 0 && (
+          <div className="flex flex-col w-full">
+            <span className="mt-3 text-primary text-sm lg:text-base font-semibold">
+              {t("portfolio.techText")}
+            </span>
+            <div className="flex items-center flex-wrap w-full mt-3">
+              {projectData?.techStacks?.map((v, idx) => (
+                <Icons key={idx} v={v} />
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="flex mt-5">
-          {
-            <a
-              href={
-                websiteLink
-                  ? websiteLink.includes("https")
-                    ? websiteLink
-                    : "https://" + websiteLink
-                  : ""
-              }
-              target="_blank"
-            >
+          {websiteLink && (
+            <a href={websiteLink} target="_blank" rel="noreferrer noopener">
               <button className="flex items-center text-sm md:text-base justify-center w-[190px]  h-[52px]  text-white rounded bg-gradient-to-r from-primary to-gradientColor">
                 {t("portfolio.visitText")}{" "}
                 <FiArrowUpRight className="text-[16px] lg:text-[20px] ml-2 md:ml-4" />
               </button>
             </a>
-          }
-          <a
-            href={
-              codeLink
-                ? codeLink.includes("https")
-                  ? codeLink
-                  : "https://" + codeLink
-                : ""
-            }
-            target="_blank"
-          >
-            <button className="flex text-sm md:text-base text-white items-center justify-center w-[140px] h-[51px] border border-primary rounded cursor-pointer ml-4">
-              {t("portfolio.codeText")}{" "}
-            </button>
-          </a>
+          )}
+          {codeLink && (
+            <a href={codeLink} target="_blank" rel="noreferrer noopener">
+              <button className="flex text-sm md:text-base text-white items-center justify-center w-[140px] h-[51px] border border-primary rounded cursor-pointer ml-4">
+                {t("portfolio.codeText")}{" "}
+              </button>
+            </a>
+          )}
         </div>
       </div>
     </div>

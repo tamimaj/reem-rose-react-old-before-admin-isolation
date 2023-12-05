@@ -10,8 +10,9 @@ i18n
   .init({
     fallbackLng: "en",
 
-    supportedLngs: ["en", "es", "fr", "ar"],
-    debug: true,
+    // supportedLngs: ["en", "es", "ar"],
+    supportedLngs: ["en"],
+    debug: false,
 
     // Set default namespace
     defaultNS: "common",

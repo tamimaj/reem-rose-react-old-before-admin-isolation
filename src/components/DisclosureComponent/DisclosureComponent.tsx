@@ -25,7 +25,7 @@ const DisclosureComponent: React.FC<DisclosureType> = ({
   };
 
   return servicesData.map((v, idx) => (
-    <>
+    <div key={idx} className="flex w-full flex-col">
       <div
         onClick={() => handleActive(idx)}
         className={`flex justify-between w-[98%] h-[60px] px-[24px] py-[20px] disclosure ${
@@ -51,7 +51,7 @@ const DisclosureComponent: React.FC<DisclosureType> = ({
           />
         </div>
       )}{" "}
-    </>
+    </div>
   ));
 };
 

@@ -1,21 +1,17 @@
-<svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-  viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
-    <rect x="20" y="50" width="4" height="10" fill="#fff">
-      <animateTransform attributeType="xml"
-        attributeName="transform" type="translate"
-        values="0 0; 0 20; 0 0"
-        begin="0" dur="0.6s" repeatCount="indefinite" />
-    </rect>
-    <rect x="30" y="50" width="4" height="10" fill="#fff">
-      <animateTransform attributeType="xml"
-        attributeName="transform" type="translate"
-        values="0 0; 0 20; 0 0"
-        begin="0.2s" dur="0.6s" repeatCount="indefinite" />
-    </rect>
-    <rect x="40" y="50" width="4" height="10" fill="#fff">
-      <animateTransform attributeType="xml"
-        attributeName="transform" type="translate"
-        values="0 0; 0 20; 0 0"
-        begin="0.4s" dur="0.6s" repeatCount="indefinite" />
-    </rect>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" width="2400" height="2400" style=""><rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none" class="" style=""/>
+  
+<g class="currentLayer" style=""><title>Layer 1</title><g stroke-width="200" stroke-linecap="round" stroke="#00a388" fill="#1aeb1a" id="spinner" class="selected" stroke-opacity="1" fill-opacity="1">
+    <line x1="1200" y1="600" x2="1200" y2="100" id="svg_1" stroke="#00a388"/>
+    <line opacity="0.5" x1="1200" y1="2300" x2="1200" y2="1800" id="svg_2" stroke="#00a388"/>
+    <line opacity="0.917" x1="900" y1="680.4000244140625" x2="650" y2="247.39999389648438" id="svg_3" stroke="#00a388"/>
+    <line opacity="0.417" x1="1750" y1="2152.60009765625" x2="1500" y2="1719.5999755859375" id="svg_4" stroke="#00a388"/>
+    <line opacity="0.833" x1="680.4000244140625" y1="900" x2="247.39999389648438" y2="650" id="svg_5" stroke="#00a388"/>
+    <line opacity="0.333" x1="2152.60009765625" y1="1750" x2="1719.5999755859375" y2="1500" id="svg_6" stroke="#00a388"/>
+    <line opacity="0.75" x1="600" y1="1200" x2="100" y2="1200" id="svg_7" stroke="#00a388"/>
+    <line opacity="0.25" x1="2300" y1="1200" x2="1800" y2="1200" id="svg_8" stroke="#00a388"/>
+    <line opacity="0.667" x1="680.4000244140625" y1="1500" x2="247.39999389648438" y2="1750" id="svg_9" stroke="#00a388"/>
+    <line opacity="0.167" x1="2152.60009765625" y1="650" x2="1719.5999755859375" y2="900" id="svg_10" stroke="#00a388"/>
+    <line opacity="0.583" x1="900" y1="1719.5999755859375" x2="650" y2="2152.60009765625" id="svg_11" stroke="#00a388"/>
+    <line opacity="0.083" x1="1750" y1="247.39999389648438" x2="1500" y2="680.4000244140625" id="svg_12" stroke="#00a388"/>
+    <animateTransform attributeName="transform" attributeType="XML" type="rotate" keyTimes="0;0.08333;0.16667;0.25;0.33333;0.41667;0.5;0.58333;0.66667;0.75;0.83333;0.91667" values="0 1199 1199;30 1199 1199;60 1199 1199;90 1199 1199;120 1199 1199;150 1199 1199;180 1199 1199;210 1199 1199;240 1199 1199;270 1199 1199;300 1199 1199;330 1199 1199" dur="0.83333s" begin="0s" repeatCount="indefinite" calcMode="discrete"/>
+  </g></g></svg>

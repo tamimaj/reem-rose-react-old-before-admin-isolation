@@ -5,7 +5,7 @@ import Calendar from "react-calendar";
 import { IoMdLock } from "react-icons/io";
 import moment from "moment";
 
-import scheduleImage from "../../assets/tempImages/schedule.png";
+import scheduleImage from "../../assets/images/tamim.jpeg";
 import videocam from "../../assets/icons/videocam.svg";
 import globe from "../../assets/icons/globe_uk.svg";
 import "../../assets/styles/calendar.css";
@@ -93,7 +93,6 @@ const ScheduleCall = () => {
   });
 
   const handleFormSubmit = async (values: any) => {
-    setLoading(true);
     const selectedDate = moment(date).format("YYYY-MM-DD");
     const startDate = moment(`${selectedDate} ${time}`).utc(true).format();
     const data = { ...values, startDate };
@@ -108,7 +107,6 @@ const ScheduleCall = () => {
     getCallData();
     toast(<CustomToast type="success" message={t("schedule.success")} />);
     navigate("/");
-    setLoading(false);
   };
 
   const isDateDisabled = (scheduleTime: string) => {
@@ -144,9 +142,7 @@ const ScheduleCall = () => {
                     alt="schedule Image"
                     className="w-[105px] h-[105px] rounded"
                   />
-                  <span className="text-white text-base mt-2">
-                    derrick rose
-                  </span>
+                  <span className="text-white text-center mt-2">Tamim</span>
                   <span className="text-primary text-[20px] mt-4">
                     {t("schedule.timeText")}
                   </span>

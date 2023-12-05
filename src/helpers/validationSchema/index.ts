@@ -2,7 +2,9 @@ import * as Yup from "yup";
 export const validationSchema = [
   Yup.object().shape({
     name: Yup.string().required("Name is required"),
-    email: Yup.string().required("Email is required"),
+    email: Yup.string()
+      .email("Please enter a valid email address")
+      .required("Email is required"),
     phoneNumber: Yup.string().required("Phone Number is required"),
     github: Yup.string().required("Github is required"),
     linkedin: Yup.string().required("Linkedin is required"),
@@ -56,18 +58,26 @@ export const validationSchema = [
   }),
 
   Yup.object().shape({
-    email: Yup.string().required("Email is required"),
+    email: Yup.string()
+      .email("Please enter a valid email address")
+      .required("Email is required"),
     password: Yup.string().required("Password is required"),
   }),
 
   Yup.object().shape({
     requestorName: Yup.string().required("Name is required"),
-    requestorEmail: Yup.string().required("Email is required"),
+    requestorEmail: Yup.string()
+      .email("Please enter a valid email address")
+      .required("Email is required"),
     description: Yup.string().required("Letter is required"),
   }),
   Yup.object().shape({
     name: Yup.string().required("Name is required"),
-    email: Yup.string().required("Email is required"),
-    coverLetter: Yup.string().required("Cover Letter is required"),
+    email: Yup.string()
+      .email("Please enter a valid email address")
+      .required("Email is required"),
+    message: Yup.string()
+      .min(30, "Message is too short")
+      .required("Message is required"),
   }),
 ];

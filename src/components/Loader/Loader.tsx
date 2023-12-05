@@ -13,7 +13,7 @@ const Loader: React.FC<LoaderTypes> = ({ className }) => {
       <img
         src={loader}
         draggable={false}
-        className={"w-20 select-none"}
+        className={"w-8 select-none"}
         alt="loading..."
       />
     </div>
