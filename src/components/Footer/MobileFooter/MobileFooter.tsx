@@ -6,6 +6,7 @@ import ROUTES from "../../../settings/ROUTES";
 import { useNavigate } from "react-router";
 import LanguageDetector from "../../../hooks/LanguageDetector/LanguageDetector";
 import { Link } from "react-router-dom";
+import Button from "../../Button";
 
 const MobileFooter = () => {
   const { i18n, t } = useTranslation();
@@ -23,19 +24,14 @@ const MobileFooter = () => {
         <span className="mt-2 text-bodyText text-center text-base">
           {t("footer.tagline")}
         </span>
-        <button
-          onClick={() => navigate(ROUTES.SCHEDULE)}
-          className="flex items-center justify-center w-full //xs:w-[272px] h-[50px] xs:h-[60px] text-white rounded bg-gradient-to-r from-primary to-gradientColor mt-[48px]"
-        >
-          {t("header.scheduleText")}{" "}
-          {lang === "ar" ? (
-            <FiChevronLeft className="text-[20px] ml-4" />
-          ) : (
-            <FiChevronRight className="text-[20px] ml-4" />
-          )}
-        </button>
+        <Button
+          text={t("header.scheduleText")}
+          withArrow
+          href={ROUTES.SCHEDULE}
+          className="w-full md:w-4/5 mt-[38px]"
+        />
       </div>
-      <div className="flex justify-between px-1 text-white mt-[64px] w-full">
+      <div className="flex justify-between px-1 text-heading mt-[64px] w-full">
         {siteSettings.socialLinks.map((v) => (
           <div className="flex cursor-pointer" key={v.name}>
             <Link to={v.link} target="_blank" rel="noopener noreferrer">
@@ -44,7 +40,7 @@ const MobileFooter = () => {
           </div>
         ))}
       </div>
-      <div className="flex sm:text-sm text-xs justify-between text-white xs:ml-2  mt-[64px]">
+      <div className="flex sm:text-sm text-xs justify-between text-heading xs:ml-2  mt-[64px]">
         <div className="flex flex-col sm:w-full  mb-3">
           {/* // TODO. REVERT */}
 

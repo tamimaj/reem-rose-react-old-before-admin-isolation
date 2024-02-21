@@ -5,6 +5,7 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 import ROUTES from "../../../settings/ROUTES";
 import LanguageDetector from "../../../hooks/LanguageDetector/LanguageDetector";
+import Button from "../../Button";
 
 const Intro = () => {
   const { i18n, t } = useTranslation();
@@ -26,25 +27,23 @@ const Intro = () => {
           {t("home.tagline2")}
         </span>
       </div>
-      <div className="flex items-center justify-between font-PlusJakartaSans mt-[48px] lg:mt-[96px] w-[270px] xs:w-[350px] sm:w-[390px] md:w-[460px]">
-        <button
-          onClick={() => navigate(ROUTES.SCHEDULE)}
-          className="flex items-center text-sm md:text-base justify-center w-[130px] xs:w-[169px] md:w-[208px]  h-[52px] xs:h-[62px] pl-2 xs:pl-0 text-white rounded bg-gradient-to-r from-primary to-gradientColor "
-        >
-          {t("header.scheduleText")}{" "}
-          {lang === "ar" ? (
-            <FiChevronLeft className="text-[16px] lg:text-[20px] ml-1 xs:ml-2 md:ml-4 mt-[2px] xs:mt-0" />
-          ) : (
-            <FiChevronRight className="text-[16px] lg:text-[20px] ml-1 xs:ml-2 md:ml-4 mt-[2px] xs:mt-0" />
-          )}
-        </button>
+      <div className="flex items-center justify-center mt-[38px] lg:mt-[86px] w-full gap-x-3 md:gap-x-4 lg:gap-x-9">
+        <Button
+          text={t("header.scheduleText")}
+          withArrow
+          href={ROUTES.SCHEDULE}
+          cleanDimensions
+          className="h-[50px] md:h-[60px] w-[170px] lg:w-[210px] text-sm md:text-base my-2 md:my-0"
+        />
+
         <div className="relative">
-          <button
-            onClick={() => navigate(ROUTES.ABOUT_US)}
-            className="flex text-white items-center justify-center w-[130px] xs:w-[169px] md:w-[208px] h-[50px] xs:h-[60px]  border border-primary rounded cursor-pointer"
-          >
-            {t("home.btnText")}{" "}
-          </button>
+          <Button
+            variant="secondary"
+            text={t("home.btnText")}
+            href={ROUTES.ABOUT_US}
+            cleanDimensions
+            className="h-[50px] md:h-[60px] w-[170px] lg:w-[210px] text-sm md:text-base my-2 md:my-0"
+          />
         </div>
       </div>
     </>
