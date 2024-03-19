@@ -113,6 +113,7 @@ const AddBlogForm = () => {
     }
   };
   const textEditorOptions = {
+    syntax: true,
     toolbar: [
       ["bold", "italic", "underline", "code-block"],
       [{ font: [] }],
