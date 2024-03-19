@@ -99,7 +99,7 @@ code {
 
 @keyframes scroll-row1 {
   0% {
-    transform: translateX(50%);
+    transform: translateX(-10%);
   }
   100% {
     transform: translateX(-100%);
@@ -108,17 +108,31 @@ code {
 
 @keyframes scroll-row2 {
   0% {
-    transform: translateX(60%); /* Start from the middle of the container */
+    transform: translateX(0%); /* Start from the middle of the container */
   }
   100% {
     transform: translateX(-100%);
   }
 }
 
-.animate-scrolling-row1 {
-  animation: scroll-row1 40s linear infinite;
+/* For screens smaller than 768px (typical mobile devices) */
+@media only screen and (max-width: 767px) {
+  .animate-scrolling-row1 {
+    animation: scroll-row1 10s linear infinite;
+  }
+
+  .animate-scrolling-row2 {
+    animation: scroll-row2 10s linear infinite;
+  }
 }
 
-.animate-scrolling-row2 {
-  animation: scroll-row2 40s linear infinite;
+/* For screens larger than or equal to 768px */
+@media only screen and (min-width: 768px) {
+  .animate-scrolling-row1 {
+    animation: scroll-row1 40s linear infinite;
+  }
+
+  .animate-scrolling-row2 {
+    animation: scroll-row2 40s linear infinite;
+  }
 }
