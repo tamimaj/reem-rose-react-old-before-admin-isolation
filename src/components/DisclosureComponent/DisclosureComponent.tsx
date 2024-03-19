@@ -45,8 +45,8 @@ const DisclosureComponent: React.FC<DisclosureType> = ({
       </div>
       {active === idx && (
         <div className="mb-8 transition ease-in-out duration-1000 w-full">
-          <p
-            className="text-heading text-left w-full"
+          <div
+            className="rich-text"
             dangerouslySetInnerHTML={HtmlConverter(v.content)}
           />
         </div>

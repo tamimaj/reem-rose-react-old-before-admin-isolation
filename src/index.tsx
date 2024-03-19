@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 
 import "./i18n";
 import "./index.css";
+import "./styles/rich-text.css";
 import App from "./App";
 
 const root = ReactDOM.createRoot(
