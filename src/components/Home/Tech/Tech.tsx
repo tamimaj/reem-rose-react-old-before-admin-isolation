@@ -45,51 +45,52 @@ const Tech = () => {
 
   return (
     <div className="mt-[144px] lg:mt-[216px] bg-primaryLight rounded flex flex-col items-center p-[48px] w-full">
-      <div className="flex flex-col items-center lg:items-start lg:flex-row w-full max-w-[1344px] lg:justify-around">
-        <div className="flex flex-col lg:mt-0 w-[437px] items-center">
-          <h5 className="text-heading font-semibold font-PlusJakartaSans text-base lg:text-[20px]">
+      <div className="flex flex-col items-center lg:items-start lg:flex-row w-full lg:justify-around">
+        <div className="flex flex-col lg:mt-0 w-full items-center">
+          <h5 className="text-heading font-semibold text-base lg:text-[20px]">
             {t("home.banner.service1.title")}
           </h5>
-          <div className="flex justify-center">
-            <span className="text-sm opacity-40 hover:opacity-100 text-primary font-RobotoSlab mr-4">
+          <div className="flex justify-center mt-2">
+            <span className="text-sm text-primary hover:text-primaryBtnHoverFrom mr-4">
               {t("home.banner.service1.tag1")}
             </span>
-            <span className="text-sm opacity-40 hover:opacity-100 text-primary font-RobotoSlab mr-4">
+            <span className="text-sm text-primary hover:text-primaryBtnHoverFrom mr-4">
               {t("home.banner.service1.tag2")}
             </span>
-            <span className="text-sm opacity-40 hover:opacity-100 text-primary font-RobotoSlab mr-4">
+            <span className="text-sm text-primary hover:text-primaryBtnHoverFrom mr-4">
               {t("home.banner.service1.tag3")}
             </span>
           </div>
         </div>
-        <div className="flex flex-col mt-6 lg:mt-0 w-[437px] items-center">
-          <h5 className="text-heading font-semibold font-PlusJakartaSans text-base lg:text-[20px]">
+
+        <div className="flex flex-col mt-6 lg:mt-0 w-full items-center">
+          <h5 className="text-heading font-semibold  text-base lg:text-[20px]">
             {t("home.banner.service2.title")}
           </h5>
-          <div className="flex justify-center">
-            <span className="text-sm opacity-40 hover:opacity-100 text-primary font-RobotoSlab mr-4">
+          <div className="flex justify-center  mt-2">
+            <span className="text-sm text-primary hover:text-primaryBtnHoverFrom mr-4">
               {t("home.banner.service2.tag1")}
             </span>
-            <span className="text-sm opacity-40 hover:opacity-100 text-primary font-RobotoSlab mr-4">
+            <span className="text-sm text-primary hover:text-primaryBtnHoverFrom mr-4">
               {t("home.banner.service2.tag2")}
             </span>
-            <span className="text-sm opacity-40 hover:opacity-100 text-primary font-RobotoSlab mr-4">
+            <span className="text-sm text-primary hover:text-primaryBtnHoverFrom mr-4">
               {t("home.banner.service2.tag3")}
             </span>
           </div>
         </div>
-        <div className="flex flex-col mt-6 lg:mt-0 w-[437px] items-center">
-          <h5 className="text-heading  font-semibold font-PlusJakartaSans text-base lg:text-[20px] mr-4">
+        <div className="flex flex-col mt-6 lg:mt-0 w-full items-center">
+          <h5 className="text-heading  font-semibold  text-base lg:text-[20px] mr-4">
             {t("home.banner.service3.title")}
           </h5>
-          <div className="ml-[12px] xs:ml-0 flex justify-center">
-            <span className="text-sm opacity-40 hover:opacity-100 text-primary font-RobotoSlab mr-4">
+          <div className="ml-[12px] xs:ml-0 flex justify-center  mt-2">
+            <span className="text-sm text-primary hover:text-primaryBtnHoverFrom mr-4">
               {t("home.banner.service3.tag1")}
             </span>
-            <span className="text-sm opacity-40 hover:opacity-100 text-primary font-RobotoSlab mr-4">
+            <span className="text-sm text-primary hover:text-primaryBtnHoverFrom mr-4">
               {t("home.banner.service3.tag2")}
             </span>
-            <span className="text-sm opacity-40 hover:opacity-100 text-primary font-RobotoSlab mr-4">
+            <span className="text-sm text-primary hover:text-primaryBtnHoverFrom mr-4">
               {t("home.banner.service3.tag3")}
             </span>
           </div>

@@ -8,22 +8,33 @@ module.exports = {
         10: "10",
       },
       colors: {
-        primary: "#00A388", // this and heading are primary
-        primaryDarker: "#032728", // this and heading are primary
+        primary: "#00A388",
+        primaryDarker: "#032728",
         primaryLight: "rgba(0, 163, 136, 0.08)",
         primaryDark: "rgba(0, 163, 136, 0.48)",
         primarySchedule: "rgba(0, 163, 136, 0.24)",
         gradientColor: "#006655",
-        heading: "rgba(255, 255, 255, 0.8)", // white 80% opacity
-        bodyText: "rgba(255, 255, 255, 0.4)", // white 40% opacity
+        /// BUTTONS ///
+        // Primary ///
+        primaryBtnHoverFrom: "#00CCAA",
+        primaryBtnHoverTo: "#007864",
+        // Secondary ///
+        secondaryBtnHoverBg: "rgba(0, 163, 136, .12)", // primary 12% opacity
+        // Tertiary ///
+        tertiaryBtnHoverBg: "#00CCAA",
+
+        heading: "rgba(255, 255, 255, 1)", // white, normal but to stop using white.
+        bodyTextLight: "rgba(255, 255, 255, 0.8)", // white 80% opacity
+        bodyText: "rgba(255, 255, 255, 0.64)", // white 64% new base.
+        bodyTextDark: "rgba(255, 255, 255,  0.4)", // white 40% opacity.
         body: "#000E14", // this is the background color. Blueish black.
         white: "#ffffff",
-        lightWhite: "rgba(255, 255, 255, 0.64)", // white 64% opacity
-        lighterWhite: "rgba(255, 255, 255, 0.16)", //white 16% opacity
+        lightWhite: "rgba(255, 255, 255, 0.64)", // white 64% opacity. will depreciate. use bodyText
+        lighterWhite: "rgba(255, 255, 255, 0.16)", //white 16% opacity. will depreciate. use bodyTextDark
         gray: "#6b7280",
         black: "#000A08", // ZAITECH BLACK
-        lightBlack: "rgb(0 10 8 / 64%)",
-        lighterBlack: "rgb(0 10 8 / 24%)",
+        lightBlack: "rgba(0, 10, 8,  0.64)",
+        lighterBlack: "rgba(0, 10, 8, 0.24)",
         red: "rgba(179,58,58,1)",
         lightRed: "rgba(179,58,58,0.08)",
         yellow: "rgba(247,203,115,1)",

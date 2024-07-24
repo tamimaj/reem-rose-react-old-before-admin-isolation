@@ -6,6 +6,7 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import siteSettings from "../../../settings/siteSettings";
 import ROUTES from "../../../settings/ROUTES";
 import LanguageDetector from "../../../hooks/LanguageDetector/LanguageDetector";
+import Button from "../../Button";
 
 const DesktopFooter = () => {
   const { t } = useTranslation();
@@ -21,28 +22,31 @@ const DesktopFooter = () => {
         <span className="mt-2 text-bodyText text-base">
           {t("footer.tagline")}
         </span>
-        <button
-          onClick={() => navigate(ROUTES.SCHEDULE)}
-          className="flex items-center justify-center w-[208px] h-[60px] text-white rounded bg-gradient-to-r from-primary to-gradientColor mt-[48px]"
-        >
-          {t("header.scheduleText")}{" "}
-          {lang === "ar" ? (
-            <FiChevronLeft className="text-[20px] ml-4" />
-          ) : (
-            <FiChevronRight className="text-[20px] ml-4" />
-          )}
-        </button>
+        <Button
+          text={t("header.scheduleText")}
+          withArrow
+          href={ROUTES.SCHEDULE}
+          className="mt-[48px]"
+        />
       </div>
-      <div className="flex flex-col text-white">
+      <div className="flex flex-col text-bodyTextLight">
         {siteSettings.footerMenu.map((v, idx) => (
-          <Link to={v.link} className="mb-4 text-sm cursor-pointer" key={idx}>
+          <Link
+            to={v.link}
+            className="mb-4 text-sm cursor-pointer hover:text-heading"
+            key={idx}
+          >
             {t(v.text)}
           </Link>
         ))}
       </div>
-      <div className="flex flex-col text-white">
+      <div className="flex flex-col text-bodyTextLight">
         {siteSettings.footerPrivacy.map((v, idx) => (
-          <Link to={v.link} className="text-sm cursor-pointer mb-3" key={idx}>
+          <Link
+            to={v.link}
+            className="text-sm cursor-pointer mb-3 hover:text-heading"
+            key={idx}
+          >
             {t(v.text)}
           </Link>
         ))}

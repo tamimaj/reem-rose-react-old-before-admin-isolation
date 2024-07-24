@@ -8,6 +8,7 @@ import MobileMenuDrawer from "./MobileMenuDrawer/MobileMenuDrawer";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import ROUTES from "../../settings/ROUTES";
 import LanguageDetector from "../../hooks/LanguageDetector/LanguageDetector";
+import Button from "../Button";
 
 interface HeaderTypes {
   text: string;
@@ -59,17 +60,13 @@ const Header = () => {
           </div>
           <div className="hidden lg:flex items-center ">
             {/* <LanguagesMenu /> */}
-            <Link
-              to={ROUTES.SCHEDULE}
-              className="flex text-primary items-center ml-[48px] cursor-pointer"
-            >
-              <span>{t(siteSettings.scheduleText)}</span>
-              {lang === "ar" ? (
-                <FiChevronLeft className="text-[20px] ml-4" />
-              ) : (
-                <FiChevronRight className="text-[20px] ml-4" />
-              )}
-            </Link>
+
+            <Button
+              variant="tertiary"
+              text={t(siteSettings.scheduleText)}
+              href={ROUTES.SCHEDULE}
+              withArrow
+            />
           </div>
           <div className="flex lg:hidden cursor-pointer">
             <IoMdMenu

@@ -1,0 +1,116 @@
+.rich-text {
+  --primary: #00a388;
+  --primary-hover: #00ccaa;
+  --body-text: rgba(255, 255, 255, 0.64);
+  --body-text-hover: rgba(255, 255, 255, 1);
+  --heading: rgba(255, 255, 255, 1);
+
+  color: var(--body-tex);
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.rich-text h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: var(--primary);
+}
+
+.rich-text h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: var(--heading);
+}
+
+.rich-text h3 {
+  font-size: 1.17em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: var(--heading);
+}
+
+.rich-text h4 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: var(--body-text);
+}
+
+.rich-text h5 {
+  font-size: 0.83em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: var(--body-text);
+}
+
+.rich-text h6 {
+  font-size: 0.67em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: var(--body-text);
+}
+
+.rich-text p {
+  margin-bottom: 1em;
+  color: var(--body-text);
+}
+
+.rich-text ul,
+.rich-text ol {
+  margin-bottom: 1em;
+}
+
+.rich-text ul li::before {
+  content: "\2022";
+  display: inline-block;
+  width: 0.4em;
+  height: 0.4em;
+  background-color: var(--primary);
+  border-radius: 20%;
+  margin-right: 0.5em;
+  color: transparent;
+  vertical-align: middle;
+}
+
+.rich-text ol {
+  list-style: decimal inside;
+}
+
+.rich-text ol li {
+  color: var(--body-text);
+  margin-bottom: 0.5em;
+}
+
+.rich-text ol li::marker {
+  color: var(--primary);
+}
+
+.rich-text ul li,
+.rich-text ol li {
+  margin-bottom: 0.5em;
+  color: var(--body-text);
+}
+
+.rich-text a {
+  color: var(--link-color);
+  text-decoration: underline;
+  color: var(--primary);
+}
+
+.rich-text a:hover {
+  color: var(--primary-hover);
+}
+
+.rich-text pre {
+  background-color: #000e14;
+  padding: 1em;
+  border-radius: 0.5em;
+  overflow-x: auto;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--body-text);
+}
